@@ -1,0 +1,12 @@
+$container-name: wrapper;
+
+@layer utilities {
+  .cq-wrapper {
+    --_name: var(--container-name, #{$container-name});
+  
+    @supports (container-type: inline-size) {
+      container-type: inline-size;
+      container-name: var(--_name);
+    }
+  }
+}

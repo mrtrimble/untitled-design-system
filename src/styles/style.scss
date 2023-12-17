@@ -1,0 +1,12 @@
+@use 'sass:meta';
+
+@use 'colors';
+@use 'components';
+@use 'typography';
+@use 'utilities';
+
+@layer reset, colors, typography, components, theme, utilities;
+
+@layer reset {
+  @include meta.load-css('../../node_modules/@acab/reset.css/index.css');
+}

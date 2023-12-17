@@ -1,0 +1,42 @@
+@use 'sass:meta';
+@use '../tokens/tokens';
+
+$DEFAULT_MAX_COLORS: 5;
+
+@layer theme {
+  @each $name, $color in meta.module-variables('tokens') {
+    @if meta.type-of($color) == color {
+      :root {
+        --#{$name}: #{$color};
+        @for $i from 1 through $DEFAULT_MAX_COLORS {
+          --#{$name}-lighten-#{$i * 100}: lch(from #{$color} calc(l + #{$i * 5%}) c h);
+        }
+        @for $i from 1 through $DEFAULT_MAX_COLORS {
+          --#{$name}-darken-#{$i * 100}: lch(from #{$color} calc(l - #{$i * 5%}) c h);
+        }
+      }
+
+      $types: (
+        'text': 'color',
+        'background': 'background',
+        'border': 'border',
+      );
+
+      @each $type, $typeValue in $types {
+        .#{$type}-#{$name} {
+          #{$typeValue}: var(--#{$name});
+        }
+
+        @for $i from 1 through $DEFAULT_MAX_COLORS {
+          $variants: ('lighten', 'darken');
+
+          @each $variant in $variants {
+            .#{$type}-#{$name}-lighten-#{$i * 100} {
+              #{$typeValue}: var(--#{$name}-#{$variant}-#{$i * 100});
+            }
+          }
+        }
+      }
+    }
+  }
+}

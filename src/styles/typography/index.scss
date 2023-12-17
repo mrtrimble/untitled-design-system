@@ -1,0 +1,6 @@
+@use '../tokens/tokens' as tokens;
+
+body {
+  font-family: system-ui;
+  color: tokens.$color-base;
+}

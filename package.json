@@ -7,14 +7,18 @@
     "vite:dev": "vite",
     "vite:build": "tsc && vite build",
     "vite:preview": "vite preview",
-    "sass:watch": "sass --watch src/style.scss:src/style.css",
-    "start": "run-p sass:watch vite:dev"
+    "sass:watch": "sass --quiet --watch src/styles/style.scss:src/styles/dist/style.css",
+    "style-dictionary:build": "style-dictionary build --config ./style-dictionary.config.json",
+    "build": "run-s style-dictionary:build vite:build",
+    "start": "npm run style-dictionary:build && run-p sass:watch vite:dev"
   },
   "devDependencies": {
+    "@acab/reset.css": "^0.8.0",
     "browserslist": "^4.22.2",
     "lightningcss": "^1.22.1",
     "npm-run-all": "^4.1.5",
     "sass": "^1.69.5",
+    "style-dictionary": "^3.9.1",
     "typescript": "^5.2.2",
     "vite": "^5.0.8"
   }
