@@ -1,0 +1,27 @@
+// Spacers
+$spacers: (
+  '3xs': --spacer-3xs,
+  '2xs': --spacer-2xs,
+  'sm': --spacer-sm,
+  'md': --spacer-md,
+  'lg': --spacer-lg,
+  'xl': --spacer-xl,
+  '2xl': --spacer-2xl,
+  '3xl': --spacer-3xl,
+);
+
+@layer utilities {
+  .flow {
+    --_flow-spacer: var(--flow-spacer, var(--spacer-md));
+
+    > * + * {
+      margin-block-start: var(--_flow-spacer);
+    }
+  }
+
+  @each $spacer, $value in $spacers {
+    .flow-#{$spacer} {
+      --flow-spacer: var(#{$value});
+    }
+  }
+}

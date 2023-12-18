@@ -23,8 +23,8 @@ $DEFAULT_MAX_COLORS: 5;
       'border': 'border',
     );
 
-    @layer utilities {
-      @each $type, $typeValue in $types {
+    @each $type, $typeValue in $types {
+      @layer utilities {
         .#{$type}-#{$name} {
           #{$typeValue}: var(--#{$name});
         }

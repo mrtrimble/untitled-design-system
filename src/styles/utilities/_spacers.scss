@@ -6,18 +6,21 @@
   $string: meta.inspect($spacer);
 
   @if string.index(meta.inspect($string), 'spacer') == 2 {
-    $types: ('padding', 'margin');
+    $types: (
+      'p': 'padding',
+      'm': 'margin',
+    );
 
-    @each $type in $types {
-      @layer theme {
-        :root {
-          --#{$spacer}: #{$value};
-        }
+    @layer theme {
+      :root {
+        --#{$spacer}: #{$value};
       }
+    }
 
+    @each $prefix, $typeProperty in $types {
       @layer utilities {
-        .#{$type}-#{$spacer} {
-          #{$type}: var(--#{$spacer});
+        .#{$prefix}-#{$spacer} {
+          #{$typeProperty}: var(--#{$spacer});
         }
 
         $directions: (
@@ -30,8 +33,8 @@
         );
 
         @each $direction, $property in $directions {
-          .#{$type}-#{$direction}-#{$spacer} {
-            #{$type}-#{$property}: var(--#{$spacer});
+          .#{$prefix}#{$direction}-#{$spacer} {
+            #{$typeProperty}-#{$property}: var(--#{$spacer});
           }
         }
       }

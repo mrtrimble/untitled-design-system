@@ -1,0 +1,144 @@
+// Set maximum amount of columns
+$max-columns: 12;
+
+// Responsive Columns
+$breakpoints: (
+  'mobile': '640px',
+  'tablet': '768px',
+  'lg-tablet': '1024px',
+  'laptop': '1240px',
+);
+
+// Spacers
+$spacers: (
+  '3xs': --spacer-3xs,
+  '2xs': --spacer-2xs,
+  'sm': --spacer-sm,
+  'md': --spacer-md,
+  'lg': --spacer-lg,
+  'xl': --spacer-xl,
+  '2xl': --spacer-2xl,
+  '3xl': --spacer-3xl,
+);
+
+// Default Grid styles
+@layer utilities {
+  .grid {
+    --_columns: 1;
+    --_column-gap: 0;
+    --_row-gap: 0;
+
+    --_gap: var(--grid-row-gap, var(--_row-gap)) var(--grid-column-gap, var(--_column-gap));
+
+    container-name: grid-container;
+    container-type: inline-size;
+    display: block grid;
+    grid-template-columns: repeat(var(--grid-columns, var(--_columns)), 1fr);
+    gap: var(--grid-gap, var(--_gap));
+  }
+
+  // Unresponsive Columns
+  @for $i from 1 through $max-columns {
+    .grid-#{$i} {
+      --grid-columns: #{$i};
+    }
+  }
+
+  @each $breakpoint, $value in $breakpoints {
+    @media (min-width: $value) {
+      @for $i from 1 through $max-columns {
+        .grid-#{$i}\:#{$breakpoint} {
+          --grid-columns: #{$i};
+        }
+      }
+    }
+  }
+
+  [class^='block'] {
+    grid-column: span var(--grid-column-span, var(--_column-span));
+  }
+
+  @for $i from 1 through $max-columns {
+    .block-#{$i} {
+      --grid-column-span: #{$i};
+    }
+  }
+
+  @each $breakpoint, $value in $breakpoints {
+    @media (min-width: #{$value}) {
+      @for $i from 1 through $max-columns {
+        .block-#{$i}\:#{$breakpoint} {
+          --grid-column-span: #{$i};
+        }
+      }
+    }
+  }
+
+  // Gap styles
+
+  // Unresponsive Gap Sizes
+  @each $spacer, $value in $spacers {
+    .gap-#{$spacer} {
+      --grid-gap: var(#{$value});
+    }
+
+    .gap-row-#{$spacer} {
+      --grid-row-gap: var(#{$value});
+    }
+
+    .gap-column-#{$spacer} {
+      --grid-row-gap: var(#{$value});
+    }
+  }
+
+  // Responsive Gap Sizes
+  @each $breakpoint, $value in $breakpoints {
+    @media (min-width: #{$value}) {
+      @each $spacer, $value in $spacers {
+        .gap-#{$spacer}\:#{$breakpoint} {
+          --grid-gap: var(#{$value});
+        }
+
+        .gap-row-#{$spacer}\:#{$breakpoint} {
+          --grid-row-gap: var(#{$value});
+          --grid-gap: var(--grid-row-gap) var(--grid-column-gap);
+        }
+
+        .gap-column-#{$spacer}\:#{$breakpoint} {
+          --grid-column-gap: var(#{$value});
+          --grid-gap: var(--grid-row-gap) var(--grid-column-gap);
+        }
+      }
+    }
+  }
+
+  .auto-grid {
+    --_min: 15ch;
+
+    display: grid;
+    grid-gap: var(--grid-gap);
+    grid-template-columns: repeat(auto-fit, minmax(min(100%, var(--grid-column-min, var(--_min))), 1fr));
+  }
+
+  .grid-stack {
+    grid-template-areas: 'stack';
+    > * {
+      grid-area: stack;
+    }
+  }
+
+  .grid-center {
+    display: grid;
+    place-content: center;
+  }
+
+  .grid-align-center {
+    display: grid;
+    align-items: center;
+  }
+
+  .grid-justify-center {
+    display: grid;
+    justify-content: center;
+  }
+}

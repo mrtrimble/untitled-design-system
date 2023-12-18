@@ -8,8 +8,9 @@
     "vite:build": "tsc && vite build",
     "vite:preview": "vite preview",
     "sass:watch": "sass --watch src/styles/style.scss:src/styles/dist/style.css",
+    "sass:build": "sass src/styles/style.scss:src/styles/dist/style.css",
     "style-dictionary:build": "style-dictionary build --config ./style-dictionary.config.json",
-    "build": "run-s style-dictionary:build vite:build",
+    "build": "run-s style-dictionary:build sass:build vite:build",
     "start": "npm run style-dictionary:build && run-p sass:watch vite:dev"
   },
   "devDependencies": {
