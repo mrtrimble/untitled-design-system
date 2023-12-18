@@ -1,5 +1,5 @@
 // Spacers
-$spacers: (
+$SPACERS: (
   '3xs': --spacer-3xs,
   '2xs': --spacer-2xs,
   'sm': --spacer-sm,
@@ -19,7 +19,7 @@ $spacers: (
     }
   }
 
-  @each $spacer, $value in $spacers {
+  @each $spacer, $value in $SPACERS {
     .flow-#{$spacer} {
       --flow-spacer: var(#{$value});
     }

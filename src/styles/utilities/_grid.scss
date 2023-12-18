@@ -1,8 +1,8 @@
 // Set maximum amount of columns
-$max-columns: 12;
+$MAX_COLUMNS: 12;
 
 // Responsive Columns
-$breakpoints: (
+$BREAKPOINTS: (
   'mobile': '640px',
   'tablet': '768px',
   'lg-tablet': '1024px',
@@ -10,7 +10,7 @@ $breakpoints: (
 );
 
 // Spacers
-$spacers: (
+$SPACERS: (
   '3xs': --spacer-3xs,
   '2xs': --spacer-2xs,
   'sm': --spacer-sm,
@@ -38,15 +38,15 @@ $spacers: (
   }
 
   // Unresponsive Columns
-  @for $i from 1 through $max-columns {
+  @for $i from 1 through $MAX_COLUMNS {
     .grid-#{$i} {
       --grid-columns: #{$i};
     }
   }
 
-  @each $breakpoint, $value in $breakpoints {
+  @each $breakpoint, $value in $BREAKPOINTS {
     @media (min-width: $value) {
-      @for $i from 1 through $max-columns {
+      @for $i from 1 through $MAX_COLUMNS {
         .grid-#{$i}\:#{$breakpoint} {
           --grid-columns: #{$i};
         }
@@ -58,15 +58,15 @@ $spacers: (
     grid-column: span var(--grid-column-span, var(--_column-span));
   }
 
-  @for $i from 1 through $max-columns {
+  @for $i from 1 through $MAX_COLUMNS {
     .block-#{$i} {
       --grid-column-span: #{$i};
     }
   }
 
-  @each $breakpoint, $value in $breakpoints {
+  @each $breakpoint, $value in $BREAKPOINTS {
     @media (min-width: #{$value}) {
-      @for $i from 1 through $max-columns {
+      @for $i from 1 through $MAX_COLUMNS {
         .block-#{$i}\:#{$breakpoint} {
           --grid-column-span: #{$i};
         }
@@ -77,7 +77,7 @@ $spacers: (
   // Gap styles
 
   // Unresponsive Gap Sizes
-  @each $spacer, $value in $spacers {
+  @each $spacer, $value in $SPACERS {
     .gap-#{$spacer} {
       --grid-gap: var(#{$value});
     }
@@ -92,9 +92,9 @@ $spacers: (
   }
 
   // Responsive Gap Sizes
-  @each $breakpoint, $value in $breakpoints {
+  @each $breakpoint, $value in $BREAKPOINTS {
     @media (min-width: #{$value}) {
-      @each $spacer, $value in $spacers {
+      @each $spacer, $value in $SPACERS {
         .gap-#{$spacer}\:#{$breakpoint} {
           --grid-gap: var(#{$value});
         }
