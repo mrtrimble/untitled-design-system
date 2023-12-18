@@ -1,11 +1,33 @@
 
 // Do not edit directly
-// Generated on Mon, 18 Dec 2023 15:19:58 GMT
+// Generated on Mon, 18 Dec 2023 19:22:41 GMT
 
 $color-base: #111111;
 $color-secondary: #333333;
 $color-tertiary: #666666;
 $color-inverse-base: #ffffff;
+$swatch-navy: #003f70;
+$swatch-skyblue: #91b9dc;
+$swatch-lightblue: #e5f5ff;
+$swatch-med-blue: #3f7bad;
+$swatch-beige: #ecd7b1;
+$swatch-peach: #dfa278;
+$swatch-salmon: #e58967;
+$swatch-brown: #866657;
+$swatch-orange: #f48418;
+$grayscale-white: #ffffff;
+$grayscale-lighter: #efefef;
+$grayscale-light: #999999;
+$grayscale-base: #666666;
+$grayscale-dark: #333333;
+$grayscale-black: #000000;
+$message-default: #666666;
+$message-success: #2a6538;
+$message-info: #006eb2;
+$message-warning: #876600;
+$message-error: #ad1c00;
+$spacer-none: 0;
+$spacer-auto: auto;
 $spacer-3xs: clamp(0.3125rem, 0.3125rem + 0vw, 0.3125rem);
 $spacer-2xs: clamp(0.5625rem, 0.5408rem + 0.1087vw, 0.625rem);
 $spacer-xs: clamp(0.875rem, 0.8533rem + 0.1087vw, 0.9375rem);

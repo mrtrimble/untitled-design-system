@@ -1,0 +1,34 @@
+@layer components {
+  @layer defaults, rules, states;
+  .message {
+    @layer default {
+      --_color: var(--message-color, var(--message-default-darken-300));
+      --_background-color: var(--message-background-color, var(--message-default));
+      --_padding-x: var(--message-padding-inline, var(--spacer-2xs));
+      --_padding-y: var(--message-padding-block, var(--spacer-xs));
+      --_border-color: var(--message-border-color, var(--message-default));
+      --_border-width: var(--message-border-width, 5px);
+      --_border-style: var(--message-border-style, solid);
+    }
+
+    @layer rules {
+      color: var(--_color);
+      background: color-mix(in lab, var(--_background-color), var(--grayscale-white) 90%);
+      padding-inline: var(--_padding-x);
+      padding-block: var(--_padding-y);
+      border-left: var(--_border-width) var(--_border-color) var(--_border-style);
+    }
+
+    @layer states {
+      $states: ('default', 'info', 'warning', 'success', 'error');
+
+      @each $state in $states {
+        &.#{$state} {
+          --message-color: var(--message-#{$state});
+          --message-background-color: var(--message-#{$state});
+          --message-border-color: var(--message-#{$state});
+        }
+      }
+    }
+  }
+}

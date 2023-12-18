@@ -1,0 +1,16 @@
+$TYPES: ('visible', 'hidden', 'clip', 'scroll', 'auto');
+
+$DIRECTIONS: ('x', 'y');
+
+@layer utilities {
+  @each $type in $TYPES {
+    .overflow-#{$type} {
+      overflow: #{$type};
+    }
+    @each $direction in $DIRECTIONS {
+      .overflow-#{$direction}-#{$type} {
+        overflow-#{$direction}: #{$type};
+      }
+    }
+  }
+}

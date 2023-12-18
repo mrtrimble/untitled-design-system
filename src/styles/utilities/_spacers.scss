@@ -2,23 +2,29 @@
 @use 'sass:string';
 @use '../tokens/tokens' as tokens;
 
-@each $spacer, $value in meta.module-variables('tokens') {
-  $string: meta.inspect($spacer);
+:root {
+  @layer theme {
+    @each $spacer, $value in meta.module-variables('tokens') {
+      $string: meta.inspect($spacer);
 
-  @if string.index(meta.inspect($string), 'spacer') == 2 {
-    $types: (
-      'p': 'padding',
-      'm': 'margin',
-    );
-
-    @layer theme {
-      :root {
+      @if string.index(meta.inspect($string), 'spacer') == 2 {
         --#{$spacer}: #{$value};
       }
     }
+  }
+}
 
-    @each $prefix, $typeProperty in $types {
-      @layer utilities {
+@layer utilities {
+  @each $spacer, $value in meta.module-variables('tokens') {
+    $string: meta.inspect($spacer);
+
+    @if string.index(meta.inspect($string), 'spacer') == 2 {
+      $types: (
+        'p': 'padding',
+        'm': 'margin',
+      );
+
+      @each $prefix, $typeProperty in $types {
         .#{$prefix}-#{$spacer} {
           #{$typeProperty}: var(--#{$spacer});
         }

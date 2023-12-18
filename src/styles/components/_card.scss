@@ -1,22 +1,48 @@
 @layer components {
+  @layer defaults, rules;
+
   :has(.card) {
     --container-name: card;
   }
 
   .card {
-    border: 1px solid #333;
-    padding: 1rem;
-
-    @container card (min-width: 700px) {
-      width: 200px;
-      background: blue;
+    @layer defaults {
+      --_background-color: var(--card-background-color, transparent);
+      --_border-color: var(--card-border-color, var(--grayscale-lighter));
+      --_border-style: var(--card-border-style, solid);
+      --_border-width: var(--card-border-width, 1px);
+      --_margin-x: var(--card-margin-inline, var(--spacer-xs));
+      --_flow-space: var(--card-flow-space, var(--spacer-xs));
     }
 
-    @supports not (container-type: inline-size) {
-      @media screen and (min-width: 700px) {
-        width: 200px;
-        background: blue;
+    @layer rules {
+      display: grid;
+      background-color: var(--_background-color);
+      border: var(--_border-width) var(--_border-color) var(--_border-style);
+
+      *:not(figure, image) {
+        margin-inline: var(--_margin-x);
+        margin-block-start: var(--_flow-space);
+
+        &:last-child {
+          margin-block-end: var(--_flow-space);
+        }
       }
     }
   }
 }
+
+// border: 1px solid #333;
+// padding: 1rem;
+
+// @container card (min-width: 700px) {
+//   width: 200px;
+//   background: blue;
+// }
+
+// @supports not (container-type: inline-size) {
+//   @media screen and (min-width: 700px) {
+//     width: 200px;
+//     background: blue;
+//   }
+// }

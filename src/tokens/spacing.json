@@ -1,5 +1,11 @@
 {
   "spacer": {
+    "none": {
+      "value": "0"
+    },
+    "auto": {
+      "value": "auto"
+    },
     "3xs": {
       "value": "clamp(0.3125rem, 0.3125rem + 0vw, 0.3125rem)"
     },

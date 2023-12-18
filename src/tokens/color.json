@@ -6,5 +6,31 @@
     "inverse": {
       "base": { "value": "#ffffff" }
     }
+  },
+  "swatch": {
+    "navy": { "value": "#003f70" },
+    "skyblue": { "value": "#91b9dc" },
+    "lightblue": { "value": "#e5f5ff" },
+    "med-blue": { "value": "#3f7bad" },
+    "beige": { "value": "#ecd7b1" },
+    "peach": { "value": "#dfa278" },
+    "salmon": { "value": "#e58967" },
+    "brown": { "value": "#866657" },
+    "orange": { "value": "#f48418" }
+  },
+  "grayscale": {
+    "white": { "value": "#ffffff" },
+    "lighter": { "value": "#efefef" },
+    "light": { "value": "#999999" },
+    "base": { "value": "#666666" },
+    "dark": { "value": "#333333" },
+    "black": { "value": "#000000" }
+  },
+  "message": {
+    "default": {"value": "#666666"},
+    "success": {"value": "#2a6538"},
+    "info": {"value": "#006eb2"},
+    "warning": { "value": "#876600"},
+    "error": { "value": "#ad1c00"}
   }
 }

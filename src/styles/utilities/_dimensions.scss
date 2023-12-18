@@ -1,0 +1,33 @@
+@use 'sass:map';
+@use 'sass:meta';
+
+$DIMENSIONS: ('height', 'width');
+
+$DIMENSION_INFO: (
+  'height': (
+    'h': '%',
+    'vh': 'vh',
+  ),
+  'width': (
+    'w': '%',
+    'vw': 'vw',
+  ),
+);
+
+$STEP: 10;
+
+@layer utilities {
+  @each $dimension in $DIMENSIONS {
+    @each $prefix, $unit in map.get($DIMENSION_INFO, $dimension) {
+      @for $i from 1 through $STEP {
+        .#{$prefix}-#{$i * $STEP} {
+          #{$dimension}: #{$i * $STEP}#{$unit};
+        }
+      }
+    }
+  }
+}
+
+.w-fit-content {
+  width: fit-content;
+}
