@@ -1,7 +1,7 @@
 @layer components {
   @layer defaults, rules;
 
-  :has(.card) {
+  *:has(> .card) {
     --container-name: card;
   }
 
@@ -20,12 +20,28 @@
       background-color: var(--_background-color);
       border: var(--_border-width) var(--_border-color) var(--_border-style);
 
-      *:not(figure, image) {
+      *:not(figure, img) {
         margin-inline: var(--_margin-x);
         margin-block-start: var(--_flow-space);
 
         &:last-child {
           margin-block-end: var(--_flow-space);
+        }
+
+        figure,
+        img {
+          margin: var(--spacer-none);
+          padding: var(--space-none);
+          width: 100%;
+          height: auto;
+        }
+
+        figure {
+          > image {
+            height: 100%;
+            width: 100%;
+            object-fit: contain;
+          }
         }
       }
     }
