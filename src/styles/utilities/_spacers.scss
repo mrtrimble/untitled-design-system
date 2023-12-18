@@ -2,17 +2,18 @@
 @use 'sass:string';
 @use '../tokens/tokens' as tokens;
 
-:root {
-  @layer theme {
-    @each $spacer, $value in meta.module-variables('tokens') {
-      $string: meta.inspect($spacer);
+// :root {
+//   @layer theme {
+//     @each $spacer, $value in meta.module-variables('tokens') {
+//       $string: meta.inspect($spacer);
 
-      @if string.index(meta.inspect($string), 'spacer') == 2 {
-        --#{$spacer}: #{$value};
-      }
-    }
-  }
-}
+//       // TODO: Figure out why this is doubling up on build...
+//       @if string.index(meta.inspect($string), 'spacer') == 2 {
+//         --#{$spacer}: #{$value};
+//       }
+//     }
+//   }
+// }
 
 @layer utilities {
   @each $spacer, $value in meta.module-variables('tokens') {

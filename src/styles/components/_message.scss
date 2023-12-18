@@ -1,15 +1,14 @@
 @layer components {
-  @layer defaults, rules, states;
+  @layer rules, states;
+
   .message {
-    @layer defaults {
-      --_color: var(--message-color, var(--message-default-darken-300));
-      --_background-color: var(--message-background-color, var(--message-default));
-      --_padding-x: var(--message-padding-inline, var(--spacer-2xs));
-      --_padding-y: var(--message-padding-block, var(--spacer-xs));
-      --_border-color: var(--message-border-color, var(--message-default));
-      --_border-width: var(--message-border-width, 5px);
-      --_border-style: var(--message-border-style, solid);
-    }
+    --_color: var(--message-color, var(--message-default-darken-300));
+    --_background-color: var(--message-background-color, var(--message-default));
+    --_padding-x: var(--message-padding-inline, var(--spacer-2xs));
+    --_padding-y: var(--message-padding-block, var(--spacer-xs));
+    --_border-color: var(--message-border-color, var(--message-default));
+    --_border-width: var(--message-border-width, 5px);
+    --_border-style: var(--message-border-style, solid);
 
     @layer rules {
       color: var(--_color);

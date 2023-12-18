@@ -2,17 +2,18 @@
 @use 'sass:string';
 @use '../tokens/tokens' as tokens;
 
-@layer theme {
-  :root {
-    @each $textSize, $value in meta.module-variables('tokens') {
-      $string: meta.inspect($textSize);
+// @layer theme {
+//   :root {
+//     @each $textSize, $value in meta.module-variables('tokens') {
+//       $string: meta.inspect($textSize);
 
-      @if string.index(meta.inspect($string), 'text') == 2 {
-        --#{$textSize}: #{$value};
-      }
-    }
-  }
-}
+//       // TODO: Figure out why this is doubling up on build...
+//       @if string.index(meta.inspect($string), 'text') == 2 {
+//         --#{$textSize}: #{$value};
+//       }
+//     }
+//   }
+// }
 
 @layer globals {
   @layer typography {
@@ -21,8 +22,8 @@
     }
 
     body {
-      --_text-color: var(--text-color-base, #{tokens.$color-base});
-      --_text-color-inverse: var(--text-color-inverse-base, #{tokens.$color-inverse-base});
+      --_text-color: var(--body-color-base, #{tokens.$color-base});
+      --_text-color-inverse: var(--body-color-inverse-base, #{tokens.$color-inverse-base});
       --_font-family: var(--body-font-family, system-ui);
       --_font-size: var(--body-font-size, #{tokens.$text-xs});
 

@@ -1,19 +1,18 @@
 @layer components {
-  @layer defaults, rules;
+  @layer rules;
 
   *:has(> .card) {
     --container-name: card;
   }
 
   .card {
-    @layer defaults {
       --_background-color: var(--card-background-color, transparent);
       --_border-color: var(--card-border-color, var(--grayscale-lighter));
       --_border-style: var(--card-border-style, solid);
       --_border-width: var(--card-border-width, 1px);
       --_margin-x: var(--card-margin-inline, var(--spacer-xs));
       --_flow-space: var(--card-flow-space, var(--spacer-xs));
-    }
+    
 
     @layer rules {
       display: grid;
