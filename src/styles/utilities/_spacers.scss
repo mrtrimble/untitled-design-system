@@ -1,0 +1,40 @@
+@use 'sass:meta';
+@use 'sass:string';
+@use '../tokens/tokens' as tokens;
+
+@each $spacer, $value in meta.module-variables('tokens') {
+  $string: meta.inspect($spacer);
+
+  @if string.index(meta.inspect($string), 'spacer') == 2 {
+    $types: ('padding', 'margin');
+
+    @each $type in $types {
+      @layer theme {
+        :root {
+          --#{$spacer}: #{$value};
+        }
+      }
+
+      @layer utilities {
+        .#{$type}-#{$spacer} {
+          #{$type}: var(--#{$spacer});
+        }
+
+        $directions: (
+          'x': 'inline',
+          'y': 'block',
+          'x-start': 'inline-start',
+          'x-end': 'inline-end',
+          'y-start': 'block-start',
+          'y-end': 'block-end',
+        );
+
+        @each $direction, $property in $directions {
+          .#{$type}-#{$direction}-#{$spacer} {
+            #{$type}-#{$property}: var(--#{$spacer});
+          }
+        }
+      }
+    }
+  }
+}
