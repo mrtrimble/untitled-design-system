@@ -1,0 +1,266 @@
+@layer theme {
+  :root {
+    --color-base: #111111;
+    --color-secondary: #333333;
+    --color-tertiary: #666666;
+    --color-inverse-base: #ffffff;
+    --swatch-navy: #003f70;
+    --swatch-skyblue: #91b9dc;
+    --swatch-lightblue: #e5f5ff;
+    --swatch-med-blue: #3f7bad;
+    --swatch-beige: #ecd7b1;
+    --swatch-peach: #dfa278;
+    --swatch-salmon: #e58967;
+    --swatch-brown: #866657;
+    --swatch-orange: #f48418;
+    --grayscale-white: #ffffff;
+    --grayscale-lighter: #efefef;
+    --grayscale-light: #999999;
+    --grayscale-base: #666666;
+    --grayscale-dark: #333333;
+    --grayscale-black: #000000;
+    --message-default: #666666;
+    --message-success: #2a6538;
+    --message-info: #006eb2;
+    --message-warning: #876600;
+    --message-error: #ad1c00;
+    --spacer-none: 0;
+    --spacer-auto: auto;
+    --spacer-3xs: clamp(0.3125rem, 0.3125rem + 0vw, 0.3125rem);
+    --spacer-2xs: clamp(0.5625rem, 0.5408rem + 0.1087vw, 0.625rem);
+    --spacer-xs: clamp(0.875rem, 0.8533rem + 0.1087vw, 0.9375rem);
+    --spacer-md: clamp(1.6875rem, 1.6223rem + 0.3261vw, 1.875rem);
+    --spacer-lg: clamp(2.25rem, 2.163rem + 0.4348vw, 2.5rem);
+    --spacer-xl: clamp(3.375rem, 3.2446rem + 0.6522vw, 3.75rem);
+    --spacer-2xl: clamp(4.5rem, 4.3261rem + 0.8696vw, 5rem);
+    --spacer-3xl: clamp(6.75rem, 6.4891rem + 1.3043vw, 7.5rem);
+    --text-2xs: clamp(0.7813rem, 0.7747rem + 0.0326vw, 0.8rem);
+    --text-xs: clamp(0.9375rem, 0.9158rem + 0.1087vw, 1rem);
+    --text-md: clamp(1.125rem, 1.0815rem + 0.2174vw, 1.25rem);
+    --text-lg: clamp(1.35rem, 1.2761rem + 0.3696vw, 1.5625rem);
+    --text-xl: clamp(1.62rem, 1.5041rem + 0.5793vw, 1.9531rem);
+    --text-2xl: clamp(1.9438rem, 1.7707rem + 0.8652vw, 2.4413rem);
+    --text-3xl: clamp(2.3325rem, 2.0823rem + 1.2511vw, 3.0519rem);
+    --text-4xl: clamp(2.7994rem, 2.4461rem + 1.7663vw, 3.815rem);
+  }
+}
+@layer utilities {
+  .text-color-base {
+    color: var(--color-base);
+  }
+  .background-color-base {
+    background: var(--color-base);
+  }
+  .border-color-base {
+    border-color: var(--color-base);
+  }
+  .text-color-secondary {
+    color: var(--color-secondary);
+  }
+  .background-color-secondary {
+    background: var(--color-secondary);
+  }
+  .border-color-secondary {
+    border-color: var(--color-secondary);
+  }
+  .text-color-tertiary {
+    color: var(--color-tertiary);
+  }
+  .background-color-tertiary {
+    background: var(--color-tertiary);
+  }
+  .border-color-tertiary {
+    border-color: var(--color-tertiary);
+  }
+  .text-color-inverse-base {
+    color: var(--color-inverse-base);
+  }
+  .background-color-inverse-base {
+    background: var(--color-inverse-base);
+  }
+  .border-color-inverse-base {
+    border-color: var(--color-inverse-base);
+  }
+  .text-swatch-navy {
+    color: var(--swatch-navy);
+  }
+  .background-swatch-navy {
+    background: var(--swatch-navy);
+  }
+  .border-swatch-navy {
+    border-color: var(--swatch-navy);
+  }
+  .text-swatch-skyblue {
+    color: var(--swatch-skyblue);
+  }
+  .background-swatch-skyblue {
+    background: var(--swatch-skyblue);
+  }
+  .border-swatch-skyblue {
+    border-color: var(--swatch-skyblue);
+  }
+  .text-swatch-lightblue {
+    color: var(--swatch-lightblue);
+  }
+  .background-swatch-lightblue {
+    background: var(--swatch-lightblue);
+  }
+  .border-swatch-lightblue {
+    border-color: var(--swatch-lightblue);
+  }
+  .text-swatch-med-blue {
+    color: var(--swatch-med-blue);
+  }
+  .background-swatch-med-blue {
+    background: var(--swatch-med-blue);
+  }
+  .border-swatch-med-blue {
+    border-color: var(--swatch-med-blue);
+  }
+  .text-swatch-beige {
+    color: var(--swatch-beige);
+  }
+  .background-swatch-beige {
+    background: var(--swatch-beige);
+  }
+  .border-swatch-beige {
+    border-color: var(--swatch-beige);
+  }
+  .text-swatch-peach {
+    color: var(--swatch-peach);
+  }
+  .background-swatch-peach {
+    background: var(--swatch-peach);
+  }
+  .border-swatch-peach {
+    border-color: var(--swatch-peach);
+  }
+  .text-swatch-salmon {
+    color: var(--swatch-salmon);
+  }
+  .background-swatch-salmon {
+    background: var(--swatch-salmon);
+  }
+  .border-swatch-salmon {
+    border-color: var(--swatch-salmon);
+  }
+  .text-swatch-brown {
+    color: var(--swatch-brown);
+  }
+  .background-swatch-brown {
+    background: var(--swatch-brown);
+  }
+  .border-swatch-brown {
+    border-color: var(--swatch-brown);
+  }
+  .text-swatch-orange {
+    color: var(--swatch-orange);
+  }
+  .background-swatch-orange {
+    background: var(--swatch-orange);
+  }
+  .border-swatch-orange {
+    border-color: var(--swatch-orange);
+  }
+  .text-grayscale-white {
+    color: var(--grayscale-white);
+  }
+  .background-grayscale-white {
+    background: var(--grayscale-white);
+  }
+  .border-grayscale-white {
+    border-color: var(--grayscale-white);
+  }
+  .text-grayscale-lighter {
+    color: var(--grayscale-lighter);
+  }
+  .background-grayscale-lighter {
+    background: var(--grayscale-lighter);
+  }
+  .border-grayscale-lighter {
+    border-color: var(--grayscale-lighter);
+  }
+  .text-grayscale-light {
+    color: var(--grayscale-light);
+  }
+  .background-grayscale-light {
+    background: var(--grayscale-light);
+  }
+  .border-grayscale-light {
+    border-color: var(--grayscale-light);
+  }
+  .text-grayscale-base {
+    color: var(--grayscale-base);
+  }
+  .background-grayscale-base {
+    background: var(--grayscale-base);
+  }
+  .border-grayscale-base {
+    border-color: var(--grayscale-base);
+  }
+  .text-grayscale-dark {
+    color: var(--grayscale-dark);
+  }
+  .background-grayscale-dark {
+    background: var(--grayscale-dark);
+  }
+  .border-grayscale-dark {
+    border-color: var(--grayscale-dark);
+  }
+  .text-grayscale-black {
+    color: var(--grayscale-black);
+  }
+  .background-grayscale-black {
+    background: var(--grayscale-black);
+  }
+  .border-grayscale-black {
+    border-color: var(--grayscale-black);
+  }
+  .text-message-default {
+    color: var(--message-default);
+  }
+  .background-message-default {
+    background: var(--message-default);
+  }
+  .border-message-default {
+    border-color: var(--message-default);
+  }
+  .text-message-success {
+    color: var(--message-success);
+  }
+  .background-message-success {
+    background: var(--message-success);
+  }
+  .border-message-success {
+    border-color: var(--message-success);
+  }
+  .text-message-info {
+    color: var(--message-info);
+  }
+  .background-message-info {
+    background: var(--message-info);
+  }
+  .border-message-info {
+    border-color: var(--message-info);
+  }
+  .text-message-warning {
+    color: var(--message-warning);
+  }
+  .background-message-warning {
+    background: var(--message-warning);
+  }
+  .border-message-warning {
+    border-color: var(--message-warning);
+  }
+  .text-message-error {
+    color: var(--message-error);
+  }
+  .background-message-error {
+    background: var(--message-error);
+  }
+  .border-message-error {
+    border-color: var(--message-error);
+  }
+}
+
+/*# sourceMappingURL=index.css.map */
