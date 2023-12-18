@@ -9,6 +9,7 @@
     "vite:preview": "vite preview",
     "sass:watch": "sass --watch src/styles/scss/:src/styles/css/",
     "sass:build": "sass src/styles/scss/:src/styles/css/",
+    "style-dictionary:clean": "style-dictionary clean --config ./style-dictionary.config.json",
     "style-dictionary:build": "style-dictionary build --config ./style-dictionary.config.json",
     "build": "run-s style-dictionary:build sass:build vite:build",
     "start": "npm run style-dictionary:build && run-p sass:watch vite:dev"
