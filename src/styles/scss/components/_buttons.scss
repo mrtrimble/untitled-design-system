@@ -1,0 +1,100 @@
+@layer components {
+  :where(.button) {
+    @layer defaults {
+      --_background-color: var(--button-background-color, var(--swatch-salmon));
+      --_border-color: var(--button-border-color, transparent);
+      --_border-width: var(--button-border-width, 3px);
+      --_border-style: var(--button-border-style, solid);
+      --_border-radius: var(--button-border-radius, 0.5rem);
+      --_font-size: var(--button-font-size, inherit);
+      --_text-color: var(--button-text-color, black);
+      --_outline-color: var(--button-outline-color, transparent);
+      --_outline-style: var(--button-outline-style, solid);
+      --_outline-width: var(--button-outline-width, 3px);
+      --_outline-offset: var(--button-outline-offset, 3px);
+      --_padding-x: var(--button-padding-inline, var(--spacer-xs));
+      --_padding-y: var(--button-padding-block, var(--spacer-3xs));
+      --_text-decoration: var(--button-text-decoration, none);
+      --_width: var(--button-width, fit-content);
+    }
+
+    @layer rules {
+      background: var(--_background-color);
+      border-color: var(--_border-color);
+      border-radius: var(--_border-radius);
+      border-style: var(--_border-style);
+      border-width: var(--_border-width);
+      color: var(--_text-color);
+      display: inline-grid;
+      font-size: var(--_font-size);
+      padding-block: var(--_padding-y);
+      padding-inline: var(--_padding-x);
+      place-content: center;
+      text-decoration: var(--_text-decoration);
+      transition-duration: 0.2s;
+      transition-property: background, outline, color;
+      transition-timing-function: ease;
+      outline: var(--_outline-width) var(--_outline-style) var(--_outline-color);
+      outline-offset: var(--_outline-offset);
+      text-align: center;
+      width: var(--_width);
+    }
+
+    @layer modifiers {
+      &.secondary {
+        --button-background-color: var(--grayscale-white);
+        --button-border-color: var(--grayscale-light);
+        --button-border-width: 3px;
+      }
+      &.plain {
+        --button-background-color: transparent;
+        --button-border-color: transparent;
+        --button-text-decoration: underline;
+      }
+    }
+
+    @layer states {
+      &:hover {
+        --button-background-color: var(--swatch-salmon);
+      }
+
+      &:active,
+      &:focus-visible {
+        --button-outline-color: currentcolor;
+      }
+
+      @container button (min-width: 320px) {
+        --button-width: fit-content;
+      }
+    }
+
+    @layer themes {
+      @media (prefers-color-scheme: dark) {
+        --button-background-color: var(--grayscale-white);
+        --button-text-color: var(--grayscale-black);
+        --button-outline-type: dashed;
+
+        &.secondary {
+          --button-background-color: var(--grayscale-light);
+        }
+        &.plain {
+          --button-background-color: transparent;
+          --button-text-color: var(--grayscale-white);
+          &:hover {
+            --button-text-color: var(--grayscale-black);
+          }
+        }
+
+        &:hover {
+          --button-background-color: var(--grayscale-lighter);
+        }
+
+        &:active,
+        &:focus,
+        &:focus-visible {
+          --button-outline-color: currentcolor;
+        }
+      }
+    }
+  }
+}
