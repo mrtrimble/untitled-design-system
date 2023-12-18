@@ -113,11 +113,11 @@ $SPACERS: (
   }
 
   .auto-grid {
-    --_min: 15ch;
+    --_min: var(--grid-column-min, 15ch);
 
     display: grid;
     grid-gap: var(--grid-gap);
-    grid-template-columns: repeat(auto-fit, minmax(min(100%, var(--grid-column-min, var(--_min))), 1fr));
+    grid-template-columns: repeat(auto-fit, minmax(min(100%, --_min)), 1fr));
   }
 
   .grid-stack {
