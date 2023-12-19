@@ -1,16 +1,16 @@
-@use 'sass:map';
-@use 'sass:meta';
+@use "sass:map";
+@use "sass:meta";
 
-$DIMENSIONS: ('height', 'width');
+$DIMENSIONS: ("height", "width");
 
 $DIMENSION_INFO: (
-  'height': (
-    'h': '%',
-    'vh': 'vh',
+  "height": (
+    "h": "%",
+    "vh": "vh",
   ),
-  'width': (
-    'w': '%',
-    'vw': 'vw',
+  "width": (
+    "w": "%",
+    "vw": "vw",
   ),
 );
 

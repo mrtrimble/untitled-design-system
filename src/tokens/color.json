@@ -27,10 +27,10 @@
     "black": { "value": "#000000" }
   },
   "message": {
-    "default": {"value": "#666666"},
-    "success": {"value": "#2a6538"},
-    "info": {"value": "#006eb2"},
-    "warning": { "value": "#876600"},
-    "error": { "value": "#ad1c00"}
+    "default": { "value": "#666666" },
+    "success": { "value": "#2a6538" },
+    "info": { "value": "#006eb2" },
+    "warning": { "value": "#876600" },
+    "error": { "value": "#ad1c00" }
   }
 }

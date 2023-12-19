@@ -1,6 +1,6 @@
-$TYPES: ('visible', 'hidden', 'clip', 'scroll', 'auto');
+$TYPES: ("visible", "hidden", "clip", "scroll", "auto");
 
-$DIRECTIONS: ('x', 'y');
+$DIRECTIONS: ("x", "y");
 
 @layer utilities {
   @each $type in $TYPES {

@@ -1,28 +1,15 @@
-@use 'sass:meta';
-@use 'sass:string';
-@use '../tokens/tokens' as tokens;
-
-// :root {
-//   @layer theme {
-//     @each $spacer, $value in meta.module-variables('tokens') {
-//       $string: meta.inspect($spacer);
-
-//       // TODO: Figure out why this is doubling up on build...
-//       @if string.index(meta.inspect($string), 'spacer') == 2 {
-//         --#{$spacer}: #{$value};
-//       }
-//     }
-//   }
-// }
+@use "sass:meta";
+@use "sass:string";
+@use "../tokens/tokens" as tokens;
 
 @layer utilities {
-  @each $spacer, $value in meta.module-variables('tokens') {
+  @each $spacer, $value in meta.module-variables("tokens") {
     $string: meta.inspect($spacer);
 
-    @if string.index(meta.inspect($string), 'spacer') == 2 {
+    @if string.index(meta.inspect($string), "spacer") == 2 {
       $types: (
-        'p': 'padding',
-        'm': 'margin',
+        "p": "padding",
+        "m": "margin",
       );
 
       @each $prefix, $typeProperty in $types {
@@ -31,12 +18,12 @@
         }
 
         $directions: (
-          'x': 'inline',
-          'y': 'block',
-          'x-start': 'inline-start',
-          'x-end': 'inline-end',
-          'y-start': 'block-start',
-          'y-end': 'block-end',
+          "x": "inline",
+          "y": "block",
+          "x-start": "inline-start",
+          "x-end": "inline-end",
+          "y-start": "block-start",
+          "y-end": "block-end",
         );
 
         @each $direction, $property in $directions {

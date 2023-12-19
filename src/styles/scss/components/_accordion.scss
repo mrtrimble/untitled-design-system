@@ -1,16 +1,38 @@
 @layer components {
   @layer rules, modifiers, states, themes;
 
+  :has(> details.accordion) {
+    container-name: --accordion;
+  }
+
   details.accordion {
-    --_header-padding-x: var(--accordion-header-padding-inline, var(--spacer-xs));
-    --_header-padding-y: var(--accordion-header-padding-block, var(--spacer-xs));
-    --_header-background-color: var(--accordion-header-background-color, var(--grayscale-lighter));
+    --_header-padding-x: var(
+      --accordion-header-padding-inline,
+      var(--spacer-xs)
+    );
+    --_header-padding-y: var(
+      --accordion-header-padding-block,
+      var(--spacer-xs)
+    );
+    --_header-background-color: var(
+      --accordion-header-background-color,
+      var(--grayscale-lighter)
+    );
     --_header-text-color: var(--accordion-header-text-color, var(--color-base));
 
-    --_content-padding-x: var(--accordion-content-padding-inline, var(--spacer-xs));
-    --_content-padding-y: var(--accordion-content-padding-block, var(--spacer-xs));
+    --_content-padding-x: var(
+      --accordion-content-padding-inline,
+      var(--spacer-xs)
+    );
+    --_content-padding-y: var(
+      --accordion-content-padding-block,
+      var(--spacer-xs)
+    );
 
-    --_background-color: var(--accordion-background-color, var(--grayscale-lighter));
+    --_background-color: var(
+      --accordion-background-color,
+      var(--grayscale-lighter)
+    );
     --_text-color: var(--accordion-text-color, var(--color-base));
     --_flow-space: var(--accordion-flow-space, var(--spacer-xs));
 

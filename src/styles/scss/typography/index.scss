@@ -1,19 +1,6 @@
-@use 'sass:meta';
-@use 'sass:string';
-@use '../tokens/tokens' as tokens;
-
-// @layer theme {
-//   :root {
-//     @each $textSize, $value in meta.module-variables('tokens') {
-//       $string: meta.inspect($textSize);
-
-//       // TODO: Figure out why this is doubling up on build...
-//       @if string.index(meta.inspect($string), 'text') == 2 {
-//         --#{$textSize}: #{$value};
-//       }
-//     }
-//   }
-// }
+@use "sass:meta";
+@use "sass:string";
+@use "../tokens/tokens" as tokens;
 
 @layer globals {
   @layer typography {
@@ -23,7 +10,10 @@
 
     body {
       --_text-color: var(--body-color-base, #{tokens.$color-base});
-      --_text-color-inverse: var(--body-color-inverse-base, #{tokens.$color-inverse-base});
+      --_text-color-inverse: var(
+        --body-color-inverse-base,
+        #{tokens.$color-inverse-base}
+      );
       --_font-family: var(--body-font-family, system-ui);
       --_font-size: var(--body-font-size, #{tokens.$text-xs});
 
@@ -37,12 +27,12 @@
     }
 
     $headings: (
-      'h6': var(--text-xs, #{tokens.$text-xs}),
-      'h5': var(--text-md, #{tokens.$text-md}),
-      'h4': var(--text-lg, #{tokens.$text-lg}),
-      'h3': var(--text-xl, #{tokens.$text-2xl}),
-      'h2': var(--text-2xl, #{tokens.$text-3xl}),
-      'h1': var(--text-3xl, #{tokens.$text-4xl}),
+      "h6": var(--text-xs, #{tokens.$text-xs}),
+      "h5": var(--text-md, #{tokens.$text-md}),
+      "h4": var(--text-lg, #{tokens.$text-lg}),
+      "h3": var(--text-xl, #{tokens.$text-2xl}),
+      "h2": var(--text-2xl, #{tokens.$text-3xl}),
+      "h1": var(--text-3xl, #{tokens.$text-4xl}),
     );
 
     @each $heading, $value in $headings {

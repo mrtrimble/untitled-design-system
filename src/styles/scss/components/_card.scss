@@ -35,7 +35,7 @@
         }
 
         figure {
-          > image {
+          > img {
             height: 100%;
             width: 100%;
             object-fit: contain;
@@ -43,20 +43,15 @@
         }
       }
     }
+
+    @layer states {
+      // !NOTE: Example container query!
+      @supports (container-type: inline-size) {
+        @container card (max-width: 20rem) {
+          --card-border-style: dashed;
+          --card-border-width: 4px;
+        }
+      }
+    }
   }
 }
-
-// border: 1px solid #333;
-// padding: 1rem;
-
-// @container card (min-width: 700px) {
-//   width: 200px;
-//   background: blue;
-// }
-
-// @supports not (container-type: inline-size) {
-//   @media screen and (min-width: 700px) {
-//     width: 200px;
-//     background: blue;
-//   }
-// }

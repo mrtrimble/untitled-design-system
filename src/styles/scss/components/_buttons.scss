@@ -1,6 +1,10 @@
 @layer components {
   @layer rules, modifiers, states, themes;
 
+  :has(> .button) {
+    container-name: button;
+  }
+
   .button {
     --_background-color: var(--button-background-color, var(--swatch-salmon));
     --_border-color: var(--button-border-color, transparent);
