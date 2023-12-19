@@ -18,6 +18,8 @@
     <header>
       <h1>Design System</h1>
     </header>
+
+    <!-- Colors -->
     <section class="flow flow-xs">
       <h2>Colors</h2>
       <div class="auto-grid">
@@ -47,30 +49,48 @@
         </div>
       </div>
     </section>
+
+    <!-- Components -->
     <section class="flow flow-xs">
       <h2>Components</h2>
+
+      <!-- Accordions -->
+      <section>
+        <h3>Accordions</h3>
+        <details class="accordion">
+          <summary>Accordion Header</summary>
+
+          <p>Lorem ipsum dolor sit amet consectetur adipisicing elit. Illum blanditiis officiis totam quam nisi ratione,
+            ut praesentium fugit nostrum, deleniti modi ad inventore aliquam voluptas. Saepe deleniti eos consectetur
+            inventore.</p>
+          <p>Lorem ipsum dolor sit amet consectetur adipisicing elit. Illum blanditiis officiis totam quam nisi ratione,
+            ut praesentium fugit nostrum, deleniti modi ad inventore aliquam voluptas. Saepe deleniti eos consectetur
+            inventore.</p>
+        </details>
+      </section>
+
+      <!-- Buttons -->
       <section class="flow flow-2xs">
         <h3>Buttons</h3>
         <button class="button">Button</button>
         <button class="button secondary">Button</button>
         <button class="button plain">Button</button>
       </section>
+
+      <!-- Cards -->
       <section class="flow flow-2xs">
         <h3>Cards</h3>
         <p>Lorem ipsum dolor sit amet consectetur adipisicing elit. Quaerat natus enim fugiat optio, eaque ex impedit
           molestiae harum, voluptatum excepturi sunt consectetur, ipsam architecto facilis accusantium expedita.
           Aspernatur, nulla fugiat.</p>
         <div class="grid auto-grid gap-2xs"
-             style="--grid-column-min: 30ch;">
+             style="--grid-column-min: 20ch;">
           <div class="card background-grayscale-white text-color-base">
             <figure>
               <img src="https://images.unsplash.com/photo-1519681393784-d120267933ba?ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D&auto=format&fit=crop&w=2340&q=80"
                    alt="Mountains">
             </figure>
             <h4>Card</h4>
-            <p>Lorem ipsum, dolor sit amet consectetur adipisicing elit. Ea iure ullam voluptas nulla ex earum tempora
-              sequi possimus quaerat esse, cupiditate, delectus aperiam fugiat quibusdam hic. Nemo vero sunt
-              perspiciatis.</p>
             <p>Lorem ipsum, dolor sit amet consectetur adipisicing elit. Ea iure ullam voluptas nulla ex earum tempora
               sequi possimus quaerat esse, cupiditate, delectus aperiam fugiat quibusdam hic. Nemo vero sunt
               perspiciatis.</p>
@@ -84,12 +104,21 @@
             <p>Lorem ipsum, dolor sit amet consectetur adipisicing elit. Ea iure ullam voluptas nulla ex earum tempora
               sequi possimus quaerat esse, cupiditate, delectus aperiam fugiat quibusdam hic. Nemo vero sunt
               perspiciatis.</p>
+          </div>
+          <div class="card background-grayscale-white text-color-base">
+            <figure>
+              <img src="https://images.unsplash.com/photo-1519681393784-d120267933ba?ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D&auto=format&fit=crop&w=2340&q=80"
+                   alt="Mountains">
+            </figure>
+            <h4>Card</h4>
             <p>Lorem ipsum, dolor sit amet consectetur adipisicing elit. Ea iure ullam voluptas nulla ex earum tempora
               sequi possimus quaerat esse, cupiditate, delectus aperiam fugiat quibusdam hic. Nemo vero sunt
               perspiciatis.</p>
           </div>
         </div>
       </section>
+
+      <!-- Messages -->
       <section class="flow flow-2xs">
         <h3>Messages</h3>
         <div class="message">
@@ -109,6 +138,8 @@
         </div>
       </section>
     </section>
+
+    <!-- Typography -->
     <section class="flow flow-xs">
       <h2>Typography</h2>
       <section class="flow flow-2xs">
@@ -129,114 +160,122 @@
         <h6>H6 - Hello, World.</h6>
       </section>
     </section>
+
+    <!-- Utilities -->
     <section class="flow flow-xs">
       <h2>Utilities</h2>
+
+      <!-- Grid -->
       <section class="flow flow-2xs">
         <h3>Grid</h3>
 
         <section class="flow flow-2xs">
           <p>Specifies the number of columns in the grid.</p>
-          <div class="grid grid-1">
-            <div class="block">Grid 1</div>
-          </div>
-          <div class="grid grid-2">
-            <div class="block">Grid 2</div>
-            <div class="block">Grid 2</div>
-          </div>
-          <div class="grid grid-3">
-            <div class="block">Grid 3</div>
-            <div class="block">Grid 3</div>
-            <div class="block">Grid 3</div>
-          </div>
-          <div class="grid grid-4">
-            <div class="block">Grid 4</div>
-            <div class="block">Grid 4</div>
-            <div class="block">Grid 4</div>
-            <div class="block">Grid 4</div>
-          </div>
-          <div class="grid grid-5">
-            <div class="block">Grid 5</div>
-            <div class="block">Grid 5</div>
-            <div class="block">Grid 5</div>
-            <div class="block">Grid 5</div>
-            <div class="block">Grid 5</div>
-          </div>
-          <div class="grid grid-6">
-            <div class="block">Grid 6</div>
-            <div class="block">Grid 6</div>
-            <div class="block">Grid 6</div>
-            <div class="block">Grid 6</div>
-            <div class="block">Grid 6</div>
-            <div class="block">Grid 6</div>
-          </div>
-          <div class="grid grid-7">
-            <div class="block">Grid 7</div>
-            <div class="block">Grid 7</div>
-            <div class="block">Grid 7</div>
-            <div class="block">Grid 7</div>
-            <div class="block">Grid 7</div>
-            <div class="block">Grid 7</div>
-            <div class="block">Grid 7</div>
-          </div>
-          <div class="grid grid-8">
-            <div class="block">Grid 8</div>
-            <div class="block">Grid 8</div>
-            <div class="block">Grid 8</div>
-            <div class="block">Grid 8</div>
-            <div class="block">Grid 8</div>
-            <div class="block">Grid 8</div>
-            <div class="block">Grid 8</div>
-            <div class="block">Grid 8</div>
-          </div>
-          <div class="grid grid-9">
-            <div class="block">Grid 9</div>
-            <div class="block">Grid 9</div>
-            <div class="block">Grid 9</div>
-            <div class="block">Grid 9</div>
-            <div class="block">Grid 9</div>
-            <div class="block">Grid 9</div>
-            <div class="block">Grid 9</div>
-            <div class="block">Grid 9</div>
-            <div class="block">Grid 9</div>
-          </div>
-          <div class="grid grid-10">
-            <div class="block">Grid 10</div>
-            <div class="block">Grid 10</div>
-            <div class="block">Grid 10</div>
-            <div class="block">Grid 10</div>
-            <div class="block">Grid 10</div>
-            <div class="block">Grid 10</div>
-            <div class="block">Grid 10</div>
-            <div class="block">Grid 10</div>
-            <div class="block">Grid 10</div>
-            <div class="block">Grid 10</div>
-          </div>
-          <div class="grid grid-11">
-            <div class="block">Grid 11</div>
-            <div class="block">Grid 11</div>
-            <div class="block">Grid 11</div>
-            <div class="block">Grid 11</div>
-            <div class="block">Grid 11</div>
-            <div class="block">Grid 11</div>
-            <div class="block">Grid 11</div>
-            <div class="block">Grid 11</div>
-            <div class="block">Grid 11</div>
-            <div class="block">Grid 11</div>
-            <div class="block">Grid 11</div>
-          </div>
-          <div class="grid grid-12">
-            <div class="block">Grid 12</div>
-            <div class="block">Grid 12</div>
-            <div class="block">Grid 12</div>
-            <div class="block">Grid 12</div>
-            <div class="block">Grid 12</div>
-            <div class="block">Grid 12</div>
-            <div class="block">Grid 12</div>
-            <div class="block">Grid 12</div>
-            <div class="block">Grid 12</div>
-            <div class="block">Grid 12</div>
-            <div class="block">Grid 12</div>
-            <div class="block">Grid 12</div>
+
+          <div class="overflow-x-auto">
+
+            <div class="grid grid-1">
+              <div class="block">Grid 1</div>
+            </div>
+            <div class="grid grid-2">
+              <div class="block">Grid 2</div>
+              <div class="block">Grid 2</div>
+            </div>
+            <div class="grid grid-3">
+              <div class="block">Grid 3</div>
+              <div class="block">Grid 3</div>
+              <div class="block">Grid 3</div>
+            </div>
+            <div class="grid grid-4">
+              <div class="block">Grid 4</div>
+              <div class="block">Grid 4</div>
+              <div class="block">Grid 4</div>
+              <div class="block">Grid 4</div>
+            </div>
+            <div class="grid grid-5">
+              <div class="block">Grid 5</div>
+              <div class="block">Grid 5</div>
+              <div class="block">Grid 5</div>
+              <div class="block">Grid 5</div>
+              <div class="block">Grid 5</div>
+            </div>
+            <div class="grid grid-6">
+              <div class="block">Grid 6</div>
+              <div class="block">Grid 6</div>
+              <div class="block">Grid 6</div>
+              <div class="block">Grid 6</div>
+              <div class="block">Grid 6</div>
+              <div class="block">Grid 6</div>
+            </div>
+            <div class="grid grid-7">
+              <div class="block">Grid 7</div>
+              <div class="block">Grid 7</div>
+              <div class="block">Grid 7</div>
+              <div class="block">Grid 7</div>
+              <div class="block">Grid 7</div>
+              <div class="block">Grid 7</div>
+              <div class="block">Grid 7</div>
+            </div>
+            <div class="grid grid-8">
+              <div class="block">Grid 8</div>
+              <div class="block">Grid 8</div>
+              <div class="block">Grid 8</div>
+              <div class="block">Grid 8</div>
+              <div class="block">Grid 8</div>
+              <div class="block">Grid 8</div>
+              <div class="block">Grid 8</div>
+              <div class="block">Grid 8</div>
+            </div>
+            <div class="grid grid-9">
+              <div class="block">Grid 9</div>
+              <div class="block">Grid 9</div>
+              <div class="block">Grid 9</div>
+              <div class="block">Grid 9</div>
+              <div class="block">Grid 9</div>
+              <div class="block">Grid 9</div>
+              <div class="block">Grid 9</div>
+              <div class="block">Grid 9</div>
+              <div class="block">Grid 9</div>
+            </div>
+            <div class="grid grid-10">
+              <div class="block">Grid 10</div>
+              <div class="block">Grid 10</div>
+              <div class="block">Grid 10</div>
+              <div class="block">Grid 10</div>
+              <div class="block">Grid 10</div>
+              <div class="block">Grid 10</div>
+              <div class="block">Grid 10</div>
+              <div class="block">Grid 10</div>
+              <div class="block">Grid 10</div>
+              <div class="block">Grid 10</div>
+            </div>
+            <div class="grid grid-11">
+              <div class="block">Grid 11</div>
+              <div class="block">Grid 11</div>
+              <div class="block">Grid 11</div>
+              <div class="block">Grid 11</div>
+              <div class="block">Grid 11</div>
+              <div class="block">Grid 11</div>
+              <div class="block">Grid 11</div>
+              <div class="block">Grid 11</div>
+              <div class="block">Grid 11</div>
+              <div class="block">Grid 11</div>
+              <div class="block">Grid 11</div>
+            </div>
+            <div class="grid grid-12">
+              <div class="block">Grid 12</div>
+              <div class="block">Grid 12</div>
+              <div class="block">Grid 12</div>
+              <div class="block">Grid 12</div>
+              <div class="block">Grid 12</div>
+              <div class="block">Grid 12</div>
+              <div class="block">Grid 12</div>
+              <div class="block">Grid 12</div>
+              <div class="block">Grid 12</div>
+              <div class="block">Grid 12</div>
+              <div class="block">Grid 12</div>
+              <div class="block">Grid 12</div>
+            </div>
           </div>
         </section>
 
@@ -244,7 +283,7 @@
           <h4>Blocks</h4>
           <p>Specifies the number of columns a block will span.</p>
           <h5>Grid 12</h5>
-          <div class="grid grid-12 gap-2xs">
+          <div class="grid grid-12 gap-2xs overflow-x-auto">
             <div class="block block-1">Block 1</div>
             <div class="block block-1">Block 1</div>
             <div class="block block-1">Block 1</div>
@@ -276,7 +315,7 @@
           </div>
 
           <h5>Grid 8</h5>
-          <div class="grid grid-8 gap-2xs">
+          <div class="grid grid-8 gap-2xs overflow-x-auto">
             <div class="block block-1">Block 1</div>
             <div class="block block-1">Block 1</div>
             <div class="block block-1">Block 1</div>

@@ -1,5 +1,5 @@
 @layer components {
-  @layer rules, states;
+  @layer rules, modifiers, states, themes;
 
   .message {
     --_color: var(--message-color, var(--message-default-darken-300));

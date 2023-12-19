@@ -1,22 +1,22 @@
 @layer components {
-  :where(.button) {
-    @layer defaults {
-      --_background-color: var(--button-background-color, var(--swatch-salmon));
-      --_border-color: var(--button-border-color, transparent);
-      --_border-width: var(--button-border-width, 3px);
-      --_border-style: var(--button-border-style, solid);
-      --_border-radius: var(--button-border-radius, 0.5rem);
-      --_font-size: var(--button-font-size, inherit);
-      --_text-color: var(--button-text-color, black);
-      --_outline-color: var(--button-outline-color, transparent);
-      --_outline-style: var(--button-outline-style, solid);
-      --_outline-width: var(--button-outline-width, 3px);
-      --_outline-offset: var(--button-outline-offset, 3px);
-      --_padding-x: var(--button-padding-inline, var(--spacer-xs));
-      --_padding-y: var(--button-padding-block, var(--spacer-3xs));
-      --_text-decoration: var(--button-text-decoration, none);
-      --_width: var(--button-width, fit-content);
-    }
+  @layer rules, modifiers, states, themes;
+
+  .button {
+    --_background-color: var(--button-background-color, var(--swatch-salmon));
+    --_border-color: var(--button-border-color, transparent);
+    --_border-width: var(--button-border-width, 3px);
+    --_border-style: var(--button-border-style, solid);
+    --_border-radius: var(--button-border-radius, 0.5rem);
+    --_font-size: var(--button-font-size, inherit);
+    --_text-color: var(--button-text-color, black);
+    --_outline-color: var(--button-outline-color, transparent);
+    --_outline-style: var(--button-outline-style, solid);
+    --_outline-width: var(--button-outline-width, 3px);
+    --_outline-offset: var(--button-outline-offset, 3px);
+    --_padding-x: var(--button-padding-inline, var(--spacer-xs));
+    --_padding-y: var(--button-padding-block, var(--spacer-3xs));
+    --_text-decoration: var(--button-text-decoration, none);
+    --_width: var(--button-width, fit-content);
 
     @layer rules {
       background: var(--_background-color);

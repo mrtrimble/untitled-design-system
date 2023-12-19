@@ -22,7 +22,7 @@ $DEFAULT_MAX_COLORS: 5;
     @if meta.type-of($color) == color {
       $types: (
         'text': 'color',
-        'background': 'background',
+        'background': 'background-color',
         'border': 'border-color',
       );
 
