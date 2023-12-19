@@ -8,7 +8,7 @@ $SPACERS: (
   "xl": --spacer-xl,
   "2xl": --spacer-2xl,
   "3xl": --spacer-3xl,
-);
+) !default;
 
 @layer utilities {
   .flow {

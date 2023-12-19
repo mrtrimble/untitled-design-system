@@ -1,4 +1,4 @@
-$CONTAINER_NAME: wrapper;
+$CONTAINER_NAME: wrapper !default;
 
 @layer utilities {
   .cq-wrapper {

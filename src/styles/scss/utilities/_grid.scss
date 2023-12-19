@@ -1,5 +1,5 @@
 // Set maximum amount of columns
-$MAX_COLUMNS: 12;
+$MAX_COLUMNS: 12 !default;
 
 // Responsive Columns
 $BREAKPOINTS: (
@@ -7,7 +7,7 @@ $BREAKPOINTS: (
   "tablet": "768px",
   "lg-tablet": "1024px",
   "laptop": "1240px",
-);
+) !default;
 
 // Spacers
 $SPACERS: (
@@ -19,23 +19,23 @@ $SPACERS: (
   "xl": --spacer-xl,
   "2xl": --spacer-2xl,
   "3xl": --spacer-3xl,
-);
+) !default;
 
 // Default Grid styles
 @layer utilities {
   .grid {
-    --_columns: 1;
-    --_column-gap: 0;
-    --_row-gap: 0;
+    --_columns: var(--grid-columns, 1);
+    --_column-gap: var(--grid-column-gap, 0);
+    --_column-span: var(--grid-column-span);
+    --_row-gap: var(--grid-row-gap, 0);
 
-    --_gap: var(--grid-row-gap, var(--_row-gap))
-      var(--grid-column-gap, var(--_column-gap));
+    --_gap: var(--_row-gap) var(--_column-gap);
 
     container-name: grid-container;
     container-type: inline-size;
     display: block grid;
-    grid-template-columns: repeat(var(--grid-columns, var(--_columns)), 1fr);
-    gap: var(--grid-gap, var(--_gap));
+    grid-template-columns: repeat(var(--_columns), 1fr);
+    gap: var(--_gap);
   }
 
   // Unresponsive Columns

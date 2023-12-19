@@ -1,0 +1,30 @@
+@use "sass:meta";
+@use "sass:map";
+@use "sass:string";
+@use "../tokens/tokens" as tokens;
+@use "../functions" as functions;
+
+$FONT_SIZE_PREFIX: "font-size" !default;
+$FONT_SIZE_TOKENS: functions.getList(
+  meta.module-variables("tokens"),
+  $FONT_SIZE_PREFIX
+);
+
+@layer utilities {
+  @each $fontSize in $FONT_SIZE_TOKENS {
+    .#{$fontSize} {
+      font-size: var(--#{$fontSize});
+    }
+  }
+}
+
+// Text Alignment
+@layer utilities {
+  $alignments: (left, center, right, justify);
+
+  @each $alignment in $alignments {
+    .text-#{$alignment} {
+      text-align: $alignment;
+    }
+  }
+}

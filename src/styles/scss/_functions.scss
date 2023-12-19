@@ -1,0 +1,18 @@
+@use "sass:meta";
+@use "sass:list";
+@use "sass:string";
+
+// Returns a list of tokens with a specific prefix
+@function getList($tokens, $prefix) {
+  $list: ();
+
+  @each $key, $value in $tokens {
+    $string: meta.inspect($key);
+
+    @if string.index(meta.inspect($key), $prefix) == 2 {
+      $list: list.append($list, $key);
+    }
+  }
+
+  @return $list;
+}

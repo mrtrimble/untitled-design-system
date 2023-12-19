@@ -1,7 +1,7 @@
 @use "sass:map";
 @use "sass:meta";
 
-$DIMENSIONS: ("height", "width");
+$DIMENSIONS: ("height", "width") !default;
 
 $DIMENSION_INFO: (
   "height": (
@@ -12,9 +12,9 @@ $DIMENSION_INFO: (
     "w": "%",
     "vw": "vw",
   ),
-);
+) !default;
 
-$STEP: 10;
+$STEP: 10 !default;
 
 @layer utilities {
   @each $dimension in $DIMENSIONS {

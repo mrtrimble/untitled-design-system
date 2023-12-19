@@ -1,5 +1,5 @@
 {
-  "text": {
+  "font-size": {
     "2xs": {
       "value": "clamp(0.7813rem, 0.7747rem + 0.0326vw, 0.8rem)"
     },
