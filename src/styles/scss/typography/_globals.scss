@@ -10,14 +10,6 @@ $FONT_SIZE_TOKENS: functions.getList(
   $FONT_SIZE_PREFIX
 );
 
-@layer theme {
-  :root {
-    @each $fontSize in $FONT_SIZE_TOKENS {
-      --#{$fontSize}: #{map.get(meta.module-variables("tokens"), $fontSize)};
-    }
-  }
-}
-
 @layer globals {
   @layer typography {
     html {
