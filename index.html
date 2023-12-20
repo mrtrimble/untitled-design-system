@@ -11,6 +11,36 @@
   <link rel="stylesheet"
         href="./src/styles/css/style.css">
   <title>Design System</title>
+
+  <style>
+    /* :is(.button:not(.secondary, .plain)) {
+      --button-background-color: dodgerblue;
+      --button-text-color: black;
+    } */
+
+    /* .button.secondary {
+      --button-background-color: seagreen;
+      --button-text-color: white;
+    } */
+
+    /* .button.plain {
+      --button-padding-inline: none;
+    } */
+
+    /* .button.plain:hover {
+      --button-background-color: none;
+    } */
+
+    /* .accordion {
+      --accordion-background-color: #EFEFEF;
+      --accordion-header-background-color: dodgerblue;
+      --accordion-text-color: black;
+    } */
+
+    /* :root {
+      --message-success: rebeccapurple;
+    } */
+  </style>
 </head>
 
 <body class="py-spacer-md">
@@ -404,6 +434,47 @@
           </details>
         </div>
       </section>
+
+      <section>
+        <div class="flow flow-2xs">
+          <h3>Modals</h3>
+          <button class="button modal-toggle"
+                  data-target="example-modal">
+            Open Dialog Modal
+          </button>
+          <dialog class="modal"
+                  id="example-modal">
+            <h4>Modal Heading</h4>
+            <p>Lorem ipsum dolor sit, amet consectetur adipisicing elit. Illo ea fugit eligendi possimus ratione
+              excepturi voluptas repudiandae, facere quo magnam. Facilis odio, ipsum harum iste quam nam reiciendis eius
+              nihil!</p>
+
+            <button class="button modal-toggle"
+                    data-target="example-modal">
+              Close Modal
+            </button>
+          </dialog>
+          <button class="button modal-toggle"
+                  data-target="example-modal2">
+            Open Div Modal
+          </button>
+          <div class="modal"
+               id="example-modal2">
+            <div class="modal-inner">
+              <h4>Modal Heading</h4>
+              <p>Lorem ipsum dolor sit, amet consectetur adipisicing elit. Illo ea fugit eligendi possimus ratione
+                excepturi voluptas repudiandae, facere quo magnam. Facilis odio, ipsum harum iste quam nam reiciendis
+                eius
+                nihil!</p>
+
+              <button class="button modal-toggle"
+                      data-target="example-modal2">
+                Close Modal
+              </button>
+            </div>
+          </div>
+        </div>
+      </section>
     </section>
 
     <!-- Typography -->
@@ -711,7 +782,80 @@
             </div>
           </div>
         </section>
+
       </section>
+
+      <section>
+        <h3>Spacers</h3>
+
+        <h4>Padding</h4>
+        <div class="flow flow-2xs">
+          <div class="card px-spacer-none">
+            <pre class="mx-spacer-none">--spacer-none</pre>
+          </div>
+          <div class="card px-spacer-auto">
+            <pre class="mx-spacer-none">--spacer-auto</pre>
+          </div>
+          <div class="card px-spacer-3xs">
+            <pre class="mx-spacer-none">--spacer-3xs</pre>
+          </div>
+          <div class="card px-spacer-2xs">
+            <pre class="mx-spacer-none">--spacer-2xs</pre>
+          </div>
+          <div class="card px-spacer-md">
+            <pre class="mx-spacer-none">--spacer-md</pre>
+          </div>
+          <div class="card px-spacer-lg">
+            <pre class="mx-spacer-none">--spacer-lg</pre>
+          </div>
+          <div class="card px-spacer-xl">
+            <pre class="mx-spacer-none">--spacer-xl</pre>
+          </div>
+          <div class="card px-spacer-2xl">
+            <pre class="mx-spacer-none">--spacer-2xl</pre>
+          </div>
+          <div class="card px-spacer-3xl">
+            <pre class="mx-spacer-none">--spacer-3xl</pre>
+          </div>
+        </div>
+      </section>
+
+      <!-- Shadows -->
+      <!-- <section class="flow">
+        <h3>Shadows</h3>
+        <div class="grid gap-3xl">
+          <div class="card shadow-xs">
+            <p>
+            <pre>--shadow-xs</pre>
+            </p>
+          </div>
+          <div class="card shadow-sm">
+            <p>
+            <pre>--shadow-sm</pre>
+            </p>
+          </div>
+          <div class="card shadow-md">
+            <p>
+            <pre>--shadow-md</pre>
+            </p>
+          </div>
+          <div class="card shadow-lg">
+            <p>
+            <pre>--shadow-lg</pre>
+            </p>
+          </div>
+          <div class="card shadow-xl">
+            <p>
+            <pre>--shadow-xl</pre>
+            </p>
+          </div>
+          <div class="card shadow-2xl">
+            <p>
+            <pre>--shadow-2xl</pre>
+            </p>
+          </div>
+        </div>
+      </section> -->
     </section>
   </main>
   <script type="module"

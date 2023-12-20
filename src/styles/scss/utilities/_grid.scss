@@ -29,7 +29,7 @@ $SPACERS: (
     --_column-span: var(--grid-column-span);
     --_row-gap: var(--grid-row-gap, 0);
 
-    --_gap: var(--_row-gap) var(--_column-gap);
+    --_gap: var(--grid-gap, var(--_row-gap) var(--_column-gap));
 
     container-name: grid-container;
     container-type: inline-size;

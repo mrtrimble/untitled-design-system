@@ -1,0 +1,77 @@
+@layer components {
+  .modal {
+    --_backdrop-background-color: var(
+      --modal-backdrop-background-color,
+      rgba(0, 0, 0, 0.5)
+    );
+    --_background-color: var(--modal-background-color, canvas);
+    --_border-width: var(--modal-border-width, 3px);
+    --_border-color: var(--modal-border-color, transparent);
+    --_border-style: var(--modal-border-style, solid);
+    --_flow-space: var(--modal-flow-space, var(--spacer-xs));
+    --_padding-x: var(--modal-padding-inline, var(--spacer-md));
+    --_padding-y: var(--modal-padding-block, var(--spacer-md));
+    --_max-width: var(--modal-max-width, 50ch);
+    --_shadow: var(--modal-shadow, var(--shadow-xs));
+    --_text-color: var(--modal-text-color, canvasText);
+
+    @layer rules {
+      border: var(--_border-width) var(--_border-color) var(--border-style);
+      background-color: var(--_background-color);
+      color: var(--_text-color);
+      margin: auto;
+      padding-inline: var(--_padding-x);
+      padding-block: var(--_padding-y);
+      width: min(100% - var(--spacer-xs), var(--_max-width));
+      transition: opacity, transform;
+      box-shadow: var(--_shadow);
+      z-index: 10;
+
+      > * + * {
+        margin-block-start: var(--_flow-space);
+      }
+
+      &:not(dialog) {
+        color: currentColor;
+        display: none;
+        height: var(--percentage-100);
+        inset-block-start: 0;
+        inset-inline-start: 0;
+        place-content: center;
+        position: fixed;
+        width: var(--percentage-100);
+
+        .modal-inner {
+          background-color: var(--_background-color);
+          height: auto;
+          margin: auto;
+          padding-inline: var(--_padding-x);
+          padding-block: var(--_padding-y);
+          width: var(--_max-width);
+
+          > * + * {
+            margin-block-start: var(--_flow-space);
+          }
+        }
+      }
+
+      &::backdrop {
+        --_backdrop-background-color: var(
+          --modal-backdrop-background-color,
+          rgba(0, 0, 0, 0.5)
+        );
+
+        background-color: var(--_backdrop-background-color);
+      }
+    }
+
+    @layer states {
+      &:not(dialog) {
+        &.open {
+          display: grid;
+          background-color: var(--_backdrop-background-color);
+        }
+      }
+    }
+  }
+}

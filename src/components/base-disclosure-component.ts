@@ -16,9 +16,16 @@ export default class DialogComponent {
             : false;
 
           if (target) {
-            const dialog = document.getElementById(target);
+            const targetElement = document.getElementById(target);
 
-            dialog?.classList.toggle('open');
+            if (targetElement) {
+              if (targetElement instanceof HTMLDialogElement) {
+                targetElement.open
+                  ? targetElement.close()
+                  : targetElement.showModal();
+              }
+              targetElement.classList.toggle('open');
+            }
           }
 
           return;

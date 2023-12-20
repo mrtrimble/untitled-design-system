@@ -1,3 +1,9 @@
+@use "sass:meta";
+@use "sass:map";
+@use "../tokens/tokens";
+
+$TOKENS: meta.module-variables("tokens");
+
 @layer components {
   :has(> details.accordion) {
     container-name: --accordion;
@@ -6,33 +12,42 @@
   details.accordion {
     --_header-padding-x: var(
       --accordion-header-padding-inline,
-      var(--spacer-xs)
+      #{map.get($TOKENS, accordion-header-padding-inline)}
     );
     --_header-padding-y: var(
       --accordion-header-padding-block,
-      var(--spacer-xs)
+      #{map.get($TOKENS, accordion-header-padding-block)}
     );
     --_header-background-color: var(
       --accordion-header-background-color,
-      var(--grayscale-lighter)
+      #{map.get($TOKENS, accordion-header-background-color)}
     );
-    --_header-text-color: var(--accordion-header-text-color, var(--color-base));
+    --_header-text-color: var(
+      --accordion-header-text-color,
+      #{map.get($TOKENS, accordion-header-text-color)}
+    );
 
     --_content-padding-x: var(
       --accordion-content-padding-inline,
-      var(--spacer-xs)
+      #{map.get($TOKENS, accordion-content-padding-inline)}
     );
     --_content-padding-y: var(
       --accordion-content-padding-block,
-      var(--spacer-xs)
+      #{map.get($TOKENS, accordion-content-padding-block)}
     );
 
     --_background-color: var(
       --accordion-background-color,
-      var(--grayscale-lighter)
+      #{map.get($TOKENS, accordion-background-color)}
     );
-    --_text-color: var(--accordion-text-color, var(--color-base));
-    --_flow-space: var(--accordion-flow-space, var(--spacer-xs));
+    --_text-color: var(
+      --accordion-text-color,
+      #{map.get($TOKENS, accordion-text-color)}
+    );
+    --_flow-space: var(
+      --accordion-flow-space,
+      #{map.get($TOKENS, accordion-flow-space)}
+    );
 
     @layer rules {
       background-color: var(--_background-color);
