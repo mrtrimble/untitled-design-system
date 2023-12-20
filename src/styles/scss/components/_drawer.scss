@@ -1,0 +1,41 @@
+@layer components {
+  .drawer {
+    --_background-color: var(--drawer-background-color, var(--grayscale-white));
+    --_text-color: var(--drawer-text-color, var(--color-base));
+    --_padding-x: var(--drawer-padding-inline, var(--spacer-xs));
+    --_padding-y: var(--drawer-padding-block, var(--spacer-lg));
+    --_width: var(--drawer-max-width, 40ch);
+    --_transition: var(--drawer-transition, 0.25s ease);
+    --_flow-space: var(--drawer-flow-space, var(--spacer-xs));
+    --_shadow: var(--drawer-shadow, var(--shadow-xs));
+
+    @layer rules {
+      background: var(--_background-color);
+      color: var(--_text-color);
+      display: block;
+      height: var(--view-height-100);
+      inset-block-start: 0;
+      inset-inline-start: 0;
+      margin: 0;
+      padding-block: var(--_padding-y);
+      padding-inline: var(--_padding-x);
+      position: fixed;
+      transform: translateX(-100%);
+      transition: transform var(--_transition);
+      width: min(100%, var(--_width));
+      z-index: 10;
+
+      > * + * {
+        margin-block-start: var(--_flow-space);
+      }
+    }
+
+    @layer states {
+      &.open,
+      &:popover-open {
+        transform: translateX(0);
+        box-shadow: var(--_shadow);
+      }
+    }
+  }
+}

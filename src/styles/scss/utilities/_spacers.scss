@@ -10,7 +10,7 @@ $SPACER_TOKENS: functions.getList(
 );
 
 @layer utilities {
-  @each $spacer, $value in $SPACER_TOKENS {
+  @each $spacer in $SPACER_TOKENS {
     $types: (
       "p": "padding",
       "m": "margin",

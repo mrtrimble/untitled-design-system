@@ -49,11 +49,11 @@
             <p class="text-color-base">--swatch-salmon</p>
           </div>
         </div>
-  
+
         <details class="accordion">
           <summary>Color Tokens</summary>
-  
-          <ul>
+
+          <ul class="overflow-x-auto">
             <li>
               <pre>--color-base</pre>
             </li>
@@ -141,11 +141,13 @@
           <h3>Accordions</h3>
           <details class="accordion">
             <summary>Accordion Header</summary>
-  
-            <p>Lorem ipsum dolor sit amet consectetur adipisicing elit. Illum blanditiis officiis totam quam nisi ratione,
+
+            <p>Lorem ipsum dolor sit amet consectetur adipisicing elit. Illum blanditiis officiis totam quam nisi
+              ratione,
               ut praesentium fugit nostrum, deleniti modi ad inventore aliquam voluptas. Saepe deleniti eos consectetur
               inventore.</p>
-            <p>Lorem ipsum dolor sit amet consectetur adipisicing elit. Illum blanditiis officiis totam quam nisi ratione,
+            <p>Lorem ipsum dolor sit amet consectetur adipisicing elit. Illum blanditiis officiis totam quam nisi
+              ratione,
               ut praesentium fugit nostrum, deleniti modi ad inventore aliquam voluptas. Saepe deleniti eos consectetur
               inventore.</p>
           </details>
@@ -153,7 +155,7 @@
             <summary>
               <span>Accordion Tokens</span>
             </summary>
-            <ul>
+            <ul class="overflow-x-auto">
               <li>
                 <pre>--accordion-background-color</pre>
               </li>
@@ -190,10 +192,10 @@
           <button class="button">Button</button>
           <button class="button secondary">Button</button>
           <button class="button plain">Button</button>
-  
+
           <details class="accordion">
             <summary>Button Tokens</summary>
-            <ul>
+            <ul class="overflow-x-auto">
               <li>
                 <pre>--button-background-color</pre>
               </li>
@@ -260,7 +262,8 @@
                        alt="Mountains">
                 </figure>
                 <h4>Card</h4>
-                <p>Lorem ipsum, dolor sit amet consectetur adipisicing elit. Ea iure ullam voluptas nulla ex earum tempora
+                <p>Lorem ipsum, dolor sit amet consectetur adipisicing elit. Ea iure ullam voluptas nulla ex earum
+                  tempora
                   sequi possimus quaerat esse, cupiditate, delectus aperiam fugiat quibusdam hic. Nemo vero sunt
                   perspiciatis.</p>
               </div>
@@ -286,10 +289,10 @@
                 perspiciatis.</p>
             </div>
           </div>
-  
+
           <details class="accordion">
             <summary>Card Tokens</summary>
-            <ul>
+            <ul class="overflow-x-auto">
               <li>
                 <pre>--card-background-color</pre>
               </li>
@@ -310,6 +313,43 @@
               </li>
             </ul>
           </details>
+        </div>
+      </section>
+
+      <!-- Drawer -->
+      <section>
+        <div class="flow flow-2xs">
+          <h3>Drawers</h3>
+          <button class="button drawer-toggle"
+                  data-target="example">
+            Open Drawer
+          </button>
+          <div class="drawer"
+               id="example">
+            <h4>Drawer Header</h4>
+            <p>Lorem ipsum dolor sit amet consectetur, adipisicing elit. Ex, magni. Non saepe optio tenetur eos
+              consequatur in quia iure aliquam ad facere consequuntur error illum aliquid, repudiandae earum vitae
+              delectus?</p>
+            <button class="button drawer-toggle"
+                    data-target="example">
+              Close Drawer
+            </button>
+          </div>
+          <button class="button drawer-toggle"
+                  data-target="example2">
+            Open Drawer
+          </button>
+          <div class="drawer"
+               id="example2">
+            <h4>Drawer Header2</h4>
+            <p>Lorem ipsum dolor sit amet consectetur, adipisicing elit. Ex, magni. Non saepe optio tenetur eos
+              consequatur in quia iure aliquam ad facere consequuntur error illum aliquid, repudiandae earum vitae
+              delectus?</p>
+            <button class="button drawer-toggle"
+                    data-target="example2">
+              Close Drawer
+            </button>
+          </div>
         </div>
       </section>
 
@@ -334,11 +374,11 @@
               <p>Error Message</p>
             </div>
           </div>
-  
+
           <details class="accordion">
             <summary>Message Tokens</summary>
-  
-            <ul>
+
+            <ul class="overflow-x-auto">
               <li>
                 <pre>--message-background-color</pre>
               </li>
@@ -406,7 +446,6 @@
             <p>Specifies the number of columns in the grid.</p>
 
             <div class="overflow-x-auto">
-
               <div class="grid grid-1">
                 <div class="block card grid-center text-center">Grid 1</div>
               </div>
@@ -516,56 +555,62 @@
         <section>
           <div class="flow flow-2xs">
             <h4>Blocks</h4>
+
             <p>Specifies the number of columns a block will span.</p>
-            <h5>Grid 12</h5>
-            <div class="grid grid-12 gap-2xs overflow-x-auto">
-              <div class="block block-1 card grid-center text-center">Block 1</div>
-              <div class="block block-1 card grid-center text-center">Block 1</div>
-              <div class="block block-1 card grid-center text-center">Block 1</div>
-              <div class="block block-1 card grid-center text-center">Block 1</div>
-              <div class="block block-1 card grid-center text-center">Block 1</div>
-              <div class="block block-1 card grid-center text-center">Block 1</div>
-              <div class="block block-1 card grid-center text-center">Block 1</div>
-              <div class="block block-1 card grid-center text-center">Block 1</div>
-              <div class="block block-1 card grid-center text-center">Block 1</div>
-              <div class="block block-1 card grid-center text-center">Block 1</div>
-              <div class="block block-1 card grid-center text-center">Block 1</div>
-              <div class="block block-1 card grid-center text-center">Block 1</div>
-              <div class="block block-2 card grid-center text-center">Block 2</div>
-              <div class="block block-2 card grid-center text-center">Block 2</div>
-              <div class="block block-2 card grid-center text-center">Block 2</div>
-              <div class="block block-2 card grid-center text-center">Block 2</div>
-              <div class="block block-2 card grid-center text-center">Block 2</div>
-              <div class="block block-2 card grid-center text-center">Block 2</div>
-              <div class="block block-3 card grid-center text-center">Block 3</div>
-              <div class="block block-3 card grid-center text-center">Block 3</div>
-              <div class="block block-3 card grid-center text-center">Block 3</div>
-              <div class="block block-3 card grid-center text-center">Block 3</div>
-              <div class="block block-4 card grid-center text-center">Block 4</div>
-              <div class="block block-4 card grid-center text-center">Block 4</div>
-              <div class="block block-4 card grid-center text-center">Block 4</div>
-              <div class="block block-6 card grid-center text-center">Block 6</div>
-              <div class="block block-6 card grid-center text-center">Block 6</div>
-              <div class="block block-12 card grid-center text-center">Block 12</div>
+
+            <div class="flow flow-2xs">
+              <h5>Grid 12</h5>
+              <div class="grid grid-12 gap-2xs overflow-x-auto">
+                <div class="block block-1 card grid-center text-center">Block 1</div>
+                <div class="block block-1 card grid-center text-center">Block 1</div>
+                <div class="block block-1 card grid-center text-center">Block 1</div>
+                <div class="block block-1 card grid-center text-center">Block 1</div>
+                <div class="block block-1 card grid-center text-center">Block 1</div>
+                <div class="block block-1 card grid-center text-center">Block 1</div>
+                <div class="block block-1 card grid-center text-center">Block 1</div>
+                <div class="block block-1 card grid-center text-center">Block 1</div>
+                <div class="block block-1 card grid-center text-center">Block 1</div>
+                <div class="block block-1 card grid-center text-center">Block 1</div>
+                <div class="block block-1 card grid-center text-center">Block 1</div>
+                <div class="block block-1 card grid-center text-center">Block 1</div>
+                <div class="block block-2 card grid-center text-center">Block 2</div>
+                <div class="block block-2 card grid-center text-center">Block 2</div>
+                <div class="block block-2 card grid-center text-center">Block 2</div>
+                <div class="block block-2 card grid-center text-center">Block 2</div>
+                <div class="block block-2 card grid-center text-center">Block 2</div>
+                <div class="block block-2 card grid-center text-center">Block 2</div>
+                <div class="block block-3 card grid-center text-center">Block 3</div>
+                <div class="block block-3 card grid-center text-center">Block 3</div>
+                <div class="block block-3 card grid-center text-center">Block 3</div>
+                <div class="block block-3 card grid-center text-center">Block 3</div>
+                <div class="block block-4 card grid-center text-center">Block 4</div>
+                <div class="block block-4 card grid-center text-center">Block 4</div>
+                <div class="block block-4 card grid-center text-center">Block 4</div>
+                <div class="block block-6 card grid-center text-center">Block 6</div>
+                <div class="block block-6 card grid-center text-center">Block 6</div>
+                <div class="block block-12 card grid-center text-center">Block 12</div>
+              </div>
             </div>
 
-            <h5>Grid 8</h5>
-            <div class="grid grid-8 gap-2xs overflow-x-auto">
-              <div class="block block-1 card grid-center text-center">Block 1</div>
-              <div class="block block-1 card grid-center text-center">Block 1</div>
-              <div class="block block-1 card grid-center text-center">Block 1</div>
-              <div class="block block-1 card grid-center text-center">Block 1</div>
-              <div class="block block-1 card grid-center text-center">Block 1</div>
-              <div class="block block-1 card grid-center text-center">Block 1</div>
-              <div class="block block-1 card grid-center text-center">Block 1</div>
-              <div class="block block-1 card grid-center text-center">Block 1</div>
-              <div class="block block-2 card grid-center text-center">Block 2</div>
-              <div class="block block-2 card grid-center text-center">Block 2</div>
-              <div class="block block-2 card grid-center text-center">Block 2</div>
-              <div class="block block-2 card grid-center text-center">Block 2</div>
-              <div class="block block-4 card grid-center text-center">Block 4</div>
-              <div class="block block-4 card grid-center text-center">Block 4</div>
-              <div class="block block-8 card grid-center text-center">Block 8</div>
+            <div class="flow flow-2xs">
+              <h5>Grid 8</h5>
+              <div class="grid grid-8 gap-2xs overflow-x-auto">
+                <div class="block block-1 card grid-center text-center">Block 1</div>
+                <div class="block block-1 card grid-center text-center">Block 1</div>
+                <div class="block block-1 card grid-center text-center">Block 1</div>
+                <div class="block block-1 card grid-center text-center">Block 1</div>
+                <div class="block block-1 card grid-center text-center">Block 1</div>
+                <div class="block block-1 card grid-center text-center">Block 1</div>
+                <div class="block block-1 card grid-center text-center">Block 1</div>
+                <div class="block block-1 card grid-center text-center">Block 1</div>
+                <div class="block block-2 card grid-center text-center">Block 2</div>
+                <div class="block block-2 card grid-center text-center">Block 2</div>
+                <div class="block block-2 card grid-center text-center">Block 2</div>
+                <div class="block block-2 card grid-center text-center">Block 2</div>
+                <div class="block block-4 card grid-center text-center">Block 4</div>
+                <div class="block block-4 card grid-center text-center">Block 4</div>
+                <div class="block block-8 card grid-center text-center">Block 8</div>
+              </div>
             </div>
           </div>
         </section>
@@ -573,7 +618,9 @@
         <section>
           <div class="flow flow-2xs">
             <h4>Responsive Grid</h4>
+
             <p>Sets number of columns based on viewport breakpoints.</p>
+
             <div class="grid grid-2:mobile grid-3:tablet grid-4:lg-tablet grid-6:lg-tablet grid-12:laptop">
               <div class="block card grid-center text-center">Block</div>
               <div class="block card grid-center text-center">Block</div>

@@ -14,7 +14,7 @@ $SPACERS: (
   .flow {
     --_flow-spacer: var(--flow-spacer, var(--spacer-md));
 
-    > * + * {
+    > * + *:not(.drawer, .modal) {
       margin-block-start: var(--_flow-spacer);
     }
   }

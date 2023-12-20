@@ -4,7 +4,9 @@ $MAX_WIDTH: 80ch !default;
   .container {
     --_max-width: var(--container-max-width, #{$MAX_WIDTH});
 
-    width: min(100%, var(--_max-width));
-    margin-inline: auto;
+    > *:not(.full-bleed) {
+      width: min(100%, var(--_max-width));
+      margin-inline: auto;
+    }
   }
 }
