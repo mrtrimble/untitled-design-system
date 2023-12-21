@@ -1,3 +1,5 @@
+import './styles/css/style.css';
+
 import './components/base-popover-component';
 import './components/accordion';
 import './components/drawer';
