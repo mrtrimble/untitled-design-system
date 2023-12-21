@@ -1,7 +1,0 @@
-@layer theme {
-  :root {
-    @each $fontSize in $FONT_SIZE_TOKENS {
-      --#{$fontSize}: #{map.get(meta.module-variables("tokens"), $fontSize)};
-    }
-  }
-}

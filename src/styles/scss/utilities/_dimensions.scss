@@ -1,23 +1,23 @@
-@use "sass:map";
-@use "sass:meta";
+@use 'sass:map';
+@use 'sass:meta';
 
-$DIMENSIONS: ("height", "width") !default;
+$DIMENSIONS: ('height', 'width') !default;
 
 $DIMENSION_INFO: (
-  "height": (
-    "h": "%",
-    "vh": "vh",
+  'height': (
+    'h': '%',
+    'vh': 'vh',
   ),
-  "width": (
-    "w": "%",
-    "vw": "vw",
+  'width': (
+    'w': '%',
+    'vw': 'vw',
   ),
 ) !default;
 
 $LABELS: (
-  "percentage": "%",
-  "view-width": "vw",
-  "view-height": "vh",
+  'percentage': '%',
+  'view-width': 'vw',
+  'view-height': 'vh',
 ) !default;
 
 $STEP: 10 !default;

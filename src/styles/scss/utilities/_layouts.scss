@@ -1,0 +1,19 @@
+@layer utilities {
+  .layout-sidebar {
+    display: grid;
+    grid-template-areas:
+      'sidebar'
+      'content';
+    @media screen and (min-width: 786px) {
+      grid-template-areas: 'sidebar content';
+      grid-template-columns: 3fr 9fr;
+    }
+
+    > *:first-child {
+      grid-area: sidebar;
+    }
+    > *:last-child {
+      grid-area: content;
+    }
+  }
+}

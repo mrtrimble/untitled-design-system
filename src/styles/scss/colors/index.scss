@@ -1,29 +1,24 @@
-@use "sass:meta";
-@use "../tokens/tokens";
+@use 'sass:meta';
+@use '../tokens/tokens';
 
 $DEFAULT_MAX_COLORS: 5 !default;
 
-@layer theme {
-  :root {
-    @each $name, $color in meta.module-variables("tokens") {
-      --#{$name}: #{$color};
-    }
-    // :root {
-    //   @for $i from 1 through $DEFAULT_MAX_COLORS {
-    //     --#{$name}-lighten-#{$i * 100}: lch(from #{$color} calc(l + #{$i * 5%}) c h);
-    //     --#{$name}-darken-#{$i * 100}: lch(from #{$color} calc(l - #{$i * 5%}) c h);
-    //   }
-    // }
-  }
-}
+// @layer theme {
+  // :root {
+  //   @for $i from 1 through $DEFAULT_MAX_COLORS {
+  //     --#{$name}-lighten-#{$i * 100}: lch(from #{$color} calc(l + #{$i * 5%}) c h);
+  //     --#{$name}-darken-#{$i * 100}: lch(from #{$color} calc(l - #{$i * 5%}) c h);
+  //   }
+  // }
+// }
 
 @layer utilities {
-  @each $name, $color in meta.module-variables("tokens") {
+  @each $name, $color in meta.module-variables('tokens') {
     @if meta.type-of($color) == color {
       $types: (
-        "text": "color",
-        "background": "background-color",
-        "border": "border-color",
+        'text': 'color',
+        'background': 'background-color',
+        'border': 'border-color',
       );
 
       @each $type, $property in $types {

@@ -1,0 +1,23 @@
+@layer components {
+  .skip-link {
+    --_padding: var(--skip-link-padding, var(--spacer-xs));
+    --_transition: var(--skip-link-transition, 0.2s ease);
+
+    @layer rules {
+      position: absolute;
+      inset-inline-start: 0;
+      inset-block-start: 0;
+      padding: var(--spacer-xs);
+      background: canvasText;
+      color: canvas;
+      transform: translateY(-100%);
+      transition: 0.2s ease;
+    }
+
+    @layer states {
+      &:has(a:focus) {
+        transform: translateY(0);
+      }
+    }
+  }
+}

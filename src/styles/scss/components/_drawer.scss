@@ -26,12 +26,12 @@
       transition: transform var(--_transition);
       width: min(100%, var(--_width));
       z-index: 10;
-
+      
       > * + * {
         margin-block-start: var(--_flow-space);
       }
     }
-
+    
     @layer states {
       &.open,
       &:popover-open {

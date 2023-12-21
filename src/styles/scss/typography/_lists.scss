@@ -1,0 +1,14 @@
+@layer globals {
+  @layer typography {
+    ul,
+    ol {
+      &[role='list'] {
+        list-style-type: disc;
+      }
+      ul,
+      ol {
+        margin-inline-start: var(--spacer-2xs);
+      }
+    }
+  }
+}

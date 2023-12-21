@@ -1,4 +1,4 @@
-export default class DialogComponent {
+export default class PopoverComponent {
   identifier;
   toggles;
 

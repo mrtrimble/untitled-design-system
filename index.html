@@ -44,836 +44,933 @@
 </head>
 
 <body class="py-spacer-md no-js">
-  <main class="container px-spacer-md flow">
-    <header>
-      <h1>Design System</h1>
-    </header>
-
-    <!-- Colors -->
-    <section class="flow">
-      <div class="flow flow-2xs">
-        <h2>Colors</h2>
-        <div class="auto-grid">
-          <div class="card background-color-base">
-            <p class="text-color-inverse-base">--color-base</p>
-          </div>
-          <div class="card background-color-inverse-base">
-            <p class="text-color-base">--color-inverse-base</p>
-          </div>
-          <div class="card background-color-secondary">
-            <p class="text-color-inverse-base">--color-secondary</p>
-          </div>
-          <div class="card background-color-tertiary">
-            <p class="text-color-inverse-base">--color-tertiary</p>
-          </div>
-          <div class="card background-swatch-navy">
-            <p class="text-color-inverse-base">--swatch-navy</p>
-          </div>
-          <div class="card background-swatch-lightblue">
-            <p class="text-color-base">--swatch-lightblue</p>
-          </div>
-          <div class="card background-swatch-med-blue">
-            <p class="text-color-inverse-base">--swatch-med-blue</p>
-          </div>
-          <div class="card background-swatch-salmon">
-            <p class="text-color-base">--swatch-salmon</p>
-          </div>
+  <div class="container">
+    <div class="layout-sidebar flow">
+      <nav aria-label="main"
+           class="px-spacer-md py-spacer-xs">
+        <div class="skip-link">
+          <a href="#main-content">
+            Skip to content.
+          </a>
         </div>
-
-        <details class="accordion">
-          <summary>Color Tokens</summary>
-
-          <ul class="overflow-x-auto">
-            <li>
-              <pre>--color-base</pre>
-            </li>
-            <li>
-              <pre>--color-secondary</pre>
-            </li>
-            <li>
-              <pre>--color-tertiary</pre>
-            </li>
-            <li>
-              <pre>--color-inverse-base</pre>
-            </li>
-            <li>
-              <pre>--swatch-navy</pre>
-            </li>
-            <li>
-              <pre>--swatch-skyblue</pre>
-            </li>
-            <li>
-              <pre>--swatch-lightblue</pre>
-            </li>
-            <li>
-              <pre>--swatch-med-blue</pre>
-            </li>
-            <li>
-              <pre>--swatch-beige</pre>
-            </li>
-            <li>
-              <pre>--swatch-peach</pre>
-            </li>
-            <li>
-              <pre>--swatch-salmon</pre>
-            </li>
-            <li>
-              <pre>--swatch-brown</pre>
-            </li>
-            <li>
-              <pre>--swatch-orange</pre>
-            </li>
-            <li>
-              <pre>--grayscale-white</pre>
-            </li>
-            <li>
-              <pre>--grayscale-lighter</pre>
-            </li>
-            <li>
-              <pre>--grayscale-light</pre>
-            </li>
-            <li>
-              <pre>--grayscale-base</pre>
-            </li>
-            <li>
-              <pre>--grayscale-dark</pre>
-            </li>
-            <li>
-              <pre>--grayscale-black</pre>
-            </li>
-            <li>
-              <pre>--message-default</pre>
-            </li>
-            <li>
-              <pre>--message-success</pre>
-            </li>
-            <li>
-              <pre>--message-info</pre>
-            </li>
-            <li>
-              <pre>--message-warning</pre>
-            </li>
-            <li>
-              <pre>--message-error</pre>
-            </li>
-          </ul>
-        </details>
-      </div>
-    </section>
-
-    <!-- Components -->
-    <section class="flow">
-      <h2>Components</h2>
-
-      <!-- Accordions -->
-      <section>
-        <div class="flow flow-2xs">
-          <h3>Accordions</h3>
-          <div class="accordion">
-            <div class="accordion-header">
-              <span>JavaScript Accordion</span>
-            </div>
-            <div class="accordion-content">
-              <p>Lorem ipsum dolor sit amet consectetur, adipisicing elit. Recusandae fugiat non, aperiam distinctio
-                odit illum pariatur. Reprehenderit corporis soluta possimus sunt. Rerum amet, numquam hic ratione quis
-                doloribus veniam nam.</p>
-            </div>
-          </div>
-          <details class="accordion">
-            <summary>No JavaScript Accordion</summary>
-
-            <p>Lorem ipsum dolor sit amet consectetur adipisicing elit. Illum blanditiis officiis totam quam nisi
-              ratione,
-              ut praesentium fugit nostrum, deleniti modi ad inventore aliquam voluptas. Saepe deleniti eos consectetur
-              inventore.</p>
-            <p>Lorem ipsum dolor sit amet consectetur adipisicing elit. Illum blanditiis officiis totam quam nisi
-              ratione,
-              ut praesentium fugit nostrum, deleniti modi ad inventore aliquam voluptas. Saepe deleniti eos consectetur
-              inventore.</p>
-          </details>
-          <details class="accordion">
-            <summary>
-              <span>Accordion Tokens</span>
-            </summary>
-            <ul class="overflow-x-auto">
+        <ul>
+          <li>
+            <a href="#colors">Colors</a>
+          </li>
+          <li>
+            <a href="#components">Components</a>
+            <ul>
               <li>
-                <pre>--accordion-background-color</pre>
+                <a href="#accordions">Accordions</a>
               </li>
               <li>
-                <pre>--accordion-flow-space</pre>
+                <a href="#buttons">Buttons</a>
               </li>
               <li>
-                <pre>--accordion-text-color</pre>
+                <a href="#cards">Cards</a>
               </li>
               <li>
-                <pre>--accordion-content-padding-block</pre>
+                <a href="#drawers">Drawers</a>
               </li>
               <li>
-                <pre>--accordion-content-padding-inline</pre>
+                <a href="#messages">Messages</a>
               </li>
               <li>
-                <pre>--accordion-header-background-color</pre>
-              </li>
-              <li>
-                <pre>--accordion-header-padding-inline</pre>
-              </li>
-              <li>
-                <pre>--accordion-header-text-color</pre>
+                <a href="#modals">Modals</a>
               </li>
             </ul>
-          </details>
-        </div>
-      </section>
-
-      <!-- Buttons -->
-      <section>
-        <div class="flow flow-2xs">
-          <h3>Buttons</h3>
-          <button class="button">Button</button>
-          <button class="button secondary">Button</button>
-          <button class="button plain">Button</button>
-
-          <details class="accordion">
-            <summary>Button Tokens</summary>
-            <ul class="overflow-x-auto">
+          </li>
+          <li>
+            <a href="#typography">Typography</a>
+            <ul>
               <li>
-                <pre>--button-background-color</pre>
+                <a href="#body">Body</a>
               </li>
               <li>
-                <pre>--button-border-color</pre>
-              </li>
-              <li>
-                <pre>--button-border-style</pre>
-              </li>
-              <li>
-                <pre>--button-border-radius</pre>
-              </li>
-              <li>
-                <pre>--button-border-width</pre>
-              </li>
-              <li>
-                <pre>--button-font-size</pre>
-              </li>
-              <li>
-                <pre>--button-outline-offset</pre>
-              </li>
-              <li>
-                <pre>--button-outline-color</pre>
-              </li>
-              <li>
-                <pre>--button-outline-style</pre>
-              </li>
-              <li>
-                <pre>--button-outline-width</pre>
-              </li>
-              <li>
-                <pre>--button-padding-block</pre>
-              </li>
-              <li>
-                <pre>--button-padding-inline</pre>
-              </li>
-              <li>
-                <pre>--button-text-color</pre>
-              </li>
-              <li>
-                <pre>--button-text-decoration</pre>
-              </li>
-              <li>
-                <pre>--button-width</pre>
+                <a href="#headings">Headings</a>
               </li>
             </ul>
-          </details>
-        </div>
-      </section>
+          </li>
+          <li>
+            <a href="#utilities">Utilities</a>
+            <ul>
+              <li>
+                <a href="#grid">Grid</a>
+              </li>
+              <li>
+                <a href="#spacers">Spacers</a>
+              </li>
+            </ul>
 
-      <!-- Cards -->
-      <section>
-        <div class="flow flow-2xs">
-          <h3>Cards</h3>
-          <p>Lorem ipsum dolor sit amet consectetur adipisicing elit. Quaerat natus enim fugiat optio, eaque ex impedit
-            molestiae harum, voluptatum excepturi sunt consectetur, ipsam architecto facilis accusantium expedita.
-            Aspernatur, nulla fugiat.</p>
-          <div class="grid auto-grid gap-2xs"
-               style="--grid-column-min: 20ch;">
-            <div class="cq-wrapper">
-              <div class="card background-grayscale-white text-color-base">
-                <figure>
-                  <img src="https://images.unsplash.com/photo-1519681393784-d120267933ba?ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D&auto=format&fit=crop&w=2340&q=80"
-                       alt="Mountains">
-                </figure>
-                <h4>Card</h4>
-                <p>Lorem ipsum, dolor sit amet consectetur adipisicing elit. Ea iure ullam voluptas nulla ex earum
-                  tempora
-                  sequi possimus quaerat esse, cupiditate, delectus aperiam fugiat quibusdam hic. Nemo vero sunt
-                  perspiciatis.</p>
+          </li>
+        </ul>
+      </nav>
+      <main id="main-content"
+            class="px-spacer-md flow">
+        <header>
+          <h1>Design System</h1>
+        </header>
+
+        <!-- Colors -->
+        <section class="flow">
+          <div class="flow flow-2xs">
+            <h2 id="colors">Colors</h2>
+            <p>
+              You can bring your own colors to this design system! Add colors to the <code>./tokens/colors.json</code>
+              file and
+              Style Dictionery will create tokens out of them!
+            </p>
+
+            <p>Once the tokens are created, running the build script will compile Sass and output a stylesheet that
+              includes custom properties and color utility classes for each color.</p>
+
+            <div class="message warning">
+              <p><strong>Warning!</strong> The more colors you add, the larger the final stylesheet will be!</p>
+            </div>
+            <h3>Color Samples</h3>
+            <div class="auto-grid">
+              <div class="card background-color-base">
+                <p class="text-color-inverse-base">--color-base</p>
+              </div>
+              <div class="card background-color-inverse-base">
+                <p class="text-color-base">--color-inverse-base</p>
+              </div>
+              <div class="card background-color-secondary">
+                <p class="text-color-inverse-base">--color-secondary</p>
+              </div>
+              <div class="card background-color-tertiary">
+                <p class="text-color-inverse-base">--color-tertiary</p>
+              </div>
+              <div class="card background-swatch-navy">
+                <p class="text-color-inverse-base">--swatch-navy</p>
+              </div>
+              <div class="card background-swatch-lightblue">
+                <p class="text-color-base">--swatch-lightblue</p>
+              </div>
+              <div class="card background-swatch-med-blue">
+                <p class="text-color-inverse-base">--swatch-med-blue</p>
+              </div>
+              <div class="card background-swatch-salmon">
+                <p class="text-color-base">--swatch-salmon</p>
+              </div>
+              <div class="card background-message-success">
+                <p>--message-success</p>
               </div>
             </div>
-            <div class="card background-grayscale-white text-color-base">
-              <figure>
-                <img src="https://images.unsplash.com/photo-1519681393784-d120267933ba?ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D&auto=format&fit=crop&w=2340&q=80"
-                     alt="Mountains">
-              </figure>
-              <h4>Card</h4>
-              <p>Lorem ipsum, dolor sit amet consectetur adipisicing elit. Ea iure ullam voluptas nulla ex earum tempora
-                sequi possimus quaerat esse, cupiditate, delectus aperiam fugiat quibusdam hic. Nemo vero sunt
-                perspiciatis.</p>
-            </div>
-            <div class="card background-grayscale-white text-color-base">
-              <figure>
-                <img src="https://images.unsplash.com/photo-1519681393784-d120267933ba?ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D&auto=format&fit=crop&w=2340&q=80"
-                     alt="Mountains">
-              </figure>
-              <h4>Card</h4>
-              <p>Lorem ipsum, dolor sit amet consectetur adipisicing elit. Ea iure ullam voluptas nulla ex earum tempora
-                sequi possimus quaerat esse, cupiditate, delectus aperiam fugiat quibusdam hic. Nemo vero sunt
-                perspiciatis.</p>
-            </div>
+
+            <details class="accordion">
+              <summary>Color Tokens</summary>
+
+              <ul class="overflow-x-auto">
+                <li>
+                  <pre>--color-base</pre>
+                </li>
+                <li>
+                  <pre>--color-secondary</pre>
+                </li>
+                <li>
+                  <pre>--color-tertiary</pre>
+                </li>
+                <li>
+                  <pre>--color-inverse-base</pre>
+                </li>
+                <li>
+                  <pre>--swatch-navy</pre>
+                </li>
+                <li>
+                  <pre>--swatch-skyblue</pre>
+                </li>
+                <li>
+                  <pre>--swatch-lightblue</pre>
+                </li>
+                <li>
+                  <pre>--swatch-med-blue</pre>
+                </li>
+                <li>
+                  <pre>--swatch-beige</pre>
+                </li>
+                <li>
+                  <pre>--swatch-peach</pre>
+                </li>
+                <li>
+                  <pre>--swatch-salmon</pre>
+                </li>
+                <li>
+                  <pre>--swatch-brown</pre>
+                </li>
+                <li>
+                  <pre>--swatch-orange</pre>
+                </li>
+                <li>
+                  <pre>--grayscale-white</pre>
+                </li>
+                <li>
+                  <pre>--grayscale-lighter</pre>
+                </li>
+                <li>
+                  <pre>--grayscale-light</pre>
+                </li>
+                <li>
+                  <pre>--grayscale-base</pre>
+                </li>
+                <li>
+                  <pre>--grayscale-dark</pre>
+                </li>
+                <li>
+                  <pre>--grayscale-black</pre>
+                </li>
+                <li>
+                  <pre>--message-default</pre>
+                </li>
+                <li>
+                  <pre>--message-success</pre>
+                </li>
+                <li>
+                  <pre>--message-info</pre>
+                </li>
+                <li>
+                  <pre>--message-warning</pre>
+                </li>
+                <li>
+                  <pre>--message-error</pre>
+                </li>
+              </ul>
+            </details>
           </div>
+        </section>
 
-          <details class="accordion">
-            <summary>Card Tokens</summary>
-            <ul class="overflow-x-auto">
-              <li>
-                <pre>--card-background-color</pre>
-              </li>
-              <li>
-                <pre>--card-border-color</pre>
-              </li>
-              <li>
-                <pre>--card-border-style</pre>
-              </li>
-              <li>
-                <pre>--card-border-width</pre>
-              </li>
-              <li>
-                <pre>--card-flow-space</pre>
-              </li>
-              <li>
-                <pre>--card-margin-inline</pre>
-              </li>
-            </ul>
-          </details>
-        </div>
-      </section>
+        <!-- Components -->
+        <section class="flow">
+          <h2 id="components">Components</h2>
 
-      <!-- Drawer -->
-      <section>
-        <div class="flow flow-2xs">
-          <h3>Drawers</h3>
-          <button class="button drawer-toggle"
-                  data-target="example">
-            Open JavaScript Drawer
-          </button>
-          <div class="drawer"
-               id="example">
-            <h4>JavaScript Drawer Header</h4>
-            <p>Lorem ipsum dolor sit amet consectetur, adipisicing elit. Ex, magni. Non saepe optio tenetur eos
-              consequatur in quia iure aliquam ad facere consequuntur error illum aliquid, repudiandae earum vitae
-              delectus?</p>
-            <button class="button drawer-toggle"
-                    data-target="example">
-              Close Drawer
-            </button>
-          </div>
-          <button class="button drawer-toggle"
-                  popovertarget="example-2"
-                  popovertargetaction="toggle">
-            Open Popover Drawer
-          </button>
-          <div class="drawer"
-               popover
-               id="example-2">
-            <h4>Popover Drawer Header</h4>
-            <p>Lorem ipsum dolor sit amet consectetur, adipisicing elit. Ex, magni. Non saepe optio tenetur eos
-              consequatur in quia iure aliquam ad facere consequuntur error illum aliquid, repudiandae earum vitae
-              delectus?</p>
-            <button class="button drawer-toggle"
-                    popovertarget="example-2"
-                    popovertargetaction="toggle">
-              Close Drawer
-            </button>
-          </div>
-        </div>
-      </section>
+          <!-- Accordions -->
+          <section>
+            <div class="flow flow-2xs">
+              <h3 id="accordions">Accordions</h3>
 
-      <!-- Messages -->
-      <section>
-        <div class="flow flow-2xs">
-          <h3>Messages</h3>
-          <div>
-            <div class="message">
-              <p class="text-color-base">Default Message</p>
+              <p>
+                There are two flavors of accordion, a standard JavaScript based accordion and a styled
+                <code>&lt;details&gt;</code> element that requires no JavaScript.
+              </p>
+
+              <h4>Accordion Examples</h4>
+              <div class="accordion">
+                <div class="accordion-header"
+                     id="accordion-header-1"
+                     aria-expanded="true"
+                     aria-controls="accordion-content-1">
+                  <span>JavaScript Accordion</span>
+                </div>
+                <div class="accordion-content"
+                     id="accordion-content-1"
+                     aria-labelledby="accordion-header-1"
+                     role="region">
+                  <p>Lorem ipsum dolor sit amet consectetur, adipisicing elit. Recusandae fugiat non, aperiam distinctio
+                    odit illum pariatur. Reprehenderit corporis soluta possimus sunt. Rerum amet, numquam hic ratione
+                    quis
+                    doloribus veniam nam.</p>
+                </div>
+              </div>
+              <details class="accordion">
+                <summary>No JavaScript Accordion</summary>
+
+                <p>Lorem ipsum dolor sit amet consectetur adipisicing elit. Illum blanditiis officiis totam quam nisi
+                  ratione,
+                  ut praesentium fugit nostrum, deleniti modi ad inventore aliquam voluptas. Saepe deleniti eos
+                  consectetur
+                  inventore.</p>
+                <p>Lorem ipsum dolor sit amet consectetur adipisicing elit. Illum blanditiis officiis totam quam nisi
+                  ratione,
+                  ut praesentium fugit nostrum, deleniti modi ad inventore aliquam voluptas. Saepe deleniti eos
+                  consectetur
+                  inventore.</p>
+              </details>
+              <details class="accordion">
+                <summary>
+                  <span>Accordion Tokens</span>
+                </summary>
+                <ul class="overflow-x-auto">
+                  <li>
+                    <pre>--accordion-background-color</pre>
+                  </li>
+                  <li>
+                    <pre>--accordion-flow-space</pre>
+                  </li>
+                  <li>
+                    <pre>--accordion-text-color</pre>
+                  </li>
+                  <li>
+                    <pre>--accordion-content-padding-block</pre>
+                  </li>
+                  <li>
+                    <pre>--accordion-content-padding-inline</pre>
+                  </li>
+                  <li>
+                    <pre>--accordion-header-background-color</pre>
+                  </li>
+                  <li>
+                    <pre>--accordion-header-padding-inline</pre>
+                  </li>
+                  <li>
+                    <pre>--accordion-header-text-color</pre>
+                  </li>
+                </ul>
+              </details>
             </div>
-            <div class="message info">
-              <p>Info Message</p>
-            </div>
-            <div class="message warning">
-              <p>Warning Message</p>
-            </div>
-            <div class="message success">
-              <p>Success Message</p>
-            </div>
-            <div class="message error">
-              <p>Error Message</p>
-            </div>
-          </div>
+          </section>
 
-          <details class="accordion">
-            <summary>Message Tokens</summary>
+          <!-- Buttons -->
+          <section>
+            <div class="flow flow-2xs">
+              <h3 id="buttons">Buttons</h3>
+              <p>There are three different types of buttons: primary, secondary, and plain.</p>
+              <p>Primary buttons are for primary actions, secondary buttons are for secondary actions. Plain buttons are styled to appear as links.</p>
+              <button class="button">Primary Button</button>
+              <button class="button secondary">Secondary Button</button>
+              <button class="button plain">Plain Button</button>
 
-            <ul class="overflow-x-auto">
-              <li>
-                <pre>--message-background-color</pre>
-              </li>
-              <li>
-                <pre>--message-border-style</pre>
-              </li>
-              <li>
-                <pre>--message-border-width</pre>
-              </li>
-              <li>
-                <pre>--message-border-color</pre>
-              </li>
-              <li>
-                <pre>--message-color</pre>
-              </li>
-              <li>
-                <pre>--message-padding-block</pre>
-              </li>
-              <li>
-                <pre>--message-padding-inline</pre>
-              </li>
-            </ul>
-          </details>
-        </div>
-      </section>
+              <details class="accordion">
+                <summary>Button Tokens</summary>
+                <ul class="overflow-x-auto">
+                  <li>
+                    <pre>--button-background-color</pre>
+                  </li>
+                  <li>
+                    <pre>--button-border-color</pre>
+                  </li>
+                  <li>
+                    <pre>--button-border-style</pre>
+                  </li>
+                  <li>
+                    <pre>--button-border-radius</pre>
+                  </li>
+                  <li>
+                    <pre>--button-border-width</pre>
+                  </li>
+                  <li>
+                    <pre>--button-font-size</pre>
+                  </li>
+                  <li>
+                    <pre>--button-outline-offset</pre>
+                  </li>
+                  <li>
+                    <pre>--button-outline-color</pre>
+                  </li>
+                  <li>
+                    <pre>--button-outline-style</pre>
+                  </li>
+                  <li>
+                    <pre>--button-outline-width</pre>
+                  </li>
+                  <li>
+                    <pre>--button-padding-block</pre>
+                  </li>
+                  <li>
+                    <pre>--button-padding-inline</pre>
+                  </li>
+                  <li>
+                    <pre>--button-text-color</pre>
+                  </li>
+                  <li>
+                    <pre>--button-text-decoration</pre>
+                  </li>
+                  <li>
+                    <pre>--button-width</pre>
+                  </li>
+                </ul>
+              </details>
+            </div>
+          </section>
 
-      <!-- Modals -->
-      <section>
-        <div class="flow flow-2xs">
-          <h3>Modals</h3>
-          <button class="button modal-toggle"
-                  data-target="example-modal">
-            Open Dialog Modal
-          </button>
-          <dialog class="modal"
-                  id="example-modal">
-            <div class="modal-inner">
-              <h4>Dialog Modal Heading</h4>
-              <p>Lorem ipsum dolor sit, amet consectetur adipisicing elit. Illo ea fugit eligendi possimus ratione
-                excepturi voluptas repudiandae, facere quo magnam. Facilis odio, ipsum harum iste quam nam reiciendis
-                eius
-                nihil!</p>
+          <!-- Cards -->
+          <section>
+            <div class="flow flow-2xs">
+              <h3 id="cards">Cards</h3>
+              <p>Every design system needs to have a card component, obviously!</p>
+              <div class="grid auto-grid gap-xs"
+                   style="--grid-column-min: 25ch">
+                <div class="cq-wrapper">
+                  <div class="card background-grayscale-white text-color-base">
+                    <figure>
+                      <img src="https://images.unsplash.com/photo-1519681393784-d120267933ba?ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D&auto=format&fit=crop&w=2340&q=80"
+                           alt="Mountains">
+                    </figure>
+                    <h4>Card</h4>
+                    <p>Lorem ipsum, dolor sit amet consectetur adipisicing elit. Ea iure ullam voluptas nulla ex earum
+                      tempora
+                      sequi possimus quaerat esse, cupiditate, delectus aperiam fugiat quibusdam hic. Nemo vero sunt
+                      perspiciatis.</p>
+                  </div>
+                </div>
+                <div class="card background-grayscale-white text-color-base">
+                  <figure>
+                    <img src="https://images.unsplash.com/photo-1519681393784-d120267933ba?ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D&auto=format&fit=crop&w=2340&q=80"
+                         alt="Mountains">
+                  </figure>
+                  <h4>Card</h4>
+                  <p>Lorem ipsum, dolor sit amet consectetur adipisicing elit. Ea iure ullam voluptas nulla ex earum
+                    tempora
+                    sequi possimus quaerat esse, cupiditate, delectus aperiam fugiat quibusdam hic. Nemo vero sunt
+                    perspiciatis.</p>
+                </div>
 
+              </div>
+
+              <details class="accordion">
+                <summary>Card Tokens</summary>
+                <ul class="overflow-x-auto">
+                  <li>
+                    <pre>--card-background-color</pre>
+                  </li>
+                  <li>
+                    <pre>--card-border-color</pre>
+                  </li>
+                  <li>
+                    <pre>--card-border-style</pre>
+                  </li>
+                  <li>
+                    <pre>--card-border-width</pre>
+                  </li>
+                  <li>
+                    <pre>--card-flow-space</pre>
+                  </li>
+                  <li>
+                    <pre>--card-margin-inline</pre>
+                  </li>
+                </ul>
+              </details>
+            </div>
+          </section>
+
+          <!-- Drawer -->
+          <section>
+            <div class="flow flow-2xs">
+              <h3 id="drawers">Drawers</h3>
+
+              <p>Drawers can be utilized in two different ways: standard JavaScript or utilizing the Popover API!</p>
+
+              <button class="button drawer-toggle"
+                      data-target="example">
+                Open JavaScript Drawer
+              </button>
+              <div class="drawer"
+                   id="example">
+                <h4>JavaScript Drawer Header</h4>
+                <p>Lorem ipsum dolor sit amet consectetur, adipisicing elit. Ex, magni. Non saepe optio tenetur eos
+                  consequatur in quia iure aliquam ad facere consequuntur error illum aliquid, repudiandae earum vitae
+                  delectus?</p>
+                <button class="button drawer-toggle"
+                        data-target="example">
+                  Close Drawer
+                </button>
+              </div>
+              <button class="button drawer-toggle"
+                      popovertarget="example-2"
+                      popovertargetaction="toggle">
+                Open Popover Drawer
+              </button>
+              <div class="drawer"
+                   popover
+                   id="example-2">
+                <h4>Popover Drawer Header</h4>
+                <p>Lorem ipsum dolor sit amet consectetur, adipisicing elit. Ex, magni. Non saepe optio tenetur eos
+                  consequatur in quia iure aliquam ad facere consequuntur error illum aliquid, repudiandae earum vitae
+                  delectus?</p>
+                <button class="button drawer-toggle"
+                        popovertarget="example-2"
+                        popovertargetaction="toggle">
+                  Close Drawer
+                </button>
+              </div>
+            </div>
+          </section>
+
+          <!-- Messages -->
+          <section>
+            <div class="flow flow-2xs">
+              <h3 id="messages">Messages</h3>
+
+              <p>Messages for different various states and statuses.</p>
+
+              <div>
+                <div class="message">
+                  <p class="text-color-base">Default Message</p>
+                </div>
+                <div class="message info">
+                  <p>Info Message</p>
+                </div>
+                <div class="message warning">
+                  <p>Warning Message</p>
+                </div>
+                <div class="message success">
+                  <p>Success Message</p>
+                </div>
+                <div class="message error">
+                  <p>Error Message</p>
+                </div>
+              </div>
+
+              <details class="accordion">
+                <summary>Message Tokens</summary>
+
+                <ul class="overflow-x-auto">
+                  <li>
+                    <pre>--message-background-color</pre>
+                  </li>
+                  <li>
+                    <pre>--message-border-style</pre>
+                  </li>
+                  <li>
+                    <pre>--message-border-width</pre>
+                  </li>
+                  <li>
+                    <pre>--message-border-color</pre>
+                  </li>
+                  <li>
+                    <pre>--message-color</pre>
+                  </li>
+                  <li>
+                    <pre>--message-padding-block</pre>
+                  </li>
+                  <li>
+                    <pre>--message-padding-inline</pre>
+                  </li>
+                </ul>
+              </details>
+            </div>
+          </section>
+
+          <!-- Modals -->
+          <section>
+            <div class="flow flow-2xs">
+              <h3 id="modals">Modals</h3>
+              <p>Modals can be built with either the <code>&lt;dialog&gt;</code> element, or by using the built in JavaScript approach.</p>
               <button class="button modal-toggle"
                       data-target="example-modal">
-                Close Modal
+                Open Dialog Modal
               </button>
+              <dialog class="modal"
+                      id="example-modal">
+                <div class="modal-inner">
+                  <h4>Dialog Modal Heading</h4>
+                  <p>Lorem ipsum dolor sit, amet consectetur adipisicing elit. Illo ea fugit eligendi possimus ratione
+                    excepturi voluptas repudiandae, facere quo magnam. Facilis odio, ipsum harum iste quam nam
+                    reiciendis
+                    eius
+                    nihil!</p>
 
-            </div>
-          </dialog>
-          <button class="button modal-toggle"
-                  data-target="example-modal2">
-            Open JavaScript Modal
-          </button>
-          <div class="modal"
-               id="example-modal2">
-            <div class="modal-inner">
-              <h4>JavaScript Modal Heading</h4>
-              <p>Lorem ipsum dolor sit, amet consectetur adipisicing elit. Illo ea fugit eligendi possimus ratione
-                excepturi voluptas repudiandae, facere quo magnam. Facilis odio, ipsum harum iste quam nam reiciendis
-                eius
-                nihil!</p>
+                  <button class="button modal-toggle"
+                          data-target="example-modal">
+                    Close Modal
+                  </button>
 
+                </div>
+              </dialog>
               <button class="button modal-toggle"
                       data-target="example-modal2">
-                Close Modal
+                Open JavaScript Modal
               </button>
-            </div>
-          </div>
-        </div>
-      </section>
-    </section>
+              <div class="modal"
+                   id="example-modal2">
+                <div class="modal-inner">
+                  <h4>JavaScript Modal Heading</h4>
+                  <p>Lorem ipsum dolor sit, amet consectetur adipisicing elit. Illo ea fugit eligendi possimus ratione
+                    excepturi voluptas repudiandae, facere quo magnam. Facilis odio, ipsum harum iste quam nam
+                    reiciendis
+                    eius
+                    nihil!</p>
 
-    <!-- Typography -->
-    <section class="flow">
-      <h2>Typography</h2>
-      <section>
-        <div class="flow flow-2xs">
-          <h3>Body Text</h3>
-          <p>Lorem ipsum dolor sit amet consectetur adipisicing elit. Sequi harum omnis voluptatem totam accusantium
-            tempora.
-            Iusto repellendus blanditiis nulla impedit enim tempora cupiditate alias, error at corrupti recusandae
-            voluptatum
-            consectetur.</p>
-        </div>
-      </section>
-      <section>
-        <div class="flow flow-2xs">
-          <h3>Headings</h3>
-          <h1>Heading Level 1</h1>
-          <h2>Heading Level 2</h2>
-          <h3>Heading Level 3</h3>
-          <h4>Heading Level 4</h4>
-          <h5>Heading Level 5</h5>
-          <h6>Heading Level 6</h6>
-        </div>
-      </section>
-    </section>
-
-    <!-- Utilities -->
-    <section class="flow">
-      <h2>Utilities</h2>
-
-      <!-- Grid -->
-      <section class="flow">
-        <h3>Grid</h3>
-
-        <section>
-          <div class="flow flow-2xs">
-            <h4>Full Grid</h4>
-            <p>Specifies the number of columns in the grid.</p>
-
-            <div class="overflow-x-auto">
-              <div class="grid grid-1">
-                <div class="block card grid-center text-center">Grid 1</div>
-              </div>
-              <div class="grid grid-2">
-                <div class="block card grid-center text-center">Grid 2</div>
-                <div class="block card grid-center text-center">Grid 2</div>
-              </div>
-              <div class="grid grid-3">
-                <div class="block card grid-center text-center">Grid 3</div>
-                <div class="block card grid-center text-center">Grid 3</div>
-                <div class="block card grid-center text-center">Grid 3</div>
-              </div>
-              <div class="grid grid-4">
-                <div class="block card grid-center text-center">Grid 4</div>
-                <div class="block card grid-center text-center">Grid 4</div>
-                <div class="block card grid-center text-center">Grid 4</div>
-                <div class="block card grid-center text-center">Grid 4</div>
-              </div>
-              <div class="grid grid-5">
-                <div class="block card grid-center text-center">Grid 5</div>
-                <div class="block card grid-center text-center">Grid 5</div>
-                <div class="block card grid-center text-center">Grid 5</div>
-                <div class="block card grid-center text-center">Grid 5</div>
-                <div class="block card grid-center text-center">Grid 5</div>
-              </div>
-              <div class="grid grid-6">
-                <div class="block card grid-center text-center">Grid 6</div>
-                <div class="block card grid-center text-center">Grid 6</div>
-                <div class="block card grid-center text-center">Grid 6</div>
-                <div class="block card grid-center text-center">Grid 6</div>
-                <div class="block card grid-center text-center">Grid 6</div>
-                <div class="block card grid-center text-center">Grid 6</div>
-              </div>
-              <div class="grid grid-7">
-                <div class="block card grid-center text-center">Grid 7</div>
-                <div class="block card grid-center text-center">Grid 7</div>
-                <div class="block card grid-center text-center">Grid 7</div>
-                <div class="block card grid-center text-center">Grid 7</div>
-                <div class="block card grid-center text-center">Grid 7</div>
-                <div class="block card grid-center text-center">Grid 7</div>
-                <div class="block card grid-center text-center">Grid 7</div>
-              </div>
-              <div class="grid grid-8">
-                <div class="block card grid-center text-center">Grid 8</div>
-                <div class="block card grid-center text-center">Grid 8</div>
-                <div class="block card grid-center text-center">Grid 8</div>
-                <div class="block card grid-center text-center">Grid 8</div>
-                <div class="block card grid-center text-center">Grid 8</div>
-                <div class="block card grid-center text-center">Grid 8</div>
-                <div class="block card grid-center text-center">Grid 8</div>
-                <div class="block card grid-center text-center">Grid 8</div>
-              </div>
-              <div class="grid grid-9">
-                <div class="block card grid-center text-center">Grid 9</div>
-                <div class="block card grid-center text-center">Grid 9</div>
-                <div class="block card grid-center text-center">Grid 9</div>
-                <div class="block card grid-center text-center">Grid 9</div>
-                <div class="block card grid-center text-center">Grid 9</div>
-                <div class="block card grid-center text-center">Grid 9</div>
-                <div class="block card grid-center text-center">Grid 9</div>
-                <div class="block card grid-center text-center">Grid 9</div>
-                <div class="block card grid-center text-center">Grid 9</div>
-              </div>
-              <div class="grid grid-10">
-                <div class="block card grid-center text-center">Grid 10</div>
-                <div class="block card grid-center text-center">Grid 10</div>
-                <div class="block card grid-center text-center">Grid 10</div>
-                <div class="block card grid-center text-center">Grid 10</div>
-                <div class="block card grid-center text-center">Grid 10</div>
-                <div class="block card grid-center text-center">Grid 10</div>
-                <div class="block card grid-center text-center">Grid 10</div>
-                <div class="block card grid-center text-center">Grid 10</div>
-                <div class="block card grid-center text-center">Grid 10</div>
-                <div class="block card grid-center text-center">Grid 10</div>
-              </div>
-              <div class="grid grid-11">
-                <div class="block card grid-center text-center">Grid 11</div>
-                <div class="block card grid-center text-center">Grid 11</div>
-                <div class="block card grid-center text-center">Grid 11</div>
-                <div class="block card grid-center text-center">Grid 11</div>
-                <div class="block card grid-center text-center">Grid 11</div>
-                <div class="block card grid-center text-center">Grid 11</div>
-                <div class="block card grid-center text-center">Grid 11</div>
-                <div class="block card grid-center text-center">Grid 11</div>
-                <div class="block card grid-center text-center">Grid 11</div>
-                <div class="block card grid-center text-center">Grid 11</div>
-                <div class="block card grid-center text-center">Grid 11</div>
-              </div>
-              <div class="grid grid-12">
-                <div class="block card grid-center text-center">Grid 12</div>
-                <div class="block card grid-center text-center">Grid 12</div>
-                <div class="block card grid-center text-center">Grid 12</div>
-                <div class="block card grid-center text-center">Grid 12</div>
-                <div class="block card grid-center text-center">Grid 12</div>
-                <div class="block card grid-center text-center">Grid 12</div>
-                <div class="block card grid-center text-center">Grid 12</div>
-                <div class="block card grid-center text-center">Grid 12</div>
-                <div class="block card grid-center text-center">Grid 12</div>
-                <div class="block card grid-center text-center">Grid 12</div>
-                <div class="block card grid-center text-center">Grid 12</div>
-                <div class="block card grid-center text-center">Grid 12</div>
+                  <button class="button modal-toggle"
+                          data-target="example-modal2">
+                    Close Modal
+                  </button>
+                </div>
               </div>
             </div>
-          </div>
+          </section>
         </section>
 
-        <section>
-          <div class="flow flow-2xs">
-            <h4>Blocks</h4>
-
-            <p>Specifies the number of columns a block will span.</p>
-
+        <!-- Typography -->
+        <section class="flow">
+          <h2>Typography</h2>
+          <section>
             <div class="flow flow-2xs">
-              <h5>Grid 12</h5>
-              <div class="grid grid-12 gap-2xs overflow-x-auto">
-                <div class="block block-1 card grid-center text-center">Block 1</div>
-                <div class="block block-1 card grid-center text-center">Block 1</div>
-                <div class="block block-1 card grid-center text-center">Block 1</div>
-                <div class="block block-1 card grid-center text-center">Block 1</div>
-                <div class="block block-1 card grid-center text-center">Block 1</div>
-                <div class="block block-1 card grid-center text-center">Block 1</div>
-                <div class="block block-1 card grid-center text-center">Block 1</div>
-                <div class="block block-1 card grid-center text-center">Block 1</div>
-                <div class="block block-1 card grid-center text-center">Block 1</div>
-                <div class="block block-1 card grid-center text-center">Block 1</div>
-                <div class="block block-1 card grid-center text-center">Block 1</div>
-                <div class="block block-1 card grid-center text-center">Block 1</div>
-                <div class="block block-2 card grid-center text-center">Block 2</div>
-                <div class="block block-2 card grid-center text-center">Block 2</div>
-                <div class="block block-2 card grid-center text-center">Block 2</div>
-                <div class="block block-2 card grid-center text-center">Block 2</div>
-                <div class="block block-2 card grid-center text-center">Block 2</div>
-                <div class="block block-2 card grid-center text-center">Block 2</div>
-                <div class="block block-3 card grid-center text-center">Block 3</div>
-                <div class="block block-3 card grid-center text-center">Block 3</div>
-                <div class="block block-3 card grid-center text-center">Block 3</div>
-                <div class="block block-3 card grid-center text-center">Block 3</div>
-                <div class="block block-4 card grid-center text-center">Block 4</div>
-                <div class="block block-4 card grid-center text-center">Block 4</div>
-                <div class="block block-4 card grid-center text-center">Block 4</div>
-                <div class="block block-6 card grid-center text-center">Block 6</div>
-                <div class="block block-6 card grid-center text-center">Block 6</div>
-                <div class="block block-12 card grid-center text-center">Block 12</div>
-              </div>
+              <h3 id="body">Body</h3>
+              <p>Lorem ipsum dolor sit amet consectetur adipisicing elit. Sequi harum omnis voluptatem totam accusantium
+                tempora.
+                Iusto repellendus blanditiis nulla impedit enim tempora cupiditate alias, error at corrupti recusandae
+                voluptatum
+                consectetur.</p>
             </div>
-
+          </section>
+          <section>
             <div class="flow flow-2xs">
-              <h5>Grid 8</h5>
-              <div class="grid grid-8 gap-2xs overflow-x-auto">
-                <div class="block block-1 card grid-center text-center">Block 1</div>
-                <div class="block block-1 card grid-center text-center">Block 1</div>
-                <div class="block block-1 card grid-center text-center">Block 1</div>
-                <div class="block block-1 card grid-center text-center">Block 1</div>
-                <div class="block block-1 card grid-center text-center">Block 1</div>
-                <div class="block block-1 card grid-center text-center">Block 1</div>
-                <div class="block block-1 card grid-center text-center">Block 1</div>
-                <div class="block block-1 card grid-center text-center">Block 1</div>
-                <div class="block block-2 card grid-center text-center">Block 2</div>
-                <div class="block block-2 card grid-center text-center">Block 2</div>
-                <div class="block block-2 card grid-center text-center">Block 2</div>
-                <div class="block block-2 card grid-center text-center">Block 2</div>
-                <div class="block block-4 card grid-center text-center">Block 4</div>
-                <div class="block block-4 card grid-center text-center">Block 4</div>
-                <div class="block block-8 card grid-center text-center">Block 8</div>
+              <h3 id="headings">Headings</h3>
+              <h1>Heading Level 1</h1>
+              <h2>Heading Level 2</h2>
+              <h3>Heading Level 3</h3>
+              <h4>Heading Level 4</h4>
+              <h5>Heading Level 5</h5>
+              <h6>Heading Level 6</h6>
+            </div>
+          </section>
+        </section>
+
+        <!-- Utilities -->
+        <section class="flow">
+          <h2 id="utilities">Utilities</h2>
+
+          <!-- Grid -->
+          <section class="flow">
+            <h3 id="grid">Grid</h3>
+
+            <section>
+              <div class="flow flow-2xs">
+                <h4>Full Grid</h4>
+                <p>Specifies the number of columns in the grid.</p>
+
+                <div class="overflow-x-auto">
+                  <div class="grid grid-1">
+                    <div class="block card grid-center text-center">Grid 1</div>
+                  </div>
+                  <div class="grid grid-2">
+                    <div class="block card grid-center text-center">Grid 2</div>
+                    <div class="block card grid-center text-center">Grid 2</div>
+                  </div>
+                  <div class="grid grid-3">
+                    <div class="block card grid-center text-center">Grid 3</div>
+                    <div class="block card grid-center text-center">Grid 3</div>
+                    <div class="block card grid-center text-center">Grid 3</div>
+                  </div>
+                  <div class="grid grid-4">
+                    <div class="block card grid-center text-center">Grid 4</div>
+                    <div class="block card grid-center text-center">Grid 4</div>
+                    <div class="block card grid-center text-center">Grid 4</div>
+                    <div class="block card grid-center text-center">Grid 4</div>
+                  </div>
+                  <div class="grid grid-5">
+                    <div class="block card grid-center text-center">Grid 5</div>
+                    <div class="block card grid-center text-center">Grid 5</div>
+                    <div class="block card grid-center text-center">Grid 5</div>
+                    <div class="block card grid-center text-center">Grid 5</div>
+                    <div class="block card grid-center text-center">Grid 5</div>
+                  </div>
+                  <div class="grid grid-6">
+                    <div class="block card grid-center text-center">Grid 6</div>
+                    <div class="block card grid-center text-center">Grid 6</div>
+                    <div class="block card grid-center text-center">Grid 6</div>
+                    <div class="block card grid-center text-center">Grid 6</div>
+                    <div class="block card grid-center text-center">Grid 6</div>
+                    <div class="block card grid-center text-center">Grid 6</div>
+                  </div>
+                  <div class="grid grid-7">
+                    <div class="block card grid-center text-center">Grid 7</div>
+                    <div class="block card grid-center text-center">Grid 7</div>
+                    <div class="block card grid-center text-center">Grid 7</div>
+                    <div class="block card grid-center text-center">Grid 7</div>
+                    <div class="block card grid-center text-center">Grid 7</div>
+                    <div class="block card grid-center text-center">Grid 7</div>
+                    <div class="block card grid-center text-center">Grid 7</div>
+                  </div>
+                  <div class="grid grid-8">
+                    <div class="block card grid-center text-center">Grid 8</div>
+                    <div class="block card grid-center text-center">Grid 8</div>
+                    <div class="block card grid-center text-center">Grid 8</div>
+                    <div class="block card grid-center text-center">Grid 8</div>
+                    <div class="block card grid-center text-center">Grid 8</div>
+                    <div class="block card grid-center text-center">Grid 8</div>
+                    <div class="block card grid-center text-center">Grid 8</div>
+                    <div class="block card grid-center text-center">Grid 8</div>
+                  </div>
+                  <div class="grid grid-9">
+                    <div class="block card grid-center text-center">Grid 9</div>
+                    <div class="block card grid-center text-center">Grid 9</div>
+                    <div class="block card grid-center text-center">Grid 9</div>
+                    <div class="block card grid-center text-center">Grid 9</div>
+                    <div class="block card grid-center text-center">Grid 9</div>
+                    <div class="block card grid-center text-center">Grid 9</div>
+                    <div class="block card grid-center text-center">Grid 9</div>
+                    <div class="block card grid-center text-center">Grid 9</div>
+                    <div class="block card grid-center text-center">Grid 9</div>
+                  </div>
+                  <div class="grid grid-10">
+                    <div class="block card grid-center text-center">Grid 10</div>
+                    <div class="block card grid-center text-center">Grid 10</div>
+                    <div class="block card grid-center text-center">Grid 10</div>
+                    <div class="block card grid-center text-center">Grid 10</div>
+                    <div class="block card grid-center text-center">Grid 10</div>
+                    <div class="block card grid-center text-center">Grid 10</div>
+                    <div class="block card grid-center text-center">Grid 10</div>
+                    <div class="block card grid-center text-center">Grid 10</div>
+                    <div class="block card grid-center text-center">Grid 10</div>
+                    <div class="block card grid-center text-center">Grid 10</div>
+                  </div>
+                  <div class="grid grid-11">
+                    <div class="block card grid-center text-center">Grid 11</div>
+                    <div class="block card grid-center text-center">Grid 11</div>
+                    <div class="block card grid-center text-center">Grid 11</div>
+                    <div class="block card grid-center text-center">Grid 11</div>
+                    <div class="block card grid-center text-center">Grid 11</div>
+                    <div class="block card grid-center text-center">Grid 11</div>
+                    <div class="block card grid-center text-center">Grid 11</div>
+                    <div class="block card grid-center text-center">Grid 11</div>
+                    <div class="block card grid-center text-center">Grid 11</div>
+                    <div class="block card grid-center text-center">Grid 11</div>
+                    <div class="block card grid-center text-center">Grid 11</div>
+                  </div>
+                  <div class="grid grid-12">
+                    <div class="block card grid-center text-center">Grid 12</div>
+                    <div class="block card grid-center text-center">Grid 12</div>
+                    <div class="block card grid-center text-center">Grid 12</div>
+                    <div class="block card grid-center text-center">Grid 12</div>
+                    <div class="block card grid-center text-center">Grid 12</div>
+                    <div class="block card grid-center text-center">Grid 12</div>
+                    <div class="block card grid-center text-center">Grid 12</div>
+                    <div class="block card grid-center text-center">Grid 12</div>
+                    <div class="block card grid-center text-center">Grid 12</div>
+                    <div class="block card grid-center text-center">Grid 12</div>
+                    <div class="block card grid-center text-center">Grid 12</div>
+                    <div class="block card grid-center text-center">Grid 12</div>
+                  </div>
+                </div>
+              </div>
+            </section>
+
+            <section>
+              <div class="flow flow-2xs">
+                <h4>Blocks</h4>
+
+                <p>Specifies the number of columns a block will span.</p>
+
+                <div class="flow flow-2xs">
+                  <h5>Grid 12</h5>
+                  <div class="grid grid-12 gap-2xs overflow-x-auto">
+                    <div class="block block-1 card grid-center text-center">Block 1</div>
+                    <div class="block block-1 card grid-center text-center">Block 1</div>
+                    <div class="block block-1 card grid-center text-center">Block 1</div>
+                    <div class="block block-1 card grid-center text-center">Block 1</div>
+                    <div class="block block-1 card grid-center text-center">Block 1</div>
+                    <div class="block block-1 card grid-center text-center">Block 1</div>
+                    <div class="block block-1 card grid-center text-center">Block 1</div>
+                    <div class="block block-1 card grid-center text-center">Block 1</div>
+                    <div class="block block-1 card grid-center text-center">Block 1</div>
+                    <div class="block block-1 card grid-center text-center">Block 1</div>
+                    <div class="block block-1 card grid-center text-center">Block 1</div>
+                    <div class="block block-1 card grid-center text-center">Block 1</div>
+                    <div class="block block-2 card grid-center text-center">Block 2</div>
+                    <div class="block block-2 card grid-center text-center">Block 2</div>
+                    <div class="block block-2 card grid-center text-center">Block 2</div>
+                    <div class="block block-2 card grid-center text-center">Block 2</div>
+                    <div class="block block-2 card grid-center text-center">Block 2</div>
+                    <div class="block block-2 card grid-center text-center">Block 2</div>
+                    <div class="block block-3 card grid-center text-center">Block 3</div>
+                    <div class="block block-3 card grid-center text-center">Block 3</div>
+                    <div class="block block-3 card grid-center text-center">Block 3</div>
+                    <div class="block block-3 card grid-center text-center">Block 3</div>
+                    <div class="block block-4 card grid-center text-center">Block 4</div>
+                    <div class="block block-4 card grid-center text-center">Block 4</div>
+                    <div class="block block-4 card grid-center text-center">Block 4</div>
+                    <div class="block block-6 card grid-center text-center">Block 6</div>
+                    <div class="block block-6 card grid-center text-center">Block 6</div>
+                    <div class="block block-12 card grid-center text-center">Block 12</div>
+                  </div>
+                </div>
+
+                <div class="flow flow-2xs">
+                  <h5>Grid 8</h5>
+                  <div class="grid grid-8 gap-2xs overflow-x-auto">
+                    <div class="block block-1 card grid-center text-center">Block 1</div>
+                    <div class="block block-1 card grid-center text-center">Block 1</div>
+                    <div class="block block-1 card grid-center text-center">Block 1</div>
+                    <div class="block block-1 card grid-center text-center">Block 1</div>
+                    <div class="block block-1 card grid-center text-center">Block 1</div>
+                    <div class="block block-1 card grid-center text-center">Block 1</div>
+                    <div class="block block-1 card grid-center text-center">Block 1</div>
+                    <div class="block block-1 card grid-center text-center">Block 1</div>
+                    <div class="block block-2 card grid-center text-center">Block 2</div>
+                    <div class="block block-2 card grid-center text-center">Block 2</div>
+                    <div class="block block-2 card grid-center text-center">Block 2</div>
+                    <div class="block block-2 card grid-center text-center">Block 2</div>
+                    <div class="block block-4 card grid-center text-center">Block 4</div>
+                    <div class="block block-4 card grid-center text-center">Block 4</div>
+                    <div class="block block-8 card grid-center text-center">Block 8</div>
+                  </div>
+                </div>
+              </div>
+            </section>
+
+            <section>
+              <div class="flow flow-2xs">
+                <h4>Responsive Grid</h4>
+
+                <p>Sets number of columns based on viewport breakpoints.</p>
+
+                <div class="grid grid-2:mobile grid-3:tablet grid-4:lg-tablet grid-6:lg-tablet grid-12:laptop">
+                  <div class="block card grid-center text-center">Block</div>
+                  <div class="block card grid-center text-center">Block</div>
+                  <div class="block card grid-center text-center">Block</div>
+                  <div class="block card grid-center text-center">Block</div>
+                  <div class="block card grid-center text-center">Block</div>
+                  <div class="block card grid-center text-center">Block</div>
+                  <div class="block card grid-center text-center">Block</div>
+                  <div class="block card grid-center text-center">Block</div>
+                  <div class="block card grid-center text-center">Block</div>
+                  <div class="block card grid-center text-center">Block</div>
+                  <div class="block card grid-center text-center">Block</div>
+                  <div class="block card grid-center text-center">Block</div>
+                </div>
+              </div>
+            </section>
+
+            <section>
+              <div class="flow flow-2xs">
+                <h4>Responsive Blocks</h4>
+                <p>Sets amount of columns a block will span based on viewport breakpoints.</p>
+                <div class="grid grid-6:mobile grid-12:lg-tablet">
+                  <div class="block card block-3:mobile grid-center text-center">
+                    Block
+                  </div>
+                  <div class="block card block-3:mobile block-6:lg-tablet grid-center text-center">
+                    Block
+                  </div>
+                  <div class="block card block-6:mobile block-3:lg-tablet grid-center text-center">
+                    Block
+                  </div>
+                </div>
+              </div>
+            </section>
+
+            <section>
+              <div class="flow flow-2xs">
+                <h4>Auto-grid</h4>
+                <p>Specify a minimum width for columns and blocks will responsively flow within the grid.</p>
+                <div class="auto-grid gap-2xs">
+                  <div class="block card grid-center text-center">Block</div>
+                  <div class="block card grid-center text-center">Block</div>
+                  <div class="block card grid-center text-center">Block</div>
+                  <div class="block card grid-center text-center">Block</div>
+                  <div class="block card grid-center text-center">Block</div>
+                  <div class="block card grid-center text-center">Block</div>
+                  <div class="block card grid-center text-center">Block</div>
+                  <div class="block card grid-center text-center">Block</div>
+                  <div class="block card grid-center text-center">Block</div>
+                  <div class="block card grid-center text-center">Block</div>
+                  <div class="block card grid-center text-center">Block</div>
+                  <div class="block card grid-center text-center">Block</div>
+                </div>
+              </div>
+            </section>
+
+            <section>
+              <div class="flow flow-2xs">
+                <h4>Grid with Responsive Gaps</h4>
+                <p>Set column and row gap sizes based on viewport breakpoints.</p>
+                <div class="grid grid-6 gap-3xs:mobile gap-sm:lg-tablet gap-column-lg:tablet gap-row-sm:tablet">
+                  <div class="block card grid-center text-center">Block</div>
+                  <div class="block card grid-center text-center">Block</div>
+                  <div class="block card grid-center text-center">Block</div>
+                  <div class="block card grid-center text-center">Block</div>
+                  <div class="block card grid-center text-center">Block</div>
+                  <div class="block card grid-center text-center">Block</div>
+                  <div class="block card grid-center text-center">Block</div>
+                  <div class="block card grid-center text-center">Block</div>
+                  <div class="block card grid-center text-center">Block</div>
+                  <div class="block card grid-center text-center">Block</div>
+                  <div class="block card grid-center text-center">Block</div>
+                  <div class="block card grid-center text-center">Block</div>
+                </div>
+              </div>
+            </section>
+
+            <section>
+              <div class="flow flow-2xs">
+                <h4>Grid Stack</h4>
+                <p>Stacks elements on top of one another.</p>
+                <div class="grid grid-stack">
+                  <div class="block card grid-center text-center">
+                    <img src="https://images.unsplash.com/photo-1519681393784-d120267933ba?ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D&auto=format&fit=crop&w=2340&q=80"
+                         alt="Mountains">
+                  </div>
+                  <div class="block card grid-center text-center text-color-inverse-base">Block 2</div>
+                </div>
+              </div>
+            </section>
+
+          </section>
+
+          <section class="flow">
+            <h3 id="spacers">Spacers</h3>
+            <div class="flow flow-2xs">
+              <div class="card px-spacer-none">
+                <pre class="mx-spacer-none">--spacer-none</pre>
+              </div>
+              <div class="card px-spacer-auto">
+                <pre class="mx-spacer-none">--spacer-auto</pre>
+              </div>
+              <div class="card px-spacer-3xs">
+                <pre class="mx-spacer-none">--spacer-3xs</pre>
+              </div>
+              <div class="card px-spacer-2xs">
+                <pre class="mx-spacer-none">--spacer-2xs</pre>
+              </div>
+              <div class="card px-spacer-md">
+                <pre class="mx-spacer-none">--spacer-md</pre>
+              </div>
+              <div class="card px-spacer-lg">
+                <pre class="mx-spacer-none">--spacer-lg</pre>
+              </div>
+              <div class="card px-spacer-xl">
+                <pre class="mx-spacer-none">--spacer-xl</pre>
+              </div>
+              <div class="card px-spacer-2xl">
+                <pre class="mx-spacer-none">--spacer-2xl</pre>
+              </div>
+              <div class="card px-spacer-3xl">
+                <pre class="mx-spacer-none">--spacer-3xl</pre>
               </div>
             </div>
-          </div>
-        </section>
+          </section>
 
-        <section>
-          <div class="flow flow-2xs">
-            <h4>Responsive Grid</h4>
-
-            <p>Sets number of columns based on viewport breakpoints.</p>
-
-            <div class="grid grid-2:mobile grid-3:tablet grid-4:lg-tablet grid-6:lg-tablet grid-12:laptop">
-              <div class="block card grid-center text-center">Block</div>
-              <div class="block card grid-center text-center">Block</div>
-              <div class="block card grid-center text-center">Block</div>
-              <div class="block card grid-center text-center">Block</div>
-              <div class="block card grid-center text-center">Block</div>
-              <div class="block card grid-center text-center">Block</div>
-              <div class="block card grid-center text-center">Block</div>
-              <div class="block card grid-center text-center">Block</div>
-              <div class="block card grid-center text-center">Block</div>
-              <div class="block card grid-center text-center">Block</div>
-              <div class="block card grid-center text-center">Block</div>
-              <div class="block card grid-center text-center">Block</div>
-            </div>
-          </div>
-        </section>
-
-        <section>
-          <div class="flow flow-2xs">
-            <h4>Responsive Blocks</h4>
-            <p>Sets amount of columns a block will span based on viewport breakpoints.</p>
-            <div class="grid grid-6:mobile grid-12:lg-tablet">
-              <div class="block card block-3:mobile grid-center text-center">
-                Block
+          <!-- Shadows -->
+          <!-- <section class="flow">
+            <h3>Shadows</h3>
+            <div class="grid gap-3xl">
+              <div class="card shadow-xs">
+                <p>
+                <pre>--shadow-xs</pre>
+                </p>
               </div>
-              <div class="block card block-3:mobile block-6:lg-tablet grid-center text-center">
-                Block
+              <div class="card shadow-sm">
+                <p>
+                <pre>--shadow-sm</pre>
+                </p>
               </div>
-              <div class="block card block-6:mobile block-3:lg-tablet grid-center text-center">
-                Block
+              <div class="card shadow-md">
+                <p>
+                <pre>--shadow-md</pre>
+                </p>
+              </div>
+              <div class="card shadow-lg">
+                <p>
+                <pre>--shadow-lg</pre>
+                </p>
+              </div>
+              <div class="card shadow-xl">
+                <p>
+                <pre>--shadow-xl</pre>
+                </p>
+              </div>
+              <div class="card shadow-2xl">
+                <p>
+                <pre>--shadow-2xl</pre>
+                </p>
               </div>
             </div>
-          </div>
+          </section> -->
         </section>
-
-        <section>
-          <div class="flow flow-2xs">
-            <h4>Auto-grid</h4>
-            <p>Specify a minimum width for columns and blocks will responsively flow within the grid.</p>
-            <div class="auto-grid gap-2xs">
-              <div class="block card grid-center text-center">Block</div>
-              <div class="block card grid-center text-center">Block</div>
-              <div class="block card grid-center text-center">Block</div>
-              <div class="block card grid-center text-center">Block</div>
-              <div class="block card grid-center text-center">Block</div>
-              <div class="block card grid-center text-center">Block</div>
-              <div class="block card grid-center text-center">Block</div>
-              <div class="block card grid-center text-center">Block</div>
-              <div class="block card grid-center text-center">Block</div>
-              <div class="block card grid-center text-center">Block</div>
-              <div class="block card grid-center text-center">Block</div>
-              <div class="block card grid-center text-center">Block</div>
-            </div>
-          </div>
-        </section>
-
-        <section>
-          <div class="flow flow-2xs">
-            <h4>Grid with Responsive Gaps</h4>
-            <p>Set column and row gap sizes based on viewport breakpoints.</p>
-            <div class="grid grid-6 gap-3xs:mobile gap-sm:lg-tablet gap-column-lg:tablet gap-row-sm:tablet">
-              <div class="block card grid-center text-center">Block</div>
-              <div class="block card grid-center text-center">Block</div>
-              <div class="block card grid-center text-center">Block</div>
-              <div class="block card grid-center text-center">Block</div>
-              <div class="block card grid-center text-center">Block</div>
-              <div class="block card grid-center text-center">Block</div>
-              <div class="block card grid-center text-center">Block</div>
-              <div class="block card grid-center text-center">Block</div>
-              <div class="block card grid-center text-center">Block</div>
-              <div class="block card grid-center text-center">Block</div>
-              <div class="block card grid-center text-center">Block</div>
-              <div class="block card grid-center text-center">Block</div>
-            </div>
-          </div>
-        </section>
-
-        <section>
-          <div class="flow flow-2xs">
-            <h4>Grid Stack</h4>
-            <p>Stacks elements on top of one another.</p>
-            <div class="grid grid-stack">
-              <div class="block card grid-center text-center">
-                <img src="https://images.unsplash.com/photo-1519681393784-d120267933ba?ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D&auto=format&fit=crop&w=2340&q=80"
-                     alt="Mountains">
-              </div>
-              <div class="block card grid-center text-center text-color-inverse-base">Block 2</div>
-            </div>
-          </div>
-        </section>
-
-      </section>
-
-      <section class="flow">
-        <h3>Spacing</h3>
-        <div class="flow flow-2xs">
-          <div class="card px-spacer-none">
-            <pre class="mx-spacer-none">--spacer-none</pre>
-          </div>
-          <div class="card px-spacer-auto">
-            <pre class="mx-spacer-none">--spacer-auto</pre>
-          </div>
-          <div class="card px-spacer-3xs">
-            <pre class="mx-spacer-none">--spacer-3xs</pre>
-          </div>
-          <div class="card px-spacer-2xs">
-            <pre class="mx-spacer-none">--spacer-2xs</pre>
-          </div>
-          <div class="card px-spacer-md">
-            <pre class="mx-spacer-none">--spacer-md</pre>
-          </div>
-          <div class="card px-spacer-lg">
-            <pre class="mx-spacer-none">--spacer-lg</pre>
-          </div>
-          <div class="card px-spacer-xl">
-            <pre class="mx-spacer-none">--spacer-xl</pre>
-          </div>
-          <div class="card px-spacer-2xl">
-            <pre class="mx-spacer-none">--spacer-2xl</pre>
-          </div>
-          <div class="card px-spacer-3xl">
-            <pre class="mx-spacer-none">--spacer-3xl</pre>
-          </div>
-        </div>
-      </section>
-
-      <!-- Shadows -->
-      <!-- <section class="flow">
-        <h3>Shadows</h3>
-        <div class="grid gap-3xl">
-          <div class="card shadow-xs">
-            <p>
-            <pre>--shadow-xs</pre>
-            </p>
-          </div>
-          <div class="card shadow-sm">
-            <p>
-            <pre>--shadow-sm</pre>
-            </p>
-          </div>
-          <div class="card shadow-md">
-            <p>
-            <pre>--shadow-md</pre>
-            </p>
-          </div>
-          <div class="card shadow-lg">
-            <p>
-            <pre>--shadow-lg</pre>
-            </p>
-          </div>
-          <div class="card shadow-xl">
-            <p>
-            <pre>--shadow-xl</pre>
-            </p>
-          </div>
-          <div class="card shadow-2xl">
-            <p>
-            <pre>--shadow-2xl</pre>
-            </p>
-          </div>
-        </div>
-      </section> -->
-    </section>
-  </main>
+      </main>
+    </div>
+  </div>
   <script type="module"
           src="/src/main.ts"></script>
 </body>
