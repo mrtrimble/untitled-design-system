@@ -1,36 +1,27 @@
-export default class DialogComponent {
-  identifier;
-  toggles;
+export default class DisclosureComponent {
+  components;
+  toggle;
 
-  constructor(identifier: string, toggles: Element[]) {
-    this.identifier = identifier;
-    this.toggles = toggles;
-  }
+  constructor(components: Element[], toggle: String) {
+    this.components = components;
+    this.toggle = toggle;
 
-  setListeners() {
-    if (this.toggles) {
-      this.toggles.map((toggle) => {
-        toggle.addEventListener('click', () => {
-          const target: string | boolean = toggle.hasAttribute('data-target')
-            ? `${toggle.getAttribute('data-target')}`
-            : false;
+    if (this.components.length) {
+      this.components.forEach(function (component) {
+        if (component instanceof HTMLDetailsElement) return;
 
-          if (target) {
-            const targetElement = document.getElementById(target);
+        const toggleElement = component.querySelector(`${toggle}`);
 
-            if (targetElement) {
-              if (targetElement instanceof HTMLDialogElement) {
-                targetElement.open
-                  ? targetElement.close()
-                  : targetElement.showModal();
-              }
-              targetElement.classList.toggle('open');
-            }
-          }
+        if (toggleElement) {
+          if (!toggleElement.hasAttribute('tab-index')) toggleElement.setAttribute('tabindex', '0');
 
-          return;
-        });
+          toggleElement.addEventListener('click', () => {
+            component.classList.toggle('open');
+          });
+        }
       });
     }
+
+    return;
   }
 }

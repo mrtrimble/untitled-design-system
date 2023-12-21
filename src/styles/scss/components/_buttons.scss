@@ -3,6 +3,7 @@
     container-name: button;
   }
 
+  button,
   .button {
     --_background-color: var(--button-background-color, var(--swatch-salmon));
     --_border-color: var(--button-border-color, transparent);
@@ -47,11 +48,24 @@
         --button-background-color: var(--grayscale-white);
         --button-border-color: var(--grayscale-light);
         --button-border-width: 3px;
+
+        &:active,
+        &:focus-visible {
+          --button-outline-color: canvastext;
+        }
       }
       &.plain {
         --button-background-color: transparent;
         --button-border-color: transparent;
         --button-text-decoration: underline;
+        --button-text-color: canvastext;
+        &:hover {
+          --button-background-color: var(--grayscale-black);
+        }
+        &:active,
+        &:focus-visible {
+          --button-outline-color: canvastext;
+        }
       }
     }
 
@@ -62,7 +76,7 @@
 
       &:active,
       &:focus-visible {
-        --button-outline-color: currentcolor;
+        --button-outline-color: canvastext;
       }
 
       @container button (min-width: 320px) {

@@ -1,9 +1,11 @@
-import BaseDisclosureComponent from './base-disclosure-component';
+import PopoverComponent from './base-popover-component';
 
-class Drawer extends BaseDisclosureComponent {
+export default class Drawer extends PopoverComponent {
   constructor(identifier: string, toggles: Element[]) {
     super(identifier, toggles);
     super.setListeners();
+
+    return;
   }
 }
 

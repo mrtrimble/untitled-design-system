@@ -1,16 +1,18 @@
 @layer components {
   .drawer {
-    --_background-color: var(--drawer-background-color, var(--grayscale-white));
-    --_text-color: var(--drawer-text-color, var(--color-base));
+    --_background-color: var(--drawer-background-color, canvas);
+    --_text-color: var(--drawer-text-color, canvasText);
     --_padding-x: var(--drawer-padding-inline, var(--spacer-xs));
     --_padding-y: var(--drawer-padding-block, var(--spacer-lg));
     --_width: var(--drawer-max-width, 40ch);
     --_transition: var(--drawer-transition, 0.25s ease);
     --_flow-space: var(--drawer-flow-space, var(--spacer-xs));
     --_shadow: var(--drawer-shadow, var(--shadow-xs));
+    --_border: var(--drawer-border, 3px transparent solid);
 
     @layer rules {
       background: var(--_background-color);
+      border: var(--_border);
       color: var(--_text-color);
       display: block;
       height: var(--view-height-100);

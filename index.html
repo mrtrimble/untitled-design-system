@@ -43,7 +43,7 @@
   </style>
 </head>
 
-<body class="py-spacer-md">
+<body class="py-spacer-md no-js">
   <main class="container px-spacer-md flow">
     <header>
       <h1>Design System</h1>
@@ -169,8 +169,18 @@
       <section>
         <div class="flow flow-2xs">
           <h3>Accordions</h3>
+          <div class="accordion">
+            <div class="accordion-header">
+              <span>JavaScript Accordion</span>
+            </div>
+            <div class="accordion-content">
+              <p>Lorem ipsum dolor sit amet consectetur, adipisicing elit. Recusandae fugiat non, aperiam distinctio
+                odit illum pariatur. Reprehenderit corporis soluta possimus sunt. Rerum amet, numquam hic ratione quis
+                doloribus veniam nam.</p>
+            </div>
+          </div>
           <details class="accordion">
-            <summary>Accordion Header</summary>
+            <summary>No JavaScript Accordion</summary>
 
             <p>Lorem ipsum dolor sit amet consectetur adipisicing elit. Illum blanditiis officiis totam quam nisi
               ratione,
@@ -352,11 +362,11 @@
           <h3>Drawers</h3>
           <button class="button drawer-toggle"
                   data-target="example">
-            Open Drawer
+            Open JavaScript Drawer
           </button>
           <div class="drawer"
                id="example">
-            <h4>Drawer Header</h4>
+            <h4>JavaScript Drawer Header</h4>
             <p>Lorem ipsum dolor sit amet consectetur, adipisicing elit. Ex, magni. Non saepe optio tenetur eos
               consequatur in quia iure aliquam ad facere consequuntur error illum aliquid, repudiandae earum vitae
               delectus?</p>
@@ -366,17 +376,20 @@
             </button>
           </div>
           <button class="button drawer-toggle"
-                  data-target="example2">
-            Open Drawer
+                  popovertarget="example-2"
+                  popovertargetaction="toggle">
+            Open Popover Drawer
           </button>
           <div class="drawer"
-               id="example2">
-            <h4>Drawer Header2</h4>
+               popover
+               id="example-2">
+            <h4>Popover Drawer Header</h4>
             <p>Lorem ipsum dolor sit amet consectetur, adipisicing elit. Ex, magni. Non saepe optio tenetur eos
               consequatur in quia iure aliquam ad facere consequuntur error illum aliquid, repudiandae earum vitae
               delectus?</p>
             <button class="button drawer-toggle"
-                    data-target="example2">
+                    popovertarget="example-2"
+                    popovertargetaction="toggle">
               Close Drawer
             </button>
           </div>
@@ -435,6 +448,7 @@
         </div>
       </section>
 
+      <!-- Modals -->
       <section>
         <div class="flow flow-2xs">
           <h3>Modals</h3>
@@ -444,24 +458,28 @@
           </button>
           <dialog class="modal"
                   id="example-modal">
-            <h4>Modal Heading</h4>
-            <p>Lorem ipsum dolor sit, amet consectetur adipisicing elit. Illo ea fugit eligendi possimus ratione
-              excepturi voluptas repudiandae, facere quo magnam. Facilis odio, ipsum harum iste quam nam reiciendis eius
-              nihil!</p>
+            <div class="modal-inner">
+              <h4>Dialog Modal Heading</h4>
+              <p>Lorem ipsum dolor sit, amet consectetur adipisicing elit. Illo ea fugit eligendi possimus ratione
+                excepturi voluptas repudiandae, facere quo magnam. Facilis odio, ipsum harum iste quam nam reiciendis
+                eius
+                nihil!</p>
 
-            <button class="button modal-toggle"
-                    data-target="example-modal">
-              Close Modal
-            </button>
+              <button class="button modal-toggle"
+                      data-target="example-modal">
+                Close Modal
+              </button>
+
+            </div>
           </dialog>
           <button class="button modal-toggle"
                   data-target="example-modal2">
-            Open Div Modal
+            Open JavaScript Modal
           </button>
           <div class="modal"
                id="example-modal2">
             <div class="modal-inner">
-              <h4>Modal Heading</h4>
+              <h4>JavaScript Modal Heading</h4>
               <p>Lorem ipsum dolor sit, amet consectetur adipisicing elit. Illo ea fugit eligendi possimus ratione
                 excepturi voluptas repudiandae, facere quo magnam. Facilis odio, ipsum harum iste quam nam reiciendis
                 eius
@@ -785,10 +803,8 @@
 
       </section>
 
-      <section>
-        <h3>Spacers</h3>
-
-        <h4>Padding</h4>
+      <section class="flow">
+        <h3>Spacing</h3>
         <div class="flow flow-2xs">
           <div class="card px-spacer-none">
             <pre class="mx-spacer-none">--spacer-none</pre>

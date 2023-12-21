@@ -1,9 +1,6 @@
 @layer components {
   .modal {
-    --_backdrop-background-color: var(
-      --modal-backdrop-background-color,
-      rgba(0, 0, 0, 0.5)
-    );
+    --_backdrop-background-color: var(--modal-backdrop-background-color, rgba(0, 0, 0, 0.5));
     --_background-color: var(--modal-background-color, canvas);
     --_border-width: var(--modal-border-width, 3px);
     --_border-color: var(--modal-border-color, transparent);
@@ -11,28 +8,39 @@
     --_flow-space: var(--modal-flow-space, var(--spacer-xs));
     --_padding-x: var(--modal-padding-inline, var(--spacer-md));
     --_padding-y: var(--modal-padding-block, var(--spacer-md));
+    --_max-height: var(--modal-max-height, fit-content);
     --_max-width: var(--modal-max-width, 50ch);
     --_shadow: var(--modal-shadow, var(--shadow-xs));
     --_text-color: var(--modal-text-color, canvasText);
+    --_margin-x: var(--modal-margin-inline, auto);
+    --_margin-y: var(--modal-margin-block, auto);
 
     @layer rules {
-      border: var(--_border-width) var(--_border-color) var(--border-style);
       background-color: var(--_background-color);
-      color: var(--_text-color);
-      margin: auto;
-      padding-inline: var(--_padding-x);
-      padding-block: var(--_padding-y);
-      width: min(100% - var(--spacer-xs), var(--_max-width));
-      transition: opacity, transform;
+      border: var(--_border-width) var(--_border-color) var(--border-style);
       box-shadow: var(--_shadow);
+      color: var(--_text-color);
+      height: var(--_max-height);
+      padding-block: var(--_padding-y);
+      padding-inline: var(--_padding-x);
+      margin-block: var(--_margin-y);
+      margin-inline: var(--_margin-x);
+      transition: opacity, transform;
+      width: min(100% - var(--spacer-xs), var(--_max-width));
       z-index: 10;
 
       > * + * {
         margin-block-start: var(--_flow-space);
       }
 
+      .modal-inner {
+        > * + * {
+          margin-block-start: var(--_flow-space);
+        }
+      }
+
       &:not(dialog) {
-        color: currentColor;
+        color: var(--_text-color);
         display: none;
         height: var(--percentage-100);
         inset-block-start: 0;
@@ -43,25 +51,25 @@
 
         .modal-inner {
           background-color: var(--_background-color);
-          height: auto;
-          margin: auto;
-          padding-inline: var(--_padding-x);
+          height: var(--_max-height);
+          margin: var(--_max-width);
           padding-block: var(--_padding-y);
+          padding-inline: var(--_padding-x);
           width: var(--_max-width);
-
-          > * + * {
-            margin-block-start: var(--_flow-space);
-          }
         }
       }
 
       &::backdrop {
-        --_backdrop-background-color: var(
-          --modal-backdrop-background-color,
-          rgba(0, 0, 0, 0.5)
-        );
+        --_backdrop-background-color: var(--modal-backdrop-background-color, rgba(0, 0, 0, 0.5));
 
         background-color: var(--_backdrop-background-color);
+      }
+    }
+
+    @layer modifiers {
+      &.fullscreen {
+        --modal-max-height: 100%;
+        --modal-max-width: 100%;
       }
     }
 
