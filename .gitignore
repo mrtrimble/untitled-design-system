@@ -26,3 +26,5 @@ dist-ssr
 # Dynamically generated folders
 src/styles/css/
 src/styles/scss/tokens/
+public/icons/*.svg
+public/sprite.svg

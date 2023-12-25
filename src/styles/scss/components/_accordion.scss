@@ -5,8 +5,8 @@
 $TOKENS: meta.module-variables('tokens');
 
 @layer components {
-  :has(> details.accordion) {
-    container-name: --accordion;
+  *:has(> .accordion) {
+    --container-name: accordion;
   }
 
   body.no-js {
@@ -54,6 +54,11 @@ $TOKENS: meta.module-variables('tokens');
 
       .accordion-content {
         display: var(--_display);
+      }
+
+      .marker {
+        transition: transform 0.2s ease;
+        transform-origin: center center;
       }
     }
 

@@ -122,9 +122,6 @@
             <p>Once the tokens are created, running the build script will compile Sass and output a stylesheet that
               includes custom properties and color utility classes for each color.</p>
 
-            <div class="message warning">
-              <p><strong>Warning!</strong> The more colors you add, the larger the final stylesheet will be!</p>
-            </div>
             <h3>Color Samples</h3>
             <div class="auto-grid">
               <div class="card background-color-base">
@@ -242,6 +239,39 @@
         <section class="flow">
           <h2 id="components">Components</h2>
 
+          <section>
+            <div class="flow flow-2xs">
+              <h3 id="forms">Forms</h3>
+
+              <h4>Inputs</h4>
+              <label for="">
+                Input Label
+                <input type="text">
+                <span class="error">This input has an error!</span>
+              </label>
+              <label for="">
+                Input Label
+                <input type="date">
+                <span class="error">This input has an error!</span>
+              </label>
+              <fieldset>
+                <legend>Test</legend>
+                <label for="example-checkbox">
+                  <input type="checkbox"
+                         name="checkbox"
+                         id="example-checkbox">
+                  Default Checkbox
+                </label>
+                <label for="example-radio">
+                  <input type="checkbox"
+                         name="example-radio"
+                         id="example-radio-1">
+                  Default Checkbox
+                </label>
+              </fieldset>
+            </div>
+          </section>
+
           <!-- Accordions -->
           <section>
             <div class="flow flow-2xs">
@@ -254,12 +284,18 @@
 
               <h4>Accordion Examples</h4>
               <div class="accordion">
-                <div class="accordion-header"
+                <div class="accordion-header flex flex-justify-between flex-align-center"
                      id="accordion-header-1"
                      role="button"
                      aria-expanded="true"
                      aria-controls="accordion-content-1">
                   <span>JavaScript Accordion</span>
+                  <span class="marker">
+                    <svg class="icon"
+                         aria-hidden="true">
+                      <use xlink:href="sprite.svg#chevron-right"></use>
+                    </svg>
+                  </span>
                 </div>
                 <div class="accordion-content"
                      id="accordion-content-1"
@@ -599,6 +635,8 @@
         <!-- Typography -->
         <section class="flow">
           <h2>Typography</h2>
+
+          <!-- Body -->
           <section>
             <div class="flow flow-2xs">
               <h3 id="body">Body</h3>
@@ -609,6 +647,8 @@
                 consectetur.</p>
             </div>
           </section>
+
+          <!-- Headings -->
           <section>
             <div class="flow flow-2xs">
               <h3 id="headings">Headings</h3>
@@ -619,6 +659,87 @@
               <h5>Heading Level 5</h5>
               <h6>Heading Level 6</h6>
             </div>
+          </section>
+
+          <!-- Icons -->
+          <section>
+            <h3>Icons</h3>
+
+
+            <div class="card">
+              <p>Hello World!
+                <svg class="icon"
+                     style="stroke: currentColor; background: canvas;"
+                     aria-hidden="true">
+                  <use xlink:href="sprite.svg#heart"></use>
+                </svg>
+              </p>
+            </div>
+            <div class="card auto-grid">
+              <svg class="icon"
+                   aria-hidden="true">
+                <use xlink:href="sprite.svg#heart"></use>
+              </svg>
+              <svg class="icon"
+                   aria-hidden="true">
+                <use xlink:href="sprite.svg#heart-half-full"></use>
+              </svg>
+              <svg class="icon"
+                   aria-hidden="true">
+                <use xlink:href="sprite.svg#heart-empty"></use>
+              </svg>
+              <svg class="icon"
+                   aria-hidden="true">
+                <use xlink:href="sprite.svg#star"></use>
+              </svg>
+              <svg class="icon"
+                   aria-hidden="true">
+                <use xlink:href="sprite.svg#star-half-full"></use>
+              </svg>
+              <svg class="icon"
+                   aria-hidden="true">
+                <use xlink:href="sprite.svg#star-empty"></use>
+              </svg>
+            </div>
+            <div class="card auto-grid">
+              <svg class="icon icon-size-2xs"
+                   aria-hidden="true">
+                <use xlink:href="sprite.svg#heart"></use>
+              </svg>
+              <svg class="icon icon-size-xs"
+                   aria-hidden="true">
+                <use xlink:href="sprite.svg#heart"></use>
+              </svg>
+              <svg class="icon"
+                   aria-hidden="true">
+                <use xlink:href="sprite.svg#heart"></use>
+              </svg>
+              <svg class="icon icon-size-md"
+                   aria-hidden="true">
+                <use xlink:href="sprite.svg#heart"></use>
+              </svg>
+              <svg class="icon icon-size-lg"
+                   aria-hidden="true">
+                <use xlink:href="sprite.svg#heart"></use>
+              </svg>
+              <svg class="icon icon-size-xl"
+                   aria-hidden="true">
+                <use xlink:href="sprite.svg#heart"></use>
+              </svg>
+              <svg class="icon icon-size-2xl"
+                   aria-hidden="true">
+                <use xlink:href="sprite.svg#heart"></use>
+              </svg>
+              <svg class="icon icon-size-3xl"
+                   aria-hidden="true">
+                <use xlink:href="sprite.svg#heart"></use>
+              </svg>
+              <svg class="icon icon-size-4xl"
+                   aria-hidden="true">
+                <use xlink:href="sprite.svg#heart"></use>
+              </svg>
+            </div>
+
           </section>
         </section>
 
@@ -900,7 +1021,8 @@
                     <img src="https://images.unsplash.com/photo-1519681393784-d120267933ba?ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D&auto=format&fit=crop&w=2340&q=80"
                          alt="Mountains">
                   </div>
-                  <div class="block card grid-center text-center text-color-inverse-base">Block 2</div>
+                  <div class="block card grid-center text-center text-color-inverse-base"
+                       style="--card-background-color: transparent;">Block 2</div>
                 </div>
               </div>
             </section>

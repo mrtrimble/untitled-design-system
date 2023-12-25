@@ -1,0 +1,13 @@
+@layer utilities {
+  .flex {
+    display: flex;
+  }
+
+  .flex-justify-between {
+    justify-content: space-between;
+  }
+
+  .flex-align-center {
+    align-items: center;
+  }
+}

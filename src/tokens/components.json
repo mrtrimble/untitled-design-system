@@ -1,0 +1,116 @@
+{
+  "accordion": {
+    "header-padding-inline": {
+      "value": "{spacer.xs.value}"
+    },
+    "header-padding-block": {
+      "value": "{spacer.xs.value}"
+    },
+    "header-background-color": {
+      "value": "{grayscale.lighter.value}"
+    },
+    "header-text-color": {
+      "value": "currentColor"
+    },
+    "content-padding-inline": {
+      "value": "{spacer.xs.value}"
+    },
+    "content-padding-block": {
+      "value": "{spacer.xs.value}"
+    },
+    "background-color": {
+      "value": "{grayscale.lighter.value}"
+    },
+    "text-color": {
+      "value": "currentColor"
+    },
+    "flow-space": {
+      "value": "{spacer.xs.value}"
+    }
+  },
+  "button": {
+    "background-color": {
+      "value": "{swatch.salmon.value}"
+    },
+    "border": {
+      "color": {
+        "value": "transparent"
+      },
+      "width": {
+        "value": "3px"
+      },
+      "style": {
+        "value": "solid"
+      },
+      "radius": {
+        "value": "{spacer.2xs.value}"
+      }
+    },
+    "font-size": {
+      "value": "inherit"
+    },
+    "text": {
+      "color": {
+        "value": "{color.base.value}"
+      },
+      "decoration": {
+        "value": "none"
+      }
+    },
+    "outline": {
+      "color": {
+        "value": "transparent"
+      },
+      "width": {
+        "value": "3px"
+      },
+      "style": {
+        "value": "solid"
+      },
+      "offset": {
+        "value": "3px"
+      }
+    },
+    "padding": {
+      "inline": {
+        "value": "{spacer.xs.value}"
+      },
+      "block": {
+        "value": "{spacer.3xs.value}"
+      }
+    },
+    "width": {
+      "value": "fit-content"
+    }
+  },
+  "card": {
+    "background-color": {
+      "value": "canvas"
+    },
+    "border": {
+      "color": {
+        "value": "canvastext"
+      },
+      "width": {
+        "value": "1px"
+      },
+      "style": {
+        "value": "solid"
+      },
+      "radius": {
+        "value": "0"
+      }
+    },
+    "content": {
+      "margin-inline": {
+        "value": "{spacer.xs.value}"
+      }
+    },
+    "flow-space": {
+      "value": "{spacer.xs.value}"
+    },
+    "text-color": {
+      "value": "canvastext"
+    }
+  }
+}

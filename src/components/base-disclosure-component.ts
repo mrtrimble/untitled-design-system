@@ -19,6 +19,8 @@ export default class DisclosureComponent {
             ? toggleElement.setAttribute('aria-expanded', `${component.classList.contains('open')}`)
             : toggleElement.setAttribute('aria-expanded', 'false');
 
+          let marker = toggleElement.querySelector('.marker');
+
           ['click', 'keypress'].forEach((listener) => {
             toggleElement.addEventListener(listener, (event: Event | KeyboardEvent) => {
               if (event instanceof KeyboardEvent) {
@@ -28,6 +30,10 @@ export default class DisclosureComponent {
                 }
               } else {
                 component.classList.toggle('open');
+              }
+
+              if (marker) {
+                component.classList.contains('open') ? marker.classList.add('rotate-90') : marker.classList.remove('rotate-90');
               }
 
               toggleElement.setAttribute('aria-expanded', `${component.classList.contains('open')}`);

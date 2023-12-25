@@ -1,22 +1,29 @@
+@use 'sass:meta';
+@use 'sass:map';
+@use '../tokens/tokens';
+
+$TOKENS: meta.module-variables('tokens');
+
 @layer components {
   *:has(> .card) {
     --container-name: card;
   }
 
   .card {
-    --_background-color: var(--card-background-color, transparent);
-    --_border-color: var(--card-border-color, var(--grayscale-light));
-    --_border-style: var(--card-border-style, solid);
-    --_border-width: var(--card-border-width, 1px);
-    --_margin-x: var(--card-margin-inline, var(--spacer-xs));
-    --_flow-space: var(--card-flow-space, var(--spacer-xs));
+    --_background-color: var(--card-background-color, #{map.get($TOKENS, card-background-color)});
+    --_border-color: var(--card-border-color, #{map.get($TOKENS, card-border-color)});
+    --_border-style: var(--card-border-style, #{map.get($TOKENS, card-border-style)});
+    --_border-width: var(--card-border-width, #{map.get($TOKENS, card-border-width)});
+    --_margin-x: var(--card-content-margin-inline, #{map.get($TOKENS, card-content-margin-inline)});
+    --_flow-space: var(--card-flow-space, #{map.get($TOKENS, card-flow-space)});
 
     @layer rules {
       display: grid;
+      align-content: start;
       background-color: var(--_background-color);
       border: var(--_border-width) var(--_border-color) var(--_border-style);
 
-      *:not(figure, img) {
+      > *:not(figure, img) {
         margin-inline: var(--_margin-x);
         margin-block-start: var(--_flow-space);
 
@@ -47,6 +54,7 @@
       @supports (container-type: inline-size) {
         @container card (max-width: 20rem) {
           --card-border-style: dashed;
+          --card-border-color: var(--message-error);
           --card-border-width: 4px;
         }
       }

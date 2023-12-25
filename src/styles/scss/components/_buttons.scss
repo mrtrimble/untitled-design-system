@@ -1,25 +1,31 @@
+@use 'sass:meta';
+@use 'sass:map';
+@use '../tokens/tokens';
+
+$TOKENS: meta.module-variables('tokens');
+
 @layer components {
-  .cq-wrapper:has(> .button) {
-    container-name: button;
+  *:has(> .button) {
+    --container-name: button;
   }
 
   button,
   .button {
-    --_background-color: var(--button-background-color, var(--swatch-salmon));
-    --_border-color: var(--button-border-color, transparent);
-    --_border-width: var(--button-border-width, 3px);
-    --_border-style: var(--button-border-style, solid);
-    --_border-radius: var(--button-border-radius, 0.5rem);
-    --_font-size: var(--button-font-size, inherit);
-    --_text-color: var(--button-text-color, var(--color-base));
-    --_outline-color: var(--button-outline-color, transparent);
-    --_outline-style: var(--button-outline-style, solid);
-    --_outline-width: var(--button-outline-width, 3px);
-    --_outline-offset: var(--button-outline-offset, 3px);
-    --_padding-x: var(--button-padding-inline, var(--spacer-xs));
-    --_padding-y: var(--button-padding-block, var(--spacer-3xs));
-    --_text-decoration: var(--button-text-decoration, none);
-    --_width: var(--button-width, fit-content);
+    --_background-color: var(--button-background-color, #{map.get($TOKENS, button-background-color)});
+    --_border-color: var(--button-border-color, #{map.get($TOKENS, button-border-color)});
+    --_border-width: var(--button-border-width, #{map.get($TOKENS, button-border-width)});
+    --_border-style: var(--button-border-style, #{map.get($TOKENS, button-border-style)});
+    --_border-radius: var(--button-border-radius, #{map.get($TOKENS, button-border-radius)});
+    --_font-size: var(--button-font-size, #{map.get($TOKENS, button-font-size)});
+    --_text-color: var(--button-text-color, #{map.get($TOKENS, button-border-color)});
+    --_outline-color: var(--button-outline-color, #{map.get($TOKENS, button-outline-color)});
+    --_outline-style: var(--button-outline-style, #{map.get($TOKENS, button-outline-style)});
+    --_outline-width: var(--button-outline-width, #{map.get($TOKENS, button-outline-width)});
+    --_outline-offset: var(--button-outline-offset, #{map.get($TOKENS, button-outline-offset)});
+    --_padding-x: var(--button-padding-inline, #{map.get($TOKENS, button-padding-inline)});
+    --_padding-y: var(--button-padding-block, #{map.get($TOKENS, button-padding-block)});
+    --_text-decoration: var(--button-text-decoration, #{map.get($TOKENS, button-text-decoration)});
+    --_width: var(--button-width, #{map.get($TOKENS, button-width)});
 
     @layer rules {
       background: var(--_background-color);
@@ -67,7 +73,7 @@
         --button-padding-block: var(--spacer-none);
         &:hover {
           --button-background-color: transparent;
-          // --button-text-color: var(--grayscale-white);
+          --button-text-color: var(--grayscale-white);
         }
         &:active,
         &:focus-visible {
@@ -86,8 +92,8 @@
         --button-outline-color: canvastext;
       }
 
-      @container button (min-width: 320px) {
-        --button-width: fit-content;
+      @container button (max-width: 320px) {
+        --button-background-color: var(--message-success);
       }
     }
 

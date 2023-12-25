@@ -5,12 +5,12 @@ import browserslist from 'browserslist';
 import ViteSvgSpriteWrapper from 'vite-svg-sprite-wrapper';
 
 export default {
-  plugins: [
-    ViteSvgSpriteWrapper({
-      icons: './src/icons/*.svg',
-      outputDir: './public/'
-    }),
-  ],
+  // plugins: [
+  //   ViteSvgSpriteWrapper({
+  //     icons: './src/icons/*.svg',
+  //     outputDir: './public/icons'
+  //   }),
+  // ],
   css: {
     transformer: 'lightningcss',
     lightningcss: {
