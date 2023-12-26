@@ -13,7 +13,7 @@ export default class DisclosureComponent {
         const toggleElement = component.querySelector(`${toggle}`);
 
         if (toggleElement) {
-          if (!toggleElement.hasAttribute('tab-index')) toggleElement.setAttribute('tabindex', '0');
+          if (!toggleElement.hasAttribute('tabindex')) toggleElement.setAttribute('tabindex', '0');
 
           toggleElement.hasAttribute('aria-expanded')
             ? toggleElement.setAttribute('aria-expanded', `${component.classList.contains('open')}`)

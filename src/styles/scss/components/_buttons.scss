@@ -9,7 +9,7 @@ $TOKENS: meta.module-variables('tokens');
     --container-name: button;
   }
 
-  button,
+  button:not(.tab),
   .button {
     --_background-color: var(--button-background-color, #{map.get($TOKENS, button-background-color)});
     --_border-color: var(--button-border-color, #{map.get($TOKENS, button-border-color)});

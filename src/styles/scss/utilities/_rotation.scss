@@ -1,5 +1,8 @@
 @layer utilities {
   .rotate {
+    --_rotation: var(--rotation-degrees, 0deg);
+    transform: rotate(--_rotation);
+
     @for $i from 1 to 19 {
       &-#{$i * 10} {
         --rotation-degrees: #{$i * 10}deg;

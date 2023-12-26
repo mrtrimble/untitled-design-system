@@ -1,0 +1,131 @@
+@layer components {
+  .tabs {
+    @layer rules {
+      display: grid;
+      grid-template-areas:
+        "tab-list"
+        "tab-panel";
+    }
+  }
+
+  .tab-list {
+    --_min: var(--tab-list-column-min, 20ch);
+
+    @layer rules {
+      grid-area: tab-list;
+      display: grid;
+      text-align: center;
+      grid-template-columns: repeat(
+        auto-fit,
+        minmax(min(100%, var(--_min)), 1fr)
+      );
+    }
+
+    @layer states {
+      @media (min-width: 640px) {
+        --tab-list-column-min: 10ch;
+      }
+    }
+  }
+
+  :is(button.tab) {
+    --_background-color: var(--tab-background-color, var(--grayscale-lighter));
+    --_border-color: var(--tab-border-color, transparent);
+    --_border-width: var(--tab-border-width, 5px);
+    --_border-style: var(--tab-border-style, solid);
+    --_text-color: var(--tab-text-color, currentcolor);
+    --_padding-x: var(--tab-padding-inline, var(--spacer-xs));
+    --_padding-y: var(--tab-padding-block, var(--spacer-2xs));
+
+    @layer rules {
+      background-color: var(--_background-color);
+      color: var(--_text-color);
+      padding-inline: var(--_padding-x);
+      padding-block: var(--_padding-y);
+      border-top: var(--_border-width) var(--_border-style) var(--_border-color);
+    }
+
+    @layer states {
+      &.active,
+      [aria-selected="true"],
+      &:active {
+        --tab-background-color: var(--swatch-navy);
+        --tab-text-color: var(--grayscale-white);
+      }
+
+      @media (min-width: 640px) {
+        --tab-background-color: transparent;
+
+        &.active,
+        [aria-selected="true"],
+        &:active {
+          --tab-background-color: var(--grayscale-lighter);
+          --tab-border-color: var(--swatch-navy);
+          --tab-text-color: currentcolor;
+        }
+
+        &:hover {
+          --tab-background-color: var(--grayscale-lighter);
+        }
+      }
+    }
+
+    @layer themes {
+      @media (prefers-color-scheme: dark) {
+        --tab-background-color: var(--grayscale-dark);
+
+        &.active,
+        [aria-selected="true"],
+        &:active {
+          --tab-background-color: var(--grayscale-dark);
+        }
+
+        &:hover {
+          --tab-background-color: var(--grayscale-dark);
+        }
+
+        @media (min-width: 640px) {
+          --tab-background-color: transparent;
+
+          &.active,
+          [aria-selected="true"],
+          &:active {
+            --tab-background-color: var(--grayscale-dark);
+          }
+        }
+      }
+    }
+  }
+
+  :is(.tab-panel, [role="tabpanel"]) {
+    --_background-color: var(--tab-panel-background-color, transparent);
+    --_flow-space: var(--tab-panel-flow-space, var(--spacer-xs));
+    --_padding-x: var(--tab-panel-padding-inline, var(--spacer-xs));
+    --_padding-y: var(--tab-panel-padding-block, var(--spacer-md));
+
+    @layer rules {
+      grid-area: tab-panel;
+      display: none;
+      background-color: var(--_background-color);
+      padding-inline: var(--_padding-x);
+      padding-block: var(--_padding-y);
+
+      > * + * {
+        margin-block-start: var(--_flow-space);
+      }
+    }
+
+    @layer states {
+      &.open {
+        --tab-panel-background-color: var(--grayscale-lighter);
+        display: block;
+      }
+    }
+
+    @layer themes {
+      @media (prefers-color-scheme: dark) {
+        --tab-panel-background-color: var(--grayscale-dark);
+      }
+    }
+  }
+}

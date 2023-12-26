@@ -9,7 +9,9 @@ export default class Drawer extends PopoverComponent {
   }
 }
 
-const toggles = Array.from(document.querySelectorAll('.drawer-toggle'));
-if (toggles.length) {
-  window.addEventListener('load', () => new Drawer('.drawer-toggle', toggles));
-}
+window.addEventListener('load', () => {
+  const toggles = Array.from(document.querySelectorAll('.drawer-toggle'));
+  if (toggles.length) {
+    new Drawer('.drawer-toggle', toggles);
+  }
+});
