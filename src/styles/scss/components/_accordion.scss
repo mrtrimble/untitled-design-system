@@ -27,10 +27,12 @@ $TOKENS: meta.module-variables('tokens');
     --_flow-space: var(--accordion-flow-space, #{map.get($TOKENS, accordion-flow-space)});
 
     --_display: var(--accordion-display, none);
+    --_width: var(--accordion-width, 100%);
 
     @layer rules {
       background-color: var(--_background-color);
       color: var(--_text-color);
+      width: var(--_width);
 
       .accordion-header,
       summary {
