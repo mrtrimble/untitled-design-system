@@ -11,7 +11,9 @@
       background: canvasText;
       color: canvas;
       transform: translateY(-100%);
-      transition: 0.2s ease;
+      @media (prefers-reduced-motion: no-preference) {
+        transition: 0.2s ease;
+      }
     }
 
     @layer states {

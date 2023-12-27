@@ -76,6 +76,9 @@
               <li>
                 <a href="#modals">Modals</a>
               </li>
+              <li>
+                <a href="#tabs">Tabs</a>
+              </li>
             </ul>
           </li>
           <li>
@@ -433,6 +436,8 @@
                   <div class="card background-grayscale-white text-color-base">
                     <figure>
                       <img src="https://images.unsplash.com/photo-1519681393784-d120267933ba?ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D&auto=format&fit=crop&w=2340&q=80"
+                           height="200"
+                           width="300"
                            alt="Mountains">
                     </figure>
                     <h4>Container Query Card</h4>
@@ -445,6 +450,8 @@
                 <div class="card background-grayscale-white text-color-base">
                   <figure>
                     <img src="https://images.unsplash.com/photo-1519681393784-d120267933ba?ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D&auto=format&fit=crop&w=2340&q=80"
+                         height="200"
+                         width="300"
                          alt="Mountains">
                   </figure>
                   <h4>Default Card</h4>
@@ -648,7 +655,7 @@
                           id="tab-1"
                           role="tab"
                           aria-selected="true"
-                          aria-controls="tab-panel-1"
+                          data-target="tab-panel-1"
                           tabindex="0">Tab 1</button>
                   <button class="tab"
                           type="button"
@@ -696,6 +703,23 @@
                     aperiam odit natus maiores dolore nostrum doloremque. Cumque, deserunt vel accusantium accusamus
                     ipsa adipisci praesentium hic consectetur perspiciatis?</p>
                 </div>
+
+                <div role="tabpanel"
+                     class="tab-panel"
+                     id="tab-panel-3"
+                     tabindex="0"
+                     aria-labelledby="tab-3">
+                  <h4>Tab 3 Content</h4>
+                  <p>Lorem ipsum dolor sit amet consectetur adipisicing elit. Esse fugit sed animi, ea molestiae, enim
+                    iure facere non natus, delectus voluptatibus? Aut voluptates quae vel nulla blanditiis laboriosam,
+                    nihil ea.</p>
+                  <p>Exercitationem vitae ex incidunt molestias, nam, nihil, magni sint rem delectus numquam eaque sed
+                    alias adipisci modi perferendis? Aliquam sequi sit doloremque harum consectetur animi vitae ipsum,
+                    soluta quibusdam repellendus.</p>
+                  <p>Reiciendis ex esse, possimus animi sit nihil dicta. Ex modi velit at ipsa deserunt itaque tenetur
+                    id expedita dolor ipsum dolorum, perferendis rem. Nisi autem soluta corrupti id assumenda
+                    repellendus!</p>
+                </div>
                 <div role="tabpanel"
                      class="tab-panel"
                      id="tab-panel-4"
@@ -714,22 +738,6 @@
                   <p>Architecto, eius. Aut laudantium in porro dicta similique ullam assumenda vel corrupti nostrum
                     perferendis, dolores, molestias iure tempora labore eveniet soluta quasi quae! Dolorum quo
                     accusantium expedita assumenda quos accusamus.</p>
-                </div>
-                <div role="tabpanel"
-                     class="tab-panel"
-                     id="tab-panel-3"
-                     tabindex="0"
-                     aria-labelledby="tab-3">
-                  <h4>Tab 3 Content</h4>
-                  <p>Lorem ipsum dolor sit amet consectetur adipisicing elit. Esse fugit sed animi, ea molestiae, enim
-                    iure facere non natus, delectus voluptatibus? Aut voluptates quae vel nulla blanditiis laboriosam,
-                    nihil ea.</p>
-                  <p>Exercitationem vitae ex incidunt molestias, nam, nihil, magni sint rem delectus numquam eaque sed
-                    alias adipisci modi perferendis? Aliquam sequi sit doloremque harum consectetur animi vitae ipsum,
-                    soluta quibusdam repellendus.</p>
-                  <p>Reiciendis ex esse, possimus animi sit nihil dicta. Ex modi velit at ipsa deserunt itaque tenetur
-                    id expedita dolor ipsum dolorum, perferendis rem. Nisi autem soluta corrupti id assumenda
-                    repellendus!</p>
                 </div>
               </div>
             </div>
@@ -1143,6 +1151,8 @@
                 <div class="grid grid-stack">
                   <div class="block card grid-center text-center">
                     <img src="https://images.unsplash.com/photo-1519681393784-d120267933ba?ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D&auto=format&fit=crop&w=2340&q=80"
+                         height="400"
+                         width="600"
                          alt="Mountains">
                   </div>
                   <div class="block card grid-center text-center text-color-inverse-base"

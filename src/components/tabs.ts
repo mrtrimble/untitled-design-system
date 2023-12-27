@@ -13,12 +13,45 @@ export default class Tabs {
   constructor(tabList: Element) {
     this.tabList = tabList;
     this.toggles = Array.from(tabList.querySelectorAll('.tab'));
-    this.panel;
     this.current = this.getCurrentTab();
 
+    this.setCurrentTab(this.toggles[0]);
+
+    let panels: Element[];
+
+    if (this.current.parent) {
+      panels = Array.from(this.current.parent?.querySelectorAll('.tab-panel'));
+
+      if (panels.length) {
+        panels.forEach((panel) => {
+          if (!panel.hasAttribute('role'))
+            panel.setAttribute('role', 'tabpanel');
+          if (!panel.hasAttribute('tabindex'))
+            panel.setAttribute('tabindex', '0');
+        });
+      }
+    }
+
     this.toggles.forEach((toggle) => {
-      toggle.addEventListener('click', this.onClick.bind(this));
-      toggle.addEventListener('keydown', this.onKeydown.bind(this));
+      if (!toggle.hasAttribute('role')) toggle.setAttribute('role', 'tab');
+      if (!toggle.hasAttribute('aria-selected'))
+        toggle.setAttribute('aria-selected', 'false');
+      if (!toggle.hasAttribute('tabindex'))
+        toggle.setAttribute('tabindex', '-1');
+      if (toggle.hasAttribute('data-target')) {
+        toggle.setAttribute(
+          'aria-controls',
+          `${toggle.getAttribute('data-target')}`
+        );
+      }
+
+      if (!this.tabList.hasAttribute('role'))
+        this.tabList.setAttribute('role', 'tablist');
+
+      if (toggle.hasAttribute('aria-controls')) {
+        toggle.addEventListener('click', this.onClick.bind(this));
+        toggle.addEventListener('keydown', this.onKeydown.bind(this));
+      }
     });
 
     return;

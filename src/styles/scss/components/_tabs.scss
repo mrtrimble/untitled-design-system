@@ -1,19 +1,27 @@
 @layer components {
+  body.no-js {
+    --tabs-display: block;
+    --tab-list-display: none;
+    --tab-panel-display: block;
+  }
+
   .tabs {
+    --_display: var(--tabs-display, grid);
     @layer rules {
-      display: grid;
+      display: var(--_display);
       grid-template-areas:
         "tab-list"
         "tab-panel";
     }
   }
 
-  .tab-list {
+  :is(.tab-list, [role="tablist"]) {
     --_min: var(--tab-list-column-min, 20ch);
+    --_display: var(--tab-list-display, grid);
 
     @layer rules {
       grid-area: tab-list;
-      display: grid;
+      display: var(--_display);
       text-align: center;
       grid-template-columns: repeat(
         auto-fit,
@@ -28,7 +36,7 @@
     }
   }
 
-  :is(button.tab) {
+  :is(button.tab, [role="tab"]) {
     --_background-color: var(--tab-background-color, var(--grayscale-lighter));
     --_border-color: var(--tab-border-color, transparent);
     --_border-width: var(--tab-border-width, 5px);
@@ -99,13 +107,14 @@
 
   :is(.tab-panel, [role="tabpanel"]) {
     --_background-color: var(--tab-panel-background-color, transparent);
+    --_display: var(--tab-panel-display, none);
     --_flow-space: var(--tab-panel-flow-space, var(--spacer-xs));
     --_padding-x: var(--tab-panel-padding-inline, var(--spacer-xs));
     --_padding-y: var(--tab-panel-padding-block, var(--spacer-md));
 
     @layer rules {
       grid-area: tab-panel;
-      display: none;
+      display: var(--_display);
       background-color: var(--_background-color);
       padding-inline: var(--_padding-x);
       padding-block: var(--_padding-y);
@@ -118,7 +127,7 @@
     @layer states {
       &.open {
         --tab-panel-background-color: var(--grayscale-lighter);
-        display: block;
+        --tab-panel-display: block;
       }
     }
 
