@@ -14,6 +14,8 @@
       background: var(--_background-color);
       border: var(--_border);
       color: var(--_text-color);
+      height: 100vh;
+      height: 100dvh;
       display: block;
       inset-block-start: 0;
       inset-inline-start: 0;
@@ -26,12 +28,12 @@
       transition: transform var(--_transition);
       width: min(100%, var(--_width));
       z-index: 10;
-      
+
       > * + * {
         margin-block-start: var(--_flow-space);
       }
     }
-    
+
     @layer states {
       &.open,
       &:popover-open {
