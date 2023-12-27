@@ -9,6 +9,9 @@ export default class Modal extends PopoverComponent {
     this.component = component;
     this.toggles = this.getToggles();
 
+    if (!this.component.hasAttribute('role'))
+      this.component.setAttribute('role', 'dialog');
+
     if (this.toggles) {
       super.setToggles(this.toggles);
       super.setTarget(this.component);
