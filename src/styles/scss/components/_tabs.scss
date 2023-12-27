@@ -85,11 +85,11 @@
         &.active,
         [aria-selected="true"],
         &:active {
-          --tab-background-color: var(--grayscale-dark);
+          --tab-background-color: var(--grayscale-black);
         }
 
         &:hover {
-          --tab-background-color: var(--grayscale-dark);
+          --tab-background-color: var(--grayscale-black);
         }
 
         @media (min-width: 640px) {
