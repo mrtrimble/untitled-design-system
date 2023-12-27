@@ -9,6 +9,7 @@ lerna-debug.log*
 
 node_modules
 dist
+lib
 dist-ssr
 *.local
 
@@ -28,3 +29,4 @@ src/styles/css/
 src/styles/scss/tokens/
 public/icons/*.svg
 public/sprite.svg
+**/*.tgz
