@@ -63,6 +63,9 @@ export default class Accordion extends DisclosureComponent {
       if (this.toggle.id)
         this.target?.setAttribute('aria-labelledby', `${this.toggle.id}`);
 
+      if (!this.toggle.hasAttribute('role'))
+        this.toggle.setAttribute('role', 'button');
+
       if (!this.toggle.hasAttribute('aria-controls'))
         this.toggle.setAttribute(
           'aria-controls',
