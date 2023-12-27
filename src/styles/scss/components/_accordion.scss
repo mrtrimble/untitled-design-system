@@ -59,6 +59,7 @@ $TOKENS: meta.module-variables('tokens');
       }
 
       .marker {
+        transform: rotate(0);
         transition: transform 0.2s ease;
         transform-origin: center center;
       }
@@ -69,10 +70,16 @@ $TOKENS: meta.module-variables('tokens');
       &[open],
       &.open {
         --accordion-header-background-color: var(--grayscale-light);
-      }
 
+      }
+      
+      &[open],
       &.open {
         --accordion-display: block;
+
+        .marker {
+          transform: rotate(90deg);
+        }
       }
     }
 
