@@ -1,16 +1,28 @@
-@use 'sass:meta';
-@use 'sass:map';
-@use 'sass:string';
-@use '../tokens/tokens' as tokens;
-@use '../functions' as functions;
+@use "sass:meta";
+@use "sass:map";
+@use "sass:string";
+@use "../tokens/tokens" as tokens;
+@use "../functions" as functions;
 
 $FONT_SIZE: 18px !default;
-$FONT_SIZE_PREFIX: 'font-size' !default;
-$FONT_SIZE_TOKENS: functions.getList(meta.module-variables('tokens'), $FONT_SIZE_PREFIX);
+$FONT_SIZE_PREFIX: "font-size" !default;
+$FONT_SIZE_TOKENS: functions.getList(
+  meta.module-variables("tokens"),
+  $FONT_SIZE_PREFIX
+);
 
 @layer globals {
   html {
     font-size: $FONT_SIZE;
+    color-scheme: var(--body-theme, dark light);
+
+    &:has(body.light) {
+      --body-theme: light;
+    }
+
+    &:has(body.dark) {
+      --body-theme: dark;
+    }
 
     @media (prefers-reduced-motion: no-preference) {
       scroll-behavior: smooth;
@@ -20,7 +32,10 @@ $FONT_SIZE_TOKENS: functions.getList(meta.module-variables('tokens'), $FONT_SIZE
   @layer typography {
     body {
       --_text-color: var(--body-color-base, #{tokens.$color-base});
-      --_text-color-inverse: var(--body-color-inverse-base, #{tokens.$color-inverse-base});
+      --_text-color-inverse: var(
+        --body-color-inverse-base,
+        #{tokens.$color-inverse-base}
+      );
       --_font-family: var(--body-font-family, system-ui);
       --_font-size: var(--body-font-size, #{tokens.$font-size-xs});
 
@@ -29,20 +44,32 @@ $FONT_SIZE_TOKENS: functions.getList(meta.module-variables('tokens'), $FONT_SIZE
       font-family: var(--_font-family);
       font-size: var(--_font-size);
       color: var(--_text-color);
+      background-color: var(--_background-color);
       scroll-margin-block-start: var(--_scroll-offset);
 
       @media (prefers-color-scheme: dark) {
-        color: var(--_text-color-inverse);
+        --_text-color: var(--color-inverse-base);
+        --_background-color: var(--color-base);
+      }
+
+      &.dark {
+        --_text-color: var(--color-inverse-base);
+        --_background-color: var(--color-base);
+      }
+
+      &.light {
+        --_text-color: var(--color-base);
+        --_background-color: var(--grayscale-white);
       }
     }
 
     $headings: (
-      'h6': var(--font-size-xs),
-      'h5': var(--font-size-md),
-      'h4': var(--font-size-lg),
-      'h3': var(--font-size-xl),
-      'h2': var(--font-size-2xl),
-      'h1': var(--font-size-3xl),
+      "h6": var(--font-size-xs),
+      "h5": var(--font-size-md),
+      "h4": var(--font-size-lg),
+      "h3": var(--font-size-xl),
+      "h2": var(--font-size-2xl),
+      "h1": var(--font-size-3xl),
     );
 
     @each $heading, $value in $headings {

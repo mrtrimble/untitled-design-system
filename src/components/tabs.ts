@@ -34,10 +34,13 @@ export default class Tabs {
 
     this.toggles.forEach((toggle) => {
       if (!toggle.hasAttribute('role')) toggle.setAttribute('role', 'tab');
+
       if (!toggle.hasAttribute('aria-selected'))
         toggle.setAttribute('aria-selected', 'false');
+
       if (!toggle.hasAttribute('tabindex'))
         toggle.setAttribute('tabindex', '-1');
+      
       if (toggle.hasAttribute('data-target')) {
         toggle.setAttribute(
           'aria-controls',

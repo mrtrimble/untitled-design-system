@@ -1,36 +1,33 @@
 export default class PopoverComponent {
-  identifier;
-  toggles;
+  target: Element | null;
+  toggles: Element[] | null;
+  callback: Function | null;
 
-  constructor(identifier: string, toggles: Element[]) {
-    this.identifier = identifier;
-    this.toggles = toggles;
-
-    return;
+  constructor() {
+    this.target = null;
+    this.toggles = null;
+    this.callback = null;
   }
 
-  setListeners() {
-    if (this.toggles) {
-      this.toggles.map((toggle) => {
-        toggle.addEventListener('click', () => {
-          if (toggle.hasAttribute('popovertarget')) return;
+  setTarget(target: Element) {
+    return (this.target = target);
+  }
 
-          const target: string | boolean = toggle.hasAttribute('data-target') ? `${toggle.getAttribute('data-target')}` : false;
+  setToggles(toggles: Element[]) {
+    return (this.toggles = toggles);
+  }
 
-          if (target) {
-            const targetElement = document.getElementById(target);
+  setCallback(callback: Function) {
+    return (this.callback = callback ? callback : null);
+  }
 
-            if (targetElement) {
-              if (targetElement instanceof HTMLDialogElement) {
-                targetElement.open ? targetElement.close() : targetElement.showModal();
-              }
-              targetElement.classList.toggle('open');
-            }
-          }
-
-          return;
-        });
-      });
+  onClick() {
+    if (this.target instanceof HTMLDialogElement) {
+      this.target.open ? this.target.close() : this.target.showModal();
     }
+
+    this.target?.classList.toggle('open');
+
+    if (this.callback) this.callback();
   }
 }

@@ -1,48 +1,40 @@
 export default class DisclosureComponent {
-  components;
-  toggle;
+  target: Element | null;
+  toggle: Element | null;
+  callback: Function | null;
 
-  constructor(components: Element[], toggle: String) {
-    this.components = components;
-    this.toggle = toggle;
+  constructor() {
+    this.target = null;
+    this.toggle = null;
+    this.callback = null;
+  }
 
-    if (this.components.length) {
-      this.components.forEach(function (component) {
-        if (component instanceof HTMLDetailsElement) return;
+  setTarget(target: Element) {
+    return (this.target = target);
+  }
 
-        const toggleElement = component.querySelector(`${toggle}`);
+  setToggle(toggle: Element) {
+    toggle.setAttribute(
+      'aria-expanded',
+      `${toggle.classList.contains('open')}`
+    );
+    return (this.toggle = toggle);
+  }
 
-        if (toggleElement) {
-          if (!toggleElement.hasAttribute('tabindex')) toggleElement.setAttribute('tabindex', '0');
+  setCallback(callback: Function) {
+    return (this.callback = callback ? callback : null);
+  }
 
-          toggleElement.hasAttribute('aria-expanded')
-            ? toggleElement.setAttribute('aria-expanded', `${component.classList.contains('open')}`)
-            : toggleElement.setAttribute('aria-expanded', 'false');
-
-          let marker = toggleElement.querySelector('.marker');
-
-          ['click', 'keypress'].forEach((listener) => {
-            toggleElement.addEventListener(listener, (event: Event | KeyboardEvent) => {
-              if (event instanceof KeyboardEvent) {
-                if (event.code === 'Space' || event.code === 'Enter') {
-                  event.preventDefault();
-                  component.classList.toggle('open');
-                }
-              } else {
-                component.classList.toggle('open');
-              }
-
-              if (marker) {
-                component.classList.contains('open') ? marker.classList.add('rotate-90') : marker.classList.remove('rotate-90');
-              }
-
-              toggleElement.setAttribute('aria-expanded', `${component.classList.contains('open')}`);
-            });
-          });
-        }
-      });
+  onClick() {
+    if (this.toggle && this.target) {
+      this.toggle.classList.toggle('open');
+      this.toggle.setAttribute(
+        'aria-expanded',
+        `${this.toggle.classList.contains('open')}`
+      );
+      this.target.classList.toggle('active');
     }
 
-    return;
+    if (this.callback) this.callback();
   }
 }
