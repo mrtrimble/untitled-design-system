@@ -106,7 +106,7 @@
   }
 
   :is(.tab-panel, [role="tabpanel"]) {
-    --_background-color: var(--tab-panel-background-color, transparent);
+    --_background-color: var(--tab-panel-background-color, var(--grayscale-lighter));
     --_display: var(--tab-panel-display, none);
     --_flow-space: var(--tab-panel-flow-space, var(--spacer-xs));
     --_padding-x: var(--tab-panel-padding-inline, var(--spacer-xs));
@@ -126,7 +126,6 @@
 
     @layer states {
       &.open {
-        --tab-panel-background-color: var(--grayscale-lighter);
         --tab-panel-display: block;
       }
     }
