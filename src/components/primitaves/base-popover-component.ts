@@ -1,6 +1,6 @@
 export default class PopoverComponent {
-  target: Element | null;
-  toggles: Element[] | null;
+  target: HTMLElement | null;
+  toggles: HTMLElement[] | null;
   callback: Function | null;
 
   constructor() {
@@ -9,11 +9,11 @@ export default class PopoverComponent {
     this.callback = null;
   }
 
-  setTarget(target: Element) {
+  setTarget(target: HTMLElement) {
     return (this.target = target);
   }
 
-  setToggles(toggles: Element[]) {
+  setToggles(toggles: HTMLElement[]) {
     return (this.toggles = toggles);
   }
 

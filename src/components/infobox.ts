@@ -1,11 +1,11 @@
-import DisclosureComponent from './base-disclosure-component';
+import DisclosureComponent from './primitaves/base-disclosure-component';
 
 export default class Test extends DisclosureComponent {
-  toggle: Element | null;
-  target: Element | null;
-  element: Element | null;
+  toggle: HTMLElement | null;
+  target: HTMLElement | null;
+  element: HTMLElement | null;
 
-  constructor(element: Element) {
+  constructor(element: HTMLElement) {
     super();
     super.setCallback(this.handleCallback);
     this.element = element;
@@ -20,27 +20,19 @@ export default class Test extends DisclosureComponent {
     }
   }
 
-  getToggle() {
-    let toggle = this.element
-      ? this.element.querySelector('[data-toggle]')
-      : null;
+  getToggle(): HTMLElement | null {
+    let toggle: HTMLElement | null = this.element ? this.element.querySelector('[data-toggle]') : null;
 
     if (toggle) {
-      if (!toggle.hasAttribute('aria-controls'))
-        toggle.setAttribute(
-          'aria-controls',
-          `${toggle.getAttribute('data-target')}`
-        );
+      if (!toggle.hasAttribute('aria-controls')) toggle.setAttribute('aria-controls', `${toggle.getAttribute('data-target')}`);
     }
 
     return toggle;
   }
 
-  getTarget() {
+  getTarget(): HTMLElement | null {
     if (this.toggle instanceof HTMLElement) {
-      return this.element
-        ? this.element.querySelector(`#${this.toggle.dataset.target}`)
-        : null;
+      return this.element ? this.element.querySelector(`#${this.toggle.dataset.target}`) : null;
     }
 
     return null;
@@ -57,5 +49,5 @@ export default class Test extends DisclosureComponent {
 
 window.addEventListener('load', () => {
   const tests = document.querySelectorAll('.disclosure');
-  tests.forEach((test) => new Test(test));
+  tests.forEach((test) => new Test(test as HTMLElement));
 });

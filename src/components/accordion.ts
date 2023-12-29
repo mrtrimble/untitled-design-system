@@ -1,8 +1,8 @@
-import DisclosureComponent from './base-disclosure-component';
+import DisclosureComponent from './primitaves/base-disclosure-component';
 export default class Accordion extends DisclosureComponent {
-  component: Element | null;
+  component: HTMLElement | null;
 
-  constructor(component: Element | null) {
+  constructor(component: HTMLElement | null) {
     super();
 
     this.component = component;
@@ -19,77 +19,46 @@ export default class Accordion extends DisclosureComponent {
     }
   }
 
-  getToggle(): Element | null {
-    let toggle = this.component
-      ? this.component.querySelector('.accordion-header')
-      : null;
+  getToggle(): HTMLElement | null {
+    let toggle: HTMLElement | null = this.component ? this.component.querySelector('.accordion-header') : null;
 
     if (toggle) {
-      if (toggle.id)
-        this.target?.setAttribute('aria-labelledby', `${toggle.id}`);
+      if (toggle.id) this.target?.setAttribute('aria-labelledby', `${toggle.id}`);
 
-      if (!toggle.hasAttribute('aria-controls'))
-        toggle.setAttribute(
-          'aria-controls',
-          `${toggle.getAttribute('data-target')}`
-        );
+      if (!toggle.hasAttribute('aria-controls')) toggle.setAttribute('aria-controls', `${toggle.getAttribute('data-target')}`);
 
-      if (!toggle.hasAttribute('aria-expanded'))
-        toggle.setAttribute('aria-expanded', 'false');
+      if (!toggle.hasAttribute('aria-expanded')) toggle.setAttribute('aria-expanded', 'false');
 
-      if (
-        !toggle.hasAttribute('aria-controls') &&
-        this.target?.hasAttribute('id')
-      )
-        toggle.setAttribute(
-          'aria-controls',
-          `${this.target && this.target.id}`
-        );
+      if (!toggle.hasAttribute('aria-controls') && this.target?.hasAttribute('id'))
+        toggle.setAttribute('aria-controls', `${this.target && this.target.id}`);
     }
 
     return toggle;
   }
 
-  getTarget(): Element | null {
-    let target = this.component
-      ? this.component.querySelector('.accordion-content')
-      : null;
+  getTarget(): HTMLElement | null {
+    let target: HTMLElement | null = this.component ? this.component.querySelector('.accordion-content') : null;
 
     return target;
   }
 
   setAttributes() {
     if (this.toggle) {
-      if (this.toggle.id)
-        this.target?.setAttribute('aria-labelledby', `${this.toggle.id}`);
+      if (this.toggle.id) this.target?.setAttribute('aria-labelledby', `${this.toggle.id}`);
 
-      if (!this.toggle.hasAttribute('role'))
-        this.toggle.setAttribute('role', 'button');
+      if (!this.toggle.hasAttribute('role')) this.toggle.setAttribute('role', 'button');
 
-      if (!this.toggle.hasAttribute('aria-controls'))
-        this.toggle.setAttribute(
-          'aria-controls',
-          `${this.toggle.getAttribute('data-target')}`
-        );
+      if (!this.toggle.hasAttribute('aria-controls')) this.toggle.setAttribute('aria-controls', `${this.toggle.getAttribute('data-target')}`);
 
-      if (!this.toggle.hasAttribute('aria-expanded'))
-        this.toggle.setAttribute('aria-expanded', 'false');
+      if (!this.toggle.hasAttribute('aria-expanded')) this.toggle.setAttribute('aria-expanded', 'false');
 
-      if (
-        !this.toggle.hasAttribute('aria-controls') &&
-        this.target?.hasAttribute('id')
-      )
-        this.toggle.setAttribute(
-          'aria-controls',
-          `${this.target && this.target.id}`
-        );
+      if (!this.toggle.hasAttribute('aria-controls') && this.target?.hasAttribute('id'))
+        this.toggle.setAttribute('aria-controls', `${this.target && this.target.id}`);
     }
 
     if (this.target) {
-      if (this.target.id)
-        this.toggle?.setAttribute('aria-controls', `${this.target.id}`);
-      if (!this.target.hasAttribute('role'))
-        this.target?.setAttribute('role', 'region');
+      if (this.target.id) this.toggle?.setAttribute('aria-controls', `${this.target.id}`);
+      if (!this.target.hasAttribute('role')) this.target?.setAttribute('role', 'region');
     }
   }
 
@@ -103,11 +72,9 @@ export default class Accordion extends DisclosureComponent {
 }
 
 window.addEventListener('load', () => {
-  const accordions = Array.from(
-    document.querySelectorAll(':not(details).accordion')
-  );
+  const accordions = Array.from(document.querySelectorAll(':not(details).accordion'));
 
   if (accordions.length) {
-    accordions.forEach((accordion) => new Accordion(accordion));
+    accordions.forEach((accordion) => new Accordion(accordion as HTMLElement));
   }
 });

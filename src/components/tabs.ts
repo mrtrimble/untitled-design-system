@@ -1,33 +1,31 @@
 interface Tab {
   parent: ParentNode | null;
   toggle: HTMLElement | null;
-  panel: Element | null;
+  panel: HTMLElement | null;
 }
 
 export default class Tabs {
-  tabList: Element;
-  toggles: Element[];
-  panel: Element | null = null;
+  tabList: HTMLElement;
+  toggles: HTMLElement[];
+  panel: HTMLElement | null = null;
   current: Tab;
 
-  constructor(tabList: Element) {
+  constructor(tabList: HTMLElement) {
     this.tabList = tabList;
     this.toggles = Array.from(tabList.querySelectorAll('.tab'));
     this.current = this.getCurrentTab();
 
     this.setCurrentTab(this.toggles[0]);
 
-    let panels: Element[];
+    let panels: HTMLElement[];
 
     if (this.current.parent) {
       panels = Array.from(this.current.parent?.querySelectorAll('.tab-panel'));
 
       if (panels.length) {
         panels.forEach((panel) => {
-          if (!panel.hasAttribute('role'))
-            panel.setAttribute('role', 'tabpanel');
-          if (!panel.hasAttribute('tabindex'))
-            panel.setAttribute('tabindex', '0');
+          if (!panel.hasAttribute('role')) panel.setAttribute('role', 'tabpanel');
+          if (!panel.hasAttribute('tabindex')) panel.setAttribute('tabindex', '0');
         });
       }
     }
@@ -35,21 +33,15 @@ export default class Tabs {
     this.toggles.forEach((toggle) => {
       if (!toggle.hasAttribute('role')) toggle.setAttribute('role', 'tab');
 
-      if (!toggle.hasAttribute('aria-selected'))
-        toggle.setAttribute('aria-selected', 'false');
+      if (!toggle.hasAttribute('aria-selected')) toggle.setAttribute('aria-selected', 'false');
 
-      if (!toggle.hasAttribute('tabindex'))
-        toggle.setAttribute('tabindex', '-1');
-      
+      if (!toggle.hasAttribute('tabindex')) toggle.setAttribute('tabindex', '-1');
+
       if (toggle.hasAttribute('data-target')) {
-        toggle.setAttribute(
-          'aria-controls',
-          `${toggle.getAttribute('data-target')}`
-        );
+        toggle.setAttribute('aria-controls', `${toggle.getAttribute('data-target')}`);
       }
 
-      if (!this.tabList.hasAttribute('role'))
-        this.tabList.setAttribute('role', 'tablist');
+      if (!this.tabList.hasAttribute('role')) this.tabList.setAttribute('role', 'tablist');
 
       if (toggle.hasAttribute('aria-controls')) {
         toggle.addEventListener('click', this.onClick.bind(this));
@@ -61,11 +53,9 @@ export default class Tabs {
   }
 
   getCurrentTab() {
-    const parent: ParentNode | null = this.tabList.parentNode
-      ? this.tabList.parentNode
-      : null;
+    const parent: ParentNode | null = this.tabList.parentNode ? this.tabList.parentNode : null;
     let toggle: HTMLElement | null = null;
-    let panel: Element | null = null;
+    let panel: HTMLElement | null = null;
     if (parent) {
       toggle = parent.querySelector('.tab.active');
       panel = parent.querySelector(`#${toggle?.getAttribute('aria-controls')}`);
@@ -101,7 +91,7 @@ export default class Tabs {
     return;
   }
 
-  setCurrentTab(tab: Element | EventTarget | null) {
+  setCurrentTab(tab: HTMLElement | EventTarget | null) {
     this.clearCurrentTab();
 
     let selected: Tab = {
@@ -113,15 +103,11 @@ export default class Tabs {
     if (tab instanceof HTMLElement) {
       selected.toggle = tab;
 
-      selected.parent = tab.parentNode?.parentNode
-        ? tab.parentNode.parentNode
-        : null;
+      selected.parent = tab.parentNode?.parentNode ? tab.parentNode.parentNode : null;
 
-      const targetId = selected.parent?.querySelector(
-        `#${selected.toggle.getAttribute('aria-controls')}`
-      );
+      const targetId = selected.parent?.querySelector(`#${selected.toggle.getAttribute('aria-controls')}`);
 
-      selected.panel = targetId ? targetId : null;
+      selected.panel = targetId ? targetId as HTMLElement : null;
     }
 
     this.current = {
@@ -188,6 +174,6 @@ export default class Tabs {
 window.addEventListener('load', function () {
   const tablists = document.querySelectorAll('.tab-list');
   if (tablists.length) {
-    tablists.forEach((tablist) => new Tabs(tablist));
+    tablists.forEach((tablist) => new Tabs(tablist as HTMLElement));
   }
 });

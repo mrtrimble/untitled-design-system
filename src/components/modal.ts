@@ -1,16 +1,15 @@
-import PopoverComponent from './base-popover-component';
+import PopoverComponent from './primitaves/base-popover-component';
 
 export default class Modal extends PopoverComponent {
-  component: Element | null;
-  toggles: Element[] | null;
+  component: HTMLElement | null;
+  toggles: HTMLElement[] | null;
 
-  constructor(component: Element) {
+  constructor(component: HTMLElement) {
     super();
     this.component = component;
     this.toggles = this.getToggles();
 
-    if (!this.component.hasAttribute('role'))
-      this.component.setAttribute('role', 'dialog');
+    if (!this.component.hasAttribute('role')) this.component.setAttribute('role', 'dialog');
 
     if (this.toggles) {
       super.setToggles(this.toggles);
@@ -19,10 +18,8 @@ export default class Modal extends PopoverComponent {
     }
   }
 
-  getToggles(): Element[] | null {
-    const toggles = Array.from(
-      document.querySelectorAll('.modal-toggle')
-    ).filter((toggle) => {
+  getToggles(): HTMLElement[] | null {
+    const toggles = Array.from(document.querySelectorAll('.modal-toggle')).filter((toggle) => {
       if (toggle instanceof HTMLElement) {
         if (this.component) {
           return toggle.dataset.target === this.component.id;
@@ -30,7 +27,7 @@ export default class Modal extends PopoverComponent {
       }
     });
     if (toggles) {
-      return toggles;
+      return toggles as HTMLElement[];
     }
 
     return null;
@@ -49,6 +46,6 @@ window.addEventListener('load', () => {
   const modals = document.querySelectorAll('.modal');
 
   if (modals.length) {
-    modals.forEach((modal) => new Modal(modal));
+    modals.forEach((modal) => new Modal(modal as HTMLElement));
   }
 });

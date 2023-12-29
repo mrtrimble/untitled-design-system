@@ -10,12 +10,12 @@
     @layer rules {
       display: var(--_display);
       grid-template-areas:
-        "tab-list"
-        "tab-panel";
+        'tab-list'
+        'tab-panel';
     }
   }
 
-  :is(.tab-list, [role="tablist"]) {
+  :is(.tab-list, [role='tablist']) {
     --_min: var(--tab-list-column-min, 20ch);
     --_display: var(--tab-list-display, grid);
 
@@ -23,10 +23,7 @@
       grid-area: tab-list;
       display: var(--_display);
       text-align: center;
-      grid-template-columns: repeat(
-        auto-fit,
-        minmax(min(100%, var(--_min)), 1fr)
-      );
+      grid-template-columns: repeat(auto-fit, minmax(min(100%, var(--_min)), 1fr));
     }
 
     @layer states {
@@ -36,7 +33,7 @@
     }
   }
 
-  :is(button.tab, [role="tab"]) {
+  :is(button.tab, [role='tab']) {
     --_background-color: var(--tab-background-color, var(--grayscale-lighter));
     --_border-color: var(--tab-border-color, transparent);
     --_border-width: var(--tab-border-width, 5px);
@@ -55,7 +52,7 @@
 
     @layer states {
       &.active,
-      [aria-selected="true"],
+      [aria-selected='true'],
       &:active {
         --tab-background-color: var(--swatch-navy);
         --tab-text-color: var(--grayscale-white);
@@ -65,7 +62,7 @@
         --tab-background-color: transparent;
 
         &.active,
-        [aria-selected="true"],
+        [aria-selected='true'],
         &:active {
           --tab-background-color: var(--grayscale-lighter);
           --tab-border-color: var(--swatch-navy);
@@ -83,7 +80,7 @@
         --tab-background-color: var(--grayscale-dark);
 
         &.active,
-        [aria-selected="true"],
+        [aria-selected='true'],
         &:active {
           --tab-background-color: var(--grayscale-black);
         }
@@ -96,7 +93,7 @@
           --tab-background-color: transparent;
 
           &.active,
-          [aria-selected="true"],
+          [aria-selected='true'],
           &:active {
             --tab-background-color: var(--grayscale-dark);
           }
@@ -105,7 +102,7 @@
     }
   }
 
-  :is(.tab-panel, [role="tabpanel"]) {
+  :is(.tab-panel, [role='tabpanel']) {
     --_background-color: var(--tab-panel-background-color, var(--grayscale-lighter));
     --_display: var(--tab-panel-display, none);
     --_flow-space: var(--tab-panel-flow-space, var(--spacer-xs));

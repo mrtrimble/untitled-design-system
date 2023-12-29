@@ -1,4 +1,4 @@
-$STATES: ("default", "info", "warning", "success", "error") !default;
+$STATES: ('default', 'info', 'warning', 'success', 'error') !default;
 
 @layer components {
   :has(> .message) {
@@ -7,10 +7,7 @@ $STATES: ("default", "info", "warning", "success", "error") !default;
 
   .message {
     --_color: var(--message-color, var(--message-default-darken-300));
-    --_background-color: var(
-      --message-background-color,
-      var(--message-default)
-    );
+    --_background-color: var(--message-background-color, var(--message-default));
     --_padding-x: var(--message-padding-inline, var(--spacer-2xs));
     --_padding-y: var(--message-padding-block, var(--spacer-xs));
     --_border-color: var(--message-border-color, var(--message-default));
@@ -19,23 +16,30 @@ $STATES: ("default", "info", "warning", "success", "error") !default;
 
     @layer rules {
       color: var(--_color);
-      background: color-mix(
-        in lab,
-        var(--_background-color),
-        var(--grayscale-white) 90%
-      );
+      background: color-mix(in lab, var(--_background-color), var(--grayscale-white) 70%);
       padding-inline: var(--_padding-x);
       padding-block: var(--_padding-y);
-      border-left: var(--_border-width) var(--_border-color)
-        var(--_border-style);
+      border-left: var(--_border-width) var(--_border-color) var(--_border-style);
     }
 
     @layer states {
       @each $state in $STATES {
         &.#{$state} {
-          --message-color: var(--message-#{$state});
+          // --message-color: var(--message-#{$state});
           --message-background-color: var(--message-#{$state});
           --message-border-color: var(--message-#{$state});
+        }
+      }
+    }
+
+    @layer themes {
+      @media (prefers-color-scheme: dark) {
+        @each $state in $STATES {
+          &.#{$state} {
+            --message-color: var(--grayscale-white);
+            --message-border-color: transparent;
+            background-color: var(--message-#{$state});
+          }
         }
       }
     }

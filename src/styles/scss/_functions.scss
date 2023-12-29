@@ -1,6 +1,6 @@
-@use "sass:meta";
-@use "sass:list";
-@use "sass:string";
+@use 'sass:meta';
+@use 'sass:list';
+@use 'sass:string';
 
 // Returns a list of tokens with a specific prefix
 @function getList($tokens, $prefix) {

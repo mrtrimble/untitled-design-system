@@ -1,6 +1,6 @@
 export default class DisclosureComponent {
-  target: Element | null;
-  toggle: Element | null;
+  target: HTMLElement | null;
+  toggle: HTMLElement | null;
   callback: Function | null;
 
   constructor() {
@@ -9,15 +9,12 @@ export default class DisclosureComponent {
     this.callback = null;
   }
 
-  setTarget(target: Element) {
+  setTarget(target: HTMLElement) {
     return (this.target = target);
   }
 
-  setToggle(toggle: Element) {
-    toggle.setAttribute(
-      'aria-expanded',
-      `${toggle.classList.contains('open')}`
-    );
+  setToggle(toggle: HTMLElement) {
+    toggle.setAttribute('aria-expanded', `${toggle.classList.contains('open')}`);
     return (this.toggle = toggle);
   }
 
@@ -28,10 +25,7 @@ export default class DisclosureComponent {
   onClick() {
     if (this.toggle && this.target) {
       this.toggle.classList.toggle('open');
-      this.toggle.setAttribute(
-        'aria-expanded',
-        `${this.toggle.classList.contains('open')}`
-      );
+      this.toggle.setAttribute('aria-expanded', `${this.toggle.classList.contains('open')}`);
       this.target.classList.toggle('active');
     }
 

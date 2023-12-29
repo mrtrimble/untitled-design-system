@@ -1,10 +1,10 @@
-import PopoverComponent from './base-popover-component';
+import PopoverComponent from './primitaves/base-popover-component';
 
 export default class Drawer extends PopoverComponent {
-  component: Element | null;
-  toggles: Element[] | null;
+  component: HTMLElement | null;
+  toggles: HTMLElement[] | null;
 
-  constructor(component: Element) {
+  constructor(component: HTMLElement) {
     super();
     this.component = component;
     this.toggles = this.getToggles();
@@ -16,21 +16,16 @@ export default class Drawer extends PopoverComponent {
     }
   }
 
-  getToggles(): Element[] | null {
-    const toggles = Array.from(
-      document.querySelectorAll('.drawer-toggle')
-    ).filter((toggle) => {
+  getToggles(): HTMLElement[] | null {
+    let toggles = Array.from(document.querySelectorAll('.drawer-toggle')).filter((toggle) => {
       if (toggle instanceof HTMLElement) {
         if (this.component) {
           return toggle.dataset.target === this.component.id;
         }
       }
     });
-    if (toggles) {
-      return toggles;
-    }
 
-    return null;
+    return toggles ? (toggles as HTMLElement[]) : null;
   }
 
   setListeners() {
@@ -46,6 +41,6 @@ window.addEventListener('load', () => {
   const drawers = document.querySelectorAll('.drawer');
 
   if (drawers.length) {
-    drawers.forEach((drawer) => new Drawer(drawer));
+    drawers.forEach((drawer) => new Drawer(drawer as HTMLElement));
   }
 });

@@ -71,13 +71,12 @@ $TOKENS: meta.module-variables('tokens');
         --button-text-color: canvastext;
         --button-padding-inline: var(--spacer-none);
         --button-padding-block: var(--spacer-none);
-        &:hover {
-          --button-background-color: transparent;
-          --button-text-color: var(--grayscale-white);
-        }
+
         &:active,
+        &:focus,
         &:focus-visible {
           --button-outline-color: var(--grayscale-black);
+          --button-text-color: var(--color-base);
         }
       }
     }
@@ -101,40 +100,13 @@ $TOKENS: meta.module-variables('tokens');
       @media (prefers-color-scheme: dark) {
         &.plain {
           &:active,
+          &:focus,
           &:focus-visible {
             --button-outline-color: var(--grayscale-white);
+            --button-text-color: canvasText;
           }
         }
       }
     }
-
-    // @layer themes {
-    //   @media (prefers-color-scheme: dark) {
-    //     --button-background-color: var(--grayscale-white);
-    //     --button-text-color: var(--grayscale-black);
-    //     --button-outline-type: dashed;
-
-    //     &.secondary {
-    //       --button-background-color: var(--grayscale-light);
-    //     }
-    //     &.plain {
-    //       --button-background-color: transparent;
-    //       --button-text-color: var(--grayscale-white);
-    //       &:hover {
-    //         --button-text-color: var(--grayscale-black);
-    //       }
-    //     }
-
-    //     &:hover {
-    //       --button-background-color: var(--grayscale-lighter);
-    //     }
-
-    //     &:active,
-    //     &:focus,
-    //     &:focus-visible {
-    //       --button-outline-color: currentcolor;
-    //     }
-    //   }
-    // }
   }
 }

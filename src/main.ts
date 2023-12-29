@@ -5,6 +5,7 @@ import './components/drawer';
 import './components/infobox';
 import './components/modal';
 import './components/tabs';
+import './components/tooltip';
 
 window.addEventListener('load', () => {
   if (document.body.classList.contains('no-js'))
