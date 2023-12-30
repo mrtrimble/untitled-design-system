@@ -1,7 +1,13 @@
+@use 'sass:meta';
+@use 'sass:map';
+@use '../tokens/tokens';
+
+$TOKENS: meta.module-variables('tokens');
+
 @layer components {
   .skip-link {
-    --_padding: var(--skip-link-padding, var(--spacer-xs));
-    --_transition: var(--skip-link-transition, 0.2s ease);
+    --_padding: var(--skip-link-padding, #{map.get($TOKENS, skip-link-padding)});
+    --_transition: var(--skip-link-transition, #{map.get($TOKENS, skip-link-transition)});
 
     @layer rules {
       position: absolute;

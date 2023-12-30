@@ -1,19 +1,25 @@
+@use 'sass:meta';
+@use 'sass:map';
+@use '../tokens/tokens';
+
+$TOKENS: meta.module-variables('tokens');
+
 @layer components {
   .modal {
-    --_backdrop-background-color: var(--modal-backdrop-background-color, rgba(0, 0, 0, 0.5));
-    --_background-color: var(--modal-background-color, canvas);
-    --_border-width: var(--modal-border-width, 3px);
-    --_border-color: var(--modal-border-color, transparent);
-    --_border-style: var(--modal-border-style, solid);
-    --_flow-space: var(--modal-flow-space, var(--spacer-xs));
-    --_padding-x: var(--modal-padding-inline, var(--spacer-md));
-    --_padding-y: var(--modal-padding-block, var(--spacer-md));
-    --_max-height: var(--modal-max-height, fit-content);
-    --_max-width: var(--modal-max-width, 50ch);
-    --_shadow: var(--modal-shadow, var(--shadow-xs));
-    --_text-color: var(--modal-text-color, canvasText);
-    --_margin-x: var(--modal-margin-inline, auto);
-    --_margin-y: var(--modal-margin-block, auto);
+    --_backdrop-background-color: var(--modal-backdrop-background-color, #{map.get($TOKENS, modal-backdrop-background-color)});
+    --_background-color: var(--modal-background-color, #{map.get($TOKENS, modal-background-color)});
+    --_border-width: var(--modal-border-width, #{map.get($TOKENS, modal-border-width)});
+    --_border-color: var(--modal-border-color, #{map.get($TOKENS, modal-border-width)});
+    --_border-style: var(--modal-border-style, #{map.get($TOKENS, modal-border-style)});
+    --_flow-space: var(--modal-flow-space, #{map.get($TOKENS, modal-flow-space)});
+    --_padding-inline: var(--modal-padding-inline, #{map.get($TOKENS, modal-padding-inline)});
+    --_padding-block: var(--modal-padding-block, #{map.get($TOKENS, modal-padding-block)});
+    --_max-height: var(--modal-max-height, #{map.get($TOKENS, modal-max-height)});
+    --_max-width: var(--modal-max-width, #{map.get($TOKENS, modal-max-width)});
+    --_shadow: var(--modal-shadow, #{map.get($TOKENS, modal-shadow)});
+    --_text-color: var(--modal-text-color, #{map.get($TOKENS, modal-text-color)});
+    --_margin-x: var(--modal-margin-inline, #{map.get($TOKENS, modal-margin-inline)});
+    --_margin-y: var(--modal-margin-block, #{map.get($TOKENS, modal-margin-block)});
 
     @layer rules {
       background-color: var(--_background-color);
@@ -21,8 +27,8 @@
       box-shadow: var(--_shadow);
       color: var(--_text-color);
       height: var(--_max-height);
-      padding-block: var(--_padding-y);
-      padding-inline: var(--_padding-x);
+      padding-block: var(--_padding-block);
+      padding-inline: var(--_padding-inline);
       margin-block: var(--_margin-y);
       margin-inline: var(--_margin-x);
       transition: opacity, transform;
@@ -42,19 +48,19 @@
       &:not(dialog) {
         color: var(--_text-color);
         display: none;
-        height: var(--percentage-100);
+        height: 100%;
         inset-block-start: 0;
         inset-inline-start: 0;
         place-content: center;
         position: fixed;
-        width: var(--percentage-100);
+        width: 100%;
 
         .modal-inner {
           background-color: var(--_background-color);
           height: var(--_max-height);
           margin: var(--_max-width);
-          padding-block: var(--_padding-y);
-          padding-inline: var(--_padding-x);
+          padding-block: var(--_padding-block);
+          padding-inline: var(--_padding-inline);
           width: var(--_max-width);
         }
       }

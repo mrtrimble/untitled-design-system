@@ -14,23 +14,7 @@ $DIMENSION_INFO: (
   ),
 ) !default;
 
-$LABELS: (
-  'percentage': '%',
-  'view-width': 'vw',
-  'view-height': 'vh',
-) !default;
-
 $STEP: 10 !default;
-
-@layer theme {
-  :root {
-    @each $label, $unit in $LABELS {
-      @for $i from 1 through $STEP {
-        --#{$label}-#{$i * $STEP}: #{$i * $STEP}#{$unit};
-      }
-    }
-  }
-}
 
 @layer utilities {
   @each $dimension in $DIMENSIONS {

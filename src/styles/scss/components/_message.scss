@@ -1,3 +1,8 @@
+@use 'sass:meta';
+@use 'sass:map';
+@use '../tokens/tokens';
+
+$TOKENS: meta.module-variables('tokens');
 $STATES: ('default', 'info', 'warning', 'success', 'error') !default;
 
 @layer components {
@@ -6,26 +11,26 @@ $STATES: ('default', 'info', 'warning', 'success', 'error') !default;
   }
 
   .message {
-    --_color: var(--message-color, var(--message-default-darken-300));
-    --_background-color: var(--message-background-color, var(--message-default));
-    --_padding-x: var(--message-padding-inline, var(--spacer-2xs));
-    --_padding-y: var(--message-padding-block, var(--spacer-xs));
-    --_border-color: var(--message-border-color, var(--message-default));
-    --_border-width: var(--message-border-width, 5px);
-    --_border-style: var(--message-border-style, solid);
+    --_color: var(--message-color, #{map.get($TOKENS, message-color)});
+    --_background-color: var(--message-background-color, #{map.get($TOKENS, message-background-color)});
+    --_padding-inline: var(--message-padding-inline, #{map.get($TOKENS, message-padding-inline)});
+    --_padding-block: var(--message-padding-block, #{map.get($TOKENS, message-padding-block)});
+    --_border-color: var(--message-border-color, #{map.get($TOKENS, message-border-color)});
+    --_border-style: var(--message-border-style, #{map.get($TOKENS, message-border-style)});
+    --_border-width: var(--message-border-width, #{map.get($TOKENS, message-width)});
 
     @layer rules {
       color: var(--_color);
       background: color-mix(in lab, var(--_background-color), var(--grayscale-white) 70%);
-      padding-inline: var(--_padding-x);
-      padding-block: var(--_padding-y);
+      padding-inline: var(--_padding-inline);
+      padding-block: var(--_padding-block);
       border-left: var(--_border-width) var(--_border-color) var(--_border-style);
     }
 
     @layer states {
       @each $state in $STATES {
         &.#{$state} {
-          // --message-color: var(--message-#{$state});
+          --message-color: var(--color-base);
           --message-background-color: var(--message-#{$state});
           --message-border-color: var(--message-#{$state});
         }

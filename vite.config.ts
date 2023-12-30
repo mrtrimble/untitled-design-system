@@ -3,6 +3,7 @@
 import { browserslistToTargets } from 'lightningcss';
 import browserslist from 'browserslist';
 import ViteSvgSpriteWrapper from 'vite-svg-sprite-wrapper';
+import * as lightningCss from 'lightningcss';
 
 export default {
   plugins: [
@@ -11,13 +12,8 @@ export default {
       outputDir: './public/',
     }),
   ],
-  css: {
-    transformer: 'lightningcss',
-    lightningcss: {
-      targets: browserslistToTargets(browserslist('>= 0.25%')),
-    },
-  },
   build: {
     cssMinify: 'lightningcss',
+    assetsInlineLimit: 500,
   },
 };

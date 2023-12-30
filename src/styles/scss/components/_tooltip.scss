@@ -1,17 +1,22 @@
+@use 'sass:meta';
+@use 'sass:map';
+@use '../tokens/tokens';
+
+$TOKENS: meta.module-variables('tokens');
+
 @layer components {
   .tooltip {
     --_translate-x: 0;
     --_translate-y: 0;
     --_height: 0;
 
-    --_padding-x: var(--tooltip-padding-inline, var(--spacer-xs));
-    --_padding-y: var(--tooltip-padding-block, var(--spacer-3xs));
-    --_background-color: var(--tooltip-background-color, canvasText);
-    --_text-color: var(--tooltip-text-color, canvas);
-    --_outline-color: var(--tooltip-outline-color, transparent);
-    --_border-color: var(--tooltip-border-color, transparent);
-    --_border-radius: var(--tooltip-border-radius, 0.25rem);
-    --_marker-height: var(--tooltip-marker-height, var(--spacer-2xs));
+    --_padding-inline: var(--tooltip-padding-inline, #{map.get($TOKENS, tooltip-padding-inline)});
+    --_padding-block: var(--tooltip-padding-block, #{map.get($TOKENS, tooltip-padding-block)});
+    --_background-color: var(--tooltip-background-color, #{map.get($TOKENS, tooltip-background-color)});
+    --_text-color: var(--tooltip-text-color, #{map.get($TOKENS, tooltip-text-color)});
+    --_border-color: var(--tooltip-border-color, #{map.get($TOKENS, tooltip-border-color)});
+    --_border-radius: var(--tooltip-border-radius, #{map.get($TOKENS, tooltip-border-radius)});
+    --_marker-height: var(--tooltip-marker-height, #{map.get($TOKENS, tooltip-marker-height)});
 
     @layer rules {
       inset-inline-start: calc(var(--_translate-x) - 0.75rem);
@@ -19,8 +24,8 @@
       background-color: var(--_background-color);
       color: var(--_text-color);
       position: absolute;
-      padding-inline: var(--_padding-x);
-      padding-block: var(--_padding-y);
+      padding-inline: var(--_padding-inline);
+      padding-block: var(--_padding-block);
       overflow: visible;
       border-color: var(--_border-color);
       border-radius: var(--_border-radius);

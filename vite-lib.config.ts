@@ -8,15 +8,9 @@ export default {
   plugins: [
     ViteSvgSpriteWrapper({
       icons: './src/icons/*.svg',
-      outputDir: './public/'
+      outputDir: './public/',
     }),
   ],
-  css: {
-    transformer: 'lightningcss',
-    lightningcss: {
-      targets: browserslistToTargets(browserslist('>= 0.25%')),
-    },
-  },
   build: {
     cssMinify: 'lightningcss',
     lib: {
@@ -24,6 +18,6 @@ export default {
       name: 'DesignSystem',
       fileName: 'design-system',
     },
-    outDir: './lib/'
+    outDir: './lib/',
   },
 };

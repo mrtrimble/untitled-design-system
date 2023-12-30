@@ -1,14 +1,20 @@
+@use 'sass:meta';
+@use 'sass:map';
+@use '../tokens/tokens';
+
+$TOKENS: meta.module-variables('tokens');
+
 @layer components {
   .drawer {
-    --_background-color: var(--drawer-background-color, canvas);
-    --_text-color: var(--drawer-text-color, canvasText);
-    --_padding-x: var(--drawer-padding-inline, var(--spacer-xs));
-    --_padding-y: var(--drawer-padding-block, var(--spacer-lg));
-    --_width: var(--drawer-max-width, 40ch);
-    --_transition: var(--drawer-transition, 0.25s ease);
-    --_flow-space: var(--drawer-flow-space, var(--spacer-xs));
-    --_shadow: var(--drawer-shadow, var(--shadow-xs));
-    --_border: var(--drawer-border, 3px transparent solid);
+    --_background-color: var(--drawer-background-color, #{map.get($TOKENS, drawer-background-color)});
+    --_text-color: var(--drawer-text-color, #{map.get($TOKENS, drawer-text-color)});
+    --_padding-inline: var(--drawer-padding-inline, #{map.get($TOKENS, drawer-padding-inline)});
+    --_padding-block: var(--drawer-padding-block, #{map.get($TOKENS, drawer-padding-block)});
+    --_width: var(--drawer-max-width, #{map.get($TOKENS, drawer-max-width)});
+    --_transition: var(--drawer-transition, #{map.get($TOKENS, drawer-transition)});
+    --_flow-space: var(--drawer-flow-space, #{map.get($TOKENS, drawer-flow-space)});
+    --_shadow: var(--drawer-shadow, #{map.get($TOKENS, drawer-shadow)});
+    --_border: var(--drawer-border, #{map.get($TOKENS, drawer-border)});
 
     @layer rules {
       background: var(--_background-color);
@@ -21,8 +27,8 @@
       inset-inline-start: 0;
       inset-block-end: 0;
       margin: 0;
-      padding-block: var(--_padding-y);
-      padding-inline: var(--_padding-x);
+      padding-block: var(--_padding-block);
+      padding-inline: var(--_padding-inline);
       position: fixed;
       transform: translateX(-100%);
       transition: transform var(--_transition);

@@ -1,3 +1,9 @@
+@use 'sass:meta';
+@use 'sass:map';
+@use '../tokens/tokens';
+
+$TOKENS: meta.module-variables('tokens');
+
 @layer components {
   body.no-js {
     --tabs-display: block;
@@ -16,8 +22,8 @@
   }
 
   :is(.tab-list, [role='tablist']) {
-    --_min: var(--tab-list-column-min, 20ch);
-    --_display: var(--tab-list-display, grid);
+    --_min: var(--tab-list-column-min, #{map.get($TOKENS, tab-list-column-min)});
+    --_display: var(--tab-list-display, #{map.get($TOKENS, tab-list-display)});
 
     @layer rules {
       grid-area: tab-list;
@@ -34,19 +40,19 @@
   }
 
   :is(button.tab, [role='tab']) {
-    --_background-color: var(--tab-background-color, var(--grayscale-lighter));
-    --_border-color: var(--tab-border-color, transparent);
-    --_border-width: var(--tab-border-width, 5px);
-    --_border-style: var(--tab-border-style, solid);
-    --_text-color: var(--tab-text-color, currentcolor);
-    --_padding-x: var(--tab-padding-inline, var(--spacer-xs));
-    --_padding-y: var(--tab-padding-block, var(--spacer-2xs));
+    --_background-color: var(--tab-background-color, #{map.get($TOKENS, tab-background-color)});
+    --_border-color: var(--tab-border-color, #{map.get($TOKENS, tab-border-color)});
+    --_border-width: var(--tab-border-width, #{map.get($TOKENS, tab-border-width)});
+    --_border-style: var(--tab-border-style, #{map.get($TOKENS, tab-border-style)});
+    --_text-color: var(--tab-text-color, #{map.get($TOKENS, tab-text-color)});
+    --_padding-inline: var(--tab-padding-inline, #{map.get($TOKENS, tab-padding-inline)});
+    --_padding-block: var(--tab-padding-block, #{map.get($TOKENS, tab-padding-block)});
 
     @layer rules {
       background-color: var(--_background-color);
       color: var(--_text-color);
-      padding-inline: var(--_padding-x);
-      padding-block: var(--_padding-y);
+      padding-inline: var(--_padding-inline);
+      padding-block: var(--_padding-block);
       border-top: var(--_border-width) var(--_border-style) var(--_border-color);
     }
 
@@ -103,18 +109,18 @@
   }
 
   :is(.tab-panel, [role='tabpanel']) {
-    --_background-color: var(--tab-panel-background-color, var(--grayscale-lighter));
-    --_display: var(--tab-panel-display, none);
-    --_flow-space: var(--tab-panel-flow-space, var(--spacer-xs));
-    --_padding-x: var(--tab-panel-padding-inline, var(--spacer-xs));
-    --_padding-y: var(--tab-panel-padding-block, var(--spacer-md));
+    --_background-color: var(--tab-panel-background-color, #{map.get($TOKENS, tab-panel-background-color)});
+    --_display: var(--tab-panel-display, #{map.get($TOKENS, tab-panel-display)});
+    --_flow-space: var(--tab-panel-flow-space, #{map.get($TOKENS, tab-panel-flow-space)});
+    --_padding-inline: var(--tab-panel-padding-inline, #{map.get($TOKENS, tab-panel-padding-inline)});
+    --_padding-block: var(--tab-panel-padding-block, #{map.get($TOKENS, tab-panel-padding-block)});
 
     @layer rules {
       grid-area: tab-panel;
       display: var(--_display);
       background-color: var(--_background-color);
-      padding-inline: var(--_padding-x);
-      padding-block: var(--_padding-y);
+      padding-inline: var(--_padding-inline);
+      padding-block: var(--_padding-block);
 
       > * + * {
         margin-block-start: var(--_flow-space);

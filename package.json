@@ -29,7 +29,7 @@
     "pack": "npm pack",
     "build": "run-s style-dictionary:build svgo:optimize sass:build vite:build",
     "build:lib": "run-s style-dictionary:build svgo:optimize sass:build vite:lib pack",
-    "start": "npm run style-dictionary:build && run-p sass:watch vite:dev"
+    "start": "npm run style-dictionary:build && run-p vite:dev"
   },
   "devDependencies": {
     "@acab/reset.css": "^0.8.0",
@@ -45,6 +45,7 @@
     "vite-svg-sprite-wrapper": "^1.3.0"
   },
   "dependencies": {
+    "@types/node": "^20.10.5",
     "path": "^0.12.7"
   }
 }
