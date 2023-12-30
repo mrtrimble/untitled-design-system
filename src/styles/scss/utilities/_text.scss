@@ -1,14 +1,11 @@
-@use "sass:meta";
-@use "sass:map";
-@use "sass:string";
-@use "../tokens/tokens" as tokens;
-@use "../functions" as functions;
+@use 'sass:meta';
+@use 'sass:map';
+@use 'sass:string';
+@use '../tokens/tokens' as tokens;
+@use '../functions' as functions;
 
-$FONT_SIZE_PREFIX: "font-size" !default;
-$FONT_SIZE_TOKENS: functions.getList(
-  meta.module-variables("tokens"),
-  $FONT_SIZE_PREFIX
-);
+$FONT_SIZE_PREFIX: 'font-size' !default;
+$FONT_SIZE_TOKENS: functions.getList(meta.module-variables('tokens'), $FONT_SIZE_PREFIX);
 
 @layer utilities {
   @each $fontSize in $FONT_SIZE_TOKENS {
@@ -16,10 +13,9 @@ $FONT_SIZE_TOKENS: functions.getList(
       font-size: var(--#{$fontSize});
     }
   }
-}
 
-// Text Alignment
-@layer utilities {
+  // Text Alignment
+
   $alignments: (left, center, right, justify);
 
   @each $alignment in $alignments {

@@ -10,7 +10,7 @@ $TOKENS: meta.module-variables('tokens');
     --_text-color: var(--drawer-text-color, #{map.get($TOKENS, drawer-text-color)});
     --_padding-inline: var(--drawer-padding-inline, #{map.get($TOKENS, drawer-padding-inline)});
     --_padding-block: var(--drawer-padding-block, #{map.get($TOKENS, drawer-padding-block)});
-    --_width: var(--drawer-max-width, #{map.get($TOKENS, drawer-max-width)});
+    --_width: var(--drawer-max-width, #{map.get($TOKENS, drawer-width)});
     --_transition: var(--drawer-transition, #{map.get($TOKENS, drawer-transition)});
     --_flow-space: var(--drawer-flow-space, #{map.get($TOKENS, drawer-flow-space)});
     --_shadow: var(--drawer-shadow, #{map.get($TOKENS, drawer-shadow)});

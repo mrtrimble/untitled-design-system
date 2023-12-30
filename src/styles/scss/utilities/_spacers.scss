@@ -1,19 +1,16 @@
-@use "sass:meta";
-@use "sass:string";
-@use "../tokens/tokens" as tokens;
-@use "../functions" as functions;
+@use 'sass:meta';
+@use 'sass:string';
+@use '../tokens/tokens' as tokens;
+@use '../functions' as functions;
 
-$SPACER_PREFIX: "spacer" !default;
-$SPACER_TOKENS: functions.getList(
-  meta.module-variables("tokens"),
-  $SPACER_PREFIX
-);
+$SPACER_PREFIX: 'spacer' !default;
+$SPACER_TOKENS: functions.getList(meta.module-variables('tokens'), $SPACER_PREFIX);
 
 @layer utilities {
   @each $spacer in $SPACER_TOKENS {
     $types: (
-      "p": "padding",
-      "m": "margin",
+      'p': 'padding',
+      'm': 'margin',
     );
 
     @each $prefix, $typeProperty in $types {
@@ -22,12 +19,12 @@ $SPACER_TOKENS: functions.getList(
       }
 
       $directions: (
-        "x": "inline",
-        "y": "block",
-        "x-start": "inline-start",
-        "x-end": "inline-end",
-        "y-start": "block-start",
-        "y-end": "block-end",
+        'x': 'inline',
+        'y': 'block',
+        'x-start': 'inline-start',
+        'x-end': 'inline-end',
+        'y-start': 'block-start',
+        'y-end': 'block-end',
       );
 
       @each $direction, $directionProperty in $directions {

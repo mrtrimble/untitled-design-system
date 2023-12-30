@@ -18,8 +18,8 @@ $TOKENS: meta.module-variables('tokens');
     --_max-width: var(--modal-max-width, #{map.get($TOKENS, modal-max-width)});
     --_shadow: var(--modal-shadow, #{map.get($TOKENS, modal-shadow)});
     --_text-color: var(--modal-text-color, #{map.get($TOKENS, modal-text-color)});
-    --_margin-x: var(--modal-margin-inline, #{map.get($TOKENS, modal-margin-inline)});
-    --_margin-y: var(--modal-margin-block, #{map.get($TOKENS, modal-margin-block)});
+    --_margin-inline: var(--modal-margin-inline, #{map.get($TOKENS, modal-margin-inline)});
+    --_margin-block: var(--modal-margin-block, #{map.get($TOKENS, modal-margin-block)});
 
     @layer rules {
       background-color: var(--_background-color);
@@ -29,8 +29,8 @@ $TOKENS: meta.module-variables('tokens');
       height: var(--_max-height);
       padding-block: var(--_padding-block);
       padding-inline: var(--_padding-inline);
-      margin-block: var(--_margin-y);
-      margin-inline: var(--_margin-x);
+      margin-block: var(--_margin-inline);
+      margin-inline: var(--_margin-block);
       transition: opacity, transform;
       width: min(100% - var(--spacer-xs), var(--_max-width));
       z-index: 10;

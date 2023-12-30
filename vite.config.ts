@@ -13,7 +13,6 @@ export default {
     }),
   ],
   build: {
-    cssMinify: 'lightningcss',
-    assetsInlineLimit: 500,
+    cssMinify: 'lightningcss'
   },
 };

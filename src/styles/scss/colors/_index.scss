@@ -3,15 +3,6 @@
 
 $DEFAULT_MAX_COLORS: 5 !default;
 
-// @layer theme {
-// :root {
-//   @for $i from 1 through $DEFAULT_MAX_COLORS {
-//     --#{$name}-lighten-#{$i * 100}: lch(from #{$color} calc(l + #{$i * 5%}) c h);
-//     --#{$name}-darken-#{$i * 100}: lch(from #{$color} calc(l - #{$i * 5%}) c h);
-//   }
-// }
-// }
-
 @layer utilities {
   @each $name, $color in meta.module-variables('tokens') {
     @if meta.type-of($color) == color {
@@ -25,16 +16,6 @@ $DEFAULT_MAX_COLORS: 5 !default;
         .#{$type}-#{$name} {
           #{$property}: var(--#{$name});
         }
-
-        // @for $i from 1 through $DEFAULT_MAX_COLORS {
-        //   $variants: ('lighten', 'darken');
-
-        //   @each $variant in $variants {
-        //     .#{$type}-#{$name}-#{$variant}-#{$i * 100} {
-        //       #{$property}: var(--#{$name}-#{$variant}-#{$i * 100});
-        //     }
-        //   }
-        // }
       }
     }
   }

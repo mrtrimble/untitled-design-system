@@ -1,16 +1,13 @@
-@use "sass:meta";
-@use "sass:string";
-@use "../tokens/tokens" as tokens;
-@use "../functions" as functions;
+@use 'sass:meta';
+@use 'sass:string';
+@use '../tokens/tokens' as tokens;
+@use '../functions' as functions;
 
-$SHADOW_PREFIX: "shadow" !default;
-$SHADOW_TOKENS: functions.getList(
-  meta.module-variables("tokens"),
-  $SHADOW_PREFIX
-);
+$SHADOW_PREFIX: 'shadow' !default;
+$SHADOW_TOKENS: functions.getList(meta.module-variables('tokens'), $SHADOW_PREFIX);
 
 @layer utilities {
-  @each $shadow in $SHADOW_TOKENS{
+  @each $shadow in $SHADOW_TOKENS {
     .#{$shadow} {
       box-shadow: var(--#{$shadow});
     }

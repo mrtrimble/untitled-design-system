@@ -14,7 +14,7 @@ $TOKENS: meta.module-variables('tokens');
     --_border-color: var(--card-border-color, #{map.get($TOKENS, card-border-color)});
     --_border-style: var(--card-border-style, #{map.get($TOKENS, card-border-style)});
     --_border-width: var(--card-border-width, #{map.get($TOKENS, card-border-width)});
-    --_margin-x: var(--card-content-margin-inline, #{map.get($TOKENS, card-content-margin-inline)});
+    --_margin-inline: var(--card-content-margin-inline, #{map.get($TOKENS, card-content-margin-inline)});
     --_flow-space: var(--card-flow-space, #{map.get($TOKENS, card-flow-space)});
 
     @layer rules {
@@ -24,7 +24,7 @@ $TOKENS: meta.module-variables('tokens');
       border: var(--_border-width) var(--_border-color) var(--_border-style);
 
       > *:not(figure, img) {
-        margin-inline: var(--_margin-x);
+        margin-inline: var(--_margin-inline);
         margin-block-start: var(--_flow-space);
 
         &:last-child {
