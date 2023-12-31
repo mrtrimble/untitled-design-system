@@ -144,7 +144,7 @@
   },
   "tooltip": {
     "padding": {
-      "block": { "value": "{spacer.xs.value}" },
+      "block": { "value": "{spacer.3xs.value}" },
       "inline": { "value": "{spacer.3xs.value}" }
     },
     "background-color": { "value": "canvasText" },

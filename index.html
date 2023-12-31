@@ -46,6 +46,11 @@
     #target.active {
       display: block;
     } */
+
+    /* .tooltip {
+      --tooltip-background-color: dodgerblue;
+      --tooltip-text-color: white;
+    } */
   </style>
 </head>
 
@@ -87,6 +92,9 @@
               <li>
                 <a href="#tabs">Tabs</a>
               </li>
+              <li>
+                <a href="#tooltips">Tooltips</a>
+              </li>
             </ul>
           </li>
           <li>
@@ -119,20 +127,6 @@
         <header>
           <h1>Design System</h1>
         </header>
-
-
-
-        <!-- <section class="disclosure">
-          <button id="toggle"
-                  class="button"
-                  data-toggle
-                  data-target="target">Test Button</button>
-          <div id="target">
-            <p>Lorem ipsum dolor sit amet consectetur, adipisicing elit. Amet eligendi fugit nemo, nihil saepe aperiam
-              necessitatibus maxime, quibusdam, voluptatibus soluta harum eum rerum deserunt alias aliquid. Veritatis
-              impedit id deleniti.</p>
-          </div>
-        </section> -->
 
         <!-- Colors -->
         <section class="flow">
@@ -761,29 +755,50 @@
           </section>
 
           <!-- Tooltip -->
-          <!-- <section>
-            <h2>Tooltip</h2>
+          <section>
+            <div class="flow flow-2xs">
+              <h3 id="tooltips">Tooltips</h3>
 
-            <p>
-              Lorem ipsum dolor
-              <button class="button plain tooltip-toggle"
-                      aria-selected="false"
-                      id="popover-tooltip-toggle"
-                      popovertarget="popover-tooltip"
-                      popoveraction="toggle">
-                Popover Tooltip
-              </button> consectetur adipisicing elit. Minus dignissimos ipsa quos,
-              ducimus ipsam laborum
-              repudiandae totam amet cumque iure possimus. Cupiditate animi voluptatum reprehenderit hic perspiciatis
-              consequatur magni. Nulla.
-            </p>
+              <h4 id="example-tooltips">Tooltips Example</h4>
+              <p>Lorem, ipsum dolor sit
+                <span id="tooltip-toggle"
+                      class="tooltip-toggle"
+                      popovertarget="tooltip"
+                      aria-describedby="tooltip"
+                      tabindex="0">
+                  Tooltip with Anchor positioning
+                  <a href="#tooltip"
+                     class="footnote-link">[1]</a>
+                </span>
+                amet consectetur adipisicing elit.
+                <span class="tooltip-toggle"
+                      data-target="javascript-tooltip"
+                      aria-describedby="javascript-tooltip">
+                  JavaScript Tooltip
+                  <a href="#javascript-tooltip"
+                     class="footnote-link">[2]</a>
+                </span>
+                Vel quod
+                hic accusamus nam! Repellendus
+                blanditiis eum a veniam dolore sed facere. Alias obcaecati accusantium facere, magni exercitationem
+                nulla
+                est? Eaque?
+              </p>
 
-            <div class="tooltip"
-                 id="popover-tooltip"
-                 popover>
-              This is the tooltip!
+              <div anchor="tooltip-toggle"
+                   class="tooltip"
+                   id="tooltip"
+                   role="tooltip"
+                   popover>
+                <span class="footnote-link">[1]</span> This is an anchor positioned popover!
+              </div>
+              <div class="tooltip"
+                   id="javascript-tooltip"
+                   role="tooltip">
+                <span class="footnote-link">[2]</span> This is an javascript tooltip!
+              </div>
             </div>
-          </section> -->
+          </section>
         </section>
 
         <!-- Typography -->
