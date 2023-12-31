@@ -106,6 +106,9 @@
               <li>
                 <a href="#headings">Headings</a>
               </li>
+              <li>
+                <a href="#icons">Icons</a>
+              </li>
             </ul>
           </li>
           <li>
@@ -378,9 +381,12 @@
               <p>There are three different types of buttons: primary, secondary, and plain.</p>
               <p>Primary buttons are for primary actions, secondary buttons are for secondary actions. Plain buttons are
                 styled to appear as links.</p>
-              <button class="button">Primary Button</button>
-              <button class="button secondary">Secondary Button</button>
-              <button class="button plain">Plain Button</button>
+              <button type="button"
+                      class="button">Primary Button</button>
+              <button type="button"
+                      class="button secondary">Secondary Button</button>
+              <button type="button"
+                      class="button plain">Plain Button</button>
 
               <details class="accordion">
                 <summary>Button Tokens</summary>
@@ -508,7 +514,8 @@
 
               <p>Drawers can be utilized in two different ways: standard JavaScript or utilizing the Popover API!</p>
 
-              <button class="button drawer-toggle"
+              <button type="button"
+                      class="button drawer-toggle"
                       data-target="example">
                 Open JavaScript Drawer
               </button>
@@ -518,12 +525,14 @@
                 <p>Lorem ipsum dolor sit amet consectetur, adipisicing elit. Ex, magni. Non saepe optio tenetur eos
                   consequatur in quia iure aliquam ad facere consequuntur error illum aliquid, repudiandae earum vitae
                   delectus?</p>
-                <button class="button drawer-toggle"
+                <button type="button"
+                        class="button drawer-toggle"
                         data-target="example">
                   Close Drawer
                 </button>
               </div>
-              <button class="button drawer-toggle"
+              <button type="button"
+                      class="button drawer-toggle"
                       popovertarget="example-2"
                       popovertargetaction="toggle">
                 Open Popover Drawer
@@ -535,7 +544,8 @@
                 <p>Lorem ipsum dolor sit amet consectetur, adipisicing elit. Ex, magni. Non saepe optio tenetur eos
                   consequatur in quia iure aliquam ad facere consequuntur error illum aliquid, repudiandae earum vitae
                   delectus?</p>
-                <button class="button drawer-toggle"
+                <button type="button"
+                        class="button drawer-toggle"
                         popovertarget="example-2"
                         popovertargetaction="toggle">
                   Close Drawer
@@ -606,7 +616,8 @@
               <h3 id="modals">Modals</h3>
               <p>Modals can be built with either the <code>&lt;dialog&gt;</code> element, or by using the built in
                 JavaScript approach.</p>
-              <button class="button modal-toggle"
+              <button type="button"
+                      class="button modal-toggle"
                       data-target="dialog-modal">
                 Open Dialog Modal
               </button>
@@ -620,14 +631,16 @@
                     eius
                     nihil!</p>
 
-                  <button class="button modal-toggle"
+                  <button type="button"
+                          class="button modal-toggle"
                           data-target="dialog-modal">
                     Close Modal
                   </button>
 
                 </div>
               </dialog>
-              <button class="button modal-toggle"
+              <button type="button"
+                      class="button modal-toggle"
                       data-target="javascript-modal">
                 Open JavaScript Modal
               </button>
@@ -641,7 +654,8 @@
                     eius
                     nihil!</p>
 
-                  <button class="button modal-toggle"
+                  <button type="button"
+                          class="button modal-toggle"
                           data-target="javascript-modal">
                     Close Modal
                   </button>
@@ -795,7 +809,7 @@
               <div class="tooltip"
                    id="javascript-tooltip"
                    role="tooltip">
-                <span class="footnote-link">[2]</span> This is an javascript tooltip!
+                <span class="footnote-link">[2]</span> This is a javascript tooltip!
               </div>
             </div>
           </section>
@@ -832,7 +846,7 @@
 
           <!-- Icons -->
           <section>
-            <h3>Icons</h3>
+            <h3 id="icons">Icons</h3>
 
 
             <div class="card">
@@ -887,6 +901,14 @@
               <svg class="icon"
                    aria-hidden="true">
                 <use xlink:href="sprite.svg#power-on"></use>
+              </svg>
+              <svg class="icon"
+                   aria-hidden="true">
+                <use xlink:href="sprite.svg#help-full"></use>
+              </svg>
+              <svg class="icon"
+                   aria-hidden="true">
+                <use xlink:href="sprite.svg#help-empty"></use>
               </svg>
             </div>
             <div class="card auto-grid">
@@ -1209,7 +1231,7 @@
                     <img src="https://images.unsplash.com/photo-1519681393784-d120267933ba?ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D&auto=format&fit=crop&w=2340&q=80"
                          height="405"
                          width="605"
-                         alt="Mountains">
+                         alt="Beautiful mountains">
                   </div>
                   <div class="block card grid-center text-center text-color-inverse-base"
                        style="--card-background-color: transparent;">Block 2</div>
