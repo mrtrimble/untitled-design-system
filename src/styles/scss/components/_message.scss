@@ -6,10 +6,6 @@ $TOKENS: meta.module-variables('tokens');
 $STATES: ('default', 'info', 'warning', 'success', 'error') !default;
 
 @layer components {
-  :has(> .message) {
-    container-name: message;
-  }
-
   .message {
     --_color: var(--message-color, #{map.get($TOKENS, message-color)});
     --_background-color: var(--message-background-color, #{map.get($TOKENS, message-background-color)});

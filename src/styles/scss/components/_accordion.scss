@@ -5,10 +5,6 @@
 $TOKENS: meta.module-variables('tokens');
 
 @layer components {
-  *:has(> .accordion) {
-    --container-name: accordion;
-  }
-
   body.no-js {
     --accordion-display: block;
   }
@@ -70,9 +66,8 @@ $TOKENS: meta.module-variables('tokens');
       &[open],
       &.open {
         --accordion-header-background-color: var(--grayscale-light);
-
       }
-      
+
       &[open],
       &.open {
         --accordion-display: block;

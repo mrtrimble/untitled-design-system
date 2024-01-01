@@ -5,10 +5,6 @@
 $TOKENS: meta.module-variables('tokens');
 
 @layer components {
-  *:has(> .card) {
-    --container-name: card;
-  }
-
   .card {
     --_background-color: var(--card-background-color, #{map.get($TOKENS, card-background-color)});
     --_border-color: var(--card-border-color, #{map.get($TOKENS, card-border-color)});

@@ -1,5 +1,7 @@
 $CONTAINER_NAME: wrapper !default;
 
+$components: ('accordion', 'button', 'card', 'drawer', 'message', 'modal', 'skip-link', 'tabs', 'tooltip');
+
 @layer utilities {
   .cq-wrapper {
     --_name: var(--container-name, #{$CONTAINER_NAME});
@@ -7,6 +9,12 @@ $CONTAINER_NAME: wrapper !default;
     @supports (container-type: inline-size) {
       container-type: inline-size;
       container-name: var(--_name);
+
+      @each $component in $components {
+        &:has(.#{$component}) {
+          --container-name: #{$component};
+        }
+      }
     }
   }
 }

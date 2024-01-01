@@ -5,10 +5,6 @@
 $TOKENS: meta.module-variables('tokens');
 
 @layer components {
-  *:has(> .button) {
-    --container-name: button;
-  }
-
   button:not(.tab),
   .button {
     --_background-color: var(--button-background-color, #{map.get($TOKENS, button-background-color)});
