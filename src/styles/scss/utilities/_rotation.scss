@@ -5,8 +5,7 @@
 
     @for $i from 1 to 19 {
       &-#{$i * 10} {
-        --rotation-degrees: #{$i * 10}deg;
-        transform: rotate(var(--rotation-degrees));
+        transform: rotate(#{$i * 10}deg);
       }
     }
   }
