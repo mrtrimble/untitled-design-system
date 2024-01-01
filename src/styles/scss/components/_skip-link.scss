@@ -6,6 +6,7 @@ $TOKENS: meta.module-variables('tokens');
 
 @layer components {
   .skip-link {
+    --_background-color: var(--skip-link-background-color, canvasText);
     --_padding: var(--skip-link-padding, #{map.get($TOKENS, skip-link-padding)});
     --_transition: var(--skip-link-transition, #{map.get($TOKENS, skip-link-transition)});
 
@@ -14,9 +15,8 @@ $TOKENS: meta.module-variables('tokens');
       inset-inline-start: 0;
       inset-block-start: 0;
       padding: var(--spacer-xs);
-      background: canvasText;
-      color: canvas;
-      transform: translateY(-100%);
+      background: var(--_background-color);
+      transform: translateY(calc(-100% - 5px));
       @media (prefers-reduced-motion: no-preference) {
         transition: 0.2s ease;
       }
@@ -25,6 +25,9 @@ $TOKENS: meta.module-variables('tokens');
     @layer states {
       &:has(a:focus) {
         transform: translateY(0);
+      }
+      > a:focus {
+        --body-link-color: canvas
       }
     }
   }
