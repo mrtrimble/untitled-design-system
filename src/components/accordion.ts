@@ -16,6 +16,26 @@ export default class Accordion extends DisclosureComponent {
       super.setCallback(this.toggleParent);
 
       this.toggle.addEventListener('click', this.onClick.bind(this));
+
+      this.toggle.addEventListener('keydown', (event) => {
+        if (event instanceof KeyboardEvent) {
+          
+          switch (event.code) {
+            case 'Enter':
+              event.preventDefault();
+              this.onClick();
+              break;
+
+            case 'Space':
+              event.preventDefault();
+              this.onClick();
+              break;
+
+            default:
+              break;
+          }
+        }
+      });
     }
   }
 
