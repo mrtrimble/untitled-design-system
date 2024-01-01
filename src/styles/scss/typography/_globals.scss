@@ -32,7 +32,7 @@ $FONT_SIZE_TOKENS: functions.getList(meta.module-variables('tokens'), $FONT_SIZE
       --_text-color-inverse: var(--body-color-inverse-base, #{tokens.$color-inverse-base});
       --_font-family: var(--body-font-family, system-ui);
       --_font-size: var(--body-font-size, #{tokens.$font-size-xs});
-
+      --_link-text-color: var(--link-text-color, #{tokens.$color-link-default});
       --_scroll-offset: var(--body-scroll-offset, ${tokens.spacer-md});
 
       font-family: var(--_font-family);
@@ -69,6 +69,23 @@ $FONT_SIZE_TOKENS: functions.getList(meta.module-variables('tokens'), $FONT_SIZE
     @each $heading, $value in $headings {
       #{$heading} {
         font-size: $value;
+      }
+    }
+
+    a {
+      color: var(--_link-text-color);
+
+      &:focus {
+        --link-text-color: var(--color-link-focus);
+      }
+
+      &:active {
+        --link-text-color: var(--color-link-active);
+      }
+
+      @media (prefers-color-scheme: dark) {
+        --_link-text-color: var(--grayscale-white);
+        
       }
     }
   }

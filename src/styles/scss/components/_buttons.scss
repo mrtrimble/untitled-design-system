@@ -92,7 +92,7 @@ $TOKENS: meta.module-variables('tokens');
       }
 
       @container button (max-width: 320px) {
-        --button-background-color: var(--message-success);
+        --button-background-color: var(--color-green);
       }
     }
 

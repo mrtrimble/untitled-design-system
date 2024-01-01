@@ -1,11 +1,34 @@
 {
   "color": {
     "base": { "value": "#111111" },
-    "secondary": { "value": "#333333" },
-    "tertiary": { "value": "#666666" },
     "inverse": {
       "base": { "value": "#ffffff" }
-    }
+    },
+    "link": {
+      "default": { "value": "{color.deepblue.value}" },
+      "active": { "value": "{color.lightdeepblue.value}" },
+      "focus": { "value": "{color.lightdeepblue.value}" }
+    },
+    "blue": { "value": "#0097e6" },
+    "lightblue": { "value": "#00a8ff" },
+    "purple": { "value": "#8c7ae6" },
+    "lightpurple": { "value": "#9c88ff" },
+    "yellow": { "value": "#e1b12c" },
+    "lightyellow": { "value": "#fbc531" },
+    "green": { "value": "#44bd32" },
+    "lightgreen": { "value": "#4cd137" },
+    "navy": { "value": "#40739e" },
+    "lightnavy": {"value": "#487eb0"},
+    "red": { "value": "#c23616" },
+    "lightred": { "value": "#e84118" },
+    "gray": { "value": "#dcdde1" },
+    "lightgray": { "value": "#f5f6fa" },
+    "smoke": { "value": "#718093" },
+    "lightsmoke": { "value": "#7f8fa6" },
+    "deepblue": { "value": "#192a56" },
+    "lightdeepblue": { "value": "#273c75" },
+    "black": { "value": "#2f3640" },
+    "lightblack": { "value": "#353b48" }
   },
   "swatch": {
     "navy": { "value": "#003f70" },

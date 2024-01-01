@@ -46,11 +46,11 @@ $TOKENS: meta.module-variables('tokens');
   }
 
   .tooltip-toggle {
-    --_background-color: var(--tooltip-toggle-background-color, transparent);
-    --_text-decoration: var(--tooltip-toggle-text-decoration, underline);
-    --_text-decoration-style: var(--tooltip-toggle-text-decoration, dashed);
-    --_text-underline-offset: var(--tooltip-toggle-text-underline-offset, 0.75ex);
-    --_cursor: var(--tooltip-toggle-cursor, help);
+    --_background-color: var(--tooltip-toggle-background-color, #{map.get($TOKENS, tooltip-toggle-background-color)});
+    --_text-decoration: var(--tooltip-toggle-text-decoration, #{map.get($TOKENS, tooltip-toggle-text-decoration)});
+    --_text-decoration-style: var(--tooltip-toggle-text-decoration-style, #{map.get($TOKENS, tooltip-toggle-text-decoration-style)});
+    --_text-underline-offset: var(--tooltip-toggle-text-underline-offset, #{map.get($TOKENS, tooltip-toggle-text-underline-offset)});
+    --_cursor: var(--tooltip-toggle-cursor, #{map.get($TOKENS, tooltip-toggle-cursor)});
 
     @layer rules {
       anchor-name: --tooltip-toggle;
@@ -84,12 +84,12 @@ $TOKENS: meta.module-variables('tokens');
     --_text-color: var(--tooltip-text-color, #{map.get($TOKENS, tooltip-text-color)});
     --_border-color: var(--tooltip-border-color, #{map.get($TOKENS, tooltip-border-color)});
     --_border-radius: var(--tooltip-border-radius, #{map.get($TOKENS, tooltip-border-radius)});
-    --_border-width: var(--tooltip-border-width, 5px);
+    --_border-width: var(--tooltip-border-width, #{map.get($TOKENS, tooltip-border-width)});
     --_marker-height: var(--tooltip-marker-height, #{map.get($TOKENS, tooltip-marker-height)});
-    --_marker-width: var(--tooltip-marker-width, var(--spacer-md));
-    --_max-width: var(--tooltip-max-width, 50ch);
-    --_display: var(--tooltip-display, none);
-    --_shadow: var(--tooltip-shadow, var(--shadow-3xl));
+    --_marker-width: var(--tooltip-marker-width, #{map.get($TOKENS, tooltip-marker-width)});
+    --_max-width: var(--tooltip-max-width, #{map.get($TOKENS, tooltip-max-width)});
+    --_display: var(--tooltip-display, #{map.get($TOKENS, tooltip-display)});
+    --_shadow: var(--tooltip-shadow, #{map.get($TOKENS, tooltip-shadow)});
 
     @layer rules {
       padding-inline: var(--_padding-inline);
