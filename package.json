@@ -12,14 +12,12 @@
     "vite:build": "tsc && vite build",
     "vite:lib": "tsc && vite build --config ./vite-lib.config.ts",
     "vite:preview": "vite preview",
-    "sass:watch": "sass --watch src/styles/scss/:src/styles/css/",
-    "sass:build": "sass src/styles/scss/:src/styles/css/",
     "style-dictionary:clean": "style-dictionary clean --config ./style-dictionary.config.json",
     "style-dictionary:build": "style-dictionary build --config ./style-dictionary.config.json",
     "svgo:optimize": "svgo -f ./src/icons -o ./public/icons",
     "pack": "npm pack",
-    "build": "run-s style-dictionary:build svgo:optimize sass:build vite:build",
-    "build:lib": "run-s style-dictionary:build svgo:optimize sass:build vite:lib pack",
+    "build": "run-s style-dictionary:build svgo:optimize vite:build",
+    "build:lib": "run-s style-dictionary:build svgo:optimize vite:lib pack",
     "start": "npm run style-dictionary:build && run-p vite:dev"
   },
   "devDependencies": {
