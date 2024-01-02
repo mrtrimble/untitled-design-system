@@ -87,6 +87,7 @@ $FONT_SIZE_TOKENS: functions.getList(meta.module-variables('tokens'), $FONT_SIZE
 
       @media (prefers-color-scheme: dark) {
         --body-link-color: var(--grayscale-white);
+        
         &:focus,
         &:active {
           --body-link-color: var(--grayscale-white);

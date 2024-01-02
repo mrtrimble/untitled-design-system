@@ -2,22 +2,14 @@
   "name": "@mrtrimble/design-system",
   "version": "0.1.1-3",
   "type": "module",
+  "main": "./lib/design-system.js",
   "files": [
-    "/dist",
     "/lib",
-    "/src",
-    "/README.md",
-    "/style-dictionary.config.json",
-    "/tsconfig.json",
-    "/index.html",
-    "/package.json",
-    "/vite-dev.config.ts",
-    "/vite-lib.config.ts",
-    "/vite.config.ts"
+    "/README.md"
   ],
   "scripts": {
-    "vite:dev": "vite --config ./vite-dev.config.ts",
-    "vite:build": "tsc && vite build --config ./vite.config.ts",
+    "vite:dev": "vite",
+    "vite:build": "tsc && vite build",
     "vite:lib": "tsc && vite build --config ./vite-lib.config.ts",
     "vite:preview": "vite preview",
     "sass:watch": "sass --watch src/styles/scss/:src/styles/css/",

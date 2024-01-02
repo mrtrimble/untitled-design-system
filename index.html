@@ -55,7 +55,10 @@
 </head>
 
 <body class="py-spacer-md no-js">
-  <div class="container">
+  <main class="container">
+    <header class="px-spacer-md py-spacer-2xl">
+      <h1>Untitled Design System</h1>
+    </header>
     <div class="layout-sidebar flow">
       <nav aria-label="main"
            class="px-spacer-md py-spacer-xs">
@@ -125,8 +128,8 @@
           </li>
         </ul>
       </nav>
-      <main id="main-content"
-            class="px-spacer-md flow">
+      <article id="main-content"
+               class="px-spacer-md flow">
         <header>
           <h1>Design System</h1>
         </header>
@@ -238,30 +241,8 @@
                 <p class="text-color-base-inverse">--color-lightblack</p>
               </div>
             </div>
-            <div class="auto-grid">
-              <div style="--card-border-width: 0"
-                   class="card background-swatch-navy">
-                <p class="text-color-inverse-base">--swatch-navy</p>
-              </div>
-              <div style="--card-border-width: 0"
-                   class="card background-swatch-lightblue">
-                <p class="text-color-base">--swatch-lightblue</p>
-              </div>
-              <div style="--card-border-width: 0"
-                   class="card background-swatch-med-blue">
-                <p class="text-color-inverse-base">--swatch-med-blue</p>
-              </div>
-              <div style="--card-border-width: 0"
-                   class="card background-swatch-salmon">
-                <p class="text-color-base">--swatch-salmon</p>
-              </div>
-              <div style="--card-border-width: 0"
-                   class="card background-message-success">
-                <p>--message-success</p>
-              </div>
-            </div>
 
-            <details class="accordion">
+            <!-- <details class="accordion">
               <summary>Color Tokens</summary>
 
               <ul class="overflow-x-auto"
@@ -339,7 +320,7 @@
                   <code>--message-error</code>
                 </li>
               </ul>
-            </details>
+            </details> -->
           </div>
         </section>
 
@@ -382,83 +363,171 @@
           </section> -->
 
           <!-- Accordions -->
-          <section>
-            <div class="flow flow-2xs">
-              <h3 id="accordions">Accordions</h3>
+          <div class="flow">
+            <h3 id="accordions">Accordions</h3>
 
-              <p>
-                There are two flavors of accordion, a standard JavaScript based accordion and a styled
-                <code>&lt;details&gt;</code> element that requires no JavaScript.
-              </p>
+            <section>
+              <div class="flow flow-2xs">
+                <h4 id="accordion-description">Description</h4>
+                <p>Accordion components are collapsible disclosure type elements often stacked into groups.</p>
+                <p>Accordions consist of a clickable header type element that toggles the visibility of the accordion's
+                  content
+                  section.</p>
+                <p>There are two types of accordions available, stylized <code>&lt;details&gt;</code> and
+                  <code>&lt;summary&gt;</code> HTML elements, as well as a JavaScript-enabled accordion using semantic
+                  markup.
+                </p>
+              </div>
+            </section>
+            <section>
+              <div class="flow flow-2xs">
+                <h4 id="accordion-examples">Examples</h4>
 
-              <h4>Accordion Examples</h4>
-              <div class="accordion">
-                <div class="accordion-header flex flex-justify-between flex-align-center"
-                     id="accordion-header-1" tabindex="0">
-                  <span>JavaScript Accordion</span>
-                  <span class="marker">
-                    <svg class="icon icon-size-md"
-                         aria-hidden="true">
-                      <use xlink:href="sprite.svg#chevron-right"></use>
-                    </svg>
-                  </span>
-                </div>
-                <div class="accordion-content"
-                     id="accordion-content-1">
-                  <p>Lorem ipsum dolor sit amet consectetur, adipisicing elit. Recusandae fugiat non, aperiam distinctio
-                    odit illum pariatur. Reprehenderit corporis soluta possimus sunt. Rerum amet, numquam hic ratione
-                    quis
-                    doloribus veniam nam.</p>
+                <details class="accordion">
+                  <summary>No JavaScript Accordion</summary>
+
+                  <p>Lorem ipsum dolor sit amet consectetur adipisicing elit. Illum blanditiis officiis totam quam nisi
+                    ratione,
+                    ut praesentium fugit nostrum, deleniti modi ad inventore aliquam voluptas. Saepe deleniti eos
+                    consectetur
+                    inventore.</p>
+                  <p>Lorem ipsum dolor sit amet consectetur adipisicing elit. Illum blanditiis officiis totam quam nisi
+                    ratione,
+                    ut praesentium fugit nostrum, deleniti modi ad inventore aliquam voluptas. Saepe deleniti eos
+                    consectetur
+                    inventore.</p>
+                </details>
+
+                <div class="accordion">
+                  <div class="accordion-header flex flex-justify-between flex-align-center"
+                       id="accordion-header-1"
+                       tabindex="0">
+                    <span>JavaScript Accordion</span>
+                    <!--               <span class="marker">
+                                    <svg class="icon icon-size-md" aria-hidden="true">
+                                      <use xlink:href="sprite.svg#chevron-right"></use>
+                                    </svg>
+                                  </span> -->
+                  </div>
+                  <div class="accordion-content"
+                       id="accordion-content-1">
+                    <p>Lorem ipsum dolor sit amet consectetur, adipisicing elit. Recusandae fugiat non, aperiam
+                      distinctio
+                      odit illum pariatur. Reprehenderit corporis soluta possimus sunt. Rerum amet, numquam hic ratione
+                      quis
+                      doloribus veniam nam.</p>
+                  </div>
                 </div>
               </div>
-              <details class="accordion">
-                <summary>No JavaScript Accordion</summary>
-
-                <p>Lorem ipsum dolor sit amet consectetur adipisicing elit. Illum blanditiis officiis totam quam nisi
-                  ratione,
-                  ut praesentium fugit nostrum, deleniti modi ad inventore aliquam voluptas. Saepe deleniti eos
-                  consectetur
-                  inventore.</p>
-                <p>Lorem ipsum dolor sit amet consectetur adipisicing elit. Illum blanditiis officiis totam quam nisi
-                  ratione,
-                  ut praesentium fugit nostrum, deleniti modi ad inventore aliquam voluptas. Saepe deleniti eos
-                  consectetur
-                  inventore.</p>
-              </details>
-              <details class="accordion">
-                <summary>
-                  <span>Accordion Tokens</span>
-                </summary>
-                <ul class="grid overflow-x-auto"
-                    tabindex="0">
-                  <li>
-                    <code>--accordion-background-color</code>
+            </section>
+            <section>
+              <div class="flow flow-2xs">
+                <h4 id="accordion-accessibility">Accessibility</h4>
+                <ul role="list">
+                  <li>Toggling of accordions should happen by clicking the header, or by pressing the Space or Enter
+                    keys while
+                    focused on the accordion.</li>
+                  <li>The non-JavaScript variation of accordion follows the same semantics and accessibility of the
+                    <code>&lt;details&gt;</code> and <code>&lt;summary&gt;</code> HTML elements.
                   </li>
                   <li>
-                    <code>--accordion-flow-space</code>
-                  </li>
-                  <li>
-                    <code>--accordion-text-color</code>
-                  </li>
-                  <li>
-                    <code>--accordion-content-padding-block</code>
-                  </li>
-                  <li>
-                    <code>--accordion-content-padding-inline</code>
-                  </li>
-                  <li>
-                    <code>--accordion-header-background-color</code>
-                  </li>
-                  <li>
-                    <code>--accordion-header-padding-inline</code>
-                  </li>
-                  <li>
-                    <code>--accordion-header-text-color</code>
+                    As for the JavaScript enhanced accordion, there are several things to consider:
+                    <ul role="list">
+                      <li>
+                        The accordion header and accordion content elements <strong>must</strong> have unique IDs
+                        assigned to them.
+                      </li>
+                      <li>
+                        Using a <code>&lt;div&gt;</code> element as the clickable header is <strong>not</strong> a good
+                        idea, but we
+                        can apply the <code>role</code> as <code>button</code> to let the browser pretend it is a
+                        button. (It's
+                        still not though!)
+                      </li>
+                      <li>
+                        We need to apply two ARIA attributes to the header, <code>aria-controls</code> and
+                        <code>aria-expanded</code>.
+                      </li>
+                      <li>
+                        <code>aria-controls</code> points the header at the unique ID of the accordion component.
+                      </li>
+                      <li>
+                        <code>aria-expanded</code> keeps the element and assitive technology device up-to-date on the
+                        state of the
+                        accordion.
+                      </li>
+                      <li>For the accordion content, include the <code>role</code> of <code>region</code>.</li>
+                      <li>We will also need to specify that the content is labelled by the header by setting the
+                        <code>aria-labelledby</code> as the unique ID of the accordion header.
+                      </li>
+                    </ul>
                   </li>
                 </ul>
-              </details>
-            </div>
-          </section>
+              </div>
+            </section>
+            <section>
+              <div class="flow flow-2xs">
+                <h4 id="accordion-progressive-enhancement">Progressive Enhancement</h4>
+
+                <ul role="list">
+                  <li>By including the <code>no-js</code> class on the <code>body</code> element, we can enhance the
+                    accordion with
+                    a gentle fallback.
+                    <ul role="list">
+                      <li>By default the accordion components are set to an expanded state.</li>
+                      <li>This ensures that if a user decides to browse with JavaScript disabled or the JavaScript fails
+                        to load,
+                        the content of the accordion will still be available.</li>
+                    </ul>
+                  </li>
+                </ul>
+              </div>
+            </section>
+            <section>
+              <div class="flow flow-2xs">
+                <h4 id="accordion-tokens">Tokens</h4>
+                <p>The following design tokens can be customized to fit your theme!</p>
+                <details class="accordion">
+                  <summary>
+                    <span>Accordion Tokens</span>
+                  </summary>
+                  <ul class="grid overflow-x-auto"
+                      tabindex="0">
+                    <li>
+                      <code>--accordion-background-color</code>
+                    </li>
+                    <li>
+                      <code>--accordion-flow-space</code>
+                    </li>
+                    <li>
+                      <code>--accordion-text-color</code>
+                    </li>
+                    <li>
+                      <code>--accordion-content-padding-block</code>
+                    </li>
+                    <li>
+                      <code>--accordion-content-padding-inline</code>
+                    </li>
+                    <li>
+                      <code>--accordion-header-background-color</code>
+                    </li>
+                    <li>
+                      <code>--accordion-header-padding-inline</code>
+                    </li>
+                    <li>
+                      <code>--accordion-header-text-color</code>
+                    </li>
+                    <li>
+                      <code>--accordion-display</code>
+                    </li>
+                    <li>
+                      <code>--accordion-width</code>
+                    </li>
+                  </ul>
+                </details>
+              </div>
+            </section>
+          </div>
 
           <!-- Buttons -->
           <section>
@@ -1399,9 +1468,9 @@
             </div>
           </section> -->
         </section>
-      </main>
+      </article>
     </div>
-  </div>
+  </main>
   <script type="module"
           src="/src/main.ts"></script>
 </body>

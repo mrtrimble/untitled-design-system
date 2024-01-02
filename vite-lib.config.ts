@@ -14,7 +14,9 @@ export default {
   build: {
     cssMinify: 'lightningcss',
     lib: {
-      entry: './src/main.ts',
+      entry: {
+        index: './src/main.ts'
+      },
       name: 'DesignSystem',
       fileName: 'design-system',
     },
