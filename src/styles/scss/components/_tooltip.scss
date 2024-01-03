@@ -151,7 +151,7 @@
         position: absolute;
         width: fit-content;
         inset-inline: -50%;
-        inset-block-start: none;
+        inset-block-start: 0;
         transform: translateY(calc((100% + #{tokens.$spacer-xs}) * -1));
         margin-inline: auto;
         margin-block-end: #{tokens.$spacer-md};
@@ -163,7 +163,7 @@
           height: var(--_marker-height);
           aspect-ratio: 16/9;
           position: absolute;
-          inset-block-end: calc(#{tokens.$spacer-md} * -1 + 1px);
+          inset-block-end: calc(#{tokens.$spacer-2xs} * -1 + 1px);
           background-color: var(--tooltip-background-color);
           clip-path: polygon(50% 100%, 0 0, 100% 0);
         }

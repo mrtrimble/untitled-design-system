@@ -9,49 +9,6 @@
   <meta name="viewport"
         content="width=device-width, initial-scale=1.0" />
   <title>Design System</title>
-
-  <style>
-    /* :is(.button:not(.secondary, .plain)) {
-      --button-background-color: dodgerblue;
-      --button-text-color: black;
-    } */
-
-    /* .button.secondary {
-      --button-background-color: seagreen;
-      --button-text-color: white;
-    } */
-
-    /* .button.plain {
-      --button-padding-inline: none;
-    } */
-
-    /* .button.plain:hover {
-      --button-background-color: none;
-    } */
-
-    /* .accordion {
-      --accordion-background-color: #EFEFEF;
-      --accordion-header-background-color: dodgerblue;
-      --accordion-text-color: black;
-    } */
-
-    /* :root {
-      --message-success: rebeccapurple;
-    } */
-
-    /* #target {
-      display: none;
-    }
-
-    #target.active {
-      display: block;
-    } */
-
-    /* .tooltip {
-      --tooltip-background-color: dodgerblue;
-      --tooltip-text-color: white;
-    } */
-  </style>
 </head>
 
 <body class="no-js">
@@ -328,47 +285,13 @@
         <section class="flow">
           <h2 id="components">Components</h2>
 
-          <!-- Forms -->
-          <!-- <section>
-            <div class="flow flow-2xs">
-              <h3 id="forms">Forms</h3>
-
-              <h4>Inputs</h4>
-              <label for="">
-                Input Label
-                <input type="text">
-                <span class="error">This input has an error!</span>
-              </label>
-              <label for="">
-                Input Label
-                <input type="date">
-                <span class="error">This input has an error!</span>
-              </label>
-              <fieldset>
-                <legend>Test</legend>
-                <label for="example-checkbox">
-                  <input type="checkbox"
-                         name="checkbox"
-                         id="example-checkbox">
-                  Default Checkbox
-                </label>
-                <label for="example-radio">
-                  <input type="checkbox"
-                         name="example-radio"
-                         id="example-radio-1">
-                  Default Checkbox
-                </label>
-              </fieldset>
-            </div>
-          </section> -->
-
           <!-- Accordions -->
           <div class="flow">
             <h3 id="accordions">Accordions</h3>
 
             <section>
               <div class="flow flow-2xs">
-                <h4 id="accordion-description">Description</h4>
+                <h4 id="accordion-description">Accordion Description</h4>
                 <p>Accordion components are collapsible disclosure type elements often stacked into groups.</p>
                 <p>Accordions consist of a clickable header type element that toggles the visibility of the accordion's
                   content
@@ -381,7 +304,7 @@
             </section>
             <section>
               <div class="flow flow-2xs">
-                <h4 id="accordion-examples">Examples</h4>
+                <h4 id="accordion-examples">Accordion Examples</h4>
 
                 <details class="accordion">
                   <summary>No JavaScript Accordion</summary>
@@ -423,7 +346,7 @@
             </section>
             <section>
               <div class="flow flow-2xs">
-                <h4 id="accordion-accessibility">Accessibility</h4>
+                <h4 id="accordion-accessibility">Accordion Accessibility</h4>
                 <ul role="list">
                   <li>Toggling of accordions should happen by clicking the header, or by pressing the Space or Enter
                     keys while
@@ -468,7 +391,7 @@
             </section>
             <section>
               <div class="flow flow-2xs">
-                <h4 id="accordion-progressive-enhancement">Progressive Enhancement</h4>
+                <h4 id="accordion-progressive-enhancement">Accordion Progressive Enhancement</h4>
 
                 <ul role="list">
                   <li>By including the <code>no-js</code> class on the <code>body</code> element, we can enhance the
@@ -486,7 +409,7 @@
             </section>
             <section>
               <div class="flow flow-2xs">
-                <h4 id="accordion-tokens">Tokens</h4>
+                <h4 id="accordion-tokens">Accordion Tokens</h4>
                 <p>The following design tokens can be customized to fit your theme!</p>
                 <details class="accordion">
                   <summary>
@@ -531,81 +454,123 @@
           </div>
 
           <!-- Buttons -->
-          <section>
-            <div class="flow flow-2xs">
-              <h3 id="buttons">Buttons</h3>
-              <p>There are three different types of buttons: primary, secondary, and plain.</p>
-              <p>Primary buttons are for primary actions, secondary buttons are for secondary actions. Plain buttons are
-                styled to appear as links.</p>
-              <button type="button"
-                      class="button">Primary Button</button>
-              <button type="button"
-                      class="button secondary">Secondary Button</button>
-              <button type="button"
-                      class="button plain">Plain Button</button>
+          <div class="flow">
+            <h3 id="buttons">Buttons</h3>
 
-              <details class="accordion">
-                <summary>Button Tokens</summary>
-                <ul class="grid overflow-x-auto"
-                    tabindex="0">
+            <section>
+              <div class="flow flow-2xs">
+                <h4 id="buttons-description">Button Description</h4>
+                <p>There are three different types of buttons: primary, secondary, and plain.</p>
+                <p>Primary buttons are for primary actions, secondary buttons are for secondary actions. Plain buttons
+                  are styled to appear as links.</p>
+                <p>Standard link elements can also be styled to look like a button.</p>
+              </div>
+            </section>
+
+            <section>
+              <div class="flow flow-2xs">
+                <h4 id="buttons-examples">Button Examples</h4>
+
+                <button type="button"
+                        class="button">Primary Button</button>
+                <button type="button"
+                        class="button secondary">Secondary Button</button>
+                <button type="button"
+                        class="button plain">Plain Button</button>
+              </div>
+            </section>
+
+            <section>
+              <div class="flow flow-2xs">
+                <h4>Button Accessibility</h4>
+                <ul role="list">
                   <li>
-                    <code>--button-background-color</code>
-                  </li>
-                  <li>
-                    <code>--button-border-color</code>
-                  </li>
-                  <li>
-                    <code>--button-border-style</code>
-                  </li>
-                  <li>
-                    <code>--button-border-radius</code>
-                  </li>
-                  <li>
-                    <code>--button-border-width</code>
-                  </li>
-                  <li>
-                    <code>--button-font-size</code>
-                  </li>
-                  <li>
-                    <code>--button-outline-offset</code>
-                  </li>
-                  <li>
-                    <code>--button-outline-color</code>
-                  </li>
-                  <li>
-                    <code>--button-outline-style</code>
-                  </li>
-                  <li>
-                    <code>--button-outline-width</code>
-                  </li>
-                  <li>
-                    <code>--button-padding-block</code>
-                  </li>
-                  <li>
-                    <code>--button-padding-inline</code>
-                  </li>
-                  <li>
-                    <code>--button-text-color</code>
-                  </li>
-                  <li>
-                    <code>--button-text-decoration</code>
-                  </li>
-                  <li>
-                    <code>--button-width</code>
+                    Buttons should always have a type attribute applied.
+                    <ul role="list">
+                      <li>Buttons within forms automatically assume the type of `submit`.</li>
+                      <li>Non-submit buttons should have the type of `button`.</li>
+                    </ul>
                   </li>
                 </ul>
-              </details>
-            </div>
-          </section>
+              </div>
+            </section>
+
+            <section>
+              <div class="flow flow-2xs">
+                <h4>Button Tokens</h4>
+                <details class="accordion">
+                  <summary>Button Tokens</summary>
+                  <ul class="grid overflow-x-auto"
+                      tabindex="0">
+                    <li>
+                      <code>--button-background-color</code>
+                    </li>
+                    <li>
+                      <code>--button-border-color</code>
+                    </li>
+                    <li>
+                      <code>--button-border-style</code>
+                    </li>
+                    <li>
+                      <code>--button-border-radius</code>
+                    </li>
+                    <li>
+                      <code>--button-border-width</code>
+                    </li>
+                    <li>
+                      <code>--button-font-size</code>
+                    </li>
+                    <li>
+                      <code>--button-outline-offset</code>
+                    </li>
+                    <li>
+                      <code>--button-outline-color</code>
+                    </li>
+                    <li>
+                      <code>--button-outline-style</code>
+                    </li>
+                    <li>
+                      <code>--button-outline-width</code>
+                    </li>
+                    <li>
+                      <code>--button-padding-block</code>
+                    </li>
+                    <li>
+                      <code>--button-padding-inline</code>
+                    </li>
+                    <li>
+                      <code>--button-text-color</code>
+                    </li>
+                    <li>
+                      <code>--button-text-decoration</code>
+                    </li>
+                    <li>
+                      <code>--button-width</code>
+                    </li>
+                  </ul>
+                </details>
+              </div>
+            </section>
+          </div>
+
 
           <!-- Cards -->
-          <section>
-            <div class="flow flow-2xs">
-              <h3 id="cards">Cards</h3>
-              <p>Every design system needs to have a card component, obviously!</p>
-              <div class="grid auto-grid gap-xs"
-                   style="--grid-column-min: 25ch">
-                <div class="cq-wrapper">
+          <div class="flow">
+            <h3 id="cards">Cards</h3>
+
+            <section>
+              <div class="flow flow-2xs">
+                <h4>Card Description</h4>
+                <p>Every design system needs to have a card component, obviously!</p>
+              </div>
+            </section>
+
+            <section>
+              <div class="flow flow-2xs">
+                <h4>Card Examples</h4>
+
+                <div class="grid auto-grid gap-xs"
+                     style="--grid-column-min: 25ch">
                   <div class="card background-grayscale-white text-color-base">
                     <figure>
                       <img src="https://images.unsplash.com/photo-1519681393784-d120267933ba?ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D&auto=format&fit=crop&w=2340&q=80"
@@ -619,356 +584,516 @@
                       sequi possimus quaerat esse, cupiditate, delectus aperiam fugiat quibusdam hic. Nemo vero sunt
                       perspiciatis.</p>
                   </div>
-                </div>
-                <div class="card background-grayscale-white text-color-base">
-                  <figure>
-                    <img src="https://images.unsplash.com/photo-1519681393784-d120267933ba?ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D&auto=format&fit=crop&w=2340&q=80"
-                         height="200"
-                         width="400"
-                         alt="Mountains">
-                  </figure>
-                  <h4>Default Card</h4>
-                  <p>Lorem ipsum, dolor sit amet consectetur adipisicing elit. Ea iure ullam voluptas nulla ex earum
-                    tempora
-                    sequi possimus quaerat esse, cupiditate, delectus aperiam fugiat quibusdam hic. Nemo vero sunt
-                    perspiciatis.</p>
-                </div>
+                  <div class="card background-grayscale-white text-color-base">
+                    <figure>
+                      <img src="https://images.unsplash.com/photo-1519681393784-d120267933ba?ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D&auto=format&fit=crop&w=2340&q=80"
+                           height="200"
+                           width="400"
+                           alt="Mountains">
+                    </figure>
+                    <h4>Default Card</h4>
+                    <p>Lorem ipsum, dolor sit amet consectetur adipisicing elit. Ea iure ullam voluptas nulla ex earum
+                      tempora
+                      sequi possimus quaerat esse, cupiditate, delectus aperiam fugiat quibusdam hic. Nemo vero sunt
+                      perspiciatis.</p>
+                  </div>
 
+                </div>
               </div>
+            </section>
 
-              <details class="accordion">
-                <summary>Card Tokens</summary>
-                <ul class="grid overflow-x-auto"
-                    tabindex="0">
-                  <li>
-                    <code>--card-background-color</code>
-                  </li>
-                  <li>
-                    <code>--card-border-color</code>
-                  </li>
-                  <li>
-                    <code>--card-border-style</code>
-                  </li>
-                  <li>
-                    <code>--card-border-width</code>
-                  </li>
-                  <li>
-                    <code>--card-flow-space</code>
-                  </li>
-                  <li>
-                    <code>--card-margin-inline</code>
-                  </li>
-                </ul>
-              </details>
-            </div>
-          </section>
+            <section>
+              <div class="flow flow-2xs">
+                <h4>Card Accessibility</h4>
+              </div>
+            </section>
+
+            <section>
+              <div class="flow flow-2xs">
+                <h4>Card Progressive Enhancement</h4>
+              </div>
+            </section>
+
+            <section>
+              <div class="flow flow-2xs">
+                <h4>Card Tokens</h4>
+
+                <details class="accordion">
+                  <summary>Card Tokens</summary>
+                  <ul class="grid overflow-x-auto"
+                      tabindex="0">
+                    <li>
+                      <code>--card-background-color</code>
+                    </li>
+                    <li>
+                      <code>--card-border-color</code>
+                    </li>
+                    <li>
+                      <code>--card-border-style</code>
+                    </li>
+                    <li>
+                      <code>--card-border-width</code>
+                    </li>
+                    <li>
+                      <code>--card-flow-space</code>
+                    </li>
+                    <li>
+                      <code>--card-margin-inline</code>
+                    </li>
+                  </ul>
+                </details>
+              </div>
+            </section>
+          </div>
 
           <!-- Drawer -->
-          <section>
-            <div class="flow flow-2xs">
-              <h3 id="drawers">Drawers</h3>
+          <div class="flow">
+            <h3 id="drawers">Drawers</h3>
+            <section>
+              <div class="flow flow-2xs">
+                <h4>Drawer Description</h4>
 
-              <p>Drawers can be utilized in two different ways: standard JavaScript or utilizing the Popover API!</p>
+                <p>Drawers can be utilized in two different ways: standard JavaScript or utilizing the Popover API!</p>
+              </div>
+            </section>
 
-              <button type="button"
-                      class="button drawer-toggle"
-                      data-target="example">
-                Open JavaScript Drawer
-              </button>
-              <div class="drawer"
-                   id="example">
-                <h4>JavaScript Drawer Header</h4>
-                <p>Lorem ipsum dolor sit amet consectetur, adipisicing elit. Ex, magni. Non saepe optio tenetur eos
-                  consequatur in quia iure aliquam ad facere consequuntur error illum aliquid, repudiandae earum vitae
-                  delectus?</p>
+            <section>
+              <div class="flow flow-2xs">
+                <h4>Drawer Examples</h4>
+
                 <button type="button"
                         class="button drawer-toggle"
                         data-target="example">
-                  Close Drawer
+                  Open JavaScript Drawer
                 </button>
-              </div>
-              <button type="button"
-                      class="button drawer-toggle"
-                      popovertarget="example-2"
-                      popovertargetaction="toggle">
-                Open Popover Drawer
-              </button>
-              <div class="drawer"
-                   popover
-                   id="example-2">
-                <h4>Popover Drawer Header</h4>
-                <p>Lorem ipsum dolor sit amet consectetur, adipisicing elit. Ex, magni. Non saepe optio tenetur eos
-                  consequatur in quia iure aliquam ad facere consequuntur error illum aliquid, repudiandae earum vitae
-                  delectus?</p>
+                <div class="drawer"
+                     id="example">
+                  <h4>JavaScript Drawer Header</h4>
+                  <p>Lorem ipsum dolor sit amet consectetur, adipisicing elit. Ex, magni. Non saepe optio tenetur eos
+                    consequatur in quia iure aliquam ad facere consequuntur error illum aliquid, repudiandae earum vitae
+                    delectus?</p>
+                  <button type="button"
+                          class="button drawer-toggle"
+                          data-target="example">
+                    Close Drawer
+                  </button>
+                </div>
+
                 <button type="button"
                         class="button drawer-toggle"
                         popovertarget="example-2"
                         popovertargetaction="toggle">
-                  Close Drawer
+                  Open Popover Drawer
                 </button>
+                <div class="drawer"
+                     popover
+                     id="example-2">
+                  <h4>Popover Drawer Header</h4>
+                  <p>Lorem ipsum dolor sit amet consectetur, adipisicing elit. Ex, magni. Non saepe optio tenetur eos
+                    consequatur in quia iure aliquam ad facere consequuntur error illum aliquid, repudiandae earum vitae
+                    delectus?</p>
+                  <button type="button"
+                          class="button drawer-toggle"
+                          popovertarget="example-2"
+                          popovertargetaction="toggle">
+                    Close Drawer
+                  </button>
+                </div>
               </div>
-            </div>
-          </section>
+            </section>
+
+            <section>
+              <div class="flow flow-2xs">
+                <h4>Drawer Accessibility</h4>
+              </div>
+            </section>
+
+            <section>
+              <div class="flow flow-2xs">
+                <h4>Drawer Progressive Enhancement</h4>
+              </div>
+            </section>
+
+            <section>
+              <div class="flow flow-2xs">
+                <h4>Drawer Tokens</h4>
+              </div>
+            </section>
+          </div>
 
           <!-- Messages -->
-          <section>
-            <div class="flow flow-2xs">
-              <h3 id="messages">Messages</h3>
+          <div class="flow">
+            <h3 id="messages">Messages</h3>
 
-              <p>Messages for different various states and statuses.</p>
+            <section>
+              <div class="flow flow-2xs">
+                <h4>Message Description</h4>
+                <p>Messages for different various states and statuses.</p>
+              </div>
+            </section>
 
-              <div>
-                <div class="message">
-                  <p class="text-color-base">Default Message</p>
-                </div>
-                <div class="message info">
-                  <p>Info Message</p>
-                </div>
-                <div class="message warning">
-                  <p>Warning Message</p>
-                </div>
-                <div class="message success">
-                  <p>Success Message</p>
-                </div>
-                <div class="message error">
-                  <p>Error Message</p>
+            <section>
+              <div class="flow flow-2xs">
+                <h4>Message Examples</h4>
+
+                <div>
+                  <div class="message">
+                    <p class="text-color-base">Default Message</p>
+                  </div>
+                  <div class="message info">
+                    <p>Info Message</p>
+                  </div>
+                  <div class="message warning">
+                    <p>Warning Message</p>
+                  </div>
+                  <div class="message success">
+                    <p>Success Message</p>
+                  </div>
+                  <div class="message error">
+                    <p>Error Message</p>
+                  </div>
                 </div>
               </div>
+            </section>
 
-              <details class="accordion">
-                <summary>Message Tokens</summary>
+            <section>
+              <div class="flow flow-2xs">
+                <h4>Messages Accessibility</h4>
+              </div>
+            </section>
 
-                <ul class="grid overflow-x-auto"
-                    tabindex="0">
-                  <li>
-                    <code>--message-background-color</code>
-                  </li>
-                  <li>
-                    <code>--message-border-style</code>
-                  </li>
-                  <li>
-                    <code>--message-border-width</code>
-                  </li>
-                  <li>
-                    <code>--message-border-color</code>
-                  </li>
-                  <li>
-                    <code>--message-color</code>
-                  </li>
-                  <li>
-                    <code>--message-padding-block</code>
-                  </li>
-                  <li>
-                    <code>--message-padding-inline</code>
-                  </li>
-                </ul>
-              </details>
-            </div>
-          </section>
+            <section>
+              <div class="flow flow-2xs">
+                <h4>Messages Progressive Enhancement</h4>
+              </div>
+            </section>
+
+            <section>
+              <div class="flow flow-2xs">
+                <h4>Messages Tokens</h4>
+                <details class="accordion">
+                  <summary>Message Tokens</summary>
+
+                  <ul class="grid overflow-x-auto"
+                      tabindex="0">
+                    <li>
+                      <code>--message-background-color</code>
+                    </li>
+                    <li>
+                      <code>--message-border-style</code>
+                    </li>
+                    <li>
+                      <code>--message-border-width</code>
+                    </li>
+                    <li>
+                      <code>--message-border-color</code>
+                    </li>
+                    <li>
+                      <code>--message-color</code>
+                    </li>
+                    <li>
+                      <code>--message-padding-block</code>
+                    </li>
+                    <li>
+                      <code>--message-padding-inline</code>
+                    </li>
+                  </ul>
+                </details>
+              </div>
+            </section>
+          </div>
 
           <!-- Modals -->
-          <section>
-            <div class="flow flow-2xs">
-              <h3 id="modals">Modals</h3>
-              <p>Modals can be built with either the <code>&lt;dialog&gt;</code> element, or by using the built in
-                JavaScript approach.</p>
-              <button type="button"
-                      class="button modal-toggle"
-                      data-target="dialog-modal">
-                Open Dialog Modal
-              </button>
-              <dialog class="modal"
-                      id="dialog-modal">
-                <div class="modal-inner">
-                  <h4>Dialog Modal Heading</h4>
-                  <p>Lorem ipsum dolor sit, amet consectetur adipisicing elit. Illo ea fugit eligendi possimus ratione
-                    excepturi voluptas repudiandae, facere quo magnam. Facilis odio, ipsum harum iste quam nam
-                    reiciendis
-                    eius
-                    nihil!</p>
+          <div class="flow">
+            <h3 id="modals">Modals</h3>
 
-                  <button type="button"
-                          class="button modal-toggle"
-                          data-target="dialog-modal">
-                    Close Modal
-                  </button>
+            <section>
+              <div class="flow flow-2xs">
+                <h4>Modal Description</h4>
+                <p>Modals can be built with either the <code>&lt;dialog&gt;</code> element, or by using the built in
+                  JavaScript approach.</p>
+              </div>
+            </section>
 
-                </div>
-              </dialog>
-              <button type="button"
-                      class="button modal-toggle"
-                      data-target="javascript-modal">
-                Open JavaScript Modal
-              </button>
-              <div class="modal"
-                   id="javascript-modal">
-                <div class="modal-inner">
-                  <h4>JavaScript Modal Heading</h4>
-                  <p>Lorem ipsum dolor sit, amet consectetur adipisicing elit. Illo ea fugit eligendi possimus ratione
-                    excepturi voluptas repudiandae, facere quo magnam. Facilis odio, ipsum harum iste quam nam
-                    reiciendis
-                    eius
-                    nihil!</p>
+            <section>
+              <div class="flow flow-2xs">
+                <h4>Modal Examples</h4>
 
-                  <button type="button"
-                          class="button modal-toggle"
-                          data-target="javascript-modal">
-                    Close Modal
-                  </button>
+                <button type="button"
+                        class="button modal-toggle"
+                        data-target="dialog-modal">
+                  Open Dialog Modal
+                </button>
+                <dialog class="modal"
+                        id="dialog-modal">
+                  <div class="modal-inner">
+                    <h4>Dialog Modal Heading</h4>
+                    <p>Lorem ipsum dolor sit, amet consectetur adipisicing elit. Illo ea fugit eligendi possimus ratione
+                      excepturi voluptas repudiandae, facere quo magnam. Facilis odio, ipsum harum iste quam nam
+                      reiciendis
+                      eius
+                      nihil!</p>
+
+                    <button type="button"
+                            class="button modal-toggle"
+                            data-target="dialog-modal">
+                      Close Modal
+                    </button>
+
+                  </div>
+                </dialog>
+
+                <button type="button"
+                        class="button modal-toggle"
+                        data-target="javascript-modal">
+                  Open JavaScript Modal
+                </button>
+                <div class="modal"
+                     id="javascript-modal">
+                  <div class="modal-inner">
+                    <h4>JavaScript Modal Heading</h4>
+                    <p>Lorem ipsum dolor sit, amet consectetur adipisicing elit. Illo ea fugit eligendi possimus ratione
+                      excepturi voluptas repudiandae, facere quo magnam. Facilis odio, ipsum harum iste quam nam
+                      reiciendis
+                      eius
+                      nihil!</p>
+
+                    <button type="button"
+                            class="button modal-toggle"
+                            data-target="javascript-modal">
+                      Close Modal
+                    </button>
+                  </div>
                 </div>
               </div>
-            </div>
-          </section>
+            </section>
+
+            <section>
+              <div class="flow flow-2xs">
+                <h4>Modal Accessibility</h4>
+              </div>
+            </section>
+
+            <section>
+              <div class="flow flow-2xs">
+                <h4>Modal Progressive Enhancement</h4>
+              </div>
+            </section>
+
+            <section>
+              <div class="flow flow-2xs">
+                <h4>Modal Tokens</h4>
+              </div>
+            </section>
+          </div>
 
           <!-- Tabs -->
-          <section>
-            <div class="flow flow-2xs">
-              <h3 id="tabs">Tabs</h3>
-              <p>A tab component crafted for accessibility, progressively enhanced by JavaScript.</p>
+          <div class="flow">
+            <h3 id="tabs">Tabs</h3>
 
-              <h4 id="example-tabs">Example Tabs</h4>
-              <div class="tabs">
-                <div class="tab-list"
-                     role="tablist"
-                     aria-labelledby="example-tabs">
-                  <button class="tab active"
-                          type="button"
-                          id="tab-1"
-                          role="tab"
-                          aria-selected="true"
-                          data-target="tab-panel-1"
-                          tabindex="0">Tab 1</button>
-                  <button class="tab"
-                          type="button"
-                          id="tab-2"
-                          role="tab"
-                          aria-selected="false"
-                          aria-controls="tab-panel-2"
-                          tabindex="-1">Tab 2</button>
-                  <button class="tab"
-                          type="button"
-                          id="tab-3"
-                          role="tab"
-                          aria-selected="false"
-                          aria-controls="tab-panel-3"
-                          tabindex="-1">Tab 3</button>
-                  <button class="tab"
-                          type="button"
-                          id="tab-4"
-                          role="tab"
-                          aria-selected="false"
-                          aria-controls="tab-panel-4"
-                          tabindex="-1">Tab 4</button>
-                </div>
+            <section>
+              <div class="flow flow-2xs">
+                <h4>Tabs Description</h4>
+                <p>A tab component crafted for accessibility, progressively enhanced by JavaScript.</p>
+              </div>
+            </section>
 
-                <div role="tabpanel"
-                     class="tab-panel open"
-                     id="tab-panel-1"
-                     tabindex="0"
-                     aria-labelledby="tab-1">
-                  <h4>Tab 1 Content</h4>
-                  <p>Lorem ipsum dolor sit, amet consectetur adipisicing elit. In facilis eaque ratione veritatis omnis
-                    magnam voluptatum soluta hic laborum obcaecati. Iusto numquam voluptas beatae! Aliquam
-                    exercitationem quia quae! Totam, saepe!</p>
-                </div>
-                <div role="tabpanel"
-                     class="tab-panel"
-                     id="tab-panel-2"
-                     tabindex="0"
-                     aria-labelledby="tab-2">
-                  <h4>Tab 2 Content</h4>
-                  <p>Lorem ipsum dolor sit amet consectetur adipisicing elit. Quidem amet, temporibus deserunt, saepe
-                    distinctio vitae necessitatibus, repellendus itaque nesciunt minus non! Maxime numquam, cumque
-                    dolorem possimus repudiandae vel! Sed, fugiat?</p>
-                  <p>Sunt, magni corporis suscipit voluptas asperiores officia tempora ab excepturi, delectus porro
-                    aperiam odit natus maiores dolore nostrum doloremque. Cumque, deserunt vel accusantium accusamus
-                    ipsa adipisci praesentium hic consectetur perspiciatis?</p>
-                </div>
+            <section>
+              <div class="flow flow-2xs">
+                <h4 id="example-tabs">Tabs Example</h4>
+                <div class="tabs">
+                  <div class="tab-list"
+                       role="tablist"
+                       aria-labelledby="example-tabs">
+                    <button class="tab active"
+                            type="button"
+                            id="tab-1"
+                            role="tab"
+                            aria-selected="true"
+                            data-target="tab-panel-1"
+                            tabindex="0">Tab 1</button>
+                    <button class="tab"
+                            type="button"
+                            id="tab-2"
+                            role="tab"
+                            aria-selected="false"
+                            aria-controls="tab-panel-2"
+                            tabindex="-1">Tab 2</button>
+                    <button class="tab"
+                            type="button"
+                            id="tab-3"
+                            role="tab"
+                            aria-selected="false"
+                            aria-controls="tab-panel-3"
+                            tabindex="-1">Tab 3</button>
+                    <button class="tab"
+                            type="button"
+                            id="tab-4"
+                            role="tab"
+                            aria-selected="false"
+                            aria-controls="tab-panel-4"
+                            tabindex="-1">Tab 4</button>
+                  </div>
 
-                <div role="tabpanel"
-                     class="tab-panel"
-                     id="tab-panel-3"
-                     tabindex="0"
-                     aria-labelledby="tab-3">
-                  <h4>Tab 3 Content</h4>
-                  <p>Lorem ipsum dolor sit amet consectetur adipisicing elit. Esse fugit sed animi, ea molestiae, enim
-                    iure facere non natus, delectus voluptatibus? Aut voluptates quae vel nulla blanditiis laboriosam,
-                    nihil ea.</p>
-                  <p>Exercitationem vitae ex incidunt molestias, nam, nihil, magni sint rem delectus numquam eaque sed
-                    alias adipisci modi perferendis? Aliquam sequi sit doloremque harum consectetur animi vitae ipsum,
-                    soluta quibusdam repellendus.</p>
-                  <p>Reiciendis ex esse, possimus animi sit nihil dicta. Ex modi velit at ipsa deserunt itaque tenetur
-                    id expedita dolor ipsum dolorum, perferendis rem. Nisi autem soluta corrupti id assumenda
-                    repellendus!</p>
-                </div>
-                <div role="tabpanel"
-                     class="tab-panel"
-                     id="tab-panel-4"
-                     tabindex="0"
-                     aria-labelledby="tab-4">
-                  <h4>Tab 4 Content</h4>
-                  <p>Lorem ipsum dolor sit, amet consectetur adipisicing elit. Nemo asperiores, delectus soluta ducimus,
-                    tempora magnam maiores minima quas aperiam aliquid aliquam voluptatibus eius sit aut eligendi enim
-                    incidunt placeat reprehenderit.</p>
-                  <p>Eaque quas repellendus totam quod explicabo aut similique accusantium, nihil maxime! Sint
-                    recusandae suscipit possimus, quos, fugiat illum beatae aut, omnis quae odit reiciendis ab eius illo
-                    aperiam ipsa fuga?</p>
-                  <p>Similique ullam eos aut tenetur quas veritatis blanditiis adipisci. Provident nesciunt repudiandae
-                    placeat inventore dolor iste ipsum! Rerum ipsam vitae corporis laudantium, quo magnam consequuntur
-                    eligendi? Accusamus neque natus nihil.</p>
-                  <p>Architecto, eius. Aut laudantium in porro dicta similique ullam assumenda vel corrupti nostrum
-                    perferendis, dolores, molestias iure tempora labore eveniet soluta quasi quae! Dolorum quo
-                    accusantium expedita assumenda quos accusamus.</p>
+                  <div role="tabpanel"
+                       class="tab-panel open"
+                       id="tab-panel-1"
+                       tabindex="0"
+                       aria-labelledby="tab-1">
+                    <h4>Tab 1 Content</h4>
+                    <p>Lorem ipsum dolor sit, amet consectetur adipisicing elit. In facilis eaque ratione veritatis
+                      omnis
+                      magnam voluptatum soluta hic laborum obcaecati. Iusto numquam voluptas beatae! Aliquam
+                      exercitationem quia quae! Totam, saepe!</p>
+                  </div>
+                  <div role="tabpanel"
+                       class="tab-panel"
+                       id="tab-panel-2"
+                       tabindex="0"
+                       aria-labelledby="tab-2">
+                    <h4>Tab 2 Content</h4>
+                    <p>Lorem ipsum dolor sit amet consectetur adipisicing elit. Quidem amet, temporibus deserunt, saepe
+                      distinctio vitae necessitatibus, repellendus itaque nesciunt minus non! Maxime numquam, cumque
+                      dolorem possimus repudiandae vel! Sed, fugiat?</p>
+                    <p>Sunt, magni corporis suscipit voluptas asperiores officia tempora ab excepturi, delectus porro
+                      aperiam odit natus maiores dolore nostrum doloremque. Cumque, deserunt vel accusantium accusamus
+                      ipsa adipisci praesentium hic consectetur perspiciatis?</p>
+                  </div>
+
+                  <div role="tabpanel"
+                       class="tab-panel"
+                       id="tab-panel-3"
+                       tabindex="0"
+                       aria-labelledby="tab-3">
+                    <h4>Tab 3 Content</h4>
+                    <p>Lorem ipsum dolor sit amet consectetur adipisicing elit. Esse fugit sed animi, ea molestiae, enim
+                      iure facere non natus, delectus voluptatibus? Aut voluptates quae vel nulla blanditiis laboriosam,
+                      nihil ea.</p>
+                    <p>Exercitationem vitae ex incidunt molestias, nam, nihil, magni sint rem delectus numquam eaque sed
+                      alias adipisci modi perferendis? Aliquam sequi sit doloremque harum consectetur animi vitae ipsum,
+                      soluta quibusdam repellendus.</p>
+                    <p>Reiciendis ex esse, possimus animi sit nihil dicta. Ex modi velit at ipsa deserunt itaque tenetur
+                      id expedita dolor ipsum dolorum, perferendis rem. Nisi autem soluta corrupti id assumenda
+                      repellendus!</p>
+                  </div>
+                  <div role="tabpanel"
+                       class="tab-panel"
+                       id="tab-panel-4"
+                       tabindex="0"
+                       aria-labelledby="tab-4">
+                    <h4>Tab 4 Content</h4>
+                    <p>Lorem ipsum dolor sit, amet consectetur adipisicing elit. Nemo asperiores, delectus soluta
+                      ducimus,
+                      tempora magnam maiores minima quas aperiam aliquid aliquam voluptatibus eius sit aut eligendi enim
+                      incidunt placeat reprehenderit.</p>
+                    <p>Eaque quas repellendus totam quod explicabo aut similique accusantium, nihil maxime! Sint
+                      recusandae suscipit possimus, quos, fugiat illum beatae aut, omnis quae odit reiciendis ab eius
+                      illo
+                      aperiam ipsa fuga?</p>
+                    <p>Similique ullam eos aut tenetur quas veritatis blanditiis adipisci. Provident nesciunt
+                      repudiandae
+                      placeat inventore dolor iste ipsum! Rerum ipsam vitae corporis laudantium, quo magnam consequuntur
+                      eligendi? Accusamus neque natus nihil.</p>
+                    <p>Architecto, eius. Aut laudantium in porro dicta similique ullam assumenda vel corrupti nostrum
+                      perferendis, dolores, molestias iure tempora labore eveniet soluta quasi quae! Dolorum quo
+                      accusantium expedita assumenda quos accusamus.</p>
+                  </div>
                 </div>
               </div>
-            </div>
-          </section>
+            </section>
+
+            <section>
+              <div class="flow flow-2xs">
+                <h4>Tabs Accessibility</h4>
+
+              </div>
+            </section>
+
+            <section>
+              <div class="flow flow-2xs">
+                <h4>Tabs Progressive Enhancement</h4>
+              </div>
+            </section>
+
+            <section>
+              <div class="flow flow-2xs">
+                <h4>Tabs Tokens</h4>
+              </div>
+            </section>
+          </div>
 
           <!-- Tooltip -->
-          <section>
-            <div class="flow flow-2xs">
-              <h3 id="tooltips">Tooltips</h3>
+          <div class="flow">
+            <h3 id="tooltips">Tooltips</h3>
 
-              <h4 id="example-tooltips">Tooltips Example</h4>
-              <p>Lorem, ipsum dolor sit
-                <span id="tooltip-toggle"
-                      class="tooltip-toggle"
-                      popovertarget="tooltip"
-                      aria-describedby="tooltip"
-                      tabindex="0">
-                  Tooltip with Anchor positioning
-                  <a href="#tooltip"
-                     class="footnote-link">[1]</a>
-                </span>
-                amet consectetur adipisicing elit.
-                <span class="tooltip-toggle"
-                      data-target="javascript-tooltip"
-                      aria-describedby="javascript-tooltip">
-                  JavaScript Tooltip
-                  <a href="#javascript-tooltip"
-                     class="footnote-link">[2]</a>
-                </span>
-                Vel quod
-                hic accusamus nam! Repellendus
-                blanditiis eum a veniam dolore sed facere. Alias obcaecati accusantium facere, magni exercitationem
-                nulla
-                est? Eaque?
-              </p>
+            <section>
+              <div class="flow flow-2xs">
+                <h4>Tooltip Description</h4>
+              </div>
+            </section>
 
-              <div anchor="tooltip-toggle"
-                   class="tooltip"
-                   id="tooltip"
-                   role="tooltip"
-                   popover>
-                <span class="footnote-link">[1]</span> This is an anchor positioned popover!
+            <section>
+              <div class="flow flow-2xs">
+                <h4>Tooltip Examples</h4>
+
+                <p>Lorem, ipsum dolor sit
+                  <span id="tooltip-toggle"
+                        class="tooltip-toggle"
+                        popovertarget="tooltip"
+                        aria-describedby="tooltip"
+                        tabindex="0">
+                    Tooltip with Anchor positioning
+                    <a href="#tooltip"
+                       class="footnote-link">[1]</a>
+                  </span>
+                  amet consectetur adipisicing elit.
+                  <span class="tooltip-toggle"
+                        data-target="javascript-tooltip"
+                        aria-describedby="javascript-tooltip">
+                    JavaScript Tooltip
+                    <a href="#javascript-tooltip"
+                       class="footnote-link">[2]</a>
+                  </span>
+                  Vel quod
+                  hic accusamus nam! Repellendus
+                  blanditiis eum a veniam dolore sed facere. Alias obcaecati accusantium facere, magni exercitationem
+                  nulla
+                  est? Eaque?
+                </p>
+
+                <div anchor="tooltip-toggle"
+                     class="tooltip"
+                     id="tooltip"
+                     role="tooltip"
+                     popover>
+                  <span class="footnote-link">[1]</span> This is an anchor positioned popover!
+                </div>
+                <div class="tooltip"
+                     id="javascript-tooltip"
+                     role="tooltip">
+                  <span class="footnote-link">[2]</span> This is a javascript tooltip!
+                </div>
               </div>
-              <div class="tooltip"
-                   id="javascript-tooltip"
-                   role="tooltip">
-                <span class="footnote-link">[2]</span> This is a javascript tooltip!
+            </section>
+
+            <section>
+              <div class="flow flow-2xs">
+                <h4>Tooltip Accessibility</h4>
               </div>
-            </div>
-          </section>
+            </section>
+
+            <section>
+              <div class="flow flow-2xs">
+                <h4>Tooltip Progressive Enhancements</h4>
+              </div>
+            </section>
+            
+            <section>
+              <div class="flow flow-2xs">
+                <h4>Tooltip Tokens</h4>
+              </div>
+            </section>
+          </div>
         </section>
 
         <!-- Typography -->
