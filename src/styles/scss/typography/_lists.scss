@@ -1,3 +1,5 @@
+@use '../tokens/tokens' as tokens;
+
 @layer globals {
   @layer typography {
     ul,
@@ -7,7 +9,7 @@
       }
       ul,
       ol {
-        margin-inline-start: var(--spacer-2xs);
+        margin-inline-start: #{tokens.$spacer-2xs};
       }
     }
   }

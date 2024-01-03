@@ -1,20 +1,16 @@
-@use 'sass:meta';
-@use 'sass:map';
 @use '../tokens/tokens';
-
-$TOKENS: meta.module-variables('tokens');
 
 @layer components {
   .skip-link {
     --_background-color: var(--skip-link-background-color, canvasText);
-    --_padding: var(--skip-link-padding, #{map.get($TOKENS, skip-link-padding)});
-    --_transition: var(--skip-link-transition, #{map.get($TOKENS, skip-link-transition)});
+    --_padding: var(--skip-link-padding, #{tokens.$skip-link-padding});
+    --_transition: var(--skip-link-transition, #{tokens.$skip-link-transition});
 
     @layer rules {
       position: absolute;
       inset-inline-start: 0;
       inset-block-start: 0;
-      padding: var(--spacer-xs);
+      padding: #{tokens.$spacer-xs};
       background: var(--_background-color);
       transform: translateY(calc(-100% - 5px));
       @media (prefers-reduced-motion: no-preference) {
@@ -27,7 +23,7 @@ $TOKENS: meta.module-variables('tokens');
         transform: translateY(0);
       }
       > a:focus {
-        --body-link-color: canvas
+        --body-link-color: canvas;
       }
     }
   }

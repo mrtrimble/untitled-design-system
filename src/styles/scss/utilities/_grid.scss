@@ -93,25 +93,25 @@ $SPACERS: (
   }
 
   // Responsive Gap Sizes
-  @each $breakpoint, $value in $BREAKPOINTS {
-    @media (min-width: #{$value}) {
-      @each $spacer, $value in $SPACERS {
-        .gap-#{$spacer}\:#{$breakpoint} {
-          --grid-gap: var(#{$value});
-        }
+  // @each $breakpoint, $value in $BREAKPOINTS {
+  //   @media (min-width: #{$value}) {
+  //     @each $spacer, $value in $SPACERS {
+  //       .gap-#{$spacer}\:#{$breakpoint} {
+  //         --grid-gap: var(#{$value});
+  //       }
 
-        .gap-row-#{$spacer}\:#{$breakpoint} {
-          --grid-row-gap: var(#{$value});
-          --grid-gap: var(--grid-row-gap) var(--grid-column-gap);
-        }
+  //       .gap-row-#{$spacer}\:#{$breakpoint} {
+  //         --grid-row-gap: var(#{$value});
+  //         --grid-gap: var(--grid-row-gap) var(--grid-column-gap);
+  //       }
 
-        .gap-column-#{$spacer}\:#{$breakpoint} {
-          --grid-column-gap: var(#{$value});
-          --grid-gap: var(--grid-row-gap) var(--grid-column-gap);
-        }
-      }
-    }
-  }
+  //       .gap-column-#{$spacer}\:#{$breakpoint} {
+  //         --grid-column-gap: var(#{$value});
+  //         --grid-gap: var(--grid-row-gap) var(--grid-column-gap);
+  //       }
+  //     }
+  //   }
+  // }
 
   .auto-grid {
     --_min: var(--grid-column-min, 15ch);

@@ -1,3 +1,5 @@
+@use '../tokens/tokens' as tokens;
+
 @layer globals {
   @layer icons {
     .icon {
@@ -11,7 +13,7 @@
       height: var(--font-size-2xs);
     }
     .icon-size-xs {
-      height: var(--font-size-2xs);
+      height: var(--font-size-xs);
     }
     .icon-size-md {
       height: var(--font-size-md);

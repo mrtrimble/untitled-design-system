@@ -1,8 +1,4 @@
-@use 'sass:meta';
-@use 'sass:map';
 @use '../tokens/tokens';
-
-$TOKENS: meta.module-variables('tokens');
 
 @layer components {
   body.no-js {
@@ -22,8 +18,8 @@ $TOKENS: meta.module-variables('tokens');
   }
 
   :is(.tab-list, [role='tablist']) {
-    --_min: var(--tab-list-column-min, #{map.get($TOKENS, tab-list-column-min)});
-    --_display: var(--tab-list-display, #{map.get($TOKENS, tab-list-display)});
+    --_min: var(--tab-list-column-min, #{tokens.$tab-list-column-min});
+    --_display: var(--tab-list-display, #{tokens.$tab-list-display});
 
     @layer rules {
       grid-area: tab-list;
@@ -40,13 +36,13 @@ $TOKENS: meta.module-variables('tokens');
   }
 
   :is(button.tab, [role='tab']) {
-    --_background-color: var(--tab-background-color, #{map.get($TOKENS, tab-background-color)});
-    --_border-color: var(--tab-border-color, #{map.get($TOKENS, tab-border-color)});
-    --_border-width: var(--tab-border-width, #{map.get($TOKENS, tab-border-width)});
-    --_border-style: var(--tab-border-style, #{map.get($TOKENS, tab-border-style)});
-    --_text-color: var(--tab-text-color, #{map.get($TOKENS, tab-text-color)});
-    --_padding-inline: var(--tab-padding-inline, #{map.get($TOKENS, tab-padding-inline)});
-    --_padding-block: var(--tab-padding-block, #{map.get($TOKENS, tab-padding-block)});
+    --_background-color: var(--tab-background-color, #{tokens.$tab-background-color});
+    --_border-color: var(--tab-border-color, #{tokens.$tab-border-color});
+    --_border-width: var(--tab-border-width, #{tokens.$tab-border-width});
+    --_border-style: var(--tab-border-style, #{tokens.$tab-border-style});
+    --_text-color: var(--tab-text-color, #{tokens.$tab-text-color});
+    --_padding-inline: var(--tab-padding-inline, #{tokens.$tab-padding-inline});
+    --_padding-block: var(--tab-padding-block, #{tokens.$tab-padding-block});
 
     @layer rules {
       background-color: var(--_background-color);
@@ -60,8 +56,8 @@ $TOKENS: meta.module-variables('tokens');
       &.active,
       [aria-selected='true'],
       &:active {
-        --tab-background-color: var(--swatch-navy);
-        --tab-text-color: var(--grayscale-white);
+        --tab-background-color: #{tokens.$color-purple};
+        --tab-text-color: #{tokens.$grayscale-white};
       }
 
       @media (min-width: 640px) {
@@ -70,29 +66,29 @@ $TOKENS: meta.module-variables('tokens');
         &.active,
         [aria-selected='true'],
         &:active {
-          --tab-background-color: var(--grayscale-lighter);
-          --tab-border-color: var(--swatch-navy);
+          --tab-background-color: #{tokens.$grayscale-lighter};
+          --tab-border-color: #{tokens.$color-purple};
           --tab-text-color: currentcolor;
         }
 
         &:hover {
-          --tab-background-color: var(--grayscale-lighter);
+          --tab-background-color: #{tokens.$grayscale-lighter};
         }
       }
     }
 
     @layer themes {
       @media (prefers-color-scheme: dark) {
-        --tab-background-color: var(--grayscale-dark);
+        --tab-background-color: #{tokens.$grayscale-dark};
 
         &.active,
         [aria-selected='true'],
         &:active {
-          --tab-background-color: var(--grayscale-black);
+          --tab-background-color: #{tokens.$grayscale-black};
         }
 
         &:hover {
-          --tab-background-color: var(--grayscale-black);
+          --tab-background-color: #{tokens.$grayscale-black};
         }
 
         @media (min-width: 640px) {
@@ -101,7 +97,7 @@ $TOKENS: meta.module-variables('tokens');
           &.active,
           [aria-selected='true'],
           &:active {
-            --tab-background-color: var(--grayscale-dark);
+            --tab-background-color: #{tokens.$grayscale-dark};
           }
         }
       }
@@ -109,11 +105,11 @@ $TOKENS: meta.module-variables('tokens');
   }
 
   :is(.tab-panel, [role='tabpanel']) {
-    --_background-color: var(--tab-panel-background-color, #{map.get($TOKENS, tab-panel-background-color)});
-    --_display: var(--tab-panel-display, #{map.get($TOKENS, tab-panel-display)});
-    --_flow-space: var(--tab-panel-flow-space, #{map.get($TOKENS, tab-panel-flow-space)});
-    --_padding-inline: var(--tab-panel-padding-inline, #{map.get($TOKENS, tab-panel-padding-inline)});
-    --_padding-block: var(--tab-panel-padding-block, #{map.get($TOKENS, tab-panel-padding-block)});
+    --_background-color: var(--tab-panel-background-color, #{tokens.$tab-panel-background-color});
+    --_display: var(--tab-panel-display, #{tokens.$tab-panel-display});
+    --_flow-space: var(--tab-panel-flow-space, #{tokens.$tab-panel-flow-space});
+    --_padding-inline: var(--tab-panel-padding-inline, #{tokens.$tab-panel-padding-inline});
+    --_padding-block: var(--tab-panel-padding-block, #{tokens.$tab-panel-padding-block});
 
     @layer rules {
       grid-area: tab-panel;
@@ -135,7 +131,7 @@ $TOKENS: meta.module-variables('tokens');
 
     @layer themes {
       @media (prefers-color-scheme: dark) {
-        --tab-panel-background-color: var(--grayscale-dark);
+        --tab-panel-background-color: #{tokens.$grayscale-dark};
       }
     }
   }

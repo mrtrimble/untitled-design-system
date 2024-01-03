@@ -1,23 +1,20 @@
-@use 'sass:meta';
-@use 'sass:map';
 @use '../tokens/tokens';
 
-$TOKENS: meta.module-variables('tokens');
 $STATES: ('default', 'info', 'warning', 'success', 'error') !default;
 
 @layer components {
   .message {
-    --_color: var(--message-color, #{map.get($TOKENS, message-color)});
-    --_background-color: var(--message-background-color, #{map.get($TOKENS, message-background-color)});
-    --_padding-inline: var(--message-padding-inline, #{map.get($TOKENS, message-padding-inline)});
-    --_padding-block: var(--message-padding-block, #{map.get($TOKENS, message-padding-block)});
-    --_border-color: var(--message-border-color, #{map.get($TOKENS, message-border-color)});
-    --_border-style: var(--message-border-style, #{map.get($TOKENS, message-border-style)});
-    --_border-width: var(--message-border-width, #{map.get($TOKENS, message-width)});
+    --_color: var(--message-color, #{tokens.$message-color});
+    --_background-color: var(--message-background-color, #{tokens.$message-background-color});
+    --_padding-inline: var(--message-padding-inline, #{tokens.$message-padding-inline});
+    --_padding-block: var(--message-padding-block, #{tokens.$message-padding-block});
+    --_border-color: var(--message-border-color, #{tokens.$message-border-color});
+    --_border-style: var(--message-border-style, #{tokens.$message-border-style});
+    --_border-width: var(--message-border-width, #{tokens.$message-border-width});
 
     @layer rules {
       color: var(--_color);
-      background: color-mix(in lab, var(--_background-color), var(--grayscale-white) 70%);
+      background: color-mix(in lab, var(--_background-color), #{tokens.$grayscale-white} 70%);
       padding-inline: var(--_padding-inline);
       padding-block: var(--_padding-block);
       border-left: var(--_border-width) var(--_border-color) var(--_border-style);
@@ -26,7 +23,7 @@ $STATES: ('default', 'info', 'warning', 'success', 'error') !default;
     @layer states {
       @each $state in $STATES {
         &.#{$state} {
-          --message-color: var(--color-base);
+          --message-color: #{tokens.$color-base};
           --message-background-color: var(--message-#{$state});
           --message-border-color: var(--message-#{$state});
         }
@@ -37,7 +34,7 @@ $STATES: ('default', 'info', 'warning', 'success', 'error') !default;
       @media (prefers-color-scheme: dark) {
         @each $state in $STATES {
           &.#{$state} {
-            --message-color: var(--grayscale-white);
+            --message-color: #{tokens.$grayscale-white};
             --message-border-color: transparent;
             background-color: var(--message-#{$state});
           }

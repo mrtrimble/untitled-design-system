@@ -1,8 +1,4 @@
-@use 'sass:meta';
-@use 'sass:map';
 @use '../tokens/tokens';
-
-$TOKENS: meta.module-variables('tokens');
 
 @layer components {
   body.no-js {
@@ -10,17 +6,17 @@ $TOKENS: meta.module-variables('tokens');
   }
 
   .accordion {
-    --_header-padding-x: var(--accordion-header-padding-inline, #{map.get($TOKENS, accordion-header-padding-inline)});
-    --_header-padding-y: var(--accordion-header-padding-block, #{map.get($TOKENS, accordion-header-padding-block)});
-    --_header-background-color: var(--accordion-header-background-color, #{map.get($TOKENS, accordion-header-background-color)});
-    --_header-text-color: var(--accordion-header-text-color, #{map.get($TOKENS, accordion-header-text-color)});
+    --_header-padding-x: var(--accordion-header-padding-inline, #{tokens.$accordion-header-padding-inline});
+    --_header-padding-y: var(--accordion-header-padding-block, #{tokens.$accordion-header-padding-block});
+    --_header-background-color: var(--accordion-header-background-color, #{tokens.$accordion-header-background-color});
+    --_header-text-color: var(--accordion-header-text-color, #{tokens.$accordion-header-text-color});
 
-    --_content-padding-x: var(--accordion-content-padding-inline, #{map.get($TOKENS, accordion-content-padding-inline)});
-    --_content-padding-y: var(--accordion-content-padding-block, #{map.get($TOKENS, accordion-content-padding-block)});
+    --_content-padding-x: var(--accordion-content-padding-inline, #{tokens.$accordion-content-padding-inline});
+    --_content-padding-y: var(--accordion-content-padding-block, #{tokens.$accordion-content-padding-block});
 
-    --_background-color: var(--accordion-background-color, #{map.get($TOKENS, accordion-background-color)});
-    --_text-color: var(--accordion-text-color, #{map.get($TOKENS, accordion-text-color)});
-    --_flow-space: var(--accordion-flow-space, #{map.get($TOKENS, accordion-flow-space)});
+    --_background-color: var(--accordion-background-color, #{tokens.$accordion-background-color});
+    --_text-color: var(--accordion-text-color, #{tokens.$accordion-text-color});
+    --_flow-space: var(--accordion-flow-space, #{tokens.$accordion-flow-space});
 
     --_display: var(--accordion-display, none);
     --_width: var(--accordion-width, 100%);
@@ -65,7 +61,7 @@ $TOKENS: meta.module-variables('tokens');
       &:hover,
       &[open],
       &.open {
-        --accordion-header-background-color: var(--grayscale-light);
+        --accordion-header-background-color: #{tokens.$grayscale-light};
       }
 
       &[open],
@@ -80,15 +76,15 @@ $TOKENS: meta.module-variables('tokens');
 
     @layer themes {
       @media (prefers-color-scheme: dark) {
-        --accordion-header-background-color: var(--grayscale-dark);
-        --accordion-header-text-color: var(--grayscale-white);
-        --accordion-background-color: var(--grayscale-dark);
-        --accordion-text-color: var(--grayscale-white);
+        --accordion-header-background-color: #{tokens.$grayscale-dark};
+        --accordion-header-text-color: #{tokens.$color-inverse-base};
+        --accordion-background-color: #{tokens.$grayscale-dark};
+        --accordion-text-color: #{tokens.$color-inverse-base};
 
         &[open],
         &:hover,
         &.open {
-          --accordion-header-background-color: var(--grayscale-black);
+          --accordion-header-background-color: #{tokens.$grayscale-black};
         }
       }
     }

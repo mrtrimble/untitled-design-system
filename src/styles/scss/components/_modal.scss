@@ -1,25 +1,21 @@
-@use 'sass:meta';
-@use 'sass:map';
 @use '../tokens/tokens';
-
-$TOKENS: meta.module-variables('tokens');
 
 @layer components {
   .modal {
-    --_backdrop-background-color: var(--modal-backdrop-background-color, #{map.get($TOKENS, modal-backdrop-background-color)});
-    --_background-color: var(--modal-background-color, #{map.get($TOKENS, modal-background-color)});
-    --_border-width: var(--modal-border-width, #{map.get($TOKENS, modal-border-width)});
-    --_border-color: var(--modal-border-color, #{map.get($TOKENS, modal-border-width)});
-    --_border-style: var(--modal-border-style, #{map.get($TOKENS, modal-border-style)});
-    --_flow-space: var(--modal-flow-space, #{map.get($TOKENS, modal-flow-space)});
-    --_padding-inline: var(--modal-padding-inline, #{map.get($TOKENS, modal-padding-inline)});
-    --_padding-block: var(--modal-padding-block, #{map.get($TOKENS, modal-padding-block)});
-    --_max-height: var(--modal-max-height, #{map.get($TOKENS, modal-max-height)});
-    --_max-width: var(--modal-max-width, #{map.get($TOKENS, modal-max-width)});
-    --_shadow: var(--modal-shadow, #{map.get($TOKENS, modal-shadow)});
-    --_text-color: var(--modal-text-color, #{map.get($TOKENS, modal-text-color)});
-    --_margin-inline: var(--modal-margin-inline, #{map.get($TOKENS, modal-margin-inline)});
-    --_margin-block: var(--modal-margin-block, #{map.get($TOKENS, modal-margin-block)});
+    --_backdrop-background-color: var(--modal-backdrop-background-color, #{tokens.$modal-backdrop-background-color});
+    --_background-color: var(--modal-background-color, #{tokens.$modal-background-color});
+    --_border-width: var(--modal-border-width, #{tokens.$modal-border-width});
+    --_border-color: var(--modal-border-color, #{tokens.$modal-border-width});
+    --_border-style: var(--modal-border-style, #{tokens.$modal-border-style});
+    --_flow-space: var(--modal-flow-space, #{tokens.$modal-flow-space});
+    --_padding-inline: var(--modal-padding-inline, #{tokens.$modal-padding-inline});
+    --_padding-block: var(--modal-padding-block, #{tokens.$modal-padding-block});
+    --_max-height: var(--modal-max-height, #{tokens.$modal-max-height});
+    --_max-width: var(--modal-max-width, #{tokens.$modal-max-width});
+    --_shadow: var(--modal-shadow, #{tokens.$modal-shadow});
+    --_text-color: var(--modal-text-color, #{tokens.$modal-text-color});
+    --_margin-inline: var(--modal-margin-inline, #{tokens.$modal-margin-inline});
+    --_margin-block: var(--modal-margin-block, #{tokens.$modal-margin-block});
 
     @layer rules {
       background-color: var(--_background-color);

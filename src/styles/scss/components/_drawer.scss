@@ -1,20 +1,16 @@
-@use 'sass:meta';
-@use 'sass:map';
 @use '../tokens/tokens';
-
-$TOKENS: meta.module-variables('tokens');
 
 @layer components {
   .drawer {
-    --_background-color: var(--drawer-background-color, #{map.get($TOKENS, drawer-background-color)});
-    --_text-color: var(--drawer-text-color, #{map.get($TOKENS, drawer-text-color)});
-    --_padding-inline: var(--drawer-padding-inline, #{map.get($TOKENS, drawer-padding-inline)});
-    --_padding-block: var(--drawer-padding-block, #{map.get($TOKENS, drawer-padding-block)});
-    --_width: var(--drawer-max-width, #{map.get($TOKENS, drawer-width)});
-    --_transition: var(--drawer-transition, #{map.get($TOKENS, drawer-transition)});
-    --_flow-space: var(--drawer-flow-space, #{map.get($TOKENS, drawer-flow-space)});
-    --_shadow: var(--drawer-shadow, #{map.get($TOKENS, drawer-shadow)});
-    --_border: var(--drawer-border, #{map.get($TOKENS, drawer-border)});
+    --_background-color: var(--drawer-background-color, #{tokens.$drawer-background-color});
+    --_text-color: var(--drawer-text-color, #{tokens.$drawer-text-color});
+    --_padding-inline: var(--drawer-padding-inline, #{tokens.$drawer-padding-inline});
+    --_padding-block: var(--drawer-padding-block, #{tokens.$drawer-padding-block});
+    --_width: var(--drawer-max-width, #{tokens.$drawer-width});
+    --_transition: var(--drawer-transition, #{tokens.$drawer-transition});
+    --_flow-space: var(--drawer-flow-space, #{tokens.$drawer-flow-space});
+    --_shadow: var(--drawer-shadow, #{tokens.$drawer-shadow});
+    --_border: var(--drawer-border, #{tokens.$drawer-border});
 
     @layer rules {
       background: var(--_background-color);
@@ -26,7 +22,7 @@ $TOKENS: meta.module-variables('tokens');
       inset-block-start: 0;
       inset-inline-start: 0;
       inset-block-end: 0;
-      margin: 0;
+      margin: none;
       padding-block: var(--_padding-block);
       padding-inline: var(--_padding-inline);
       position: fixed;

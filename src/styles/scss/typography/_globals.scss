@@ -42,18 +42,18 @@ $FONT_SIZE_TOKENS: functions.getList(meta.module-variables('tokens'), $FONT_SIZE
       scroll-margin-block-start: var(--_scroll-offset);
 
       @media (prefers-color-scheme: dark) {
-        --_text-color: var(--color-inverse-base);
-        --_background-color: var(--color-base);
+        --_text-color: #{tokens.$color-inverse-base};
+        --_background-color: #{tokens.$color-base};
       }
 
       &.dark {
-        --_text-color: var(--color-inverse-base);
-        --_background-color: var(--color-base);
+        --_text-color: #{tokens.$color-inverse-base};
+        --_background-color: #{tokens.$color-base};
       }
 
       &.light {
-        --_text-color: var(--color-base);
-        --_background-color: var(--grayscale-white);
+        --_text-color: #{tokens.$color-base};
+        --_background-color: #{tokens.$color-inverse-base};
       }
     }
 
@@ -78,19 +78,19 @@ $FONT_SIZE_TOKENS: functions.getList(meta.module-variables('tokens'), $FONT_SIZE
       color: var(--_text-color);
 
       &:focus {
-        --body-link-color: var(--color-link-focus);
+        --body-link-color: #{tokens.$color-link-focus};
       }
 
       &:active {
-        --body-link-color: var(--color-link-active);
+        --body-link-color: #{tokens.$color-link-active};
       }
 
       @media (prefers-color-scheme: dark) {
-        --body-link-color: var(--grayscale-white);
-        
+        --body-link-color: #{tokens.$color-inverse-base};
+
         &:focus,
         &:active {
-          --body-link-color: var(--grayscale-white);
+          --body-link-color: #{tokens.$color-inverse-base};
         }
       }
     }
