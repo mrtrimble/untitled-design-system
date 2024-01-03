@@ -19,7 +19,7 @@
     "flow-space": { "value": "{spacer.xs.value}" }
   },
   "button": {
-    "background-color": { "value": "{swatch.salmon.value}" },
+    "background-color": { "value": "{color.deepblue.value}" },
     "border": {
       "color": { "value": "transparent" },
       "width": { "value": "3px" },
@@ -28,7 +28,7 @@
     },
     "font-size": { "value": "inherit" },
     "text": {
-      "color": { "value": "{color.base.value}" },
+      "color": { "value": "{color.inverse.base.value}" },
       "decoration": { "value": "none" }
     },
     "outline": {
