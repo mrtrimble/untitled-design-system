@@ -4,13 +4,15 @@
 @use '../tokens/tokens' as tokens;
 @use '../functions' as functions;
 
-$FONT_SIZE: 18px !default;
-$FONT_SIZE_PREFIX: 'utility-text' !default;
-$FONT_SIZE_TOKENS: functions.getList(meta.module-variables('tokens'), $FONT_SIZE_PREFIX);
+$FONT: (
+  SIZE: 18px,
+  PREFIX: 'utility-text',
+  TOKENS: functions.getList(meta.module-variables('tokens'), 'utility-text')
+) !default;
 
 @layer globals {
   html {
-    font-size: $FONT_SIZE;
+    font-size: map.get($FONT, SIZE);
     color-scheme: var(--body-theme, dark light);
 
     &:has(body.light) {

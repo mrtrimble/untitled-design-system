@@ -1,12 +1,25 @@
-$OVERFLOW_TYPES: ('visible', 'hidden', 'clip', 'scroll', 'auto') !default;
-$DIRECTIONS: ('x', 'y') !default;
+@use 'sass:map';
+
+$OVERFLOW: (
+  TYPES: (
+    'visible',
+    'hidden',
+    'clip',
+    'scroll',
+    'auto',
+  ),
+  DIRECTIONS: (
+    'x',
+    'y',
+  ),
+) !default;
 
 @layer utilities {
-  @each $type in $OVERFLOW_TYPES {
+  @each $type in map.get($OVERFLOW, TYPES) {
     .overflow-#{$type} {
       overflow: #{$type};
     }
-    @each $direction in $DIRECTIONS {
+    @each $direction in map.get($OVERFLOW, DIRETIONS) {
       .overflow-#{$direction}-#{$type} {
         overflow-#{$direction}: #{$type};
       }

@@ -1,26 +1,24 @@
+@use 'sass:map';
 @use '../tokens/tokens' as tokens;
 
-// Set maximum amount of columns
-$MAX_COLUMNS: 12 !default;
-
-// Responsive Columns
-$BREAKPOINTS: (
-  'mobile': '640px',
-  'tablet': '768px',
-  'lg-tablet': '1024px',
-  'laptop': '1240px',
-) !default;
-
-// Spacers
-$SPACERS: (
-  '2xs': #{tokens.$utility-spacer-2xs},
-  'xs': #{tokens.$utility-spacer-xs},
-  'sm': #{tokens.$utility-spacer-sm},
-  'md': #{tokens.$utility-spacer-md},
-  'lg': #{tokens.$utility-spacer-lg},
-  'xl': #{tokens.$utility-spacer-xl},
-  '2xl': #{tokens.$utility-spacer-2xl},
-  '3xl': #{tokens.$utility-spacer-3xl},
+$GRID: (
+  MAX_COLUMNS: 12,
+  BREAKPOINTS: (
+    'mobile': '640px',
+    'tablet': '768px',
+    'lg-tablet': '1024px',
+    'laptop': '1240px',
+  ),
+  SPACERS: (
+    '2xs': #{tokens.$utility-spacer-2xs},
+    'xs': #{tokens.$utility-spacer-xs},
+    'sm': #{tokens.$utility-spacer-sm},
+    'md': #{tokens.$utility-spacer-md},
+    'lg': #{tokens.$utility-spacer-lg},
+    'xl': #{tokens.$utility-spacer-xl},
+    '2xl': #{tokens.$utility-spacer-2xl},
+    '3xl': #{tokens.$utility-spacer-3xl},
+  ),
 ) !default;
 
 // Default Grid styles
@@ -40,16 +38,16 @@ $SPACERS: (
     gap: var(--_gap);
   }
 
-  // Unresponsive Columns
-  @for $i from 1 through $MAX_COLUMNS {
+  // Non-responsive Columns
+  @for $i from 1 through map.get($GRID, MAX_COLUMNS) {
     .grid-#{$i} {
       --grid-columns: #{$i};
     }
   }
 
-  @each $breakpoint, $value in $BREAKPOINTS {
+  @each $breakpoint, $value in map.get($GRID, BREAKPOINTS) {
     @media (min-width: $value) {
-      @for $i from 1 through $MAX_COLUMNS {
+      @for $i from 1 through map.get($GRID, MAX_COLUMNS) {
         .grid-#{$i}\:#{$breakpoint} {
           --grid-columns: #{$i};
         }
@@ -61,15 +59,15 @@ $SPACERS: (
     grid-column: span var(--grid-column-span, var(--_column-span));
   }
 
-  @for $i from 1 through $MAX_COLUMNS {
+  @for $i from 1 through map.get($GRID, MAX_COLUMNS) {
     .block-#{$i} {
       --grid-column-span: #{$i};
     }
   }
 
-  @each $breakpoint, $value in $BREAKPOINTS {
+  @each $breakpoint, $value in map.get($GRID, BREAKPOINTS) {
     @media (min-width: #{$value}) {
-      @for $i from 1 through $MAX_COLUMNS {
+      @for $i from 1 through map.get($GRID, MAX_COLUMNS) {
         .block-#{$i}\:#{$breakpoint} {
           --grid-column-span: #{$i};
         }
@@ -79,8 +77,8 @@ $SPACERS: (
 
   // Gap styles
 
-  // Unresponsive Gap Sizes
-  @each $spacer, $value in $SPACERS {
+  // Non-responsive Gap Sizes
+  @each $spacer, $value in map.get($GRID, SPACERS) {
     .gap-#{$spacer} {
       --grid-gap: #{$value};
     }
@@ -93,27 +91,6 @@ $SPACERS: (
       --grid-row-gap: #{$value};
     }
   }
-
-  // Responsive Gap Sizes
-  // @each $breakpoint, $value in $BREAKPOINTS {
-  //   @media (min-width: #{$value}) {
-  //     @each $spacer, $value in $SPACERS {
-  //       .gap-#{$spacer}\:#{$breakpoint} {
-  //         --grid-gap: var(#{$value});
-  //       }
-
-  //       .gap-row-#{$spacer}\:#{$breakpoint} {
-  //         --grid-row-gap: var(#{$value});
-  //         --grid-gap: var(--grid-row-gap) var(--grid-column-gap);
-  //       }
-
-  //       .gap-column-#{$spacer}\:#{$breakpoint} {
-  //         --grid-column-gap: var(#{$value});
-  //         --grid-gap: var(--grid-row-gap) var(--grid-column-gap);
-  //       }
-  //     }
-  //   }
-  // }
 
   .auto-grid {
     --_min: var(--grid-column-min, 15ch);

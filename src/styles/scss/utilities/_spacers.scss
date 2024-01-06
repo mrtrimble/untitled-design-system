@@ -4,31 +4,33 @@
 @use '../tokens/tokens' as tokens;
 @use '../functions' as functions;
 
-$SPACER_PREFIX: 'utility-spacer' !default;
-$SPACER_TOKENS: functions.getList(meta.module-variables('tokens'), $SPACER_PREFIX);
-
-$SPACER_TYPES: (
-  'p': 'padding',
-  'm': 'margin',
-);
+$SPACER: (
+  PREFIX: 'utility-spacer',
+  // TODO: Figure out how to use the PREFIX map property instead of hard coding the prefix
+  TOKENS: functions.getList(meta.module-variables('tokens'), 'utility-spacer'),
+  TYPES: (
+    'p': 'padding',
+    'm': 'margin',
+  ),
+  DIRECTIONS: (
+    'x': 'inline',
+    'y': 'block',
+    'l': 'inline-start',
+    'r': 'inline-end',
+    't': 'block-start',
+    'b': 'block-end',
+  ),
+) !default;
 
 @layer utilities {
-  @each $spacer in $SPACER_TOKENS {
-    @each $prefix, $spacerProperty in $SPACER_TYPES {
+  @each $spacer in map.get($SPACER, TOKENS) {
+    @each $prefix, $spacerProperty in map.get($SPACER, TYPES) {
       .#{$prefix}-#{$spacer} {
         #{$spacerProperty}: #{map.get(meta.module-variables('tokens'), $spacer)};
       }
 
-      $directions: (
-        'x': 'inline',
-        'y': 'block',
-        'x-start': 'inline-start',
-        'x-end': 'inline-end',
-        'y-start': 'block-start',
-        'y-end': 'block-end',
-      );
-
-      @each $direction, $directionProperty in $directions {
+      @each $direction, $directionProperty in map.get($SPACER, DIRECTIONS) {
+        // @debug #{$prefix}#{$direction}-#{$spacer};
         .#{$prefix}#{$direction}-#{$spacer} {
           #{$spacerProperty}-#{$directionProperty}: #{map.get(meta.module-variables('tokens'), $spacer)};
         }
@@ -39,11 +41,8 @@ $SPACER_TYPES: (
 
 @layer theme {
   :root {
-    @each $spacer in $SPACER_TOKENS {
-      @each $prefix, $spacerProperty in $SPACER_TYPES {
-        // @debug $spacer map.get(meta.module-variables('tokens'), $spacer);
-        --#{$spacer}: #{map.get(meta.module-variables('tokens'), $spacer)};
-      }
+    @each $spacer in map.get($SPACER, TOKENS) {
+      --#{$spacer}: #{map.get(meta.module-variables('tokens'), $spacer)};
     }
   }
 }

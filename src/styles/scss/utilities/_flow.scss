@@ -1,15 +1,17 @@
+@use 'sass:map';
 @use '../tokens/tokens' as tokens;
 
-// Spacers
-$SPACERS: (
-  '2xs': #{tokens.$utility-spacer-2xs},
-  'xs': #{tokens.$utility-spacer-xs},
-  'sm': #{tokens.$utility-spacer-sm},
-  'md': #{tokens.$utility-spacer-md},
-  'lg': #{tokens.$utility-spacer-lg},
-  'xl': #{tokens.$utility-spacer-xl},
-  '2xl': #{tokens.$utility-spacer-2xl},
-  '3xl': #{tokens.$utility-spacer-3xl},
+$FLOW: (
+  SPACERS: (
+    '2xs': #{tokens.$utility-spacer-2xs},
+    'xs': #{tokens.$utility-spacer-xs},
+    'sm': #{tokens.$utility-spacer-sm},
+    'md': #{tokens.$utility-spacer-md},
+    'lg': #{tokens.$utility-spacer-lg},
+    'xl': #{tokens.$utility-spacer-xl},
+    '2xl': #{tokens.$utility-spacer-2xl},
+    '3xl': #{tokens.$utility-spacer-3xl},
+  ),
 ) !default;
 
 @layer utilities {
@@ -21,7 +23,7 @@ $SPACERS: (
     }
   }
 
-  @each $spacer, $value in $SPACERS {
+  @each $spacer, $value in map.get($FLOW, SPACERS) {
     .flow-#{$spacer} {
       --flow-spacer: #{$value};
     }

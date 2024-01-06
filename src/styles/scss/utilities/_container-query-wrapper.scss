@@ -1,16 +1,29 @@
-$CONTAINER_NAME: wrapper !default;
+@use 'sass:map';
 
-$COMPONENTS: ('accordion', 'button', 'card', 'drawer', 'message', 'modal', 'skip-link', 'tabs', 'tooltip');
+$CONTAINER_QUERY: (
+  NAME: wrapper,
+  COMPONENT_LIST: (
+    'accordion',
+    'button',
+    'card',
+    'drawer',
+    'message',
+    'modal',
+    'skip-link',
+    'tabs',
+    'tooltip',
+  ),
+) !default;
 
 @layer utilities {
   .cq-wrapper {
-    --_name: var(--container-name, #{$CONTAINER_NAME});
+    --_name: var(--container-name, #{map.get($CONTAINER_QUERY, NAME)});
 
     @supports (container-type: inline-size) {
       container-type: inline-size;
       container-name: var(--_name);
 
-      @each $component in $COMPONENTS {
+      @each $component in map.get($CONTAINER_QUERY, COMPONENT_LIST) {
         &:has(.#{$component}) {
           --container-name: #{$component};
         }

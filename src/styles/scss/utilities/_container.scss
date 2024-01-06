@@ -1,8 +1,12 @@
-$CONTAINER_MAX_WIDTH: 80ch !default;
+@use 'sass:map';
+
+$CONTAINER: (
+  MAX_WIDTH: 80ch,
+) !default;
 
 @layer utilities {
   .container {
-    --_max-width: var(--container-max-width, #{$CONTAINER_MAX_WIDTH});
+    --_max-width: var(--container-max-width, #{map.get($CONTAINER, MAX_WIDTH)});
 
     > *:not(.full-bleed) {
       width: min(100%, var(--_max-width));

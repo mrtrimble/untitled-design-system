@@ -2,8 +2,10 @@
 @use 'sass:map';
 @use '../tokens/tokens' as tokens;
 
-$TOKENS: meta.module-variables('tokens');
-$DEFAULT_MAX_COLORS: 5 !default;
+$COLORS: (
+  TOKENS: meta.module-variables('tokens'),
+  MAX_SHADES: 5,
+) !default;
 
 @layer utilities {
   @each $name, $color in meta.module-variables('tokens') {
@@ -16,7 +18,7 @@ $DEFAULT_MAX_COLORS: 5 !default;
 
       @each $type, $property in $types {
         .#{$type}-#{$name} {
-          #{$property}: #{map.get($TOKENS, $name)};
+          #{$property}: #{map.get(map.get($COLORS, TOKENS), $name)};
         }
       }
     }

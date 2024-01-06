@@ -1,13 +1,16 @@
+@use 'sass:map';
 @use 'sass:meta';
 @use 'sass:string';
 @use '../tokens/tokens' as tokens;
 @use '../functions' as functions;
 
-$SHADOW_PREFIX: 'shadow' !default;
-$SHADOW_TOKENS: functions.getList(meta.module-variables('tokens'), $SHADOW_PREFIX);
+$SHADOW: (
+  PREFIX: 'shadow',
+  TOKENS: functions.getList(meta.module-variables('tokens'), 'shadow'),
+) !default;
 
 @layer utilities {
-  @each $shadow in $SHADOW_TOKENS {
+  @each $shadow in map.get($SHADOW, TOKENS) {
     .#{$shadow} {
       box-shadow: var(--#{$shadow});
     }
