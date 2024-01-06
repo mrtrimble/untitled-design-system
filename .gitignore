@@ -30,3 +30,4 @@ src/styles/scss/tokens/
 public/icons/*.svg
 public/sprite.svg
 **/*.tgz
+storybook-static/

@@ -1,4 +1,4 @@
-@use '../tokens/tokens';
+@use '../tokens/tokens' as tokens;
 
 @layer components {
   .skip-link {
@@ -10,7 +10,7 @@
       position: absolute;
       inset-inline-start: 0;
       inset-block-start: 0;
-      padding: #{tokens.$spacer-xs};
+      padding: #{tokens.$utility-spacer-sm};
       background: var(--_background-color);
       transform: translateY(calc(-100% - 5px));
       @media (prefers-reduced-motion: no-preference) {

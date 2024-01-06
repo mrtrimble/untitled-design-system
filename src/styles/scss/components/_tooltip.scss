@@ -1,4 +1,4 @@
-@use '../tokens/tokens';
+@use '../tokens/tokens' as tokens;
 
 @layer components {
   body.no-js {
@@ -152,9 +152,9 @@
         width: fit-content;
         inset-inline: -50%;
         inset-block-start: 0;
-        transform: translateY(calc((100% + #{tokens.$spacer-xs}) * -1));
+        transform: translateY(calc((100% + #{tokens.$utility-spacer-sm}) * -1));
         margin-inline: auto;
-        margin-block-end: #{tokens.$spacer-md};
+        margin-block-end: #{tokens.$utility-spacer-md};
         text-wrap: balance;
 
         &::after {
@@ -163,8 +163,8 @@
           height: var(--_marker-height);
           aspect-ratio: 16/9;
           position: absolute;
-          inset-block-end: calc(#{tokens.$spacer-2xs} * -1 + 1px);
-          background-color: var(--tooltip-background-color);
+          inset-block-end: calc(#{tokens.$utility-spacer-xs} * -1 + 1px);
+          background-color: #{tokens.$tooltip-background-color};
           clip-path: polygon(50% 100%, 0 0, 100% 0);
         }
       }

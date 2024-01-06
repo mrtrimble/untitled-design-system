@@ -18,7 +18,7 @@
     "green": { "value": "#44bd32" },
     "lightgreen": { "value": "#4cd137" },
     "navy": { "value": "#40739e" },
-    "lightnavy": {"value": "#487eb0"},
+    "lightnavy": { "value": "#487eb0" },
     "red": { "value": "#c23616" },
     "lightred": { "value": "#e84118" },
     "gray": { "value": "#dcdde1" },
@@ -29,17 +29,6 @@
     "lightdeepblue": { "value": "#273c75" },
     "black": { "value": "#2f3640" },
     "lightblack": { "value": "#353b48" }
-  },
-  "swatch": {
-    "navy": { "value": "#003f70" },
-    "skyblue": { "value": "#91b9dc" },
-    "lightblue": { "value": "#e5f5ff" },
-    "med-blue": { "value": "#3f7bad" },
-    "beige": { "value": "#ecd7b1" },
-    "peach": { "value": "#dfa278" },
-    "salmon": { "value": "#e58967" },
-    "brown": { "value": "#866657" },
-    "orange": { "value": "#f48418" }
   },
   "grayscale": {
     "white": { "value": "#ffffff" },
