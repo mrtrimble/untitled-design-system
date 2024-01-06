@@ -1,3 +1,5 @@
+@use '../tokens/tokens' as tokens;
+
 // Set maximum amount of columns
 $MAX_COLUMNS: 12 !default;
 
@@ -11,14 +13,14 @@ $BREAKPOINTS: (
 
 // Spacers
 $SPACERS: (
-  '3xs': --spacer-3xs,
-  '2xs': --spacer-2xs,
-  'xs': --spacer-xs,
-  'md': --spacer-md,
-  'lg': --spacer-lg,
-  'xl': --spacer-xl,
-  '2xl': --spacer-2xl,
-  '3xl': --spacer-3xl,
+  '2xs': #{tokens.$utility-spacer-2xs},
+  'xs': #{tokens.$utility-spacer-xs},
+  'sm': #{tokens.$utility-spacer-sm},
+  'md': #{tokens.$utility-spacer-md},
+  'lg': #{tokens.$utility-spacer-lg},
+  'xl': #{tokens.$utility-spacer-xl},
+  '2xl': #{tokens.$utility-spacer-2xl},
+  '3xl': #{tokens.$utility-spacer-3xl},
 ) !default;
 
 // Default Grid styles
@@ -80,15 +82,15 @@ $SPACERS: (
   // Unresponsive Gap Sizes
   @each $spacer, $value in $SPACERS {
     .gap-#{$spacer} {
-      --grid-gap: var(#{$value});
+      --grid-gap: #{$value};
     }
 
     .gap-row-#{$spacer} {
-      --grid-row-gap: var(#{$value});
+      --grid-row-gap: #{$value};
     }
 
     .gap-column-#{$spacer} {
-      --grid-row-gap: var(#{$value});
+      --grid-row-gap: #{$value};
     }
   }
 

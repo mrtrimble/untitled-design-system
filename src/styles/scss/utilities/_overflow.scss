@@ -1,9 +1,8 @@
-$TYPES: ('visible', 'hidden', 'clip', 'scroll', 'auto') !default;
-
+$OVERFLOW_TYPES: ('visible', 'hidden', 'clip', 'scroll', 'auto') !default;
 $DIRECTIONS: ('x', 'y') !default;
 
 @layer utilities {
-  @each $type in $TYPES {
+  @each $type in $OVERFLOW_TYPES {
     .overflow-#{$type} {
       overflow: #{$type};
     }

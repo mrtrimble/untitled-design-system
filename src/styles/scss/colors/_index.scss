@@ -1,6 +1,6 @@
 @use 'sass:meta';
 @use 'sass:map';
-@use '../tokens/tokens';
+@use '../tokens/tokens' as tokens;
 
 $TOKENS: meta.module-variables('tokens');
 $DEFAULT_MAX_COLORS: 5 !default;
@@ -16,8 +16,19 @@ $DEFAULT_MAX_COLORS: 5 !default;
 
       @each $type, $property in $types {
         .#{$type}-#{$name} {
-          #{$property}: #{map-get($TOKENS, $name)};
+          #{$property}: #{map.get($TOKENS, $name)};
         }
+      }
+    }
+  }
+}
+
+@layer theme {
+  // TODO: Filter out component color properties
+  :root {
+    @each $name, $color in meta.module-variables('tokens') {
+      @if meta.type-of($color) == color {
+        --#{$name}: #{$color};
       }
     }
   }

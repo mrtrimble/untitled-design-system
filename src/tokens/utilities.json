@@ -1,0 +1,82 @@
+{
+  "utility": {
+    "spacer": {
+      "none": {
+        "value": "0"
+      },
+      "auto": {
+        "value": "auto"
+      },
+      "2xs": {
+        "value": "clamp(0.3125rem, 0.3125rem + 0vw, 0.3125rem)"
+      },
+      "xs": {
+        "value": "clamp(0.5625rem, 0.5408rem + 0.1087vw, 0.625rem)"
+      },
+      "sm": {
+        "value": "clamp(0.875rem, 0.8533rem + 0.1087vw, 0.9375rem)"
+      },
+      "md": {
+        "value": "clamp(1.6875rem, 1.6223rem + 0.3261vw, 1.875rem)"
+      },
+      "lg": {
+        "value": "clamp(2.25rem, 2.163rem + 0.4348vw, 2.5rem)"
+      },
+      "xl": {
+        "value": "clamp(3.375rem, 3.2446rem + 0.6522vw, 3.75rem)"
+      },
+      "2xl": {
+        "value": "clamp(4.5rem, 4.3261rem + 0.8696vw, 5rem)"
+      },
+      "3xl": {
+        "value": "clamp(6.75rem, 6.4891rem + 1.3043vw, 7.5rem)"
+      }
+    },
+    "shadow": {
+      "xs": {
+        "value": "100px 100px 80px rgba(0, 0, 0, 0.07)"
+      },
+      "sm": {
+        "value": "12.5px 12.5px 10px rgba(0, 0, 0, 0.035), 100px 100px 80px rgba(0, 0, 0, 0.07)"
+      },
+      "md": {
+        "value": "6.7px 6.7px 5.3px rgba(0, 0, 0, 0.028), 22.3px 22.3px 17.9px rgba(0, 0, 0, 0.042), 100px 100px 80px rgba(0, 0, 0, 0.07)"
+      },
+      "lg": {
+        "value": "4.5px 4.5px 3.6px rgba(0, 0, 0, 0.024), 12.5px 12.5px 10px rgba(0, 0, 0, 0.035), 30.1px 30.1px 24.1px rgba(0, 0, 0, 0.046), 100px 100px 80px rgba(0, 0, 0, 0.07)"
+      },
+      "xl": {
+        "value": "3.4px 3.4px 2.7px rgba(0, 0, 0, 0.022), 8.7px 8.7px 6.9px rgba(0, 0, 0, 0.031), 17.7px 17.7px 14.2px rgba(0, 0, 0, 0.039), 36.5px 36.5px 29.2px rgba(0, 0, 0, 0.048), 100px 100px 80px rgba(0, 0, 0, 0.07)"
+      },
+      "2xl": {
+        "value": "2.8px 2.8px 2.2px rgba(0, 0, 0, 0.02), 6.7px 6.7px 5.3px rgba(0, 0, 0, 0.028), 12.5px 12.5px 10px rgba(0, 0, 0, 0.035), 22.3px 22.3px 17.9px rgba(0, 0, 0, 0.042), 41.8px 41.8px 33.4px rgba(0, 0, 0, 0.05), 100px 100px 80px rgba(0, 0, 0, 0.07)"
+      }
+    },
+    "text": {
+      "2xs": {
+        "value": "clamp(0.7813rem, 0.7747rem + 0.0326vw, 0.8rem)"
+      },
+      "xs": {
+        "value": "clamp(0.9375rem, 0.9158rem + 0.1087vw, 1rem)"
+      },
+      "md": {
+        "value": "clamp(1.125rem, 1.0815rem + 0.2174vw, 1.25rem)"
+      },
+      "lg": {
+        "value": "clamp(1.35rem, 1.2761rem + 0.3696vw, 1.5625rem)"
+      },
+      "xl": {
+        "value": "clamp(1.62rem, 1.5041rem + 0.5793vw, 1.9531rem)"
+      },
+      "2xl": {
+        "value": "clamp(1.9438rem, 1.7707rem + 0.8652vw, 2.4413rem)"
+      },
+      "3xl": {
+        "value": "clamp(2.3325rem, 2.0823rem + 1.2511vw, 3.0519rem)"
+      },
+      "4xl": {
+        "value": "clamp(2.7994rem, 2.4461rem + 1.7663vw, 3.815rem)"
+      }
+    }
+  }
+}

@@ -18,6 +18,7 @@
     "pack": "npm pack",
     "build": "run-s style-dictionary:build svgo:optimize vite:build",
     "build:lib": "run-s style-dictionary:build svgo:optimize vite:lib pack",
+    "build:sass": "sass ./src/styles/scss/style.scss:./src/styles/scss/style.css",
     "start": "npm run style-dictionary:build && run-p vite:dev",
     "storybook": "storybook dev -p 6006",
     "build-storybook": "storybook build"

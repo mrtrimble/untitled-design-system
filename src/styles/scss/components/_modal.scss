@@ -1,4 +1,4 @@
-@use '../tokens/tokens';
+@use '../tokens/tokens' as tokens;
 
 @layer components {
   .modal {
@@ -28,7 +28,7 @@
       margin-block: var(--_margin-inline);
       margin-inline: var(--_margin-block);
       transition: opacity, transform;
-      width: min(100% - var(--spacer-xs), var(--_max-width));
+      width: min(100% - #{tokens.$utility-spacer-sm}, var(--_max-width));
       z-index: 10;
 
       > * + * {

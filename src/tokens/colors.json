@@ -30,17 +30,6 @@
     "black": { "value": "#2f3640" },
     "lightblack": { "value": "#353b48" }
   },
-  "swatch": {
-    "navy": { "value": "#003f70" },
-    "skyblue": { "value": "#91b9dc" },
-    "lightblue": { "value": "#e5f5ff" },
-    "med-blue": { "value": "#3f7bad" },
-    "beige": { "value": "#ecd7b1" },
-    "peach": { "value": "#dfa278" },
-    "salmon": { "value": "#e58967" },
-    "brown": { "value": "#866657" },
-    "orange": { "value": "#f48418" }
-  },
   "grayscale": {
     "white": { "value": "#ffffff" },
     "lighter": { "value": "#efefef" },

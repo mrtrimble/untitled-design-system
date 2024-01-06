@@ -1,7 +1,7 @@
 @use '../tokens/tokens' as tokens;
 
 @layer globals {
-  @layer icons {
+  @layer typography {
     .icon {
       display: inline;
       max-width: fit-content;
@@ -10,28 +10,28 @@
     }
 
     .icon-size-2xs {
-      height: var(--font-size-2xs);
+      height: #{tokens.$utility-text-2xs};
     }
     .icon-size-xs {
-      height: var(--font-size-xs);
+      height: #{tokens.$utility-text-xs};
     }
     .icon-size-md {
-      height: var(--font-size-md);
+      height: #{tokens.$utility-text-md};
     }
     .icon-size-lg {
-      height: var(--font-size-lg);
+      height: #{tokens.$utility-text-lg};
     }
     .icon-size-xl {
-      height: var(--font-size-xl);
+      height: #{tokens.$utility-text-xl};
     }
     .icon-size-2xl {
-      height: var(--font-size-2xl);
+      height: #{tokens.$utility-text-2xl};
     }
     .icon-size-3xl {
-      height: var(--font-size-3xl);
+      height: #{tokens.$utility-text-3xl};
     }
     .icon-size-4xl {
-      height: var(--font-size-4xl);
+      height: #{tokens.$utility-text-4xl};
     }
   }
 }

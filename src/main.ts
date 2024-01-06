@@ -1,5 +1,5 @@
 import './styles/scss/style.scss';
-import './styles/scss/theme.scss';
+// import './styles/scss/theme.scss';
 
 import './components/accordion';
 import './components/drawer';

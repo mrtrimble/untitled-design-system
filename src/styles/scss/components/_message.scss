@@ -1,4 +1,6 @@
-@use '../tokens/tokens';
+@use 'sass:meta';
+@use 'sass:map';
+@use '../tokens/tokens' as tokens;
 
 $STATES: ('default', 'info', 'warning', 'success', 'error') !default;
 
@@ -23,9 +25,10 @@ $STATES: ('default', 'info', 'warning', 'success', 'error') !default;
     @layer states {
       @each $state in $STATES {
         &.#{$state} {
+          @debug message-$state;
           --message-color: #{tokens.$color-base};
-          --message-background-color: var(--message-#{$state});
-          --message-border-color: var(--message-#{$state});
+          --message-border-color: #{map.get(meta.module-variables('tokens'), 'message-' + $state)};
+          --message-background-color: #{map.get(meta.module-variables('tokens'), 'message-' + $state)};
         }
       }
     }
@@ -34,9 +37,11 @@ $STATES: ('default', 'info', 'warning', 'success', 'error') !default;
       @media (prefers-color-scheme: dark) {
         @each $state in $STATES {
           &.#{$state} {
+            @debug map.get(meta.module-variables('tokens'), 'message-' + $state);
             --message-color: #{tokens.$grayscale-white};
             --message-border-color: transparent;
-            background-color: var(--message-#{$state});
+            
+            background-color: #{map.get(meta.module-variables('tokens'), 'message-' + $state)};
           }
         }
       }

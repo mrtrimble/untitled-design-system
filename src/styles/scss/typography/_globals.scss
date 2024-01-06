@@ -5,7 +5,7 @@
 @use '../functions' as functions;
 
 $FONT_SIZE: 18px !default;
-$FONT_SIZE_PREFIX: 'font-size' !default;
+$FONT_SIZE_PREFIX: 'utility-text' !default;
 $FONT_SIZE_TOKENS: functions.getList(meta.module-variables('tokens'), $FONT_SIZE_PREFIX);
 
 @layer globals {
@@ -31,9 +31,9 @@ $FONT_SIZE_TOKENS: functions.getList(meta.module-variables('tokens'), $FONT_SIZE
       --_text-color: var(--body-color-base, #{tokens.$color-base});
       --_text-color-inverse: var(--body-color-inverse-base, #{tokens.$color-inverse-base});
       --_font-family: var(--body-font-family, system-ui);
-      --_font-size: var(--body-font-size, #{tokens.$font-size-xs});
+      --_font-size: var(--body-font-size, #{tokens.$utility-text-xs});
 
-      --_scroll-offset: var(--body-scroll-offset, ${tokens.spacer-md});
+      --_scroll-offset: var(--body-scroll-offset, #{tokens.$utility-spacer-md});
 
       font-family: var(--_font-family);
       font-size: var(--_font-size);
@@ -58,12 +58,12 @@ $FONT_SIZE_TOKENS: functions.getList(meta.module-variables('tokens'), $FONT_SIZE
     }
 
     $headings: (
-      'h6': var(--font-size-xs),
-      'h5': var(--font-size-md),
-      'h4': var(--font-size-lg),
-      'h3': var(--font-size-xl),
-      'h2': var(--font-size-2xl),
-      'h1': var(--font-size-3xl),
+      'h6': #{tokens.$utility-text-xs},
+      'h5': #{tokens.$utility-text-md},
+      'h4': #{tokens.$utility-text-lg},
+      'h3': #{tokens.$utility-text-xl},
+      'h2': #{tokens.$utility-text-2xl},
+      'h1': #{tokens.$utility-text-3xl},
     );
 
     @each $heading, $value in $headings {
