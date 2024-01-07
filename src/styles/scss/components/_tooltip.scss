@@ -152,9 +152,9 @@
         width: fit-content;
         inset-inline: -50%;
         inset-block-start: 0;
-        transform: translateY(calc((100% + #{tokens.$utility-spacer-sm}) * -1));
+        transform: translateY(calc((100% + #{tokens.$util-spacer-sm}) * -1));
         margin-inline: auto;
-        margin-block-end: #{tokens.$utility-spacer-md};
+        margin-block-end: #{tokens.$util-spacer-md};
         text-wrap: balance;
 
         &::after {
@@ -163,7 +163,7 @@
           height: var(--_marker-height);
           aspect-ratio: 16/9;
           position: absolute;
-          inset-block-end: calc(#{tokens.$utility-spacer-xs} * -1 + 1px);
+          inset-block-end: calc(#{tokens.$util-spacer-xs} * -1 + 1px);
           background-color: #{tokens.$tooltip-background-color};
           clip-path: polygon(50% 100%, 0 0, 100% 0);
         }

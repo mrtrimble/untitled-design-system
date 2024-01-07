@@ -19,7 +19,7 @@ $OVERFLOW: (
     .overflow-#{$type} {
       overflow: #{$type};
     }
-    @each $direction in map.get($OVERFLOW, DIRETIONS) {
+    @each $direction in map.get($OVERFLOW, DIRECTIONS) {
       .overflow-#{$direction}-#{$type} {
         overflow-#{$direction}: #{$type};
       }

@@ -28,7 +28,6 @@ $MESSAGE: (
     @layer states {
       @each $state in map.get($MESSAGE, STATES) {
         &.#{$state} {
-          // @debug message-$state;
           --message-color: #{tokens.$color-base};
           --message-border-color: #{map.get(meta.module-variables('tokens'), 'message-' + $state)};
           --message-background-color: #{map.get(meta.module-variables('tokens'), 'message-' + $state)};
@@ -40,7 +39,6 @@ $MESSAGE: (
       @media (prefers-color-scheme: dark) {
         @each $state in map.get($MESSAGE, STATES) {
           &.#{$state} {
-            // @debug map.get(meta.module-variables('tokens'), 'message-' + $state);
             --message-color: #{tokens.$grayscale-white};
             --message-border-color: transparent;
             

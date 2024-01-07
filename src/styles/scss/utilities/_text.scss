@@ -4,7 +4,7 @@
 @use '../tokens/tokens' as tokens;
 @use '../functions' as functions;
 
-$FONT_SIZE_PREFIX: 'utility-text' !default;
+$FONT_SIZE_PREFIX: 'util-text' !default;
 $FONT_SIZE_TOKENS: functions.getList(meta.module-variables('tokens'), $FONT_SIZE_PREFIX);
 
 @layer utilities {
