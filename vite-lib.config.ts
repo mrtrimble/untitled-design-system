@@ -20,19 +20,6 @@ export default {
       name: 'DesignSystem',
       fileName: 'design-system',
     },
-    rollupOptions: {
-      input: {
-        index: resolve(__dirname, 'index.html'),
-        theme: resolve(__dirname, 'src/styles/scss/theme.scss'),
-        accordion: resolve(__dirname, 'src/components/accordion.ts')
-      },
-      output: {
-        inlineDynamicImports: false,
-        entryFileNames: `[name].js`,
-        chunkFileNames: `[name].js`,
-        assetFileNames: `[name].[ext]`,
-      },
-    },
     outDir: './lib/',
   },
 };
