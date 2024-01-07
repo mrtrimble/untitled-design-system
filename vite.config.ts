@@ -19,7 +19,7 @@ export default {
       input: {
         index: resolve(__dirname, 'index.html'),
         theme: resolve(__dirname, 'src/styles/scss/theme.scss'),
-        accordion: resolve(__dirname, 'src/components/accordion.ts'),
+        // accordion: resolve(__dirname, 'src/components/accordion.ts'),
       },
       output: {
         entryFileNames: `[name].js`,
