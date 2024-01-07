@@ -16,7 +16,7 @@
     "style-dictionary:build": "style-dictionary build --config ./style-dictionary.config.json",
     "svgo:optimize": "svgo -f ./src/icons -o ./public/icons",
     "pack": "npm pack",
-    "build": "run-s build:demo build:lib",
+    "build": "run-s build:demo",
     "build:demo": "run-s style-dictionary:build svgo:optimize vite:build",
     "build:lib": "run-s style-dictionary:build svgo:optimize vite:lib pack",
     "start": "npm run style-dictionary:build && run-p vite:dev",
