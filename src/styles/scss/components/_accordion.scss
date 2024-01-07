@@ -1,4 +1,6 @@
+@use 'sass:map';
 @use '../tokens/tokens' as tokens;
+@use '../features' as features;
 
 @layer components {
   body.no-js {
@@ -26,34 +28,36 @@
       color: var(--_text-color);
       width: var(--_width);
 
-      .accordion-header,
-      summary {
-        cursor: pointer;
-        background-color: var(--_header-background-color);
-        color: var(--_header-text-color);
-        padding-inline: var(--_header-padding-x);
-        padding-block: var(--_header-padding-y);
-        transition: background 0.2s ease;
-      }
-
-      .accordion-content,
-      > *:not(summary) {
-        padding-block-start: var(--_flow-space);
-        padding-inline: var(--_content-padding-x);
-
-        &:last-child {
-          padding-block-end: var(--_flow-space);
+      @if (map.get(features.$FLAGS, 'SCOPE_SUPPORTED') == false) {
+        .header,
+        summary {
+          cursor: pointer;
+          background-color: var(--_header-background-color);
+          color: var(--_header-text-color);
+          padding-inline: var(--_header-padding-x);
+          padding-block: var(--_header-padding-y);
+          transition: background 0.2s ease;
         }
-      }
 
-      .accordion-content {
-        display: var(--_display);
-      }
+        .content,
+        > *:not(summary) {
+          padding-block-start: var(--_flow-space);
+          padding-inline: var(--_content-padding-x);
 
-      .marker {
-        transform: rotate(0);
-        transition: transform 0.2s ease;
-        transform-origin: center center;
+          &:last-child {
+            padding-block-end: var(--_flow-space);
+          }
+        }
+
+        .content {
+          display: var(--_display);
+        }
+
+        .marker {
+          transform: rotate(0);
+          transition: transform 0.2s ease;
+          transform-origin: center center;
+        }
       }
     }
 
@@ -86,6 +90,40 @@
         &.open {
           --accordion-header-background-color: #{tokens.$grayscale-black};
         }
+      }
+    }
+  }
+
+  @if (map.get(features.$FLAGS, 'SCOPE_SUPPORTED')) {
+    @scope (.accordion) {
+      .header,
+      summary {
+        cursor: pointer;
+        background-color: var(--_header-background-color);
+        color: var(--_header-text-color);
+        padding-inline: var(--_header-padding-x);
+        padding-block: var(--_header-padding-y);
+        transition: background 0.2s ease;
+      }
+
+      .content,
+      *:has(.header) {
+        padding-block-start: var(--_flow-space);
+        padding-inline: var(--_content-padding-x);
+
+        &:last-child {
+          padding-block-end: var(--_flow-space);
+        }
+      }
+
+      .content {
+        display: var(--_display);
+      }
+
+      .marker {
+        transform: rotate(0);
+        transition: transform 0.2s ease;
+        transform-origin: center center;
       }
     }
   }

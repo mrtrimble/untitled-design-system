@@ -1,5 +1,5 @@
-// vite.config.ts
-
+// vite-lib.config.ts
+import { resolve } from 'path';
 import { browserslistToTargets } from 'lightningcss';
 import browserslist from 'browserslist';
 import ViteSvgSpriteWrapper from 'vite-svg-sprite-wrapper';
@@ -15,7 +15,7 @@ export default {
     cssMinify: 'lightningcss',
     lib: {
       entry: {
-        index: './src/main.ts'
+        index: './src/main.ts',
       },
       name: 'DesignSystem',
       fileName: 'design-system',

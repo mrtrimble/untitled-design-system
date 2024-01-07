@@ -19,7 +19,6 @@ export default class Accordion extends DisclosureComponent {
 
       this.toggle.addEventListener('keydown', (event) => {
         if (event instanceof KeyboardEvent) {
-          
           switch (event.code) {
             case 'Enter':
               event.preventDefault();
@@ -40,7 +39,7 @@ export default class Accordion extends DisclosureComponent {
   }
 
   getToggle(): HTMLElement | null {
-    let toggle: HTMLElement | null = this.component ? this.component.querySelector('.accordion-header') : null;
+    let toggle: HTMLElement | null = this.component ? this.component.querySelector('.header') : null;
 
     if (toggle) {
       if (toggle.id) this.target?.setAttribute('aria-labelledby', `${toggle.id}`);
@@ -57,7 +56,7 @@ export default class Accordion extends DisclosureComponent {
   }
 
   getTarget(): HTMLElement | null {
-    let target: HTMLElement | null = this.component ? this.component.querySelector('.accordion-content') : null;
+    let target: HTMLElement | null = this.component ? this.component.querySelector('.content') : null;
 
     return target;
   }

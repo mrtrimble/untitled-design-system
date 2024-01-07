@@ -1,13 +1,14 @@
 @use 'sass:meta';
 @use 'sass:map';
 @use 'sass:string';
+@use 'sass:list';
 @use '../tokens/tokens' as tokens;
 @use '../functions' as functions;
 
 $SPACER: (
-  PREFIX: 'utility-spacer',
+  PREFIX: 'util-spacer',
   // TODO: Figure out how to use the PREFIX map property instead of hard coding the prefix
-  TOKENS: functions.getList(meta.module-variables('tokens'), 'utility-spacer'),
+  TOKENS: functions.getList(meta.module-variables('tokens'), 'util-spacer'),
   TYPES: (
     'p': 'padding',
     'm': 'margin',
@@ -25,13 +26,12 @@ $SPACER: (
 @layer utilities {
   @each $spacer in map.get($SPACER, TOKENS) {
     @each $prefix, $spacerProperty in map.get($SPACER, TYPES) {
-      .#{$prefix}-#{$spacer} {
+      .#{$prefix + list.nth(string.split($spacer, map.get($SPACER, PREFIX)), 2)} {
         #{$spacerProperty}: #{map.get(meta.module-variables('tokens'), $spacer)};
       }
 
       @each $direction, $directionProperty in map.get($SPACER, DIRECTIONS) {
-        // @debug #{$prefix}#{$direction}-#{$spacer};
-        .#{$prefix}#{$direction}-#{$spacer} {
+        .#{$prefix + $direction + list.nth(string.split($spacer, map.get($SPACER, PREFIX)), 2)} {
           #{$spacerProperty}-#{$directionProperty}: #{map.get(meta.module-variables('tokens'), $spacer)};
         }
       }

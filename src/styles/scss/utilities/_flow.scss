@@ -3,20 +3,20 @@
 
 $FLOW: (
   SPACERS: (
-    '2xs': #{tokens.$utility-spacer-2xs},
-    'xs': #{tokens.$utility-spacer-xs},
-    'sm': #{tokens.$utility-spacer-sm},
-    'md': #{tokens.$utility-spacer-md},
-    'lg': #{tokens.$utility-spacer-lg},
-    'xl': #{tokens.$utility-spacer-xl},
-    '2xl': #{tokens.$utility-spacer-2xl},
-    '3xl': #{tokens.$utility-spacer-3xl},
+    '2xs': #{tokens.$util-spacer-2xs},
+    'xs': #{tokens.$util-spacer-xs},
+    'sm': #{tokens.$util-spacer-sm},
+    'md': #{tokens.$util-spacer-md},
+    'lg': #{tokens.$util-spacer-lg},
+    'xl': #{tokens.$util-spacer-xl},
+    '2xl': #{tokens.$util-spacer-2xl},
+    '3xl': #{tokens.$util-spacer-3xl},
   ),
 ) !default;
 
 @layer utilities {
   .flow {
-    --_flow-spacer: var(--flow-spacer, #{tokens.$utility-spacer-md});
+    --_flow-spacer: var(--flow-spacer, #{tokens.$util-spacer-md});
 
     > * + *:not(.drawer, .modal) {
       margin-block-start: var(--_flow-spacer);

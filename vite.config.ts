@@ -1,5 +1,6 @@
 // vite.config.ts
 
+import { resolve } from 'path';
 import { browserslistToTargets } from 'lightningcss';
 import browserslist from 'browserslist';
 import ViteSvgSpriteWrapper from 'vite-svg-sprite-wrapper';
@@ -13,6 +14,23 @@ export default {
     }),
   ],
   build: {
-    cssMinify: 'lightningcss'
+    cssCodeSplit: true,
+    rollupOptions: {
+      input: {
+        index: resolve(__dirname, 'index.html'),
+        theme: resolve(__dirname, 'src/styles/scss/theme.scss'),
+        accordion: resolve(__dirname, 'src/components/accordion.ts'),
+      },
+      output: {
+        entryFileNames: `[name].js`,
+        chunkFileNames: `[name].js`,
+        assetFileNames: `[name].[ext]`,
+      },
+    },
+    esbuild: {
+      minifyIdentifiers: false,
+      keepNames: true,
+    },
+    cssMinify: 'lightningcss',
   },
 };
