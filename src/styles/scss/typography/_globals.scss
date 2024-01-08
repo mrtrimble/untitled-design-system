@@ -30,12 +30,12 @@ $FONT: (
 
   @layer typography {
     body {
-      --_text-color: var(--body-color-base, #{tokens.$color-base});
-      --_text-color-inverse: var(--body-color-inverse-base, #{tokens.$color-inverse-base});
-      --_font-family: var(--body-font-family, system-ui);
-      --_font-size: var(--body-font-size, #{tokens.$util-text-xs});
-
-      --_scroll-offset: var(--body-scroll-offset, #{tokens.$util-spacer-md});
+      --_text-color: var(--body-color-base, #{tokens.$body-color-base});
+      --_text-color-inverse: var(--body-color-inverse-base, #{tokens.$body-color-inverse-base});
+      --_font-family: var(--body-font-family, #{tokens.$body-font-family});
+      --_font-size: var(--body-font-size, #{tokens.$body-font-size});
+      --_background-color: var(--body-background-color, #{tokens.$body-background-color});
+      --_scroll-offset: var(--body-scroll-offset, #{tokens.$body-scroll-offset});
 
       font-family: var(--_font-family);
       font-size: var(--_font-size);

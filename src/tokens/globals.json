@@ -1,0 +1,20 @@
+{
+  "body": {
+    "background": {
+      "color": {"value": "{body.color.inverse.base.value}"}
+    },
+    "color": {
+      "base": { "value": "{color.base.value}" },
+      "inverse": {
+        "base": { "value": "{color.inverse.base.value}" }
+      }
+    },
+    "font": {
+      "family": { "value": "system-ui" },
+      "size": { "value": "{util.text.xs.value}" }
+    },
+    "scroll": {
+      "offset": { "value": "{util.spacer.md.value}" }
+    }
+  }
+}
