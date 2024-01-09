@@ -31,7 +31,7 @@
       width: min(100%, var(--_width));
       z-index: 10;
 
-      > * + * {
+      & > * + * {
         margin-block-start: var(--_flow-space);
       }
     }

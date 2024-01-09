@@ -28,6 +28,18 @@ $FONT: (
     }
   }
 
+  form {
+    --_flow-space: var(--form-flow-space, #{tokens.$util-spacer-xs});
+    display: grid;
+    & > * + * {
+      margin-block-start: var(--_flow-space);
+    }
+
+    & > * + *:last-child {
+      margin-block-end: var(--_flow-space);
+    }
+  }
+
   @layer typography {
     body {
       --_text-color: var(--body-color-base, #{tokens.$body-color-base});

@@ -118,7 +118,7 @@
       padding-inline: var(--_padding-inline);
       padding-block: var(--_padding-block);
 
-      > * + * {
+      & > * + * {
         margin-block-start: var(--_flow-space);
       }
     }

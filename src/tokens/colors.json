@@ -14,6 +14,8 @@
     "purple": { "value": "#8c7ae6" },
     "lightpurple": { "value": "#9c88ff" },
     "yellow": { "value": "#e1b12c" },
+    "orange": { "value": "#eb9532" },
+    "lightorange": { "value": "#f9b42d" },
     "lightyellow": { "value": "#fbc531" },
     "green": { "value": "#44bd32" },
     "lightgreen": { "value": "#4cd137" },

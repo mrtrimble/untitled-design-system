@@ -18,7 +18,7 @@ $FLOW: (
   .flow {
     --_flow-spacer: var(--flow-spacer, #{tokens.$util-spacer-md});
 
-    > * + *:not(.drawer, .modal) {
+    & > * + *:not(.drawer, .modal) {
       margin-block-start: var(--_flow-spacer);
     }
   }

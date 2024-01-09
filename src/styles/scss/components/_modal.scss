@@ -31,12 +31,12 @@
       width: min(100% - #{tokens.$util-spacer-sm}, var(--_max-width));
       z-index: 10;
 
-      > * + * {
+      & > * + * {
         margin-block-start: var(--_flow-space);
       }
 
       .modal-inner {
-        > * + * {
+        & > * + * {
           margin-block-start: var(--_flow-space);
         }
       }

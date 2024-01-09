@@ -76,7 +76,7 @@
 
     @layer states {
       &:hover {
-        --button-background-color: #{tokens.$color-lightdeepblue};
+        --button-background-color: #{tokens.$color-lightorange};
       }
 
       &:active,

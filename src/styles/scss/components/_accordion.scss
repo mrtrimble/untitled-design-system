@@ -37,6 +37,14 @@
           padding-inline: var(--_header-padding-x);
           padding-block: var(--_header-padding-y);
           transition: background 0.2s ease;
+          &:has(.marker){
+            &::-webkit-details-marker{
+              display: none;
+            };
+          }
+          &::-webkit-details-marker{
+            order: 2;
+          }
         }
 
         .content,

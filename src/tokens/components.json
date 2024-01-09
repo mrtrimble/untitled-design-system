@@ -19,7 +19,7 @@
     "flow-space": { "value": "{util.spacer.sm.value}" }
   },
   "button": {
-    "background-color": { "value": "{color.deepblue.value}" },
+    "background-color": { "value": "{color.orange.value}" },
     "border": {
       "color": { "value": "transparent" },
       "width": { "value": "3px" },
@@ -28,7 +28,7 @@
     },
     "font-size": { "value": "inherit" },
     "text": {
-      "color": { "value": "{color.inverse.base.value}" },
+      "color": { "value": "{color.base.value}" },
       "decoration": { "value": "none" }
     },
     "outline": {
@@ -46,7 +46,7 @@
   "card": {
     "background-color": { "value": "canvas" },
     "border": {
-      "color": { "value": "canvastext" },
+      "color": { "value": "{grayscale.light.value}" },
       "width": { "value": "1px" },
       "style": { "value": "solid" },
       "radius": { "value": "0" }

@@ -1,0 +1,273 @@
+@use 'sass:map';
+@use '../tokens/tokens' as tokens;
+@use '../features' as features;
+
+@layer components {
+  .label-group {
+    --_container-name: var(--label-group-container-name, label-group);
+    --_width: var(--label-group-width, 25ch);
+    --_flow-space: var(--label-group-flow-space, #{tokens.$util-spacer-2xs});
+
+    @layer rules {
+      container-name: var(--_container-name);
+      display: grid;
+      grid-template-rows: 1fr max-content;
+      width: min(100%, var(--_width));
+
+      & > * + * {
+        margin-block-start: var(--_flow-space);
+      }
+    }
+
+    @layer states {
+      &:has(> .error) {
+        .message {
+          --message-background-color: transparent;
+          --message-border-width: 0;
+          --message-padding-inline: 0;
+          --message-color: #{tokens.$message-error};
+          --message-padding-block: #{tokens.$util-spacer-2xs};
+        }
+      }
+    }
+  }
+
+  label {
+    --_flow-space: var(--label-flow-space, #{tokens.$util-spacer-2xs});
+
+    @layer rules {
+      display: grid;
+      grid-template-rows: max-content max-content 1fr max-content;
+
+      & > * {
+        margin-block-start: var(--_flow-space);
+      }
+
+      .hint {
+        --_font-size: var(--label-hint-font-size, #{tokens.$util-text-2xs});
+        font-size: var(--_font-size);
+      }
+    }
+
+    @layer states {
+      &.error {
+        .input-wrapper {
+          --input-wrapper-border-color: #{tokens.$message-error};
+          --input-wrapper-border-width: 2px;
+        }
+      }
+    }
+
+    @layer theme {
+      &:has(input[required]) {
+        &::before {
+          --_color: var(--label-required-text-color, #{tokens.$message-error});
+          --_marker: var(--label-required-marker, '*');
+          --_marker-height: 1rem;
+          --_marker-offset-x: -100%;
+          --_marker-offset-y: 40%;
+          --_marker-padding-inline: var(--label-required-marker-padding-inline, 3px);
+
+          color: var(--_color);
+          content: var(--_marker);
+          display: grid;
+          height: var(--_marker-height);
+          padding-inline: var(--_marker-padding-inline);
+          place-content: center;
+          position: absolute;
+          transform: translateX(var(--_marker-offset-x)) translateY(var(--_marker-offset-y));
+        }
+      }
+    }
+  }
+
+  .input-wrapper {
+    --_border-color: var(--input-wrapper-border-color, #{tokens.$grayscale-light});
+    --_border-style: var(--input-wrapper-border-style, solid);
+    --_border-radius: var(--input-wrapper-border-radius, #{tokens.$util-spacer-xs});
+    --_border-width: var(--input-wrapper-border-width, 1px);
+    --_padding: var(--input-padding, #{tokens.$util-spacer-2xs});
+    --_text-color: var(--input-wrapper-text-color, canvasText);
+    --_outline: var(--input-wrapper-outline, 3px solid transparent);
+
+    @layer rules {
+      color: var(--_text-color);
+      display: grid;
+      border: var(--_border-width) var(--_border-style) var(--_border-color);
+      border-radius: var(--_border-radius);
+      grid-template-columns: max-content 1fr max-content;
+      outline: var(--_outline);
+      outline-offset: 3px;
+
+      :is(.prefix, input, .suffix) {
+        border: 0;
+        outline: 0;
+        padding: var(--_padding);
+      }
+
+      :is(.prefix, .suffix) {
+        --_background-color: var(--input-accent-background-color, #{tokens.$color-lightgray});
+        --_max-width: var(--input-accent-max-width, 5ch);
+
+        aspect-ratio: 1;
+        background: var(--_background-color);
+        height: 100%;
+        display: grid;
+        width: #{tokens.$util-spacer-lg};
+        max-width: var(--_max-width);
+        order: 1;
+        place-content: center;
+        white-space: nowrap;
+
+        &:has(+ input[type='number']) {
+          font-variant-numeric: tabular-nums;
+        }
+      }
+    }
+
+    @layer states {
+      &:focus-within {
+        --input-wrapper-outline: 3px solid #{tokens.$color-purple};
+        --input-wrapper-border-width: 0;
+      }
+    }
+
+    @layer themes {
+      > .prefix {
+        grid-area: 1/1/2/2;
+        border-top-left-radius: var(--_border-radius);
+        border-bottom-left-radius: var(--_border-radius);
+      }
+
+      input {
+        grid-area: 1/1/2/4;
+        outline: none;
+      }
+
+      .prefix + input {
+        --input-padding-inline-start: #{tokens.$util-spacer-lg};
+        padding-inline-start: calc(var(--input-padding-inline-start) + 1ch);
+      }
+
+      input:has(+ .suffix) {
+        --input-padding-inline-end: #{tokens.$util-spacer-lg};
+        padding-inline-end: calc(var(--input-padding-inline-end) + 1ch);
+      }
+
+      > .suffix {
+        border-bottom-right-radius: var(--_border-radius);
+        border-top-right-radius: var(--_border-radius);
+        grid-area: 1/3/2/4;
+      }
+
+      @media (prefers-color-scheme: dark) {
+        :is(.prefix, .suffix) {
+          --input-accent-background-color: #{tokens.$grayscale-dark};
+        }
+      }
+
+      :is(button.suffix) {
+        --button-padding-block: 0;
+        --button-background-color: #{tokens.$color-lightgray};
+
+        cursor: pointer;
+        padding-block: var(--button-padding-block);
+        border-bottom-left-radius: 0;
+        border-top-left-radius: 0;
+        padding-inline: 0;
+
+        &[aria-selected='true'] {
+          --button-background-color: #{tokens.$color-gray};
+        }
+
+        &:hover {
+          --button-background-color: #{tokens.$color-gray};
+        }
+
+        @media (prefers-color-scheme: dark) {
+          --button-background-color: #{tokens.$grayscale-dark};
+          --button-text-color: canvasText;
+
+          &[aria-selected='true'] {
+            --button-background-color: #{tokens.$grayscale-black};
+          }
+
+          &:hover {
+            --button-background-color: #{tokens.$grayscale-black};
+          }
+        }
+      }
+    }
+  }
+
+  textarea,
+  input {
+    --_background-color: var(--input-background-color, canvas);
+    --_border-color: var(--input-border-color, #{tokens.$grayscale-light});
+    --_border-style: var(--input-border-style, solid);
+    --_border-radius: var(--input-border-radius, #{tokens.$util-spacer-xs});
+    --_border-width: var(--input-border-width, 1px);
+    --_text-color: var(--input-text-color, canvasText);
+    --_outline: var(--input-outline, 3px solid transparent);
+    --_padding-block: var(--input-padding-block, #{tokens.$util-spacer-2xs});
+    --_padding-inline-start: var(--input-padding-inline-start, #{tokens.$util-spacer-2xs});
+    --_padding-inline-end: var(--input-padding-inline-end, #{tokens.$util-spacer-2xs});
+    --_accent-color: var(--input-accent-color, #{tokens.$color-purple});
+
+    @layer rules {
+      background-color: var(--_background-color);
+      border-width: var(--_border-width);
+      border-style: var(--_border-style);
+      border-color: var(--_border-color);
+      border-radius: var(--_border-radius);
+      color: var(--_text-color);
+      outline: var(--_outline);
+      padding-block: var(--_padding-block);
+      padding-inline-start: var(--_padding-inline-start);
+      padding-inline-end: var(--_padding-inline-end);
+      display: grid;
+      outline-offset: 3px;
+    }
+
+    @layer states {
+      &:focus {
+        --input-outline: 3px solid var(--_accent-color);
+        --input-border-color: transparent;
+      }
+
+      &:disabled,
+      &[aria-disabled='true'] {
+        --input-background-color: var(--color-gray);
+      }
+
+      &:read-only,
+      &[aria-readonly='true'] {
+        --input-background-color: var(--color-lightgray);
+      }
+
+      @media (prefers-color-scheme: dark) {
+        &:read-only,
+        &[aria-readonly='true'] {
+          --input-background-color: var(--color-black);
+        }
+      }
+    }
+  }
+
+  input {
+    @layer rules {
+      &:is([type='number']) {
+        justify-content: end;
+        align-items: center;
+        font-family: monospace;
+        font-variant-numeric: tabular-nums;
+        text-align: right;
+        border: none;
+      }
+
+      &:is([type='date']) {
+        grid-template-columns: 1fr max-content;
+      }
+    }
+  }
+}
