@@ -10,8 +10,8 @@
     --_border-radius: var(--input-border-radius, #{tokens.$util-spacer-xs});
     --_border-width: var(--input-border-width, 1px);
     --_text-color: var(--input-text-color, canvasText);
-    --_outline-color: var(--input-outline-color, transparent);
-    --_outline: var(--input-outline, 2px solid var(--_outline-color));
+    // --_outline-color: var(--input-outline-color, transparent);
+    --_outline: var(--input-outline, 2px solid var(--input-outline-color, transparent));
     --_padding-block: var(--input-padding-block, #{tokens.$util-spacer-2xs});
     --_padding-inline-start: var(--input-padding-inline-start, #{tokens.$util-spacer-2xs});
     --_padding-inline-end: var(--input-padding-inline-end, #{tokens.$util-spacer-2xs});
@@ -125,7 +125,7 @@
         order: 1;
         place-content: center;
         white-space: nowrap;
-        outline: 0;
+        // outline: 0;
 
         &:has(+ input[type='number']) {
           font-variant-numeric: tabular-nums;
@@ -170,6 +170,10 @@
         border-top-left-radius: 0;
         border-bottom-left-radius: 0;
         cursor: pointer;
+
+        &:focus {
+          outline: 3px solid var(--_accent-color);
+        }
       }
     }
 
@@ -211,12 +215,12 @@
       padding-inline-start: var(--_padding-inline-start);
       padding-inline-end: var(--_padding-inline-end);
       display: grid;
-      outline-offset: 2px;
+      outline-offset: 3px;
     }
 
     @layer states {
       &:focus {
-        --input-outline-color: var(--_accent-color);
+        outline: 3px solid var(--_accent-color);
       }
 
       &:disabled,
