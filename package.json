@@ -1,6 +1,6 @@
 {
   "name": "@mrtrimble/design-system",
-  "version": "0.1.2-0",
+  "version": "0.1.2-1",
   "type": "module",
   "main": "./lib/design-system.js",
   "files": [
