@@ -4,6 +4,20 @@
 
 @layer components {
   .label-group {
+    --_background-color: var(--input-background-color, canvas);
+    --_border-color: var(--input-border-color, #{tokens.$grayscale-light});
+    --_border-style: var(--input-border-style, solid);
+    --_border-radius: var(--input-border-radius, #{tokens.$util-spacer-xs});
+    --_border-width: var(--input-border-width, 1px);
+    --_text-color: var(--input-text-color, canvasText);
+    --_outline-color: var(--input-outline-color, transparent);
+    --_outline: var(--input-outline, 2px solid var(--_outline-color));
+    --_padding-block: var(--input-padding-block, #{tokens.$util-spacer-2xs});
+    --_padding-inline-start: var(--input-padding-inline-start, #{tokens.$util-spacer-2xs});
+    --_padding-inline-end: var(--input-padding-inline-end, #{tokens.$util-spacer-2xs});
+
+    --_check-pixel-offset: -1.5px;
+
     --_container-name: var(--label-group-container-name, label-group);
     --_width: var(--label-group-width, 25ch);
     --_flow-space: var(--label-group-flow-space, #{tokens.$util-spacer-2xs});
@@ -58,7 +72,7 @@
       }
     }
 
-    @layer theme {
+    @layer themes {
       &:has(input[required]) {
         &::before {
           --_color: var(--label-required-text-color, #{tokens.$message-error});
@@ -93,55 +107,36 @@
     @layer rules {
       color: var(--_text-color);
       display: grid;
-      border: var(--_border-width) var(--_border-style) var(--_border-color);
-      border-radius: var(--_border-radius);
       grid-template-columns: max-content 1fr max-content;
       outline: var(--_outline);
       outline-offset: 2px;
 
-      :is(.prefix, input, .suffix) {
-        border: 0;
-        outline: 0;
-        padding: var(--_padding);
-      }
-
       :is(.prefix, .suffix) {
-        --_background-color: var(--input-accent-background-color, #{tokens.$color-lightgray});
-        --_max-width: var(--input-accent-max-width, 5ch);
+        --_background-color: var(--body-accent-color, #{tokens.$body-color-accent});
+        --_max-characters: var(--input-accent-max-width, 5ch);
+
+        --body-accent-color: #{tokens.$grayscale-lighter};
 
         aspect-ratio: 1;
         background: var(--_background-color);
-        height: 100%;
         display: grid;
         width: #{tokens.$util-spacer-lg};
-        max-width: var(--_max-width);
+        max-width: var(--_max-characters);
         order: 1;
         place-content: center;
         white-space: nowrap;
+        outline: 0;
 
         &:has(+ input[type='number']) {
           font-variant-numeric: tabular-nums;
         }
       }
-    }
 
-    @layer states {
-      &:focus-within {
-        --input-wrapper-outline: 2px solid #{tokens.$color-purple};
-        --input-wrapper-border-width: 0;
-      }
-    }
-
-    @layer themes {
-      > .prefix {
+      :is(.prefix) {
         grid-area: 1/1/2/2;
+        border: var(--_border-width) var(--_border-style) var(--_border-color);
         border-top-left-radius: var(--_border-radius);
         border-bottom-left-radius: var(--_border-radius);
-      }
-
-      input {
-        grid-area: 1/1/2/4;
-        outline: none;
       }
 
       .prefix + input {
@@ -149,41 +144,43 @@
         padding-inline-start: calc(var(--input-padding-inline-start) + 1ch);
       }
 
+      input {
+        grid-area: 1/1/2/4;
+        outline: none;
+      }
+
       input:has(+ .suffix) {
         --input-padding-inline-end: #{tokens.$util-spacer-lg};
         padding-inline-end: calc(var(--input-padding-inline-end) + 1ch);
       }
 
-      > .suffix {
-        border-bottom-right-radius: var(--_border-radius);
-        border-top-right-radius: var(--_border-radius);
+      :is(.suffix) {
         grid-area: 1/3/2/4;
+        border: var(--_border-width) var(--_border-style) var(--_border-color);
+        border-top-right-radius: var(--_border-radius);
+        border-bottom-right-radius: var(--_border-radius);
       }
 
+      :is(button.suffix) {
+        --button-background-color: #{tokens.$color-lightgray};
+        --button-border-color: #{tokens.$grayscale-light};
+        --button-padding-block: 0;
+        --button-padding-inline: 0;
+
+        border-top-left-radius: 0;
+        border-bottom-left-radius: 0;
+        cursor: pointer;
+      }
+    }
+
+    @layer themes {
       @media (prefers-color-scheme: dark) {
         :is(.prefix, .suffix) {
-          --input-accent-background-color: #{tokens.$grayscale-dark};
+          --body-accent-color: #{tokens.$grayscale-dark};
         }
       }
 
       :is(button.suffix) {
-        --button-padding-block: 0;
-        --button-background-color: #{tokens.$color-lightgray};
-
-        cursor: pointer;
-        padding-block: var(--button-padding-block);
-        border-bottom-left-radius: 0;
-        border-top-left-radius: 0;
-        padding-inline: 0;
-
-        &[aria-selected='true'] {
-          --button-background-color: #{tokens.$color-gray};
-        }
-
-        &:hover {
-          --button-background-color: #{tokens.$color-gray};
-        }
-
         @media (prefers-color-scheme: dark) {
           --button-background-color: #{tokens.$grayscale-dark};
           --button-text-color: canvasText;
@@ -202,23 +199,11 @@
 
   textarea,
   input {
-    --_background-color: var(--input-background-color, canvas);
-    --_border-color: var(--input-border-color, #{tokens.$grayscale-light});
-    --_border-style: var(--input-border-style, solid);
-    --_border-radius: var(--input-border-radius, #{tokens.$util-spacer-xs});
-    --_border-width: var(--input-border-width, 1px);
-    --_text-color: var(--input-text-color, canvasText);
-    --_outline: var(--input-outline, 2px solid transparent);
-    --_padding-block: var(--input-padding-block, #{tokens.$util-spacer-2xs});
-    --_padding-inline-start: var(--input-padding-inline-start, #{tokens.$util-spacer-2xs});
-    --_padding-inline-end: var(--input-padding-inline-end, #{tokens.$util-spacer-2xs});
-    --_accent-color: var(--input-accent-color, #{tokens.$color-purple});
+    // --_accent-color: var(--input-accent-color, #{tokens.$body-color-accent});
 
     @layer rules {
       background-color: var(--_background-color);
-      border-width: var(--_border-width);
-      border-style: var(--_border-style);
-      border-color: var(--_border-color);
+      border: var(--_border-width) var(--_border-style) var(--_border-color);
       border-radius: var(--_border-radius);
       color: var(--_text-color);
       outline: var(--_outline);
@@ -231,8 +216,7 @@
 
     @layer states {
       &:focus {
-        --input-outline: 2px solid var(--_accent-color);
-        --input-border-color: transparent;
+        --input-outline-color: var(--_accent-color);
       }
 
       &:disabled,
@@ -273,7 +257,6 @@
         font-family: monospace;
         font-variant-numeric: tabular-nums;
         text-align: right;
-        border: none;
       }
     }
 
@@ -331,8 +314,11 @@
             transform: scale(0.7);
           }
         }
-        &:focus {
-          outline: 0;
+
+        &:focus,
+        &:focus-visible {
+          box-shadow: none;
+          outline: none;
         }
       }
     }
@@ -351,9 +337,9 @@
 
       @layer themes {
         @media (prefers-color-scheme: dark) {
-          --check-color: white;
+          --check-color: #{tokens.$grayscale-white};
           &:checked {
-            --check-background-color: var(--color-purple);
+            --check-background-color: var(--_accent-color);
           }
         }
       }
@@ -361,9 +347,9 @@
   }
 
   fieldset {
-    @layer rules {
-      border-color: transparent;
+    border-color: transparent;
 
+    @layer rules {
       label {
         grid-template-columns: max-content 1fr;
         grid-template-rows: 1fr;
@@ -377,9 +363,9 @@
     @layer states {
       label {
         &:has(input[type='radio']:checked) {
-          background: color-mix(in oklab, var(--color-purple) 15%, var(--grayscale-white) 50%);
-          outline: 2px solid var(--color-purple);
-          border-radius: var(--util-spacer-2xs);
+          border-radius: #{tokens.$util-spacer-2xs};
+          background: color-mix(in oklab, var(--_accent-color) 15%, var(--grayscale-white) 50%);
+          outline: 2px solid var(--_accent-color);
         }
       }
     }

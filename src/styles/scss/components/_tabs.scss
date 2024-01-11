@@ -50,6 +50,7 @@
       padding-inline: var(--_padding-inline);
       padding-block: var(--_padding-block);
       border-top: var(--_border-width) var(--_border-style) var(--_border-color);
+      z-index: 1;
     }
 
     @layer states {
@@ -69,6 +70,10 @@
           --tab-background-color: #{tokens.$grayscale-lighter};
           --tab-border-color: #{tokens.$color-purple};
           --tab-text-color: currentcolor;
+        }
+
+        &:focus {
+          outline-color: var(--_accent-color);
         }
 
         &:hover {
@@ -126,6 +131,10 @@
     @layer states {
       &.open {
         --tab-panel-display: block;
+      }
+
+      &:focus {
+        outline-color: var(--_accent-color);
       }
     }
 

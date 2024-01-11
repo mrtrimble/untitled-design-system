@@ -39,7 +39,8 @@
       outline-offset: var(--_outline-offset);
       text-align: center;
       width: var(--_width);
-      box-shadow: inset 0 -2px 2px color-mix(in srgb, var(--_background-color), var(--grayscale-dark) 12%), inset 0 2px 2px color-mix(in srgb, var(--_background-color), var(--grayscale-white) 18%);
+      box-shadow: inset 0 -2px 2px color-mix(in srgb, var(--_background-color), var(--grayscale-dark) 12%),
+        inset 0 2px 2px color-mix(in srgb, var(--_background-color), var(--grayscale-white) 18%);
     }
 
     @layer modifiers {
@@ -55,7 +56,7 @@
 
         &:active,
         &:focus-visible {
-          --button-outline-color: canvastext;
+          --button-outline-color: var(--_accent-color);
         }
       }
       &.plain {
@@ -71,7 +72,7 @@
         &:active,
         &:focus,
         &:focus-visible {
-          --button-outline-color: #{tokens.$grayscale-black};
+          --button-outline-color: var(--_accent-color);
           --button-text-color: #{tokens.$color-base};
         }
       }
@@ -84,7 +85,7 @@
 
       &:active,
       &:focus-visible {
-        --button-outline-color: #{tokens.$color-base};
+        --button-outline-color: var(--_accent-color);
       }
     }
 
@@ -95,7 +96,7 @@
           &:active,
           &:focus,
           &:focus-visible {
-            --button-outline-color: #{tokens.$grayscale-white};
+            --button-outline-color: var(--_accent-color);
             --button-text-color: #{tokens.$color-inverse-base};
           }
         }

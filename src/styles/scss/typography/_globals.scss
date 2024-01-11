@@ -12,7 +12,9 @@ $FONT: (
 
 @layer globals {
   html {
+    --_accent-color: var(--body-color-accent, #{tokens.$body-color-accent});
     font-size: map.get($FONT, SIZE);
+    accent-color: var(--_accent-color);
     color-scheme: var(--body-theme, dark light);
 
     &:has(body.light) {
@@ -93,6 +95,7 @@ $FONT: (
 
       &:focus {
         --body-link-color: #{tokens.$color-link-focus};
+        outline-color: var(--_accent-color);
       }
 
       &:active {

@@ -62,6 +62,10 @@
       &:hover {
         --tooltip-toggle-background-color: var(--grayscale-lighter);
       }
+
+      &:focus {
+        outline-color: var(--_accent-color);
+      }
     }
 
     @layer themes {

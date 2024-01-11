@@ -37,13 +37,16 @@
           padding-inline: var(--_header-padding-x);
           padding-block: var(--_header-padding-y);
           transition: background 0.2s ease;
-          &:has(.marker){
-            &::-webkit-details-marker{
+          &:has(.marker) {
+            &::-webkit-details-marker {
               display: none;
-            };
+            }
           }
-          &::-webkit-details-marker{
+          &::-webkit-details-marker {
             order: 2;
+          }
+          &:focus {
+            outline-color: var(--_accent-color);
           }
         }
 
@@ -82,6 +85,13 @@
 
         .marker {
           transform: rotate(90deg);
+        }
+      }
+
+      &:focus {
+        .content,
+        > *:not(summary) {
+          outline-color: var(--_accent-color);
         }
       }
     }

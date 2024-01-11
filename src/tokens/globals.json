@@ -1,13 +1,14 @@
 {
   "body": {
     "background": {
-      "color": {"value": "{body.color.inverse.base.value}"}
+      "color": { "value": "{body.color.inverse.base.value}" }
     },
     "color": {
       "base": { "value": "{color.base.value}" },
       "inverse": {
         "base": { "value": "{color.inverse.base.value}" }
-      }
+      },
+      "accent": { "value": "{color.purple.value}" }
     },
     "font": {
       "family": { "value": "system-ui" },
