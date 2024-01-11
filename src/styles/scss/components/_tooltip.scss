@@ -1,4 +1,6 @@
+@use 'sass:map';
 @use '../tokens/tokens' as tokens;
+@use '../features' as features;
 
 @layer components {
   body.no-js {
@@ -108,45 +110,47 @@
       display: var(--_display);
       box-shadow: var(--_shadow);
 
-      &[popover] {
-        &::before,
-        &::after {
-          content: '';
-          position: fixed;
-          background: var(--_background-color);
-          inset-inline: anchor(auto-same);
-          width: var(--_marker-width);
-          max-height: var(--_marker-height);
-          margin-inline: auto;
-          transform: translateY(10px);
-          clip-path: polygon(50% 0%, 0% 100%, 100% 100%);
-        }
-
-        @supports (anchor-name: --foo) {
-          anchor-name: --popover;
-          inset-inline: calc(anchor(50%) - min(abs(0% - anchor(50%)), abs(100% - anchor(50%))));
-          margin-inline: auto;
-          inset-block-end: max(anchor(auto), anchor(--tooltip-toggle auto));
-          margin-block-end: 0.5rem;
-        }
-
-        @supports (anchor-name: --foo) {
+      @if (map.get(features.$FLAGS, 'ANCHOR_POSITIONING_SUPPORTED')) {
+        &[popover] {
           &::before,
           &::after {
-            @supports (anchor-default) {
-              anchor-default: --tooltip-toggle;
-            }
+            content: '';
+            position: fixed;
+            background: var(--_background-color);
+            inset-inline: anchor(auto-same);
+            width: var(--_marker-width);
+            max-height: var(--_marker-height);
+            margin-inline: auto;
+            transform: translateY(10px);
+            clip-path: polygon(50% 0%, 0% 100%, 100% 100%);
           }
 
-          &::before {
-            inset-block-start: calc(anchor(auto));
-            inset-block-end: calc(anchor(--popover auto));
-            transform: translateY(17px);
+          @supports (anchor-name: --foo) {
+            anchor-name: --popover;
+            inset-inline: calc(anchor(50%) - min(abs(0% - anchor(50%)), abs(100% - anchor(50%))));
+            margin-inline: auto;
+            inset-block-end: max(anchor(auto), anchor(--tooltip-toggle auto));
+            margin-block-end: 0.5rem;
           }
-          &::after {
-            inset-block-start: calc(anchor(--popover auto) - 0.65em);
-            inset-block-end: calc(anchor(auto));
-            clip-path: polygon(50% 100%, 4% 0, 100% 0);
+
+          @supports (anchor-name: --foo) {
+            &::before,
+            &::after {
+              @supports (anchor-default) {
+                anchor-default: --tooltip-toggle;
+              }
+            }
+
+            &::before {
+              inset-block-start: calc(anchor(auto));
+              inset-block-end: calc(anchor(--popover auto));
+              transform: translateY(17px);
+            }
+            &::after {
+              inset-block-start: calc(anchor(--popover auto) - 0.65em);
+              inset-block-end: calc(anchor(auto));
+              clip-path: polygon(50% 100%, 4% 0, 100% 0);
+            }
           }
         }
       }

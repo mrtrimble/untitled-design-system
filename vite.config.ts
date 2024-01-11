@@ -4,6 +4,7 @@ import { resolve } from 'path';
 import { browserslistToTargets } from 'lightningcss';
 import browserslist from 'browserslist';
 import ViteSvgSpriteWrapper from 'vite-svg-sprite-wrapper';
+import { ViteMinifyPlugin } from 'vite-plugin-minify';
 import * as lightningCss from 'lightningcss';
 
 export default {
@@ -12,6 +13,7 @@ export default {
       icons: './src/icons/*.svg',
       outputDir: './public/',
     }),
+    ViteMinifyPlugin({}),
   ],
   build: {
     cssCodeSplit: true,
