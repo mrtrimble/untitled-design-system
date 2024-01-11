@@ -22,7 +22,7 @@
     "background-color": { "value": "{color.orange.value}" },
     "border": {
       "color": { "value": "transparent" },
-      "width": { "value": "3px" },
+      "width": { "value": "0.5px" },
       "style": { "value": "solid" },
       "radius": { "value": "{util.spacer.xs.value}" }
     },
@@ -47,7 +47,7 @@
     "background-color": { "value": "canvas" },
     "border": {
       "color": { "value": "{grayscale.light.value}" },
-      "width": { "value": "1px" },
+      "width": { "value": "0.5px" },
       "style": { "value": "solid" },
       "radius": { "value": "0" }
     },
@@ -80,7 +80,7 @@
       "inline": { "value": "{util.spacer.xs.value}" }
     },
     "border": {
-      "color": { "value": "{message.default.value}" },
+      "color": { "value": "transparent" },
       "width": { "value": "5px" },
       "style": { "value": "solid" }
     }

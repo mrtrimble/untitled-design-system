@@ -29,7 +29,7 @@ $MESSAGE: (
       @each $state in map.get($MESSAGE, STATES) {
         &.#{$state} {
           --message-color: #{tokens.$color-base};
-          --message-border-color: #{map.get(meta.module-variables('tokens'), 'message-' + $state)};
+          // --message-border-color: #{map.get(meta.module-variables('tokens'), 'message-' + $state)};
           --message-background-color: #{map.get(meta.module-variables('tokens'), 'message-' + $state)};
         }
       }

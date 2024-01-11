@@ -39,7 +39,7 @@ $SPACER: (
   }
 }
 
-@layer theme {
+@layer themes {
   :root {
     @each $spacer in map.get($SPACER, TOKENS) {
       --#{$spacer}: #{map.get(meta.module-variables('tokens'), $spacer)};

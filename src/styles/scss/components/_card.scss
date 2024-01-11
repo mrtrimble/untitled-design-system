@@ -14,6 +14,7 @@
       align-content: start;
       background-color: var(--_background-color);
       border: var(--_border-width) var(--_border-color) var(--_border-style);
+      overflow: hidden;
 
       > *:not(figure, img) {
         margin-inline: var(--_margin-inline);

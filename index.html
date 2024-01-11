@@ -92,6 +92,7 @@
       </nav>
       <article id="main-content"
                class="px-md pb-md flow">
+
         <!-- Typography -->
         <div class="flow">
           <h2>Typography</h2>
@@ -857,8 +858,10 @@
             </section>
           </div>
 
+          <!-- Inputs -->
           <div class="flow">
             <h3 id="inputs">Inputs</h3>
+
             <section>
               <div class="auto-grid gap-2xs"
                    style="--grid-column-min: 20ch">
@@ -967,6 +970,7 @@
                     </div>
                   </form>
                 </div>
+
                 <div class="card">
                   <h4>Date</h4>
                   <form action="#">
@@ -980,6 +984,7 @@
                     </div>
                   </form>
                 </div>
+
                 <div class="card">
                   <h4>Search</h4>
                   <form action="#">
@@ -1002,6 +1007,7 @@
                     </search>
                   </form>
                 </div>
+
                 <div class="card">
                   <h4>Textarea</h4>
                   <form action="#">
@@ -1014,6 +1020,55 @@
                       </label>
 
                     </div>
+                  </form>
+                </div>
+
+                <div class="card">
+                  <h4>Radio</h4>
+                  <form action="#">
+                    <fieldset class="flow flow-2xs">
+                      <legend>Choose Starter</legend>
+                      <label for="starter-bulbasaur">
+                        <input type="radio"
+                               name="starter"
+                               id="starter-bulbasaur"
+                               checked>
+                        Bulbasaur
+                      </label>
+                      <label for="starter-squirtle">
+                        <input type="radio"
+                               name="starter"
+                               id="starter-squirtle">
+                        Squirtle
+                      </label>
+                      <label for="starter-charmander">
+                        <input type="radio"
+                               name="starter"
+                               id="starter-charmander">
+                        Charmander
+                      </label>
+                    </fieldset>
+                  </form>
+                </div>
+
+                <div class="card">
+                  <h4>Checkbox</h4>
+                  <form action="#">
+                    <fieldset class="flow flow-2xs">
+                      <legend>Select Toppings</legend>
+                      <label for="topping-pepperoni">
+                        <input type="checkbox"
+                               name="topping"
+                               id="topping-pepperoni">
+                        Pepperoni
+                      </label>
+                      <label for="topping-sausage">
+                        <input type="checkbox"
+                               name="topping"
+                               id="topping-sausage">
+                        Sausage
+                      </label>
+                    </fieldset>
                   </form>
                 </div>
               </div>

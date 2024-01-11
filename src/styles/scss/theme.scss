@@ -1,7 +1,7 @@
 @use 'sass:meta';
 @use './tokens/tokens';
 
-@layer theme {
+@layer themes {
   :root {
     @each $token, $value in meta.module-variables('tokens') {
       --#{$token}: #{$value};
