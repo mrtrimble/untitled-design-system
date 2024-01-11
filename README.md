@@ -20,7 +20,7 @@ CSS
 
 JS
 ```html
-<script src="https://unpkg.com/@mrtrimble/untitled-design-system@0.0.1-0/lib/untitled-design-system.js"></script>
+<script src="https://unpkg.com/@mrtrimble/untitled-design-system/lib/untitled-design-system.js"></script>
 ```
 
 ## Demo

@@ -1,7 +1,5 @@
 // vite-lib.config.ts
-// import { resolve } from 'path';
-// import { browserslistToTargets } from 'lightningcss';
-// import browserslist from 'browserslist';
+import { ViteMinifyPlugin } from 'vite-plugin-minify';
 import ViteSvgSpriteWrapper from 'vite-svg-sprite-wrapper';
 
 export default {
@@ -10,6 +8,7 @@ export default {
       icons: './src/icons/*.svg',
       outputDir: './public/',
     }),
+    ViteMinifyPlugin({}),
   ],
   build: {
     cssMinify: 'lightningcss',
