@@ -1,7 +1,7 @@
 // vite-lib.config.ts
-import { resolve } from 'path';
-import { browserslistToTargets } from 'lightningcss';
-import browserslist from 'browserslist';
+// import { resolve } from 'path';
+// import { browserslistToTargets } from 'lightningcss';
+// import browserslist from 'browserslist';
 import ViteSvgSpriteWrapper from 'vite-svg-sprite-wrapper';
 
 export default {
@@ -17,8 +17,8 @@ export default {
       entry: {
         index: './src/main.ts',
       },
-      name: 'DesignSystem',
-      fileName: 'design-system',
+      name: 'UntitledDesignSystem',
+      fileName: 'untitled-design-system',
     },
     outDir: './lib/',
   },

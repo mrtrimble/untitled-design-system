@@ -1,8 +1,8 @@
 {
-  "name": "@mrtrimble/untitled-design-system",
-  "version": "0.0.0",
+  "name": "@mrtrimble/design-system",
+  "version": "0.1.2-3",
   "type": "module",
-  "main": "./lib/untitled-design-system.js",
+  "main": "./lib/design-system.js",
   "files": [
     "/lib",
     "/README.md",
