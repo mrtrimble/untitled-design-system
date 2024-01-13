@@ -1,4 +1,4 @@
-import DisclosureComponent from './primitaves/base-disclosure-component';
+import DisclosureComponent from './primitives/base-disclosure-component';
 export default class Accordion extends DisclosureComponent {
   component: HTMLElement | null;
 

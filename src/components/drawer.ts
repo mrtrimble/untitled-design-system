@@ -1,4 +1,4 @@
-import PopoverComponent from './primitaves/base-popover-component';
+import PopoverComponent from './primitives/base-popover-component';
 
 export default class Drawer extends PopoverComponent {
   component: HTMLElement | null;

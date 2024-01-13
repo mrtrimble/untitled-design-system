@@ -1,5 +1,6 @@
-@use 'sass:meta';
 @use 'sass:list';
+@use 'sass:meta';
+@use 'sass:map';
 @use 'sass:string';
 
 // Returns a list of tokens with a specific prefix
@@ -15,4 +16,27 @@
   }
 
   @return $list;
+}
+
+@function filterColorList($tokens, $filters) {
+  $colorList: ();
+
+  @each $key, $value in $tokens {
+    @if meta.type-of($value) == color {
+      @debug meta.type-of($key) == color;
+      @debug meta.type-of($key) == color;
+      @each $filter in $filters {
+        $string: meta.inspect($key);
+
+        @if string.index(meta.inspect($key), $filter) != 2 {
+          @debug $key;
+          $colorList: map.remove($tokens, $key);
+        }
+      }
+    }
+  }
+
+  @debug $colorList;
+
+  @return $colorList;
 }

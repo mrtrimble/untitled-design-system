@@ -1,34 +1,67 @@
 @use 'sass:meta';
 @use 'sass:map';
+@use 'sass:list';
+@use 'sass:string';
 @use '../tokens/tokens' as tokens;
+@use '../functions' as functions;
 
-$COLORS: (
+$COLORS_LIST: ();
+$COLORS_CONFIG: (
   TOKENS: meta.module-variables('tokens'),
   MAX_SHADES: 5,
+  COMPONENT_FILTERS: (
+    'accordion',
+    'button',
+    'card',
+    'drawer',
+    'inputs',
+    'message',
+    'modal',
+    'skip-link',
+    'tab',
+    'tooltip',
+    'body',
+  ),
 ) !default;
 
-@layer utilities {
-  @each $name, $color in meta.module-variables('tokens') {
-    @if meta.type-of($color) == color {
-      $types: (
-        'text': 'color',
-        'background': 'background-color',
-        'border': 'border-color',
-      );
+@each $name, $color in meta.module-variables('tokens') {
+  @if meta.type-of($color) == color {
+    $COLORS_LIST: map.merge(
+      $COLORS_LIST,
+      (
+        $name: $color,
+      )
+    );
+  }
 
-      @each $type, $property in $types {
-        .#{$type}-#{$name} {
-          #{$property}: #{map.get(map.get($COLORS, TOKENS), $name)};
-        }
+  @each $component in map.get($COLORS_CONFIG, COMPONENT_FILTERS) {
+    $string: meta.inspect($name);
+
+    @if string.index(meta.inspect($name), $component) == 2 {
+      $COLORS_LIST: map.remove($COLORS_LIST, $name);
+    }
+  }
+}
+
+@layer utilities {
+  @each $name, $color in $COLORS_LIST {
+    $types: (
+      'text': 'color',
+      'background': 'background-color',
+      'border': 'border-color',
+    );
+
+    @each $type, $property in $types {
+      .#{$type}-#{$name} {
+        #{$property}: #{map.get(map.get($COLORS_CONFIG, TOKENS), $name)};
       }
     }
   }
 }
 
 @layer themes {
-  // TODO: Filter out component color properties
   :root {
-    @each $name, $color in meta.module-variables('tokens') {
+    @each $name, $color in $COLORS_LIST {
       @if meta.type-of($color) == color {
         --#{$name}: #{$color};
       }
