@@ -1,5 +1,7 @@
 import PopoverComponent from './primitives/base-popover-component';
 
+// TODO: Fix tabindex on toggles inside drawers
+
 export default class Drawer extends PopoverComponent {
   component: HTMLElement | null;
   toggles: HTMLElement[] | null;

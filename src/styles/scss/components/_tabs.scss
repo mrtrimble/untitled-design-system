@@ -1,7 +1,7 @@
 @use '../tokens/tokens' as tokens;
 
 @layer components {
-  body.no-js {
+  *.no-js:has(.tabs) {
     --tabs-display: block;
     --tab-list-display: none;
     --tab-panel-display: block;

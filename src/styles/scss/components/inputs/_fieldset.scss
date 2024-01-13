@@ -1,0 +1,40 @@
+@use 'sass:map';
+@use '../../tokens/tokens' as tokens;
+@use '../../features' as features;
+
+@layer components {
+  fieldset {
+    @layer rules {
+      border-color: transparent;
+
+      label {
+        grid-template-columns: max-content 1fr;
+        grid-template-rows: 1fr;
+        gap: var(--util-spacer-xs);
+        padding-inline: var(--util-spacer-2xs);
+        place-content: center;
+        width: fit-content;
+      }
+    }
+
+    @layer states {
+      label {
+        &:has(input[type='radio']:checked) {
+          border-radius: #{tokens.$util-spacer-2xs};
+          background: color-mix(in oklab, var(--_accent-color) 15%, var(--grayscale-white) 50%);
+          outline: 2px solid var(--_accent-color);
+        }
+      }
+    }
+
+    @layer themes {
+      label {
+        @media (prefers-color-scheme: dark) {
+          &:has(input[type='radio']:checked) {
+            background: color-mix(in oklab, var(--color-purple) 45%, var(--grayscale-black) 10%);
+          }
+        }
+      }
+    }
+  }
+}

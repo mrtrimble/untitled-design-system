@@ -2,7 +2,7 @@
 
 @layer components {
   .skip-link {
-    --_background-color: var(--skip-link-background-color, canvasText);
+    --_background-color: var(--skip-link-background-color, #{tokens.$skip-link-background-color});
     --_padding: var(--skip-link-padding, #{tokens.$skip-link-padding});
     --_transition: var(--skip-link-transition, #{tokens.$skip-link-transition});
 

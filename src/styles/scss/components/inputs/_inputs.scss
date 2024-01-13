@@ -1,0 +1,172 @@
+@use 'sass:map';
+@use '../../tokens/tokens' as tokens;
+@use '../../features' as features;
+
+@layer components {
+  textarea,
+  input {
+    --_background-color: var(--input-background-color, #{tokens.$input-background-color});
+    --_border-color: var(--input-border-color, #{tokens.$input-border-color});
+    --_border-style: var(--input-border-style, #{tokens.$input-border-style});
+    --_border-radius: var(--input-border-radius, #{tokens.$input-border-radius});
+    --_border-width: var(--input-border-width, #{tokens.$input-border-width});
+    --_text-color: var(--input-text-color, #{tokens.$input-text-color});
+    --_outline-color: var(--input-outline-color, #{tokens.$input-outline-color});
+    --_outline-style: var(--input-outline-style, #{tokens.$input-outline-style});
+    --_outline-width: var(--input-outline-width, #{tokens.$input-outline-width});
+    --_outline: var(--_outline-width) var(--_outline-style) var(--_outline-color);
+    --_padding-block: var(--input-padding-block, #{tokens.$input-padding-block});
+    --_padding-inline-start: var(--input-padding-inline-start, #{tokens.$input-padding-inline-start});
+    --_padding-inline-end: var(--input-padding-inline-end, #{tokens.$input-padding-inline-end});
+
+    @layer rules {
+      background-color: var(--_background-color);
+      border: var(--_border-width) var(--_border-style) var(--_border-color);
+      border-radius: var(--_border-radius);
+      color: var(--_text-color);
+      outline: var(--_outline);
+      padding-block: var(--_padding-block);
+      padding-inline-start: var(--_padding-inline-start);
+      padding-inline-end: var(--_padding-inline-end);
+      display: grid;
+      outline-offset: 3px;
+    }
+
+    @layer states {
+      &:focus {
+        outline: 3px solid var(--_accent-color);
+      }
+
+      &:disabled,
+      &[aria-disabled='true'] {
+        --input-background-color: var(--color-gray);
+      }
+
+      &:read-only,
+      &[aria-readonly='true'] {
+        --input-background-color: var(--color-lightgray);
+      }
+
+      @media (prefers-color-scheme: dark) {
+        &:read-only,
+        &[aria-readonly='true'] {
+          --input-background-color: var(--color-black);
+        }
+      }
+    }
+  }
+
+  input {
+    &:is([type='number']) {
+      @layer rules {
+        justify-content: end;
+        align-items: center;
+        font-family: monospace;
+        font-variant-numeric: tabular-nums;
+        text-align: right;
+      }
+    }
+
+    &:is([type='date']) {
+      @layer rules {
+        grid-template-columns: 1fr max-content;
+      }
+    }
+
+    &:is([type='radio'], [type='checkbox']) {
+      --_check-background-color: var(--check-background-color, #{tokens.$input-check-background-color});
+      --_check-border-radius: var(--check-border-radius, #{tokens.$input-check-border-radius});
+      --_check-border-width: var(--check-border-width, #{tokens.$input-check-border-width});
+      --_check-border-color: var(--check-border-color, #{tokens.$input-check-border-color});
+      --_check-border-style: var(--check-border-style, #{tokens.$input-check-border-style});
+      --_check-color: var(--check-color, #{tokens.$input-check-color});
+      --_check-margin-block-start: var(--check-margin-block-start, #{tokens.$input-check-margin-block-start});
+      --_check-height: var(--check-height, #{tokens.$input-check-height});
+
+      --_check-offset: var(--check-offset, #{tokens.$input-check-offset});
+
+      @layer rules {
+        appearance: none;
+        aspect-ratio: 1;
+        background-color: var(--_check-background-color);
+        border: var(--_check-border-width) var(--_check-border-style) var(--_check-border-color);
+        border-radius: var(--_check-border-radius);
+        content: '';
+        cursor: pointer;
+        display: grid;
+        height: var(--_check-height);
+        width: var(--_check-height);
+        margin-block-start: var(--_check-margin-block-start);
+        opacity: 1;
+        overflow: clip;
+        padding-inline: 0;
+        place-content: center;
+        position: relative;
+        transform: translateY(var(--_check-offset));
+
+        &::before {
+          aspect-ratio: 1;
+          background-color: var(--_check-color);
+          content: '';
+          cursor: pointer;
+          height: var(--_check-height);
+          place-self: center;
+          transform: scale(0);
+        }
+      }
+
+      @layer themes {
+        @media (prefers-color-scheme: dark) {
+          --check-background-color: canvas;
+        }
+      }
+    }
+
+    &:is([type='radio']) {
+      --check-border-radius: 100%;
+
+      @layer states {
+        &:checked {
+          &::before {
+            border-radius: 100%;
+            transform: scale(0.7);
+          }
+        }
+
+        &:focus,
+        &:focus-visible {
+          box-shadow: none;
+          outline: none;
+        }
+      }
+    }
+
+    &:is([type='checkbox']) {
+      --check-border-radius: var(--util-spacer-2xs);
+
+      @layer states {
+        &:checked {
+          &::before {
+            transform: scale(1);
+            clip-path: polygon(28% 38%, 41% 53%, 75% 24%, 86% 38%, 40% 78%, 15% 50%);
+          }
+        }
+      }
+
+      @layer themes {
+        @media (prefers-color-scheme: dark) {
+          --check-color: #{tokens.$grayscale-white};
+          &:checked {
+            --check-background-color: var(--_accent-color);
+          }
+        }
+      }
+    }
+  }
+
+  textarea {
+    @layer rules {
+      font-family: monospace;
+    }
+  }
+}

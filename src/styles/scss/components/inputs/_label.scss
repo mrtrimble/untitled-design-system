@@ -1,0 +1,54 @@
+@use 'sass:map';
+@use '../../tokens/tokens' as tokens;
+@use '../../features' as features;
+
+@layer components {
+  label {
+    --_flow-space: var(--label-flow-space, #{tokens.$label-flow-space});
+
+    @layer rules {
+      display: grid;
+      grid-template-rows: max-content max-content 1fr max-content;
+
+      & > * {
+        margin-block-start: var(--_flow-space);
+      }
+
+      .hint {
+        --_font-size: var(--label-hint-font-size, #{tokens.$util-text-2xs});
+        font-size: var(--_font-size);
+      }
+    }
+
+    @layer states {
+      &.error {
+        .input-wrapper {
+          --input-wrapper-border-color: #{tokens.$message-error};
+          --input-wrapper-border-width: 2px;
+        }
+      }
+    }
+
+    @layer themes {
+      &:has(input[required]) {
+        &::before {
+          --_color: var(--label-required-text-color, #{tokens.$label-required-text-color});
+          --_marker: var(--label-required-marker, #{tokens.$label-required-marker-symbol});
+          --_marker-height: var(--label-required-marker-height, #{tokens.$label-required-marker-height});
+          --_marker-offset-x: var(--label-required-marker-offset-x, #{tokens.$label-required-marker-offset-x});
+          --_marker-offset-y: var(--label-required-marker-offset-y, #{tokens.$label-required-marker-offset-y});
+          --_marker-padding-inline: var(--label-required-marker-padding-inline, #{tokens.$label-required-marker-padding-inline});
+
+          color: var(--_color);
+          content: var(--_marker);
+          display: grid;
+          height: var(--_marker-height);
+          padding-inline: var(--_marker-padding-inline);
+          place-content: center;
+          position: absolute;
+          transform: translateX(var(--_marker-offset-x)) translateY(var(--_marker-offset-y));
+        }
+      }
+    }
+  }
+}

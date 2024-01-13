@@ -15,6 +15,8 @@
       }
     },
     "background-color": { "value": "{grayscale.lighter.value}" },
+    "display": {"value": "none"},
+    "width": {"value": "width"},
     "text-color": { "value": "currentColor" },
     "flow-space": { "value": "{util.spacer.sm.value}" }
   },
@@ -72,6 +74,85 @@
     "shadow": { "value": "{util.shadow.xs.value}" },
     "border": { "value": "3px solid transparent" }
   },
+  "input": {
+    "background-color": { "value": "canvas" },
+    "border": {
+      "color": { "value": "{grayscale.light.value}" },
+      "style": { "value": "solid" },
+      "radius": { "value": "{util.spacer.xs.value}" },
+      "width": { "value": "0.5px" }
+    },
+    "text": {
+      "color": { "value": "canvasText" }
+    },
+    "outline": {
+      "color": { "value": "transparent" },
+      "style": { "value": "solid" },
+      "width": { "value": "2px" }
+    },
+    "padding": {
+      "block": { "value": "{util.spacer.2xs.value}" },
+      "inline": {
+        "start": { "value": "{util.spacer.2xs.value}" },
+        "end": { "value": "{util.spacer.2xs.value}" }
+      }
+    }
+  },
+  "input-check": {
+    "background-color": { "value": "{grayscale.white.value}" },
+    "border": {
+      "color": { "value": "{grayscale.light.value}" },
+      "style": { "value": "solid" },
+      "radius": { "value": "{util.spacer.xs.value}" },
+      "width": { "value": "0.5px" }
+    },
+    "color": { "value": "var(--_accent-color)" },
+    "height": { "value": "1em" },
+    "margin": {
+      "block": {
+        "start": { "value": "{util.spacer.2xs.value}" }
+      }
+    },
+    "offset": { "value": "-1.5px" }
+  },
+  "input-wrapper": {
+    "border": {
+      "color": { "value": "{grayscale.light.value}" },
+      "style": { "value": "solid" },
+      "radius": { "value": "{input.border.radius.value}" },
+      "width": { "value": "0.5px" }
+    },
+    "padding": { "value": "{util.spacer.2xs.value}" },
+    "text": {
+      "color": { "value": "canvasText" }
+    },
+    "outline": { "value": "2px solid transparent" }
+  },
+  "label": {
+    "flow-space": { "value": "{util.spacer.2xs.value}" },
+    "hint": {
+      "font-size": "{util.text.2xs.value}"
+    },
+    "required": {
+      "text-color": { "value": "{message.error.value}" },
+      "marker": {
+        "symbol": { "value": "'*'" },
+        "height": { "value": "1rem" },
+        "offset": {
+          "x": { "value": "-100%" },
+          "y": { "value": "40%" }
+        },
+        "padding": {
+          "inline": { "value": "3px" }
+        }
+      }
+    }
+  },
+  "label-group": {
+    "container-name": { "value": "label-group" },
+    "width": { "value": "25ch" },
+    "flow-space": { "value": "{util.spacer.2xs.value}" }
+  },
   "message": {
     "color": { "value": "canvas" },
     "background-color": { "value": "{message.default.value}" },
@@ -110,6 +191,7 @@
     }
   },
   "skip-link": {
+    "background-color": {"value": "canvasText"},
     "padding": { "value": "{util.spacer.sm.value}" },
     "transition": { "value": "0.2s ease" }
   },

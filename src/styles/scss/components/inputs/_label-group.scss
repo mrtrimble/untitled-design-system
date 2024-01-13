@@ -1,0 +1,34 @@
+@use 'sass:map';
+@use '../../tokens/tokens' as tokens;
+@use '../../features' as features;
+
+@layer components {
+  .label-group {
+    --_container-name: var(--label-group-container-name, #{tokens.$label-group-container-name});
+    --_width: var(--label-group-width, #{tokens.$label-group-width});
+    --_flow-space: var(--label-group-flow-space, #{tokens.$label-group-flow-space});
+
+    @layer rules {
+      container-name: var(--_container-name);
+      display: grid;
+      grid-template-rows: 1fr max-content;
+      width: min(100%, var(--_width));
+
+      & > * + * {
+        margin-block-start: var(--_flow-space);
+      }
+    }
+
+    @layer states {
+      &:has(> .error) {
+        .message {
+          --message-background-color: transparent;
+          --message-border-width: 0;
+          --message-padding-inline: 0;
+          --message-color: #{tokens.$message-error};
+          --message-padding-block: #{tokens.$util-spacer-2xs};
+        }
+      }
+    }
+  }
+}

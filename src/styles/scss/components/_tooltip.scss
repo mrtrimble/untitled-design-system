@@ -3,7 +3,7 @@
 @use '../features' as features;
 
 @layer components {
-  body.no-js {
+  *.no-js:has(.tooltip-toggle, .tooltip) {
     .tooltip-toggle,
     .tooltip {
       .footnote-link {
@@ -89,7 +89,6 @@
     --_border-width: var(--tooltip-border-width, #{tokens.$tooltip-border-width});
     --_marker-height: var(--tooltip-marker-height, #{tokens.$tooltip-marker-height});
     --_marker-width: var(--tooltip-marker-width, #{tokens.$tooltip-marker-width});
-    // --_max-width: var(--tooltip-max-width, #{tokens.$tooltip-max-width});
     --_display: var(--tooltip-display, #{tokens.$tooltip-display});
     --_shadow: var(--tooltip-shadow, #{tokens.$tooltip-shadow});
 
@@ -104,7 +103,6 @@
       justify-content: center;
       text-align: center;
       min-width: anchor-size(inline);
-      // max-width: var(--_max-width);
       overflow: visible;
       position: relative;
       display: var(--_display);

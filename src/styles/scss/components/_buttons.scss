@@ -9,13 +9,13 @@
     --_border-style: var(--button-border-style, #{tokens.$button-border-style});
     --_border-radius: var(--button-border-radius, #{tokens.$button-border-radius});
     --_font-size: var(--button-font-size, #{tokens.$button-font-size});
-    --_text-color: var(--button-text-color, #{tokens.$color-base});
     --_outline-color: var(--button-outline-color, #{tokens.$button-outline-color});
     --_outline-style: var(--button-outline-style, #{tokens.$button-outline-style});
     --_outline-width: var(--button-outline-width, #{tokens.$button-outline-width});
     --_outline-offset: var(--button-outline-offset, #{tokens.$button-outline-offset});
     --_padding-inline: var(--button-padding-inline, #{tokens.$button-padding-inline});
     --_padding-block: var(--button-padding-block, #{tokens.$button-padding-block});
+    --_text-color: var(--button-text-color, #{tokens.$button-text-color});
     --_text-decoration: var(--button-text-decoration, #{tokens.$button-text-decoration});
     --_width: var(--button-width, #{tokens.$button-width});
 
