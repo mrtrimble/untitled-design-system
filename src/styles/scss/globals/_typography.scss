@@ -13,6 +13,7 @@ $FONT_CONFIG: (
 @layer globals {
   html {
     --_accent-color: var(--body-color-accent, #{tokens.$body-color-accent});
+
     font-size: map.get($FONT_CONFIG, SIZE);
     accent-color: var(--_accent-color);
     color-scheme: var(--body-theme, dark light);
@@ -57,19 +58,19 @@ $FONT_CONFIG: (
       background-color: var(--_background-color);
       scroll-margin-block-start: var(--_scroll-offset);
 
-      @media (prefers-color-scheme: dark) {
-        --_text-color: #{tokens.$color-inverse-base};
-        --_background-color: #{tokens.$color-base};
-      }
-
       &.dark {
-        --_text-color: #{tokens.$color-inverse-base};
-        --_background-color: #{tokens.$color-base};
+        --body-color-base: #{tokens.$color-inverse-base};
+        --body-background-color: #{tokens.$color-base};
       }
 
       &.light {
-        --_text-color: #{tokens.$color-base};
-        --_background-color: #{tokens.$color-inverse-base};
+        --body-color-base: #{tokens.$color-base};
+        --body-background-color: #{tokens.$color-inverse-base};
+      }
+
+      @media (prefers-color-scheme: dark) {
+        --body-color-base: #{tokens.$color-inverse-base};
+        --body-background-color: #{tokens.$color-base};
       }
     }
 
