@@ -3,25 +3,27 @@
 @use '../features' as features;
 
 @layer components {
-  body.no-js {
+  *.no-js:has(.accordion) {
     --accordion-display: block;
   }
 
   .accordion {
-    --_header-padding-x: var(--accordion-header-padding-inline, #{tokens.$accordion-header-padding-inline});
-    --_header-padding-y: var(--accordion-header-padding-block, #{tokens.$accordion-header-padding-block});
-    --_header-background-color: var(--accordion-header-background-color, #{tokens.$accordion-header-background-color});
-    --_header-text-color: var(--accordion-header-text-color, #{tokens.$accordion-header-text-color});
+    @layer defaults {
+      --_header-padding-x: var(--accordion-header-padding-inline, #{tokens.$accordion-header-padding-inline});
+      --_header-padding-y: var(--accordion-header-padding-block, #{tokens.$accordion-header-padding-block});
+      --_header-background-color: var(--accordion-header-background-color, #{tokens.$accordion-header-background-color});
+      --_header-text-color: var(--accordion-header-text-color, #{tokens.$accordion-header-text-color});
 
-    --_content-padding-x: var(--accordion-content-padding-inline, #{tokens.$accordion-content-padding-inline});
-    --_content-padding-y: var(--accordion-content-padding-block, #{tokens.$accordion-content-padding-block});
+      --_content-padding-x: var(--accordion-content-padding-inline, #{tokens.$accordion-content-padding-inline});
+      --_content-padding-y: var(--accordion-content-padding-block, #{tokens.$accordion-content-padding-block});
 
-    --_background-color: var(--accordion-background-color, #{tokens.$accordion-background-color});
-    --_text-color: var(--accordion-text-color, #{tokens.$accordion-text-color});
-    --_flow-space: var(--accordion-flow-space, #{tokens.$accordion-flow-space});
+      --_background-color: var(--accordion-background-color, #{tokens.$accordion-background-color});
+      --_text-color: var(--accordion-text-color, #{tokens.$accordion-text-color});
+      --_flow-space: var(--accordion-flow-space, #{tokens.$accordion-flow-space});
 
-    --_display: var(--accordion-display, none);
-    --_width: var(--accordion-width, 100%);
+      --_display: var(--accordion-display, none);
+      --_width: var(--accordion-width, 100%);
+    }
 
     @layer rules {
       background-color: var(--_background-color);

@@ -8,7 +8,7 @@
     --_border-color: var(--input-border-color, #{tokens.$grayscale-light});
     --_border-style: var(--input-border-style, solid);
     --_border-radius: var(--input-border-radius, #{tokens.$util-spacer-xs});
-    --_border-width: var(--input-border-width, 1px);
+    --_border-width: var(--input-border-width, 0.5px);
     --_text-color: var(--input-text-color, canvasText);
     // --_outline-color: var(--input-outline-color, transparent);
     --_outline: var(--input-outline, 2px solid var(--input-outline-color, transparent));
@@ -99,7 +99,7 @@
     --_border-color: var(--input-wrapper-border-color, #{tokens.$grayscale-light});
     --_border-style: var(--input-wrapper-border-style, solid);
     --_border-radius: var(--input-wrapper-border-radius, #{tokens.$util-spacer-xs});
-    --_border-width: var(--input-wrapper-border-width, 1px);
+    --_border-width: var(--input-wrapper-border-width, 0.5px);
     --_padding: var(--input-padding, #{tokens.$util-spacer-2xs});
     --_text-color: var(--input-wrapper-text-color, canvasText);
     --_outline: var(--input-wrapper-outline, 2px solid transparent);

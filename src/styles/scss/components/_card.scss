@@ -6,6 +6,7 @@
     --_border-color: var(--card-border-color, #{tokens.$card-border-color});
     --_border-style: var(--card-border-style, #{tokens.$card-border-style});
     --_border-width: var(--card-border-width, #{tokens.$card-border-width});
+    --_border-radius: var(--card-border-radius, #{tokens.$card-border-radius});
     --_margin-inline: var(--card-content-margin-inline, #{tokens.$card-content-margin-inline});
     --_flow-space: var(--card-flow-space, #{tokens.$card-flow-space});
 
@@ -14,6 +15,7 @@
       align-content: start;
       background-color: var(--_background-color);
       border: var(--_border-width) var(--_border-color) var(--_border-style);
+      border-radius: var(--_border-radius);
       overflow: hidden;
 
       > *:not(figure, img) {

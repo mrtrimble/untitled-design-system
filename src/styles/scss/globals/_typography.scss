@@ -4,7 +4,7 @@
 @use '../tokens/tokens' as tokens;
 @use '../functions' as functions;
 
-$FONT: (
+$FONT_CONFIG: (
   SIZE: 18px,
   PREFIX: 'util-text',
   TOKENS: functions.getList(meta.module-variables('tokens'), 'util-text'),
@@ -13,7 +13,7 @@ $FONT: (
 @layer globals {
   html {
     --_accent-color: var(--body-color-accent, #{tokens.$body-color-accent});
-    font-size: map.get($FONT, SIZE);
+    font-size: map.get($FONT_CONFIG, SIZE);
     accent-color: var(--_accent-color);
     color-scheme: var(--body-theme, dark light);
 
