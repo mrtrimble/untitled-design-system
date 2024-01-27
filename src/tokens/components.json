@@ -16,7 +16,7 @@
     },
     "background-color": { "value": "{grayscale.lighter.value}" },
     "display": {"value": "none"},
-    "width": {"value": "width"},
+    "width": {"value": "100%"},
     "text-color": { "value": "currentColor" },
     "flow-space": { "value": "{util.spacer.sm.value}" }
   },

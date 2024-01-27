@@ -97,6 +97,32 @@
       <article id="main-content"
                class="px-md pb-md flow">
 
+
+        <dialog open id="command-palette-example" class="command-palette">
+          <form id="command-palette-form" action="#">
+            <search class="label-group">
+              <label for="command-search">
+                <span class="visually-hidden">Command Search</span>
+                <div class="input-wrapper">
+                  <div class="prefix">
+                    <svg class="icon"
+                         aria-hidden="true">
+                      <use xlink:href="sprite.svg#search"></use>
+                    </svg>
+                  </div>
+                  <input type="search"
+                         name="command-search"
+                         id="command-search"
+                         placeholder="Search..." />
+                </div>
+              </label>
+            </search>
+          </form>
+          <div id="command-palette-results" class="results">
+
+          </div>
+        </dialog>
+
         <!-- Typography -->
         <div class="flow">
           <h2>Typography</h2>

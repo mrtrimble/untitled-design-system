@@ -1,12 +1,12 @@
 @use 'sass:map';
 @use 'sass:meta';
 
-$DIMENTIONS: (
+$DIMENTIONS_CONFIG: (
   AXIS: (
     'height',
     'width',
   ),
-  INFO: (
+  UNITS: (
     'height': (
       'h': '%',
       'vh': 'vh',
@@ -20,11 +20,11 @@ $DIMENTIONS: (
 ) !default;
 
 @layer utilities {
-  @each $dimension in map.get($DIMENTIONS, AXIS) {
-    @each $prefix, $unit in map.get(map.get($DIMENTIONS, INFO), $dimension) {
-      @for $i from 1 through map.get($DIMENTIONS, STEP) {
-        .#{$prefix}-#{$i * map.get($DIMENTIONS, STEP)} {
-          #{$dimension}: #{$i * map.get($DIMENTIONS, STEP)}#{$unit};
+  @each $dimension in map.get($DIMENTIONS_CONFIG, AXIS) {
+    @each $prefix, $unit in map.get(map.get($DIMENTIONS_CONFIG, UNITS), $dimension) {
+      @for $i from 1 through map.get($DIMENTIONS_CONFIG, STEP) {
+        .#{$prefix}-#{$i * map.get($DIMENTIONS_CONFIG, STEP)} {
+          #{$dimension}: #{$i * map.get($DIMENTIONS_CONFIG, STEP)}#{$unit};
         }
       }
     }

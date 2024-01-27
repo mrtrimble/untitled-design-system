@@ -1,0 +1,49 @@
+@use '../tokens/tokens' as tokens;
+
+@layer components {
+  .command-palette {
+    --_max-width: var(--container-max-width, 80ch);
+    
+    @layer rules {
+      background: transparent;
+      background: var(--grayscale-white);
+      border-color: transparent;
+      box-shadow: #{tokens.$util-shadow-md};
+      display: grid;
+      inset: 0;
+      margin: auto;
+      place-content: center;
+      position: fixed;
+
+
+      > *:not(.full-bleed) {
+        width: min(100%, var(--_max-width));
+        margin-inline: auto;
+      }
+
+      > * {
+        padding-inline: var(--util-spacer-xs);
+      }
+
+      > *:first-child {
+        padding-block-start: var(--util-spacer-sm);
+      }
+      > *:last-child {
+        padding-block-end: var(--util-spacer-sm);
+      }
+
+      &::backdrop {
+        background-color: rgba(0, 0, 0, 0.5);
+      }
+
+      form {
+      }
+
+      input[type='search'] {
+      }
+
+      .results {
+      }
+    }
+  }
+}

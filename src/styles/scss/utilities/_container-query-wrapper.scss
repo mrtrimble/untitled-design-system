@@ -1,6 +1,6 @@
 @use 'sass:map';
 
-$CONTAINER_QUERY: (
+$CONTAINER_QUERY_CONFIG: (
   NAME: wrapper,
   COMPONENT_LIST: (
     'accordion',
@@ -17,13 +17,13 @@ $CONTAINER_QUERY: (
 
 @layer utilities {
   .cq-wrapper {
-    --_name: var(--container-name, #{map.get($CONTAINER_QUERY, NAME)});
+    --_name: var(--container-name, #{map.get($CONTAINER_QUERY_CONFIG, NAME)});
 
     @supports (container-type: inline-size) {
       container-type: inline-size;
       container-name: var(--_name);
 
-      @each $component in map.get($CONTAINER_QUERY, COMPONENT_LIST) {
+      @each $component in map.get($CONTAINER_QUERY_CONFIG, COMPONENT_LIST) {
         &:has(.#{$component}) {
           --container-name: #{$component};
         }
